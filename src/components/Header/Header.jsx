@@ -1,7 +1,11 @@
 // @ts-nocheck
 const Header = () => {
   return (
-    <div>Header</div>
+    <header>
+      <nav>
+         
+      </nav>
+    </header>
   )
 }
 
