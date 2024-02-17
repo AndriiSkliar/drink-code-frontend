@@ -1,15 +1,13 @@
 // @ts-nocheck
-import { AvatarImage } from "./UserMenu.styled"
+import { AvatarImage, BtnUserMenu } from "./UserMenu.styled"
 
 
 const UserMenu = () => {
   return (
-    <div>
-        <div>
-            <AvatarImage src="/src/assets/img/default-avatar.png" alt="Avatar by defult" />
-        </div>
+    <BtnUserMenu>
+            <AvatarImage src="/src/assets/img/header/default-avatar.png" alt="Avatar by defult" />
         <p>Vladyslav</p>
-    </div>
+    </BtnUserMenu>
   )
 }
 
