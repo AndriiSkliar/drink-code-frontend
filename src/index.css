@@ -1,13 +1,34 @@
-@import url('/src/assets/fonts/stylesheet.css');
+:root {
+  --primary-text-color: #f3f3f3;
+  --background-color: #0a0a11;
+}
 
-* {
-  box-sizing: border-box;
+@font-face {
+  font-family: 'Manrope';
+  font-weight: 400;
+  src: url('/src/fonts/Manrope-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Manrope';
+  font-weight: 500;
+  src: url('/src/fonts/Manrope-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'Manrope';
+  font-weight: 600;
+  src: url('/src/fonts/Manrope-SemiBold.ttf');
 }
 
 body {
   font-family: 'Manrope', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
+  color: var(--primary-text-color);
+  background-color: var(--background-color);
+}
+
+* {
+  box-sizing: border-box;
 }
 
 h1,
@@ -18,25 +39,47 @@ h5,
 h6,
 p {
   margin: 0;
-  padding: 0;
-}
-
-a {
-  display: inline-block;
-  text-decoration: none;
 }
 
 ul {
-  list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
 }
 
 img {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
-button {
-  cursor: pointer;
+.container {
+  max-width: 375px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .container {
+    max-width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
