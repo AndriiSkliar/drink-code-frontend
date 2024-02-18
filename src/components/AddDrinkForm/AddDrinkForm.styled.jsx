@@ -5,7 +5,7 @@ export const AddDrinkFormContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
- gap: 60px;
+ /* gap: 60px; */
 `;
 
 export const AddDrinkFormBtn = styled.button`
