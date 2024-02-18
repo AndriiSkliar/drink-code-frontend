@@ -1,13 +1,48 @@
 import styled from '@emotion/styled';
 import { Box, Button, Typography } from '@mui/material';
-import bgImageMobile from '../assets/images/welcomePage/bg-welcome-mobile@1x.jpg';
-import bgImageMobile2x from '../assets/images/welcomePage/bg-welcome-mobile@2x.jpg';
-import bgImageTablet from '../assets/images/welcomePage/bg-welcome-tablet@1x.jpg';
-import bgImageTablet2x from '../assets/images/welcomePage/bg-welcome-tablet@2x.jpg';
-import bgImageDesctop from '../assets/images/welcomePage/bg-welcome-desctop@1x.jpg';
-import bgImageDesctop2x from '../assets/images/welcomePage/bg-welcome-desctop@2x.jpg';
+
+import bgImageMobile from '../../assets/images/welcomePage/bg-welcome-mobile@1x.jpg';
+import bgImageMobile2x from '../../assets/images/welcomePage/bg-welcome-mobile@2x.jpg';
+import bgImageTablet from '../../assets/images/welcomePage/bg-welcome-tablet@1x.jpg';
+import bgImageTablet2x from '../../assets/images/welcomePage/bg-welcome-tablet@2x.jpg';
+import bgImageDesctop from '../../assets/images/welcomePage/bg-welcome-desctop@1x.jpg';
+import bgImageDesctop2x from '../../assets/images/welcomePage/bg-welcome-desctop@2x.jpg';
 
 export const StyledDiv = styled.div`
+  min-width: 320px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 304px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  @media screen and (min-width: 375px) {
+    width: 335px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 470px;
+    align-items: start;
+    text-align: left;
+    padding-top: 400px;
+    margin-left: 64px;
+    margin-right: auto;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    padding-top: 273px;
+    width: 485px;
+    margin-left: 100px;
+  }
+`;
+
+export const StyledSection = styled.section`
   background-image: url(${bgImageMobile});
   background-color: var(--black-color);
   background-position: center;
