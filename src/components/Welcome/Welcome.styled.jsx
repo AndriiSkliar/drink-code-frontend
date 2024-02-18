@@ -137,7 +137,7 @@ export const Container = styled.div`
   }
 `;
 
-export const H2 = styled.h2`
+export const WelcomeTitle = styled.h2`
   margin-bottom: 14px;
   font-size: 28px;
   font-weight: 600;
@@ -149,7 +149,7 @@ export const H2 = styled.h2`
   }
 `;
 
-export const P = styled.p`
+export const WelcomText = styled.p`
   margin-bottom: 40px;
   font-size: 14px;
   font-weight: 400;

@@ -1,7 +1,7 @@
 import {
   WelcomeWrapper,
-  H2,
-  P,
+  WelcomeTitle,
+  WelcomeText,
   Container,
   ButtonDiv,
   SignUpBut,
@@ -13,12 +13,12 @@ const Welcome = () => {
   return (
     <WelcomeWrapper>
         <Container>
-          <H2>Welcome to the app!</H2>
-          <P>
+          <WelcomeTitle>Welcome to the app!</WelcomeTitle>
+          <WelcomeText>
             This app offers more than just a collection of recipes - it is
             designed to be your very own digital cookbook. You can easily save
             and retrieve your own recipes at any time.
-          </P>
+          </WelcomeText>
           <ButtonDiv>
             <SignUpBut to="/signup">Sign Up</SignUpBut>
             <SignInBut to="/signin">Sign In</SignInBut>
