@@ -40,10 +40,10 @@ const ToggleDesktop = ({isOpenMenu}) => {
   return (
     <SwitchThemeBtnDesktop onClick={toggleThemeChange} style={isOpenMenu ? {display: 'flex'} : isDesktop ? {display: 'flex'} : {display: 'none'}}>
       <ThemeBtnIcon>
-        <use xlinkHref="/src/assets/icons.svg#icon-Rectangle"></use>
+        <use xlinkHref="/src/assets/icons/icons.svg#icon-Rectangle"></use>
       </ThemeBtnIcon>
       <ThemeBtnBall isdark={isDark}>
-        <use xlinkHref="/src/assets/icons.svg#icon-knob"></use>
+        <use xlinkHref="/src/assets/icons/icons.svg#icon-knob"></use>
       </ThemeBtnBall>
     </SwitchThemeBtnDesktop>
   );

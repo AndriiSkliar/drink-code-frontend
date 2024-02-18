@@ -23,7 +23,7 @@ const UserMenu = () => {
     <UserMenuContainer>
       <BtnUserMenu onClick={() => setIsOpenPopupMenu((prev) => !prev)}>
         <AvatarImage
-          src="/src/assets/img/header/default-avatar.png"
+          src="/src/assets/images/header/default-avatar.png"
           alt="Avatar by defult"
         />
         <p>Vladyslav</p>

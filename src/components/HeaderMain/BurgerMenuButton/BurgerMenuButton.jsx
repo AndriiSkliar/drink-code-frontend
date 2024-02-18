@@ -16,7 +16,7 @@ const toggleBurgerMenu = () => {
   return (
       <BtnBurger type="button" onClick={toggleBurgerMenu}>
         <SvgIconBurger>
-            <use xlinkHref={isOpenMenu ? "/src/assets/icons.svg#icon-close" : "/src/assets/icons.svg#icon-menu-burger"}></use>
+            <use xlinkHref={isOpenMenu ? "/src/assets/icons/icons.svg#icon-close" : "/src/assets/icons/icons.svg#icon-menu-burger"}></use>
         </SvgIconBurger>
       </BtnBurger>
   )

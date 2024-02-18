@@ -26,7 +26,7 @@ const UserPopup = () => {
          <EditProfileText>Edit profile</EditProfileText>
          <EditBtn type="button">
           <SvgIconEdit>
-            <use xlinkHref="/src/assets/icons.svg#icon-pencil"></use>
+            <use xlinkHref="/src/assets/icons/icons.svg#icon-pencil"></use>
           </SvgIconEdit>
          </EditBtn>
        </FlexContainer>

@@ -21,7 +21,7 @@ const LogoutSure = ({ setIsOpenLogout }) => {
         <div>
           <BtnClose type="button" onClick={handleClick}>
             <SvgIconClose>
-              <use xlinkHref="/src/assets/icons.svg#icon-close"></use>
+              <use xlinkHref="/src/assets/icons/icons.svg#icon-close"></use>
             </SvgIconClose>
           </BtnClose>
         </div>

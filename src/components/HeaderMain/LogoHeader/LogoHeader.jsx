@@ -7,7 +7,7 @@ const LogoHeader = () => {
     <div>
         <LogoLink>
            <SvgIcon>
-            <use xlinkHref="/src/assets/icons.svg#icon-Vector"></use>
+            <use xlinkHref="/src/assets/icons/icons.svg#icon-Vector"></use>
            </SvgIcon>
             Drink Master
         </LogoLink>

@@ -1,9 +1,9 @@
 // @ts-nocheck
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import bg224 from "../../../assets/img/mob-menu-bg/bg224.png"
-import bg223 from "../../../assets/img/mob-menu-bg/bg223.png"
-import bg222 from "../../../assets/img/mob-menu-bg/bg222.png"
+import bg224 from "../../../assets/images/mob-menu-bg/bg224.png"
+import bg223 from "../../../assets/images/mob-menu-bg/bg223.png"
+import bg222 from "../../../assets/images/mob-menu-bg/bg222.png"
 
 export const MobMenuContainer = styled.div`
     position: absolute;
