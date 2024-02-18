@@ -7,6 +7,10 @@ export const BtnBurger = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media screen and (min-width: 1280px) {
+    display: none;
+  }
 `;
 
 export const SvgIconBurger = styled.svg`
