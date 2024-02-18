@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
-import { Box, Button, Typography } from '@mui/material';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import bgImageMobile from '../../assets/images/welcomePage/bg-welcome-mobile@1x.jpg';
 import bgImageMobile2x from '../../assets/images/welcomePage/bg-welcome-mobile@2x.jpg';
@@ -8,43 +8,11 @@ import bgImageTablet2x from '../../assets/images/welcomePage/bg-welcome-tablet@2
 import bgImageDesctop from '../../assets/images/welcomePage/bg-welcome-desctop@1x.jpg';
 import bgImageDesctop2x from '../../assets/images/welcomePage/bg-welcome-desctop@2x.jpg';
 
-export const StyledDiv = styled.div`
-  min-width: 320px;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-top: 304px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+const transition = '300ms cubic-bezier(0.46, 0.03, 0.52, 0.96)';
 
-  @media screen and (min-width: 375px) {
-    width: 335px;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  @media screen and (min-width: 768px) {
-    width: 470px;
-    align-items: start;
-    text-align: left;
-    padding-top: 400px;
-    margin-left: 64px;
-    margin-right: auto;
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    padding-top: 273px;
-    width: 485px;
-    margin-left: 100px;
-  }
-`;
-
-export const StyledSection = styled.section`
+export const WelcomeWrapper = styled.section`
   background-image: url(${bgImageMobile});
-  background-color: var(--black-color);
+  background-color: var(--background-color);
   background-position: center;
   background-size: contain;
   background-position: right center;
@@ -146,91 +114,73 @@ export const StyledSection = styled.section`
   }
 `;
 
-export const StyledButton = styled(Button)`
-  width: 125px;
-  height: 46px;
+export const Container = styled.div`
   display: flex;
-  gap: 10px;
-  border-radius: 42px;
-  background: var(--whitetwenty-color);
-  border: 1px solid var(--whitetwenty-color);
-  color: var(--white-color);
-  transition:
-    color var(--transition),
-    background var(--transition),
-    transform var(--transition);
-
-  && {
-    &:hover,
-    &:focus {
-      background-color: var(--white-color);
-      color: var(--blue-color);
-      transform: scale(1.05);
-    }
-  }
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: var(--primary-text-color);
+  position: relative;
+  max-width: 335px;
+  margin-left: 20px;
 
   @media screen and (min-width: 768px) {
-    width: 140px;
-    height: 54px;
-    gap: 14px;
+    max-width: 470px;
+    margin-left: 64px;
+    align-items: start;
   }
 
   @media screen and (min-width: 1440px) {
+    max-width: 485px;
+    margin-left: 100px;
+    align-items: start;
   }
 `;
-export const StyledTypographyH2 = styled(Typography)`
-  color: #fafafa;
-  font-feature-settings: 'liga' off;
+
+export const H2 = styled.h2`
+  margin-bottom: 14px;
   font-size: 28px;
-  font-style: normal;
   font-weight: 600;
   line-height: 32px;
-  letter-spacing: -0.56px;
 
   @media screen and (min-width: 768px) {
     font-size: 40px;
     line-height: 44px;
-    letter-spacing: -0.8px;
   }
 `;
 
-export const StyledTypography = styled(Typography)`
+export const P = styled.p`
+  margin-bottom: 40px;
   font-size: 14px;
-  font-style: normal;
   font-weight: 400;
   line-height: 18px;
-  text-transform: none;
-  letter-spacing: -0.28px;
 
   @media screen and (min-width: 768px) {
     font-size: 18px;
     line-height: 24px;
-    letter-spacing: -0.36px;
   }
 `;
 
-export const StyledBox = styled(Box)`
-  position: absolute;
-  top: 84px;
-  left: 42px;
-  width: 257px;
-  height: 247px;
-  flex-shrink: 0;
-  border-radius: 257px;
-  background: rgba(188, 230, 210, 0.4);
-  filter: blur(104.8543701171875px);
-  z-index: 2;
+export const ButtonDiv = styled.div`
+  display: flex;
+  gap: 14px;
 `;
 
-export const StyledBoxBig = styled(Box)`
-  position: absolute;
-  top: 20px;
-  left: -399px;
-  width: 520px;
-  height: 550px;
-  flex-shrink: 0;
-  border-radius: 550px;
-  background: rgba(64, 112, 205, 0.5);
-  filter: blur(104.8543701171875px);
-  z-index: 1;
+export const SignUpBut = styled(Link)`
+  background-color: var(--primary-text-color);
+  color: var(--black-text-color);
+  padding: 18px 44px 18px 44px;
+  border-radius: 42px;
+  text-decoration: none;
+  border: rgba(243, 243, 243, 0.2) solid 1px;
+  transition: background-color ${transition}, color ${transition};
+  &:hover {
+    background-color: var(--black-text-color);
+    color: var(--primary-text-color);
+  }
+`;
+
+export const SignInBut = styled(SignUpBut)`
+  background-color: var(--white-color);
+  color: var(--dark-blue-color);
 `;
