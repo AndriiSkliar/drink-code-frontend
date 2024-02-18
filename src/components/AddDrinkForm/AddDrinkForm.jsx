@@ -3,7 +3,6 @@ import { useState, useRef } from 'react';
 import { AddDrinkFormContainer, AddDrinkFormBtn } from './AddDrinkForm.styled';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { useDrink } from '../../redux/hooks/useDrink';
 
 
 const AddDrinkForm = () => {
