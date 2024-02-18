@@ -6,6 +6,7 @@ export const SwitchThemeBtnDesktop = styled.button`
   border: none;
   outline: none;
   position: relative;
+  z-index: 2;
 
   @media screen and (min-width: 1280px) {
     display: flex;

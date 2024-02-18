@@ -9,6 +9,8 @@ export const LogoLink = styled.a`
   display: flex;
   align-items: center;
   column-gap: 8px;
+  cursor: pointer;
+  z-index: 2;
 `;
 
 export const SvgIcon = styled.svg`

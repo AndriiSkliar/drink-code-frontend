@@ -1,15 +1,21 @@
+// @ts-nocheck
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import bg224 from "../../../assets/img/mob-menu-bg/bg224.png"
+import bg223 from "../../../assets/img/mob-menu-bg/bg223.png"
+import bg222 from "../../../assets/img/mob-menu-bg/bg222.png"
 
 export const MobMenuContainer = styled.div`
     position: absolute;
-    top: 25%;
+    top: 0;
     left: 0;
     width: 100%;
+    padding-top: 35%;
     height: 100dvh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: url(${bg224}) no-repeat center / cover, url(${bg223}) no-repeat top center / cover, url(${bg222}) no-repeat top left / cover;
 `
 
 export const NavigationList = styled.ul`
