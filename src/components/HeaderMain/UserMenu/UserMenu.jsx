@@ -1,14 +1,51 @@
 // @ts-nocheck
-import { AvatarImage, BtnUserMenu } from "./UserMenu.styled"
-
+import { useState, useEffect } from 'react';
+import UserPopup from '../UserPopup/UserPopup';
+import { AvatarImage, BtnUserMenu, UserMenuContainer } from './UserMenu.styled';
 
 const UserMenu = () => {
-  return (
-    <BtnUserMenu>
-            <AvatarImage src="/src/assets/img/header/default-avatar.png" alt="Avatar by defult" />
-        <p>Vladyslav</p>
-    </BtnUserMenu>
-  )
-}
+  const [isOpenPopupMenu, setIsOpenPopupMenu] = useState(false);
 
-export default UserMenu
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      if (e.key === 'Escape') {
+        setIsOpenPopupMenu(false);
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyPress);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyPress);
+    };
+  }, []);
+
+
+  useEffect(() => {
+    const handleOutsideClick = (e) => {
+      if (!e.target.closest('div') && isOpenPopupMenu) {
+        setIsOpenPopupMenu(false);
+      }
+    };
+    document.addEventListener('click', handleOutsideClick);
+
+    return () => {
+      document.removeEventListener('click', handleOutsideClick);
+    };
+  }, [isOpenPopupMenu]);
+
+  return (
+    <UserMenuContainer>
+      <BtnUserMenu onClick={() => setIsOpenPopupMenu((prev) => !prev)}>
+        <AvatarImage
+          src="/src/assets/img/header/default-avatar.png"
+          alt="Avatar by defult"
+        />
+        <p>Vladyslav</p>
+      </BtnUserMenu>
+      {isOpenPopupMenu && <UserPopup />}
+    </UserMenuContainer>
+  );
+};
+
+export default UserMenu;

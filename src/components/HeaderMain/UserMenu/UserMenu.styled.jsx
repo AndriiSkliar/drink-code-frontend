@@ -6,6 +6,10 @@ export const AvatarImage = styled.img`
   border-radius: 50%;
 `;
 
+export const UserMenuContainer = styled.div`
+  position: relative;
+`;
+
 export const BtnUserMenu = styled.button`
   background-color: inherit;
   color: var(--primary-text-color);

@@ -15,5 +15,8 @@
         <symbol id="icon-Rectangle" viewBox="0 0 40 20">
             <path d="M0 10C0 4.477 4.477 0 10 0h20c5.523 0 10 4.477 10 10s-4.477 10-10 10H10C4.477 20 0 15.523 0 10z" />
         </symbol>
+        <symbol id="icon-pencil" viewBox="0 0 32 32">
+            <path fill="none" stroke="#f3f3f3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.971" d="M3.716 25.217c.105-.945.158-1.418.301-1.859a4.57 4.57 0 0 1 .533-1.109c.256-.388.592-.724 1.264-1.396L22.666 4.001a3.77 3.77 0 0 1 5.333 0v0a3.77 3.77 0 0 1 0 5.333L11.147 26.187c-.672.672-1.009 1.008-1.396 1.264a4.57 4.57 0 0 1-1.109.533c-.442.143-.914.195-1.859.3l-3.45.383.383-3.45z" style="stroke:var(--color1, #f3f3f3)"/>
+        </symbol>
     </defs>
 </svg>
