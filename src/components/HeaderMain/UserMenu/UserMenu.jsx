@@ -1,25 +1,10 @@
 // @ts-nocheck
 import { useState, useEffect } from 'react';
-import UserPopup from '../UserPopup/UserPopup';
+import UserPopup from './UserPopup/UserPopup';
 import { AvatarImage, BtnUserMenu, UserMenuContainer } from './UserMenu.styled';
 
 const UserMenu = () => {
   const [isOpenPopupMenu, setIsOpenPopupMenu] = useState(false);
-
-  useEffect(() => {
-    const handleKeyPress = (e) => {
-      if (e.key === 'Escape') {
-        setIsOpenPopupMenu(false);
-      }
-    };
-
-    document.addEventListener('keydown', handleKeyPress);
-
-    return () => {
-      document.removeEventListener('keydown', handleKeyPress);
-    };
-  }, []);
-
 
   useEffect(() => {
     const handleOutsideClick = (e) => {

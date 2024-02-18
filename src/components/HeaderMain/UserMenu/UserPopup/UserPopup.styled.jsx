@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const PopupContainer = styled.div`
   position: absolute;
   background-color: var(--popup-bg);
-  color: var(--primary-text-color);
+  color: #f3f3f3;
   left: -100%;
   border-radius: 8px;
   padding: 18px;
