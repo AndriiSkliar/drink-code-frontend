@@ -1,6 +1,11 @@
-:root {
+[data-theme='dark'] {
   --primary-text-color: #f3f3f3;
   --background-color: #0a0a11;
+}
+
+[data-theme='light'] {
+  --primary-text-color: #0a0a11;
+  --background-color: #f3f3f3;
 }
 
 @font-face {
