@@ -1,51 +1,45 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const FooterContainer = styled.footer`
+  border-top: 1px solid rgba(243, 243, 243, 0.2);
+  background-color: #0a0a11;
   padding: 40px 20px 20px;
-`;
 
-export const Navigation = styled.nav`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
+  @media (min-width: 768px) {
+    padding: 80px 30px 28px;
+  }
 
-export const StyledLink = styled(Link)`
-  padding: 8px 16px;
-  color: #ffffff; /* White text color */
-  text-shadow:
-    0 0 5px #00baff,
-    0 0 10px #00baff,
-    0 0 20px #00baff,
-    0 0 40px #00baff,
-    0 0 80px #00baff;
-  transition:
-    color 0.3s,
-    text-shadow 0.3s;
-
-  &:hover,
-  &:focus {
-    color: #00baff; /* Blue text color on hover/focus */
-    text-shadow:
-      0 0 5px #00baff,
-      0 0 10px #00baff,
-      0 0 20px #00baff,
-      0 0 40px #00baff,
-      0 0 80px #00baff;
+  @media (min-width: 1440px) {
+    padding: 80px 100px 28px;
   }
 `;
 
-export const IconWrapper = styled.svg`
-  width: ${(props) => props.size || '12px'};
-  height: ${(props) => props.size || '12px'};
-  fill: ${(props) => props.color || '#ffffff'};
-  display: inline-block;
-  margin-right: 5px;
-  box-shadow:
-    0 0 5px #00baff,
-    0 0 10px #00baff,
-    0 0 20px #00baff,
-    0 0 40px #00baff,
-    0 0 80px #00baff;
+export const LogoAndSocialContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @media (min-width: 768px) {
+    gap: 28px;
+  }
+
+  @media (min-width: 1440px) {
+    gap: 40px;
+  }
+`;
+
+export const FooterAllNavContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  @media (min-width: 768px) {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 46px;
+  }
+
+  @media (min-width: 1440px) {
+    flex-direction: row;
+    gap: 400px;
+  }
 `;

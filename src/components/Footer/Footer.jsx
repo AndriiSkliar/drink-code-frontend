@@ -1,35 +1,28 @@
 import {
   FooterContainer,
-  Navigation,
-  StyledLink,
-  IconWrapper,
+  LogoAndSocialContainer,
+  FooterAllNavContainer,
 } from './Footer.styled';
-import sprite from 'assets/sprite.svg';
+import { Logo } from './Logo/Logo';
+import { FooterNavigation } from './FooterNavigation/FooterNavigation';
+import { SocialLinks } from '../SocialLinks/SocialLinks';
+import { Link } from 'react-router-dom';
 
 export const Footer = () => {
   return (
     <FooterContainer>
       <div>
-        <div>
-          <div>
+        <FooterAllNavContainer>
+          <LogoAndSocialContainer>
             <Logo />
-            <Socials />
-          </div>
-          <nav>
-            <NavLink to="/drinks">Drinks</NavLink>
-            <NavLink to="/add">Add recipe</NavLink>
-            <NavLink to="/my">My recipes</NavLink>
-            <NavLink to="/favorite">Favorites</NavLink>
-          </nav>
-        </div>
-        <SubscribeForm />
+            <SocialLinks />
+          </LogoAndSocialContainer>
+          <FooterNavigation />
+        </FooterAllNavContainer>
+        {/* <SubscribeForm /> */}
       </div>
       <div>
-        <Link
-          className={css.links}
-          to={'https://drink-master-back-end.onrender.com/api-docs/'}
-          target="blank"
-        >
+        <Link to={''} target="blank">
           ©2023 Drink Master. All rights reserved.
         </Link>
         <div>
