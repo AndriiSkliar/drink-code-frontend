@@ -6,7 +6,6 @@ export const SwitchThemeBtnDesktop = styled.button`
   border: none;
   outline: none;
   position: relative;
-  display: none;
 
   @media screen and (min-width: 1280px) {
     display: flex;
@@ -28,6 +27,6 @@ export const ThemeBtnBall = styled.svg`
   position: absolute;
   top: 12%;
   left: 10%;
-  transform: ${props => props.isDark === "dark" ? "translateX(0)" : "translateX(100%)"};
+  transform: ${props => props.isdark === "dark" ? "translateX(0)" : "translateX(100%)"};
   transition: all 400ms ease;
 `;

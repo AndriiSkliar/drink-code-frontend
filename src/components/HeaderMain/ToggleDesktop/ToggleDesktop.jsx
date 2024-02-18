@@ -1,13 +1,15 @@
 // @ts-nocheck
 import { useEffect, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import {
   SwitchThemeBtnDesktop,
   ThemeBtnIcon,
   ThemeBtnBall,
 } from './ToggleDesktop.styled';
 
-const ToggleDesktop = () => {
+const ToggleDesktop = ({isOpenMenu}) => {
   const [isDark, setIsDark] = useState(localStorage.getItem('theme'));
+  const isDesktop = useMediaQuery({minWidth: 1280});
 
   const toggleThemeChange = () => {
     if (isDark === 'dark') {
@@ -36,11 +38,11 @@ const ToggleDesktop = () => {
   }, []);
 
   return (
-    <SwitchThemeBtnDesktop onClick={toggleThemeChange}>
+    <SwitchThemeBtnDesktop onClick={toggleThemeChange} style={isOpenMenu ? {display: 'flex'} : isDesktop ? {display: 'flex'} : {display: 'none'}}>
       <ThemeBtnIcon>
         <use xlinkHref="/src/assets/icons.svg#icon-Rectangle"></use>
       </ThemeBtnIcon>
-      <ThemeBtnBall isDark={isDark}>
+      <ThemeBtnBall isdark={isDark}>
         <use xlinkHref="/src/assets/icons.svg#icon-knob"></use>
       </ThemeBtnBall>
     </SwitchThemeBtnDesktop>

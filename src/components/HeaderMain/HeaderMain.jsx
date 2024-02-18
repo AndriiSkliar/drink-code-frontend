@@ -10,7 +10,6 @@ import { useLocation } from 'react-router-dom';
 import BurgerMenuButton from './BurgerMenuButton/BurgerMenuButton';
 import LogoHeader from './LogoHeader/LogoHeader';
 import UserMenu from './UserMenu/UserMenu';
-import ToggleTheme from './ToggleTheme/ToggleTheme';
 import MobileMenu from './MobileMenu/MobileMenu';
 import ToggleDesktop from './ToggleDesktop/ToggleDesktop';
 import NavMenu from './NavMenu/NavMenu';
@@ -30,8 +29,8 @@ const HeaderMain = () => {
           <LogoHeader />
           <NavMenu/>
           <MobileBox>
-            <ToggleDesktop />
-            {isOpenMenu ? <ToggleTheme /> : <UserMenu />}
+             <ToggleDesktop isOpenMenu={isOpenMenu}/>
+            {!isOpenMenu && <UserMenu />}
             <BurgerMenuButton
               isOpenMenu={isOpenMenu}
               setIsOpenMenu={setIsOpenMenu}
