@@ -15,7 +15,7 @@ export const getHomepageDrinks = async () => {
         //  };
          
          
-         const resp = await axios.get(`${BASE_URL}/mainpage`,
+         const resp = await axios.get(`${BASE_URL}/api/drinks/mainpage`,
           // config
           );
          const data = resp.data;
