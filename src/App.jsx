@@ -2,6 +2,9 @@
 import { Route, Routes } from 'react-router-dom';
 import SharedLayout from 'components/SharedLayout/SharedLayout';
 import ErrorPage from 'pages/ErrorPage/ErrorPage';
+import { AppWrapper } from './App.styled';
+
+const test = import.meta.env.VITE_API_TEST;
 
 function App() {
   return (
@@ -11,6 +14,7 @@ function App() {
           <Route path='/drinks' element={''}/>
           <Route path='/add' element={''}/>
           <Route path='/my' element={''}/>
+          <Route path="/favorites" element={<FavoritesPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
