@@ -24,7 +24,7 @@ import {
 import BirthDate from './DatePicker.styled';
 import { ReactComponent as ShowPassword } from '../../../../assets/images/authComponents/eye.svg';
 import { ReactComponent as HidePassword } from '../../../../assets/images/authComponents/eye-off.svg';
-import { WelcomeWrapper } from 'styles/App.styled';
+import { WelcomeWrapper } from '../Welcome/Welcome.styled';
 
 const initialValues = {
   name: '',
