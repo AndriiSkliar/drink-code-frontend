@@ -2,20 +2,19 @@ import { createAsyncThunk, createSlice, isAnyOf } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const instance = axios.create({
-  baseURL: 'https://drink-code-backend.onrender.com/',
+  baseURL: 'https://drink-code-backend.onrender.com/api',
 });
 
 const setToken = (token) => {
   instance.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
-export const loginThunk = createAsyncThunk(
-  'auth/login',
+export const signInThunk = createAsyncThunk(
+  'auth/signin',
   async (formData, thunkApi) => {
     try {
-      const { data } = await instance.post('/api/auth/signin', formData);
+      const { data } = await instance.post('/auth/signin', formData);
       setToken(data.token);
-
       return data;
     } catch (err) {
       console.log(err);
@@ -24,13 +23,12 @@ export const loginThunk = createAsyncThunk(
   }
 );
 
-export const registerThunk = createAsyncThunk(
-  'auth/register',
+export const signUpThunk = createAsyncThunk(
+  'auth/signup',
   async (formData, thunkApi) => {
     try {
-      const { data } = await instance.post('/api/auth/signup', formData);
+      const { data } = await instance.post('/auth/signup', formData);
       setToken(data.token);
-
       return data;
     } catch (err) {
       return thunkApi.rejectWithValue(err.message);
@@ -38,12 +36,11 @@ export const registerThunk = createAsyncThunk(
   }
 );
 
-export const logOutThunk = createAsyncThunk(
-  'auth/logOut',
+export const signOutThunk = createAsyncThunk(
+  'auth/signout',
   async (_, thunkApi) => {
     try {
-      const { data } = await instance.post('/api/auth/signout');
-
+      const { data } = await instance.post('/auth/signout');
       return data;
     } catch (err) {
       return thunkApi.rejectWithValue(err.message);
@@ -89,19 +86,19 @@ const authSlice = createSlice({
   reducers: {},
   extraReducers: (builder) =>
     builder
-      .addCase(loginThunk.fulfilled, (state, { payload }) => {
+      .addCase(signInThunk.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.authenticated = true;
         state.token = payload.token;
         state.userData = payload.user;
       })
-      .addCase(registerThunk.fulfilled, (state, { payload }) => {
+      .addCase(signUpThunk.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.authenticated = true;
         state.token = payload.token;
         state.userData = payload.user;
       })
-      .addCase(logOutThunk.fulfilled, () => {
+      .addCase(signOutThunk.fulfilled, () => {
         return initialState;
       })
       //   .addCase(refreshThunk.fulfilled, (state, { payload }) => {
@@ -112,10 +109,10 @@ const authSlice = createSlice({
 
       .addMatcher(
         isAnyOf(
-          loginThunk.pending,
-          registerThunk.pending,
+          signInThunk.pending,
+          signUpThunk.pending,
           //   refreshThunk.pending,
-          logOutThunk.pending
+          signOutThunk.pending
         ),
         (state) => {
           state.isLoading = true;
@@ -124,10 +121,10 @@ const authSlice = createSlice({
       )
       .addMatcher(
         isAnyOf(
-          loginThunk.rejected,
-          registerThunk.rejected,
+          signInThunk.rejected,
+          signUpThunk.rejected,
           //   refreshThunk.rejected,
-          logOutThunk.rejected
+          signOutThunk.rejected
         ),
         (state, { payload }) => {
           state.isLoading = false;
