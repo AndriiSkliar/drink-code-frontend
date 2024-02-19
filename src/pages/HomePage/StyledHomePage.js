@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import images from '../../assets/images/Hero/images';
+import images from 'src/assets/images/Hero/images';
+
 
 export const StyledHomePage = styled.div`
   background:
@@ -48,7 +49,6 @@ export const StyledHomePage = styled.div`
     height: 46px;
     background: #f3f3f3;
 
-    font-family: 'Manrope', sans-serif;
     font-weight: 600;
     font-size: 14px;
     line-height: 1.28571;

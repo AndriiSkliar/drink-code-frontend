@@ -54,7 +54,6 @@ export const StyledDrinksItem = styled.li`
   }
 
   .drinkName {
-    font-family: 'Manrope', sans-serif;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.125;
@@ -68,7 +67,6 @@ export const StyledDrinksItem = styled.li`
 
   .seeMoreLink {
     cursor: pointer;
-    font-family: 'Manrope', sans-serif;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.28571;

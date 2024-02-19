@@ -19,7 +19,6 @@ export const StyledDrinksList = styled.div`
 
   /* Стили для мобильной версии */
   .drinksListTitle {
-    font-family: 'Manrope', sans-serif;
     font-weight: 600;
     font-size: 28px;
     line-height: 1.14286;
@@ -41,7 +40,6 @@ export const StyledDrinksList = styled.div`
   /* Стили для десктопной версии (если они отличаются от мобильной и планшетной) */
   @media (min-width: 1280px) {
     .drinksListTitle {
-      font-size: 40px;
       line-height: 1.1;
     }
   }

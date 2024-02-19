@@ -36,7 +36,6 @@ export const StyledHero = styled.div`
   }
 
   .heroTitle {
-    font-family: 'Manrope', sans-serif;
     font-weight: 600;
     color: #f3f3f3;
     font-size: 32px;
@@ -68,7 +67,6 @@ export const StyledHero = styled.div`
   }
 
   .heroDescription {
-    font-family: 'Manrope', sans-serif;
     font-weight: 400;
     color: #f3f3f3;
 
@@ -110,7 +108,6 @@ export const StyledHero = styled.div`
     height: 46px;
     background: #f3f3f3;
 
-    font-family: 'Manrope', sans-serif;
     font-weight: 600;
     font-size: 14px;
     line-height: 1.28571;
