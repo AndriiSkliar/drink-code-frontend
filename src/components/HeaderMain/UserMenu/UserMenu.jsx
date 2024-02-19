@@ -7,6 +7,21 @@ const UserMenu = () => {
   const [isOpenPopupMenu, setIsOpenPopupMenu] = useState(false);
 
   useEffect(() => {
+    const handleKeyPress = (e) => {
+      if (e.key === 'Escape') {
+        setIsOpenPopupMenu(false);
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyPress);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyPress);
+    };
+  }, []);
+
+
+  useEffect(() => {
     const handleOutsideClick = (e) => {
       if (!e.target.closest('div') && isOpenPopupMenu) {
         setIsOpenPopupMenu(false);
