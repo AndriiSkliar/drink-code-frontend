@@ -4,7 +4,9 @@ export const SubscrForm = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 335px;
+  max-width: 767px;
+  /* margin-left: auto;
+  margin-right: auto; */
 
   @media (min-width: 768px) {
     max-width: 309px;
@@ -57,7 +59,7 @@ export const SubscrFormBtn = styled.button`
   border: 1px solid rgba(243, 243, 243, 0.2);
   background-color: transparent;
   color: var(--primary-text-color-footer);
-  padding: 20px 24px;
+  padding: 18px 24px;
   font-size: 16px;
   font-weight: 600;
 

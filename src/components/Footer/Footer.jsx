@@ -1,7 +1,7 @@
 import {
   FooterContainer,
   LogoAndSocialContainer,
-  FooterAllNavContainer,
+  FooterNavContainer,
   NavAndFormContainer,
 } from './Footer.styled';
 import { Logo } from './Logo/Logo';
@@ -14,13 +14,13 @@ export const Footer = () => {
   return (
     <FooterContainer>
       <NavAndFormContainer>
-        <FooterAllNavContainer>
+        <FooterNavContainer>
           <LogoAndSocialContainer>
             <Logo />
             <SocialLinks />
           </LogoAndSocialContainer>
           <FooterNavigation />
-        </FooterAllNavContainer>
+        </FooterNavContainer>
         <SubscriptionForm />
       </NavAndFormContainer>
       <div>
