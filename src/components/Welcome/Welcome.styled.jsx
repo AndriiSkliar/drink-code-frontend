@@ -149,7 +149,7 @@ export const WelcomeTitle = styled.h2`
   }
 `;
 
-export const WelcomText = styled.p`
+export const WelcomeText = styled.p`
   margin-bottom: 40px;
   font-size: 14px;
   font-weight: 400;
