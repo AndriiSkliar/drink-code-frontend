@@ -22,8 +22,8 @@ import {
 } from './SignForm.styled';
 
 import BirthDate from './DatePicker.styled';
-import { ReactComponent as ShowPassword } from '../../../../assets/images/authComponents/eye.svg';
-import { ReactComponent as HidePassword } from '../../../../assets/images/authComponents/eye-off.svg';
+import { ReactComponent as ShowPassword } from '../../assets/images/signSvg/eye.svg';
+import { ReactComponent as HidePassword } from '../../assets/images/signSvg//eye-off.svg';
 import { WelcomeWrapper } from '../Welcome/Welcome.styled';
 
 const initialValues = {
@@ -48,7 +48,6 @@ const schema = Yup.object().shape({
     .required('Email is required'),
   password: Yup.string()
     .min(6, 'Password must be at least 6 characters long')
-    .max(30, 'Password must be shorter')
     .required('Password is required')
     .matches(/[a-zA-Z]/, 'Password must contain at least one letter')
     .matches(/[0-9]/, 'Password must contain at least one number'),

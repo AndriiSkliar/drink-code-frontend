@@ -1,5 +1,6 @@
 // @ts-nocheck
 import { Route, Routes } from 'react-router-dom';
+import { lazy } from 'react';
 // import { AppWrapper } from './App.styled';
 import WelcomePage from './pages/WelcomePage/WelcomePage';
 
@@ -8,6 +9,8 @@ import ErrorPage from 'pages/ErrorPage/ErrorPage';
 import FavoritesPage from 'pages/FavoritesPage/FavoritesPage';
 
 // const test = import.meta.env.VITE_API_TEST;
+
+const SignUpPage = lazy(() => import('../pages/SignUpPage/SignUpPage'));
 
 function App() {
   return (
