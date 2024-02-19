@@ -119,7 +119,7 @@ export const Container = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  color: var(--primary-text-color);
+  color: #f3f3f3;
   position: relative;
   max-width: 335px;
   margin-left: 20px;
@@ -167,20 +167,20 @@ export const ButtonDiv = styled.div`
 `;
 
 export const SignUpBut = styled(Link)`
-  background-color: var(--primary-text-color);
-  color: var(--black-text-color);
+  background-color: #f3f3f3;
+  color: #0a0a11;
   padding: 18px 44px 18px 44px;
   border-radius: 42px;
   text-decoration: none;
   border: rgba(243, 243, 243, 0.2) solid 1px;
   transition: background-color ${transition}, color ${transition};
   &:hover {
-    background-color: var(--black-text-color);
-    color: var(--primary-text-color);
+    background-color: #434D67;
+    color: #f3f3f3;
   }
 `;
 
 export const SignInBut = styled(SignUpBut)`
-  background-color: var(--white-color);
-  color: var(--dark-blue-color);
+  background-color: #0a0a11;
+  color: #f3f3f3;
 `;

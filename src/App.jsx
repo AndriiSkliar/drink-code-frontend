@@ -1,13 +1,13 @@
 // @ts-nocheck
 import { Route, Routes } from 'react-router-dom';
-import { AppWrapper } from './App.styled';
+// import { AppWrapper } from './App.styled';
 import WelcomePage from './pages/WelcomePage/WelcomePage';
 
 import SharedLayout from 'components/SharedLayout/SharedLayout';
 import ErrorPage from 'pages/ErrorPage/ErrorPage';
 import FavoritesPage from 'pages/FavoritesPage/FavoritesPage';
 
-const test = import.meta.env.VITE_API_TEST;
+// const test = import.meta.env.VITE_API_TEST;
 
 function App() {
   return (
