@@ -56,9 +56,12 @@ export const SubscrFormBtn = styled.button`
   width: 100%;
   height: 56px;
   border-radius: 200px;
+  /* border: 1px solid var(--primary-text-color-footer);
+  background-color: transparent; */
+  /* color: var(--primary-text-color-footer); */
   border: 1px solid var(--primary-text-color-footer);
-  background-color: transparent;
-  color: var(--primary-text-color-footer);
+  color: var(--primary-black-color);
+  background-color: var(--primary-text-color-footer);
   padding: 18px 24px;
   font-size: 16px;
   font-weight: 600;
@@ -72,11 +75,17 @@ export const SubscrFormBtn = styled.button`
     font-size: 17px;
   }
 
-  &:hover,
+  /* &:hover,
   &:focus,
   &:active {
     border: 1px solid var(--primary-text-color-footer);
     color: var(--primary-black-color);
     background-color: var(--primary-text-color-footer);
+  } */
+
+  &:disabled {
+    border: 1px solid var(--primary-text-color-footer);
+    background-color: transparent;
+    color: var(--primary-text-color-footer);
   }
 `;

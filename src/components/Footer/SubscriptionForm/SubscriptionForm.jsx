@@ -47,7 +47,12 @@ export const SubscriptionForm = () => {
         value={formik.values.email}
         placeholder="Enter the email"
       />
-      <SubscrFormBtn type="submit">Subscribe</SubscrFormBtn>
+      <SubscrFormBtn
+        type="submit"
+        disabled={formik.values.email === '' ? true : false}
+      >
+        Subscribe
+      </SubscrFormBtn>
     </SubscrForm>
   );
 };

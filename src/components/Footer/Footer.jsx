@@ -27,12 +27,25 @@ export const Footer = () => {
         <SubscriptionForm />
       </NavAndFormContainer>
       <DocsContainer>
-        <DocsLink href="#" target="blank">
+        <DocsLink
+          href="https://drink-code-backend.onrender.com/api-docs/#/"
+          target="blank"
+        >
           ©2023 Drink Master. All rights reserved.
         </DocsLink>
         <DocsSubContainer>
-          <DocsLink href="#">Privacy Policy</DocsLink>
-          <DocsLink href="#">Terms of Service</DocsLink>
+          <DocsLink
+            href="/drink-code-frontend/src/assets/docs/PrivacyPolicy.txt"
+            download
+          >
+            Privacy Policy
+          </DocsLink>
+          <DocsLink
+            href="/drink-code-frontend/src/assets/docs/PublicAgreement.txt"
+            download
+          >
+            Terms of Service
+          </DocsLink>
         </DocsSubContainer>
       </DocsContainer>
     </FooterContainer>
