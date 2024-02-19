@@ -10,12 +10,13 @@ import FavoritesPage from 'pages/FavoritesPage/FavoritesPage';
 
 // const test = import.meta.env.VITE_API_TEST;
 
-const SignUpPage = lazy(() => import('../pages/SignUpPage/SignUpPage'));
+const SignUpPage = lazy(() => import('./pages/SignUpPage/signUpPage'));
 
 function App() {
   return (
       <Routes>
-        <Route path="/welcome" element={<WelcomePage />}/>    
+      <Route path="/welcome" element={<WelcomePage />} /> 
+      <Route path="/signup" element={<SignUpPage />} />
         <Route path="/" element={<SharedLayout />}>
           <Route index path="/home" element={''}/>
           <Route path='/drinks' element={''}/>

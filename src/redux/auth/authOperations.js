@@ -67,28 +67,28 @@ const currentUser = createAsyncThunk(
   }
 );
 
-// export const subscribeEmail = createAsyncThunk(
-//   '/auth/subscribe',
-//   async (data, thunkAPI) => {
-//     try {
-//       await axios.post('/users/subscribe', data);
-//     } catch (error) {
-//       return thunkAPI.rejectWithValue(error.message);
-//     }
-//   }
-// );
+export const subscribeEmail = createAsyncThunk(
+  '/auth/subscribe',
+  async (data, thunkAPI) => {
+    try {
+      await axios.post('/users/subscribe', data);
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
 
-// const themeThunk = createAsyncThunk(
-//   'auth/theme',
-//   async (payload, { rejectWithValue }) => {
-//     try {
-//       const res = await axios.patch('/users/theme', payload);
-//       return res.data;
-//     } catch (error) {
-//       return rejectWithValue(error.message);
-//     }
-//   }
-// );
+const themeThunk = createAsyncThunk(
+  'auth/theme',
+  async (payload, { rejectWithValue }) => {
+    try {
+      const res = await axios.patch('/users/theme', payload);
+      return res.data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
 
 export const updateUser = createAsyncThunk(
   'auth/update',
@@ -111,7 +111,7 @@ export const authOperations = {
   signIn,
   signOut,
   currentUser,
-//   subscribeEmail,
-//   themeThunk,
+  subscribeEmail,
+  themeThunk,
   updateUser,
 };
