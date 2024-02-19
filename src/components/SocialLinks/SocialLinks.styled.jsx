@@ -17,15 +17,11 @@ export const SocialLink = styled.a`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
-  transition: opacity border-color 200ms linear;
   transition: border-color 200ms linear;
-  transition: transform 200ms linear;
 
   &:hover,
   &:focus {
     border-color: rgba(243, 243, 243, 0.5);
-    transform: scale(1.1);
   }
 
   &:hover g,

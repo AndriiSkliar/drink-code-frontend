@@ -30,10 +30,4 @@ export const LogoLink = styled(Link)`
   align-items: center;
   gap: 15px;
   color: #f3f3f3;
-  transition: transform 200ms linear;
-
-  &:hover,
-  &:focus {
-    transform: scale(1.1);
-  }
 `;

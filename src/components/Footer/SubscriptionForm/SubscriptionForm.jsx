@@ -1,6 +1,12 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import axios from 'axios';
+import {
+  SubscrForm,
+  SubscrFormText,
+  SubscrFormInput,
+  SubscrFormBtn,
+} from './SubscriptionForm.styled';
 const baseURL = 'https://drink-master-back-end.onrender.com';
 
 export const SubscriptionForm = () => {
@@ -22,12 +28,12 @@ export const SubscriptionForm = () => {
   });
 
   return (
-    <form onSubmit={formik.handleSubmit}>
-      <label htmlFor="email">
+    <SubscrForm onSubmit={formik.handleSubmit}>
+      <SubscrFormText>
         Subscribe up to our newsletter. Be in touch with latest news and special
         offers, etc.
-      </label>
-      <input
+      </SubscrFormText>
+      <SubscrFormInput
         id="email"
         name="email"
         type="email"
@@ -35,7 +41,7 @@ export const SubscriptionForm = () => {
         value={formik.values.email}
         placeholder="Enter the email"
       />
-      <button type="submit">Subscribe</button>
-    </form>
+      <SubscrFormBtn type="submit">Subscribe</SubscrFormBtn>
+    </SubscrForm>
   );
 };

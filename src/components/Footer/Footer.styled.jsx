@@ -31,6 +31,7 @@ export const LogoAndSocialContainer = styled.div`
 export const FooterAllNavContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  gap: 90px;
 
   @media (min-width: 768px) {
     flex-direction: column;
@@ -40,6 +41,19 @@ export const FooterAllNavContainer = styled.div`
 
   @media (min-width: 1280px) {
     flex-direction: row;
-    gap: 400px;
+    gap: 350px;
+  }
+`;
+
+export const NavAndFormContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 80px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
   }
 `;

@@ -19,10 +19,10 @@ export const FooterNav = styled.nav`
 export const FooterNavLink = styled(NavLink)`
   font-weight: 500;
   line-height: 1.57;
-  color: #f3f3f3;
-  transition: transform 200ms linear;
+  color: var(--primary-text-color-footer);
+  transition: color 250ms linear;
   &:hover,
   &:focus {
-    transform: scale(1.1);
+    color: var(--footer-nav-hover-color);
   }
 `;

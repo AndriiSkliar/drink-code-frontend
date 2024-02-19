@@ -2,6 +2,7 @@ import {
   FooterContainer,
   LogoAndSocialContainer,
   FooterAllNavContainer,
+  NavAndFormContainer,
 } from './Footer.styled';
 import { Logo } from './Logo/Logo';
 import { FooterNavigation } from './FooterNavigation/FooterNavigation';
@@ -12,7 +13,7 @@ import { Link } from 'react-router-dom';
 export const Footer = () => {
   return (
     <FooterContainer>
-      <div>
+      <NavAndFormContainer>
         <FooterAllNavContainer>
           <LogoAndSocialContainer>
             <Logo />
@@ -21,7 +22,7 @@ export const Footer = () => {
           <FooterNavigation />
         </FooterAllNavContainer>
         <SubscriptionForm />
-      </div>
+      </NavAndFormContainer>
       <div>
         <Link to={''} target="blank">
           ©2023 Drink Master. All rights reserved.
