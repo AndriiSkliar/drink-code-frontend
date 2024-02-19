@@ -6,6 +6,7 @@ import {
 import { Logo } from './Logo/Logo';
 import { FooterNavigation } from './FooterNavigation/FooterNavigation';
 import { SocialLinks } from '../SocialLinks/SocialLinks';
+import { SubscriptionForm } from './SubscriptionForm/SubscriptionForm';
 import { Link } from 'react-router-dom';
 
 export const Footer = () => {
@@ -19,7 +20,7 @@ export const Footer = () => {
           </LogoAndSocialContainer>
           <FooterNavigation />
         </FooterAllNavContainer>
-        {/* <SubscribeForm /> */}
+        <SubscriptionForm />
       </div>
       <div>
         <Link to={''} target="blank">

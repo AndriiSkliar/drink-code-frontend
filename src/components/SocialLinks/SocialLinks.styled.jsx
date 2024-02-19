@@ -25,7 +25,7 @@ export const SocialLink = styled.a`
   &:hover,
   &:focus {
     border-color: rgba(243, 243, 243, 0.5);
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
 
   &:hover g,

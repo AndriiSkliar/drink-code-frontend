@@ -9,7 +9,7 @@ export const FooterContainer = styled.footer`
     padding: 80px 30px 28px;
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     padding: 80px 100px 28px;
   }
 `;
@@ -23,7 +23,7 @@ export const LogoAndSocialContainer = styled.div`
     gap: 28px;
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     gap: 40px;
   }
 `;
@@ -38,7 +38,7 @@ export const FooterAllNavContainer = styled.div`
     gap: 46px;
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     flex-direction: row;
     gap: 400px;
   }
