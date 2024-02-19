@@ -3,12 +3,15 @@ import {
   LogoAndSocialContainer,
   FooterNavContainer,
   NavAndFormContainer,
+  DocsLink,
+  DocsContainer,
+  DocsSubContainer,
 } from './Footer.styled';
 import { Logo } from './Logo/Logo';
 import { FooterNavigation } from './FooterNavigation/FooterNavigation';
 import { SocialLinks } from '../SocialLinks/SocialLinks';
 import { SubscriptionForm } from './SubscriptionForm/SubscriptionForm';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 export const Footer = () => {
   return (
@@ -23,15 +26,15 @@ export const Footer = () => {
         </FooterNavContainer>
         <SubscriptionForm />
       </NavAndFormContainer>
-      <div>
-        <Link to={''} target="blank">
+      <DocsContainer>
+        <DocsLink href="#" target="blank">
           ©2023 Drink Master. All rights reserved.
-        </Link>
-        <div>
-          <Link>Privacy Policy</Link>
-          <Link>Terms of Service</Link>
-        </div>
-      </div>
+        </DocsLink>
+        <DocsSubContainer>
+          <DocsLink href="#">Privacy Policy</DocsLink>
+          <DocsLink href="#">Terms of Service</DocsLink>
+        </DocsSubContainer>
+      </DocsContainer>
     </FooterContainer>
   );
 };

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const FooterContainer = styled.footer`
-  border-top: 1px solid rgba(243, 243, 243, 0.2);
+  border-top: 1px solid var(--primary-text-color-02);
   background-color: #0a0a11;
   padding: 40px 20px 20px;
 
@@ -55,5 +55,41 @@ export const NavAndFormContainer = styled.div`
   @media (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
+  }
+`;
+
+export const DocsLink = styled.a`
+  color: var(--primary-text-color-05);
+  font-size: 12px;
+  transition: color 250ms linear;
+
+  @media (min-width: 768px) {
+    font-size: 14px;
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--primary-text-color-footer);
+  }
+`;
+
+export const DocsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+`;
+
+export const DocsSubContainer = styled.div`
+  display: flex;
+  gap: 14px;
+
+  @media (min-width: 768px) {
+    gap: 18px;
+    margin-right: 90px;
   }
 `;

@@ -31,7 +31,7 @@ export const SubscrFormInput = styled.input`
   height: 56px;
   border-radius: 200px;
   margin-bottom: 18px;
-  border: 1px solid rgba(243, 243, 243, 0.2);
+  border: 1px solid var(--primary-text-color-02);
   background-color: transparent;
   padding: 21px 24px;
   transition: border 250ms linear;
@@ -48,7 +48,7 @@ export const SubscrFormInput = styled.input`
   &:focus,
   &:active {
     outline: none;
-    border: 1px solid rgba(243, 243, 243, 0.5);
+    border: 1px solid var(--primary-text-color-05);
   }
 `;
 
@@ -56,7 +56,7 @@ export const SubscrFormBtn = styled.button`
   width: 100%;
   height: 56px;
   border-radius: 200px;
-  border: 1px solid rgba(243, 243, 243, 0.2);
+  border: 1px solid var(--primary-text-color-footer);
   background-color: transparent;
   color: var(--primary-text-color-footer);
   padding: 18px 24px;
