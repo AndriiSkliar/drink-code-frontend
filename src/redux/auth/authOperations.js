@@ -5,6 +5,8 @@ export const instance = axios.create({
   baseURL: 'https://drink-code-backend.onrender.com/api',
 });
 
+axios.defaults.baseURL = 'https://drink-code-backend.onrender.com/api';
+
 const authHeaderToken = {
   set(token) {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
