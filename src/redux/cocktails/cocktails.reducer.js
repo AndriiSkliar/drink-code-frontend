@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, isAnyOf } from '@reduxjs/toolkit';
 // import { toast } from 'react-toastify';
-import { instance } from '../auth/auth.reducer';
+import { instance } from '../auth/authOperations';
 
 export const fetchCocktails = createAsyncThunk(
   'cocktails/getAll',
