@@ -22,7 +22,7 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h1`
-  color: var(--white-color);
+  color: var(--primary-text-color-footer);
   font-size: 28px;
   font-weight: 600;
   line-height: 1.14;
@@ -48,30 +48,30 @@ export const Input = styled(Field)`
   width: 285px;
   display: block;
   padding: 18px 24px;
-  border: 1px solid var(--white-twenty-color);
+  border: 1px solid var(--primary-text-color-02);
   border-radius: 200px;
   outline: none;
   font-size: 14px;
   line-height: 1.28;
-  color: var(--white-fifty-color);
+  color: var(--primary-text-color-05);
   background-color: transparent;
   transition: border ${transition};
 
   &:focus,
   &:hover {
-    border: 1px solid var(--white-fifty-color);
-    color: var(--white-fifty-color);
+    border: 1px solid var(--primary-text-color-05);
+    color: var(--primary-text-color-05);
   }
 
   ${({ error }) =>
     error === 'true' &&
     css`
-      border: 1px solid var(--red-error-fifty-color);
+      border: 1px solid var(--primary-text-color-05);
     `}
   ${({ success }) =>
     success === 'true' &&
     css`
-      border: 1px solid var(--green-success-fifty-color);
+      border: 1px solid var(--green-success-color-05);
     `}
     
   @media screen and (min-width: 768px) {
@@ -89,9 +89,9 @@ export const InputWrapper = styled.div`
 export const Button = styled.button`
   position: relative;
   padding: 18px;
-  background-color: var(--white-color);
+  background-color: var(--primary-text-color-footer);
   border-radius: 42px;
-  color: var(--dark-blue-color);
+  color: var(--primary-black-color);
   font-size: 14px;
   font-weight: 600;
   line-height: 1.28571;
@@ -99,13 +99,13 @@ export const Button = styled.button`
   margin-top: 14px;
   display: flex;
   justify-content: center;
-  border: 1px solid var(--white-fifty-color);
+  border: 1px solid var(--primary-text-color-05);
   cursor: pointer;
   transition: border ${transition}, background-color ${transition};
   &:focus,
   &:hover {
-    background-color: transparent;
-    color: var(--white-color);
+    background-color: var(--grey-color);
+    color: var(--primary-text-color-footer);
   }
 
   @media screen and (min-width: 768px) {
@@ -160,26 +160,27 @@ export const CheckSvgStyled = styled(CheckSvg)`
 `;
 
 export const Link = styled(NavLink)`
-  color: var(--white-color);
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 1.33px;
-  text-decoration-line: none;
-  text-align: center;
+//   color: var(--primary-text-color-footer);
+//   font-size: 12px;
+//   font-weight: 600;
+//   line-height: 1.33px;
+//   text-decoration-line: none;
+//   text-align: center;
 
-  // position: relative;
-  // padding: 18px;
-  // background-color: var(--white-color);
-  // border-radius: 42px;
-  // display: flex;
-  // justify-content: center;
-  // border-radius: 42px;
-  // background-color: transparent;
-  // border: 1px solid transparent;
-  // transition: border ${transition};
+  position: relative;
+  padding: 18px;
+  background-color: var(--primary-text-color-footer);
+  border-radius: 42px;
+  display: flex;
+  justify-content: center;
+  border-radius: 42px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  transition: border ${transition};
 
-  // &:focus,
-  // &:hover {
-  //   border: 1px solid var(--white-fifty-color);
-  // }
+  &:focus,
+  &:hover {
+    background-color: var(--grey-color);
+    border: 1px solid var(--primary-text-color-05);
+  }
 `;

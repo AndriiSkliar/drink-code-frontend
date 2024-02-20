@@ -11,6 +11,7 @@ const StyledDesktopDatePicker = styled(DesktopDatePicker)(
   ({ err, curValue }) => {
     return {
       '& .MuiInputBase-root': {
+        width: '350px',  
         borderRadius: '200px',
         border: '1px solid rgba(243, 243, 243, 0.2);',
         outline: 'none',

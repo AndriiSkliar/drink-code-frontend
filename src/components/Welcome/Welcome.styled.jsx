@@ -175,7 +175,7 @@ export const SignUpBut = styled(Link)`
   border: rgba(243, 243, 243, 0.2) solid 1px;
   transition: background-color ${transition}, color ${transition};
   &:hover {
-    background-color: #434D67;
+    background-color: var(--grey-color);
     color: #f3f3f3;
   }
 `;
