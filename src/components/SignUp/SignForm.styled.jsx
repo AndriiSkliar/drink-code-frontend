@@ -160,7 +160,8 @@ export const CheckSvgStyled = styled(CheckSvg)`
 `;
 
 export const Link = styled(NavLink)`
-//   color: var(--primary-text-color-footer);
+  color: var(--primary-text-color-footer);
+  border: 1px solid var(--primary-text-color-05);
 //   font-size: 12px;
 //   font-weight: 600;
 //   line-height: 1.33px;
@@ -175,7 +176,7 @@ export const Link = styled(NavLink)`
   justify-content: center;
   border-radius: 42px;
   background-color: transparent;
-  border: 1px solid transparent;
+//   border: 1px solid transparent;
   transition: border ${transition};
 
   &:focus,

@@ -11,6 +11,7 @@
 }
 
 :root {
+  --background-color-welcome: #0a0a11;
   --primary-text-color-footer: #f3f3f3;
   --footer-nav-hover-color: #253d6f;
   --primary-black-color: #161f37;
