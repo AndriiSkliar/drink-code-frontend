@@ -1,6 +1,21 @@
-:root {
+[data-theme='dark'] {
   --primary-text-color: #f3f3f3;
   --background-color: #0a0a11;
+  --popup-bg: #161f37;
+}
+
+[data-theme='light'] {
+  --primary-text-color: #0a0a11;
+  --background-color: #f3f3f3;
+  --popup-bg: #161f37;
+}
+
+:root {
+  --primary-text-color-footer: #f3f3f3;
+  --footer-nav-hover-color: #253d6f;
+  --primary-black-color: #161f37;
+  --primary-text-color-02: rgba(243, 243, 243, 0.2);
+  --primary-text-color-05: rgba(243, 243, 243, 0.5);
 }
 
 @font-face {
@@ -65,7 +80,13 @@ img {
 .container {
   max-width: 375px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 10px;
+}
+
+@media screen and (min-width: 375px) {
+  .container {
+    padding: 0 20px;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1279px) {
