@@ -12,23 +12,23 @@ const StyledDesktopDatePicker = styled(DesktopDatePicker)(
     return {
       '& .MuiInputBase-root': {
         borderRadius: '200px',
-        border: '1px solid var(--white-twenty-color)',
+        border: '1px solid rgba(243, 243, 243, 0.2);',
         outline: 'none',
         fontSize: '14px',
         lineHeight: '1.28',
-        color: 'var(--white-fifty-color)',
+        color: 'rgba(243, 243, 243, 0.5)',
         backgroundColor: 'transparent',
         transition: borderTransition,
         borderColor:
           err && curValue
-            ? 'var(--red-error-fifty-color)'
+            ? 'rgba(218, 20, 20, 0.5)'
             : curValue
-            ? 'var(--green-success-fifty-color)'
-            : 'var(--white-twenty-color)',
+            ? 'rgba(60, 188, 129, 0.5)'
+            : 'rgba(243, 243, 243, 0.2)',
       },
 
       '& .MuiInputBase-root:hover': {
-        border: '1px solid var(--white-fifty-color)',
+        border: '1px solid rgba(243, 243, 243, 0.5)',
       },
 
       '& .MuiTextField-root': {
@@ -38,7 +38,7 @@ const StyledDesktopDatePicker = styled(DesktopDatePicker)(
       '& .MuiOutlinedInput-root': {
         fontSize: '14px',
         lineHeight: '1.28',
-        color: 'var(--white-fifty-color)',
+        color: 'rgba(243, 243, 243, 0.5)',
         backgroundColor: 'transparent',
         paddingRight: '18px',
       },
@@ -53,7 +53,7 @@ const StyledDesktopDatePicker = styled(DesktopDatePicker)(
 
       '& .Mui-error': {
         transition: `border ${transition} color ${transition}`,
-        border: '1px solid var(--red-error-fifty-color)',
+        border: '1px solid rgba(218, 20, 20, 0.5)',
       },
 
       '& .MuiOutlinedInput-notchedOutline': {
@@ -64,12 +64,12 @@ const StyledDesktopDatePicker = styled(DesktopDatePicker)(
 );
 const PopperDateStyles = {
   '& .MuiPaper-root': {
-    backgroundColor: 'var(--dark-blue-color)',
-    color: 'var(--white-color)',
+    backgroundColor: '#161f37',
+    color: 'white',
   },
 
   '& .MuiIconButton-root': {
-  color: 'var(--white-color)',
+  color: 'white',
 },
 
 '& .Mui-disabled.Mui-disabled.MuiIconButton-edgeStart': {
@@ -81,7 +81,7 @@ const PopperDateStyles = {
 },
 
 '& .MuiPickersDay-dayOutsideMonth': {
-  color: 'var(--white-color)',
+  color: 'white',
 },
 
 '& .MuiPickersDay-root.Mui-disabled.Mui-disabled': {
@@ -89,8 +89,8 @@ const PopperDateStyles = {
 },
 
 '& .MuiPickersDay-today.Mui-selected.MuiPickersDay-root': {
-  backgroundColor: 'var(--white-color)',
-  color: 'var(--black-color)',
+  backgroundColor: 'white',
+  color: 'black',
  
 },
 
@@ -99,7 +99,7 @@ border: '1px solid rgba(243, 243, 243, 0.5)',
 },
 
 '& .MuiPickersDay-root': {
-  color:' var(--white-color)',
+  color:'white',
 },
 
  }
