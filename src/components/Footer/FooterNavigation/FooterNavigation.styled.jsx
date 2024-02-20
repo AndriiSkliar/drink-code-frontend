@@ -21,8 +21,10 @@ export const FooterNavLink = styled(NavLink)`
   line-height: 1.57;
   color: var(--primary-text-color-footer);
   transition: color 250ms linear;
+
   &:hover,
-  &:focus {
+  &:focus,
+  &.active {
     color: var(--footer-nav-hover-color);
   }
 `;
