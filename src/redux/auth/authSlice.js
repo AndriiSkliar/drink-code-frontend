@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { authOperations } from './authOperations';
 
 const initialState = {
-  user: { name: '', email: '', birthDate: '', avatar: '' },
+  user: { name: '', email: '', birthday: '', avatar: '' },
   token: '',
   isLoggedIn: false,
   isRefreshing: false,
@@ -35,12 +35,12 @@ const authSlice = createSlice({
         console.log(state.token);
       })
       .addCase(authOperations.signOut.fulfilled, state => {
-        state.user = { name: '', email: '', birthDate: '' };
+        state.user = { name: '', email: '', birthday: '' };
         state.token = '';
         state.isLoggedIn = false;
       })
       .addCase(authOperations.signOut.rejected, state => {
-        state.user = { name: '', email: '', birthDate: '' };
+        state.user = { name: '', email: '', birthday: '' };
         state.token = '';
         state.isLoggedIn = false;
       })

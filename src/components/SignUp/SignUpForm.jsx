@@ -21,14 +21,14 @@ import {
   Link,
 } from './SignForm.styled';
 
-import BirthDate from './DatePicker.styled';
+import Birthday from './DatePicker.styled';
 import { ReactComponent as ShowPassword } from '../../assets/images/signSvg/eye.svg';
 import { ReactComponent as HidePassword } from '../../assets/images/signSvg//eye-off.svg';
 import { WelcomeWrapper } from '../Welcome/Welcome.styled';
 
 const initialValues = {
   name: '',
-  birthDate: '',
+  birthday: '',
   email: '',
   password: '',
 };
@@ -38,7 +38,7 @@ const schema = Yup.object().shape({
     .required('Name is required')
     .matches(/[A-Za-z]+/, 'Name must contain at least one letter')
     .matches(/^[A-Za-z\s]+$/, 'Name must contain only letters and spaces'),
-  birthDate: Yup.date().required('Date of Birth is required').max(new Date()),
+  birthday: Yup.date().required('Date of Birth is required').max(new Date()),
   email: Yup.string()
     .matches(
       /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
@@ -63,19 +63,19 @@ function SignUpForm() {
   };
 
   const handleSubmit = values => {
-    const { name, birthDate, email, password } = values;
+    const { name, birthday, email, password } = values;
 
-    dispatch(authOperations.signUp({ name, birthDate, email, password }))
+    dispatch(authOperations.signUp({ name, birthday, email, password }))
       .unwrap()
       .then(() => {
         toast.success(`Success!`, {
-          position: toast.POSITION.TOP_RIGHT,
+          position: "top-right",
           autoClose: 1500,
         });
       })
       .catch(() => {
         toast.error(`Something went wrong. Try again`, {
-          position: toast.POSITION.TOP_RIGHT,
+          position: "top-right",
           autoClose: 1500,
         });
       });
@@ -114,10 +114,10 @@ function SignUpForm() {
 
               <InputWrapper>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
-                  <BirthDate />
+                  <Birthday />
                 </LocalizationProvider>
                 <ErrorMessage
-                  name="birthDate"
+                  name="birthday"
                   render={message => <ErrorText>{message}</ErrorText>}
                 />
               </InputWrapper>

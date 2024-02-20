@@ -105,29 +105,29 @@ border: '1px solid rgba(243, 243, 243, 0.5)',
 
  }
 
-export default function BirthDate() {
+export default function Birthday() {
   const { setFieldValue, errors, values } = useFormikContext();
 
   return (
     <StyledDesktopDatePicker
-      name="birthDate"
+      name="birthday"
       value={null}
       onChange={value => {
         const updatedValue = value ? value.format('DD MMM YYYY') : '';
-        setFieldValue('birthDate', updatedValue);
+        setFieldValue('birthday', updatedValue);
       }}
       disableFuture
       showDaysOutsideCurrentMonth
       slots={{
         openPickerIcon: CalendarSvgIcon,
       }}
-      err={errors.birthDate}
-      curValue={values.birthDate}
+      err={errors.birthday}
+      curValue={values.birthday}
       slotProps={{
         textField: {
           fullWidth: true,
           placeholder: 'dd/mm/yyyy',
-          error: !!errors.birthDate,
+          error: !!errors.birthday,
         },
         toolbar: {
           hidden: true,
