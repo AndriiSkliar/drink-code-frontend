@@ -1,7 +1,7 @@
 import { Form, Field } from 'formik';
 import styled, { css } from 'styled-components';
-import { ReactComponent as ErrorSvg } from '../../../assets/images/authComponents/error.svg';
-import { ReactComponent as CheckSvg } from '../../../assets/images/authComponents/done.svg';
+import { ReactComponent as ErrorSvg } from '../../assets/images/signSvg/error.svg';
+import { ReactComponent as CheckSvg } from '../../assets/images/signSvg/done.svg';
 import { NavLink } from 'react-router-dom';
 
 const transition = '300ms cubic-bezier(0.46, 0.03, 0.52, 0.96)'

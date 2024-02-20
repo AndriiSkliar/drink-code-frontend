@@ -1,16 +1,17 @@
 // @ts-nocheck
 import { Route, Routes } from 'react-router-dom';
-import { lazy } from 'react';
+// import { lazy } from 'react';
 // import { AppWrapper } from './App.styled';
 import WelcomePage from './pages/WelcomePage/WelcomePage';
 import HomePage from './pages/HomePage/HomePage'
 import SharedLayout from 'components/SharedLayout/SharedLayout';
 import ErrorPage from 'pages/ErrorPage/ErrorPage';
 import FavoritesPage from 'pages/FavoritesPage/FavoritesPage';
+import SignUpPage from './pages/SignUpPage/signUpPage';
 
 // const test = import.meta.env.VITE_API_TEST;
 
-const SignUpPage = lazy(() => import('./pages/SignUpPage/signUpPage'));
+// const SignUpPage = lazy(() => import('./pages/SignUpPage/signUpPage'));
 
 function App() {
   return (
