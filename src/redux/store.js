@@ -13,7 +13,7 @@ import {
 import storage from 'redux-persist/lib/storage';
 
 import { cocktailsReducer } from './cocktails/cocktails.reducer';
-import { authReducer } from './auth/auth.reducer';
+import { authReducer } from './auth/authSlice';
 
 const authConfig = {
   key: 'auth',
