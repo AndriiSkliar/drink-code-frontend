@@ -3,7 +3,7 @@ import { ToastContainer, toast, Slide } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { authOperations } from 'redux/auth/authOperations';
+import { authOperations } from '../../redux/auth/authOperations';
 import * as Yup from 'yup';
 import {
   Container,
@@ -34,7 +34,7 @@ const schema = Yup.object().shape({
   password: Yup.string()
     .min(6, 'Password must be at least 6 characters long')
     .required('Password is required')
-    .matches(/[a-zA-Z]/, 'Password must contain at least one letter')
+    // .matches(/[a-zA-Z]/, 'Password must contain at least one letter')
     .matches(/[0-9]/, 'Password must contain at least one number'),
 });
 
@@ -53,13 +53,13 @@ export default function SigninForm() {
       .unwrap()
       .then(() => {
         toast.success(`Success`, {
-          position: toast.POSITION.TOP_RIGHT,
+          position: "top-right",
           autoClose: 1500,
         });
       })
       .catch(() => {
         toast.error(`Something went wrong. Try again`, {
-          position: toast.POSITION.TOP_RIGHT,
+          position: "top-right",
           autoClose: 1500,
         });
       });
