@@ -11,7 +11,7 @@ import {
   import { useSelector } from 'react-redux';
 
   
-  const RecipePreparation = ({
+  const Recipe = ({
     onChangeHandler,
     setFieldValue,
     errors,
@@ -48,4 +48,4 @@ import {
       </Div>
     );
   };
-  export default RecipePreparation;
+  export default Recipe;

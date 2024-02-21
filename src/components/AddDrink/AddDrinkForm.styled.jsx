@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
-import { getColors } from './colors';
+import styled from 'styled-components';
+import {colors} from './colors';
 
 export const Wrapper = styled.section`  
     @media only screen and (min-width: 1280px) {

@@ -8,7 +8,6 @@ import {
     HiddenInput,
     SpanAddImage,
     DivDesription,
-    DivRow,
     Input,
     ErrorText,
     ErrorIconCategory,
@@ -25,12 +24,10 @@ import {
   import { useState } from 'react';
   import { useSelector } from 'react-redux';
 
-
-  import { fullYearsCount } from 'helpers/fullYearsCount.js';
-  import DummyDrinkThumb from 'src/assets/dummyDrinkThumb.png';
+  // import {DummyDrinkThumb} from '../../../assets/images/dummyDrinkThumb.png';
   
   
-  const DrinkDescriptionFields = ({
+  const DrinkDescription = ({
     setFile,
     onChangeHandler,
     setFieldValue,
@@ -236,4 +233,4 @@ import {
       </Wrapper>
     );
   };
-  export default DrinkDescriptionFields;
+  export default DrinkDescription;

@@ -1,6 +1,6 @@
 import { Wrapper, Button } from './AddDrinkForm.styled';
-import DrinkDescriptionFields from './DrinkDescription/DrinkDescription';
-import DrinkIngredientsFields from './DrinkIngredients/DrinkIngredients.styled';
+import DrinkDescription from './DrinkDescription/DrinkDescription';
+import DrinkIngredients from './DrinkIngredients/DrinkIngredients';
 import RecipePreparation from './Recipe/Recipe';
 
 import { Formik, Form } from 'formik';
@@ -14,7 +14,7 @@ import { initialValues } from './addDrinkFormInitials';
 import { useNavigate } from 'react-router-dom';
 
 
-const addDrinkSchema = object({
+const addDrinkSchema = () =>({
   drink: string().trim().required('This field is required'),
   description: string().required('This field is required'),
   category: string().required('This field is required'),

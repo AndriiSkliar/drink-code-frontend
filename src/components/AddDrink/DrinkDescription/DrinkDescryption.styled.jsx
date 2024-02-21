@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import { colors } from '../colors';
 
 export const Wrapper = styled.div`
@@ -120,8 +120,6 @@ export const DivDesription = styled.div`
     }
   }
 `;
-
-export const DivRow = styled.div``;
 
 export const Input = styled.input`
   width: 100%;

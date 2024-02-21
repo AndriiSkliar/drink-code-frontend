@@ -13,7 +13,7 @@ import {
 
   import IngredientItem from './IngredientsItem/IngridientsItem';
   
-  const DrinkIngredientsFields = ({
+  const DrinkIngredients = ({
     onChangeHandler,
     setFieldValue,
     errors,
@@ -97,4 +97,4 @@ import {
       </Wrapper>
     );
   };
-  export default DrinkIngredientsFields;
+  export default DrinkIngredients;
