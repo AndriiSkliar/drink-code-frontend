@@ -11,11 +11,20 @@
 }
 
 :root {
+  --background-color-welcome: #0a0a11;
   --primary-text-color-footer: #f3f3f3;
   --footer-nav-hover-color: #253d6f;
   --primary-black-color: #161f37;
   --primary-text-color-02: rgba(243, 243, 243, 0.2);
   --primary-text-color-05: rgba(243, 243, 243, 0.5);
+
+  --grey-color: #434D67;
+
+  --red-error-color: #da1414;
+  --red-error-color-05: rgba(218, 20, 20, 0.5);
+
+  --green-success-color: rgba(60, 188, 129, 1);
+  --green-success-color-05: rgba(60, 188, 129, 0.5);
 }
 
 @font-face {
@@ -40,6 +49,40 @@ body {
   font-family: 'Manrope', sans-serif;
   color: var(--primary-text-color);
   background-color: var(--background-color);
+}
+
+@media (max-width: 767px) {
+  body {
+    background-image: url('./assets/images/Hero/left_blur_mobile.svg'),
+      url('./assets/images/Hero/right_blur_mobile.svg');
+    background-repeat: no-repeat, no-repeat;
+    background-position:
+      left top,
+      right top 400px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  body {
+    background-image: url('./assets/images/Hero/left_blur_tablet.svg'),
+      url('./assets/images/Hero/right_blur_tablet.svg');
+    background-repeat: no-repeat, no-repeat;
+    background-position:
+      top left,
+      top 150px right;
+  }
+}
+
+@media (min-width: 1280px) {
+  body {
+    background-image: url('./assets/images/Hero/left_blur_desktop.svg'),
+      url('./assets/images/Hero/right_blur_desktop.svg');
+    /* center_blur_desktop.svg в StyledHomePage так как этот блик есть только на странице HomePage */
+    background-repeat: no-repeat;
+    background-position:
+      top left,
+      top 374px right;
+  }
 }
 
 * {

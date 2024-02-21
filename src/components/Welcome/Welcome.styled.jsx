@@ -12,7 +12,7 @@ const transition = '300ms cubic-bezier(0.46, 0.03, 0.52, 0.96)';
 
 export const WelcomeWrapper = styled.section`
   background-image: url(${bgImageMobile});
-  background-color: var(--background-color);
+  background-color: var(--background-color-welcome);
   background-position: center;
   background-size: contain;
   background-position: right center;
@@ -175,7 +175,7 @@ export const SignUpBut = styled(Link)`
   border: rgba(243, 243, 243, 0.2) solid 1px;
   transition: background-color ${transition}, color ${transition};
   &:hover {
-    background-color: #434D67;
+    background-color: var(--grey-color);
     color: #f3f3f3;
   }
 `;
