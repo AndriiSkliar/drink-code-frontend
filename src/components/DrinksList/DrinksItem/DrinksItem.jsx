@@ -12,7 +12,7 @@ const DrinksItem = ({ id, drinkName, img }) => {
       <h3 className="drinkName">{drinkName}</h3>
 
        {/* //!!! ссылка на страницу с рецептом коктейля */}
-      <a href="/drink/:drinkId" className="seeMoreLink">See more</a>
+      <a href="/drink-code-frontend/drink/:drinkId" className="seeMoreLink">See more</a>
       </div>
     </StyledDrinksItem>
   );
