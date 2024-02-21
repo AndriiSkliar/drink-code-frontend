@@ -39,7 +39,7 @@ const HomePage = () => {
         />
       </div>
       {/* //!! ссылка на страничку Drinks*/}
-      <a href="/drinks" className='otherDrinksLink'>Other drinks</a>
+      <a href="/drink-code-frontend/drinks" className='otherDrinksLink'>Other drinks</a>
     </StyledHomePage>
   );
 };

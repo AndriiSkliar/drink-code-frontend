@@ -40,6 +40,40 @@ body {
   background-color: var(--background-color);
 }
 
+@media (max-width: 767px) {
+  body {
+    background-image: url('./assets/images/Hero/left_blur_mobile.svg'),
+      url('./assets/images/Hero/right_blur_mobile.svg');
+    background-repeat: no-repeat, no-repeat;
+    background-position:
+      left top,
+      right top 400px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  body {
+    background-image: url('./assets/images/Hero/left_blur_tablet.svg'),
+      url('./assets/images/Hero/right_blur_tablet.svg');
+    background-repeat: no-repeat, no-repeat;
+    background-position:
+      top left,
+      top 150px right;
+  }
+}
+
+@media (min-width: 1280px) {
+  body {
+    background-image: url('./assets/images/Hero/left_blur_desktop.svg'),
+      url('./assets/images/Hero/right_blur_desktop.svg');
+    /* center_blur_desktop.svg в StyledHomePage так как этот блик есть только на странице HomePage */
+    background-repeat: no-repeat;
+    background-position:
+      top left,
+      top 374px right;
+  }
+}
+
 * {
   box-sizing: border-box;
 }

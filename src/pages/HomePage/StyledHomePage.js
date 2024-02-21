@@ -1,35 +1,14 @@
 import styled from 'styled-components';
 import images from 'src/assets/images/Hero/images';
 
-
 export const StyledHomePage = styled.div`
-  background:
-    url(${images.left_blur_mobile}) left top,
-    url(${images.right_blur_mobile}) right top;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  @media (min-width: 768px) {
-    background:
-      url(${images.left_blur_tablet}) left top,
-      url(${images.right_blur_tablet}) right top;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
   @media (min-width: 1280px) {
-    background:
-      url(${images.center_blur_desktop}) center top,
-      url(${images.left_blur_desktop}) left top,
-      url(${images.right_blur_desktop}) right top;
-    background-size: cover;
-    background-size:
-      387px 381px,
-      784px 849px,
-      549px 543px;
+    background-image: url(${images.center_blur_desktop});
+    background-size: 549px 543px;
     background-repeat: no-repeat;
+    background-position: top 343px right;
+    background-clip: content-box;
   }
-
   .categoryListsContainer {
     margin-bottom: 60px;
 

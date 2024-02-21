@@ -98,10 +98,9 @@ export const StyledHero = styled.div`
 
   .addDrinkLink {
     display: flex;
-  align-items: center;
-  justify-content: center;
+    align-items: center;
+    justify-content: center;
 
-  
     border-radius: 42px;
     padding: 14px 40px;
     width: 151px;
@@ -133,5 +132,7 @@ export const StyledHero = styled.div`
       margin-bottom: 0;
     }
   }
+
+
 `;
 export default StyledHero;
