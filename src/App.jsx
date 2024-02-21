@@ -11,7 +11,11 @@ import SignUpPage from './pages/SignUpPage/signUpPage';
 
 // const test = import.meta.env.VITE_API_TEST;
 
-// const SignUpPage = lazy(() => import('./pages/SignUpPage/signUpPage'));
+// const WelcomePage = lazy(() => import('pages/WelcomePage/WelcomePage'));
+// const HomePage = lazy(() => import('pages/HomePage/HomePage'));
+// const ErrorPage = lazy(() => import('pages/ErrorPage/ErrorPage'));
+// const FavoritesPage = lazy(() => import('pages/FavoritesPage/FavoritesPage'));
+// const SignUpPage = lazy(() => import('pages/SignUpPage/signUpPage'));
 
 function App() {
   return (
