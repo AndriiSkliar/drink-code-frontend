@@ -19,7 +19,7 @@ import {
   Link,
 } from '../SignUp/SignForm.styled';
 import { ReactComponent as ShowPassword } from '../../assets/images/signSvg/eye.svg';
-import { ReactComponent as HidePassword } from '../../assets/images/signSvg//eye-off.svg';
+import { ReactComponent as HidePassword } from '../../assets/images/signSvg/eye-off.svg';
 import { WelcomeWrapper } from '../Welcome/Welcome.styled';
 
 const initialValues = { email: '', password: '' };

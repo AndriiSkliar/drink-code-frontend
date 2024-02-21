@@ -8,6 +8,7 @@ import SharedLayout from 'components/SharedLayout/SharedLayout';
 import ErrorPage from 'pages/ErrorPage/ErrorPage';
 import FavoritesPage from 'pages/FavoritesPage/FavoritesPage';
 import SignUpPage from './pages/SignUpPage/signUpPage';
+import SignInPage from './pages/SignInPage/SignInPage';
 
 // const test = import.meta.env.VITE_API_TEST;
 
@@ -22,6 +23,7 @@ function App() {
       <Routes>
       <Route path="/welcome" element={<WelcomePage />} /> 
       <Route path="/signup" element={<SignUpPage />} />
+      <Route path="/signin" element={<SignInPage />} />
         <Route path="/" element={<SharedLayout />}>
           <Route index path="/home" element={<HomePage />}/>
           <Route path='/drinks' element={''}/>
