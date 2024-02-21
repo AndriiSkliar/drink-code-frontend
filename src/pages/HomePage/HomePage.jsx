@@ -3,7 +3,8 @@ import DrinksList from '../../components/DrinksList/DrinksList';
 import Hero from '../../components/Hero/Hero';
 import { StyledHomePage } from './StyledHomePage';
 import { getHomepageDrinks } from '../../api/getHomepageDrinks';
-import  FollowCursor  from '../../components/FollowCursor/FollowCursor';
+import FollowCursor from '../../components/FollowCursor/FollowCursor';
+import { NavLink } from 'react-router-dom';
 
 const HomePage = () => {
   const [drinks, setDrinks] = useState([]);
@@ -19,7 +20,7 @@ const HomePage = () => {
     };
 
     fetchData();
-  }, []); 
+  }, []);
   return (
     <StyledHomePage className="container">
       <Hero />
@@ -37,9 +38,12 @@ const HomePage = () => {
           key={'OtherUnknown'}
         />
       </div>
-      <a href="/drink-code-frontend/drinks" className="otherDrinksLink">
+
+      {/* Ссылка на страницу Drinks (там где сортировка, поиск по названию и тд) */}
+      <NavLink to="/drinks" className="otherDrinksLink">
         Other drinks
-      </a>
+      </NavLink>
+
       <FollowCursor />
     </StyledHomePage>
   );
