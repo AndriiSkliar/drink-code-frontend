@@ -34,7 +34,7 @@ const schema = Yup.object().shape({
   password: Yup.string()
     .min(6, 'Password must be at least 6 characters long')
     .required('Password is required')
-    // .matches(/[a-zA-Z]/, 'Password must contain at least one letter')
+    .matches(/[a-zA-Z]/, 'Password must contain at least one letter')
     .matches(/[0-9]/, 'Password must contain at least one number'),
 });
 
