@@ -65,6 +65,7 @@ export const SubscrFormBtn = styled.button`
   padding: 18px 24px;
   font-size: 16px;
   font-weight: 600;
+  cursor: pointer;
 
   transition:
     border 250ms linear,
@@ -87,5 +88,6 @@ export const SubscrFormBtn = styled.button`
     border: 1px solid var(--primary-text-color-footer);
     background-color: transparent;
     color: var(--primary-text-color-footer);
+    cursor: default;
   }
 `;
