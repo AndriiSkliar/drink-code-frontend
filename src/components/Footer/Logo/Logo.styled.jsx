@@ -5,7 +5,7 @@ import { ReactComponent as LogoIcon } from '../../../assets/icons/Logo.svg';
 export const Icon = styled(LogoIcon)`
   width: 22px;
   height: 22px;
-  fill: #f3f3f3;
+  fill: var(--primary-text-color-footer);
   @media (min-width: 768px) {
     width: 28px;
     height: 28px;
@@ -24,10 +24,9 @@ export const IconText = styled.p`
 `;
 
 export const LogoLink = styled(Link)`
-  /* height: 22px; */
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 15px;
-  color: #f3f3f3;
+  color: var(--primary-text-color-footer);
 `;

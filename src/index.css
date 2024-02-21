@@ -11,9 +11,20 @@
 }
 
 :root {
+  --background-color-welcome: #0a0a11;
   --primary-text-color-footer: #f3f3f3;
   --footer-nav-hover-color: #253d6f;
   --primary-black-color: #161f37;
+  --primary-text-color-02: rgba(243, 243, 243, 0.2);
+  --primary-text-color-05: rgba(243, 243, 243, 0.5);
+
+  --grey-color: #434D67;
+
+  --red-error-color: #da1414;
+  --red-error-color-05: rgba(218, 20, 20, 0.5);
+
+  --green-success-color: rgba(60, 188, 129, 1);
+  --green-success-color-05: rgba(60, 188, 129, 0.5);
 }
 
 @font-face {

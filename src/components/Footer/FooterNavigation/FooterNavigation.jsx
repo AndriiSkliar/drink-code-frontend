@@ -6,9 +6,9 @@ export const FooterNavigation = () => {
 
   return (
     <FooterNav>
-      <FooterNavLink to="/">Drinks</FooterNavLink>
-      <FooterNavLink to="/">Add drink</FooterNavLink>
-      <FooterNavLink to="/">My drinks</FooterNavLink>
+      <FooterNavLink to="/drinks">Drinks</FooterNavLink>
+      <FooterNavLink to="/add">Add drink</FooterNavLink>
+      <FooterNavLink to="/my">My drinks</FooterNavLink>
       <FooterNavLink to="/favorites">
         {isDesktop ? 'Favorites' : 'Favorites drinks'}
       </FooterNavLink>
