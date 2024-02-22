@@ -9,6 +9,7 @@ const UserMenu = () => {
   const [isOpenPopupMenu, setIsOpenPopupMenu] = useState(false);
   const name = useSelector(authSelectors.selectUserName);
   const avatar = useSelector(authSelectors.selectAvatarURL);
+  const [userAvatar, setUserAvatar] = useState(avatar);
 
   useEffect(() => {
     const handleKeyPress = (e) => {
@@ -41,12 +42,12 @@ const UserMenu = () => {
     <UserMenuContainer>
       <BtnUserMenu onClick={() => setIsOpenPopupMenu((prev) => !prev)}>
         <AvatarImage
-          src={avatar}
+          src={userAvatar}
           alt="Avatar by defult"
         />
         <p>{name}</p>
       </BtnUserMenu>
-      {isOpenPopupMenu && <UserPopup />}
+      {isOpenPopupMenu && <UserPopup setUserAvatar={setUserAvatar}/>}
     </UserMenuContainer>
   );
 };
