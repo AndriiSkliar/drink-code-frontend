@@ -1,6 +1,5 @@
 import React from 'react';
 import { Formik, ErrorMessage } from 'formik';
-import axios from 'axios';
 import * as Yup from 'yup';
 import { ToastContainer, toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';

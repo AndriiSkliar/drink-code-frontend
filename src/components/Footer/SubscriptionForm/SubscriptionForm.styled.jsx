@@ -52,7 +52,7 @@ export const SubscrFormInput = styled(Field)`
   ${({ error }) =>
     error === 'true' &&
     css`
-      border: 1px solid #da1414;
+      border: 1px solid var(--red-error-color);
     `}
   ${({ success }) =>
     success === 'true' &&
