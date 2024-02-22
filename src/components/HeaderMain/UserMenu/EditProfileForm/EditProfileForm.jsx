@@ -25,12 +25,33 @@ const EditProfileForm = ({ setIsEditOpen }) => {
   const avatar = useSelector(authSelectors.selectAvatarURL);
   const [editName, setEditName] = useState(false);
   const [imageURL, setImageURL] = useState('');
+  const [newUserName, setNewUserName] = useState(name);
+  const formData = new FormData();
   const handleClick = () => setIsEditOpen(false);
 
  const handleUploadAvatar = (e) => {
   const nameOfFile = e.target.files[0];
   const fileURL = URL.createObjectURL(nameOfFile)
   setImageURL(fileURL);
+ }
+
+ const handleChangeUsername = (e) => {
+  const newName = e.target.value;
+  if (newName === name) {
+    return;
+  } else {
+    setNewUserName(newName);
+  }
+ }
+
+ const onSubmitChanges = (e) => {
+  e.preventDefault();
+  if(name !== newUserName) {
+    formData.append("name", newUserName);
+  } else if (imageURL !== '') {
+    formData.append("avatarURL", imageURL);
+  }
+    console.log(formData);
  }
 
   return (
@@ -61,6 +82,7 @@ const EditProfileForm = ({ setIsEditOpen }) => {
                 id="name"
                 defaultValue={name}
                 readOnly={!editName ? true : false}
+                onChange={handleChangeUsername}
               />
               <EditNameButton
                 type="button"
@@ -71,7 +93,7 @@ const EditProfileForm = ({ setIsEditOpen }) => {
                 </SvgIcon>
               </EditNameButton>
             </LabelChangeName>
-            <SaveChangeBtn type="submit">Save changes</SaveChangeBtn>
+            <SaveChangeBtn type="submit" onSubmit={onSubmitChanges}>Save changes</SaveChangeBtn>
           </FormEdit>
         </div>
       </ModalWindow>
