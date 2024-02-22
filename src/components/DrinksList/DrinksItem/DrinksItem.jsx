@@ -1,18 +1,20 @@
 import React from 'react';
 import { StyledDrinksItem } from './StyledDrinksItem';
-
+import { NavLink } from 'react-router-dom';
 
 const DrinksItem = ({ id, drinkName, img }) => {
   return (
     <StyledDrinksItem>
       <div className="imgContainer">
-      <img src={`${img}`} alt={drinkName} className="drinkImg" />
+        <img src={`${img}`} alt={drinkName} className="drinkImg" />
       </div>
       <div className="contentContainer">
-      <h3 className="drinkName">{drinkName}</h3>
+        <h3 className="drinkName">{drinkName}</h3>
 
-       {/* //!!! ссылка на страницу с рецептом коктейля */}
-      <a href="/drink-code-frontend/drink/:drinkId" className="seeMoreLink">See more</a>
+        {/* Ссылка на страницу с рецептом коктейля */}
+        <NavLink to={`/drink/${id}`} className="seeMoreLink">
+          See more
+        </NavLink>
       </div>
     </StyledDrinksItem>
   );
