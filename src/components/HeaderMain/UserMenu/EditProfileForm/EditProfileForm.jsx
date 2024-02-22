@@ -45,7 +45,7 @@ const EditProfileForm = ({ setIsEditOpen }) => {
  }
 
  const onSubmitChanges = (e) => {
-  e.preventDefault();
+   e.preventDefault();
   if(name !== newUserName) {
     formData.append("name", newUserName);
   } else if (imageURL !== '') {
