@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { ErrorMessage, Formik } from 'formik';
 import { ToastContainer, toast, Slide } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

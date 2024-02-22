@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
@@ -6,7 +7,6 @@ export const instance = axios.create({
 });
 // для внешнего хостинга
 axios.defaults.baseURL = 'https://drink-code-backend.onrender.com/api';   
-// localhist
 // axios.defaults.baseURL = 'http://localhost:3000/api';
 
 const authHeaderToken = {

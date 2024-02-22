@@ -1,17 +1,17 @@
 // @ts-nocheck
 
-import { SvgIcon, LogoLink } from "./LogoHeader.styles"
+import { SvgIcon, LogoLink } from "./LogoHeader.styled"
 
 const LogoHeader = () => {
   return (
-    <div>
-        <LogoLink>
+    <>
+        <LogoLink to="/home">
            <SvgIcon>
             <use xlinkHref="/src/assets/icons/icons.svg#icon-Vector"></use>
            </SvgIcon>
             Drink Master
         </LogoLink>
-    </div>
+    </>
   )
 }
 

@@ -16,6 +16,7 @@ export const EditProfileText = styled.p`
   font-weight: 500;
   font-size: 14px;
   line-height: 1.28;
+  color: #f3f3f3;
 `;
 
 export const SvgIconEdit = styled.svg`
@@ -27,9 +28,14 @@ export const EditBtn = styled.button`
   background-color: inherit;
   border: none;
   outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
   transition: all 400ms ease;
   &:hover {
-    transform: scale(1.2) rotate(180deg);
+    transform: scale(1.1);
+    text-decoration: underline;
   }
 `;
 

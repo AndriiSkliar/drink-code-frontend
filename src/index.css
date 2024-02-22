@@ -122,6 +122,10 @@ img {
   height: auto;
 }
 
+input[type="file"] {
+  color: transparent;
+}
+
 .container {
   max-width: 375px;
   margin: 0 auto;
