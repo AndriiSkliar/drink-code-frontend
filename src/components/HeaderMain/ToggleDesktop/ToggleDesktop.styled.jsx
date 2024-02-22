@@ -22,12 +22,12 @@ export const ThemeBtnIcon = styled.svg`
 `;
 
 export const ThemeBtnBall = styled.svg`
-  width: 20px;
-  height: 20px;
+  width: 28px;
+  height: 28px;
   fill: var(--background-color);
   position: absolute;
-  top: 12%;
-  left: 10%;
-  transform: ${props => props.isdark === "dark" ? "translateX(0)" : "translateX(100%)"};
+  top: -4%;
+  left: 7.4%;
+  transform: ${props => props.isdark === "dark" ? "translateX(0)" : "translateX(70%)"};
   transition: all 400ms ease;
 `;

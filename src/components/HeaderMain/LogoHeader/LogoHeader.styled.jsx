@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
-export const LogoLink = styled.a`
+export const LogoLink = styled(NavLink)`
   font-family: 'Manrope', sans-serif;
   font-weight: 600;
   font-size: 16px;

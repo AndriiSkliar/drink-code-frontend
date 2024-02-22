@@ -1,35 +1,14 @@
 import styled from 'styled-components';
 import images from 'src/assets/images/Hero/images';
 
-
 export const StyledHomePage = styled.div`
-  background:
-    url(${images.left_blur_mobile}) left top,
-    url(${images.right_blur_mobile}) right top;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  @media (min-width: 768px) {
-    background:
-      url(${images.left_blur_tablet}) left top,
-      url(${images.right_blur_tablet}) right top;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
   @media (min-width: 1280px) {
-    background:
-      url(${images.center_blur_desktop}) center top,
-      url(${images.left_blur_desktop}) left top,
-      url(${images.right_blur_desktop}) right top;
-    background-size: cover;
-    background-size:
-      387px 381px,
-      784px 849px,
-      549px 543px;
+    background-image: url(${images.center_blur_desktop});
+    background-size: 549px 543px;
     background-repeat: no-repeat;
+    background-position: top 343px right;
+    background-clip: content-box;
   }
-
   .categoryListsContainer {
     margin-bottom: 60px;
 
@@ -45,7 +24,7 @@ export const StyledHomePage = styled.div`
 
     border-radius: 42px;
     padding: 14px 40px;
-    width: 163px;
+    width: 167px;
     height: 46px;
     background: #f3f3f3;
 
@@ -58,9 +37,14 @@ export const StyledHomePage = styled.div`
     margin-left: auto;
     margin-right: auto;
 
+    transition:
+      box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1),
+      border 0.3s cubic-bezier(0.25, 0.1, 0.25, 1),
+      border-radius 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+
     @media (min-width: 768px) {
       padding: 18px 44px;
-      width: 183px;
+      width: 187px;
       height: 54px;
 
       font-size: 16px;
@@ -70,9 +54,14 @@ export const StyledHomePage = styled.div`
     }
 
     @media (min-width: 1280px) {
-      width: 183px;
-      height: 54px;
       margin-bottom: 158px;
     }
+  }
+
+  .otherDrinksLink:hover,
+  .otherDrinksLink:focus {
+    border: 2px solid rgba(64, 112, 205, 0.5);
+    border-radius: 42px;
+    box-shadow: 0 0 20px rgba(64, 112, 205, 0.7);
   }
 `;
