@@ -24,12 +24,13 @@ const EditProfileForm = ({ setIsEditOpen }) => {
   const name = useSelector(authSelectors.selectUserName);
   const avatar = useSelector(authSelectors.selectAvatarURL);
   const [editName, setEditName] = useState(false);
+  const [imageURL, setImageURL] = useState('');
   const handleClick = () => setIsEditOpen(false);
 
  const handleUploadAvatar = (e) => {
   const nameOfFile = e.target.files[0];
   const fileURL = URL.createObjectURL(nameOfFile)
- console.log(fileURL);
+  setImageURL(fileURL);
  }
 
   return (
@@ -46,7 +47,7 @@ const EditProfileForm = ({ setIsEditOpen }) => {
           <FormEdit>
             <AvatarContainer>
               <Avatar
-                src={avatar}
+                src={imageURL === '' ? avatar : imageURL}
                 alt="avatar of the user"
                 width={80}
                 height={80}
