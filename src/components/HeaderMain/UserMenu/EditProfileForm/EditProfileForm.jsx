@@ -71,9 +71,15 @@ const EditProfileForm = ({ setIsEditOpen, setUserAvatar, userAvatar }) => {
   });;
  }
 
+ const onClickBackdrop = (e) => {
+    if (e.target.className === "sc-fLseNd cYBGkT backdropEditForm") {
+      setIsEditOpen(false);
+    }
+ }
+
   return (
-    <Backdrop>
-      <ModalWindow>
+    <Backdrop onClick={onClickBackdrop} className='backdropEditForm'>
+      <ModalWindow className='modalWindow'>
         <div>
           <BtnClose type="button" onClick={handleClick}>
             <SvgIconClose>

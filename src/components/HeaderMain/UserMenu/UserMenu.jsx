@@ -27,7 +27,7 @@ const UserMenu = () => {
 
   useEffect(() => {
     const handleOutsideClick = (e) => {
-      if (!e.target.closest('div') && isOpenPopupMenu) {
+      if (!e.target.closest('.user-menu-container') && isOpenPopupMenu) {
         setIsOpenPopupMenu(false);
       }
     };
@@ -39,7 +39,7 @@ const UserMenu = () => {
   }, [isOpenPopupMenu]);
 
   return (
-    <UserMenuContainer>
+    <UserMenuContainer className='user-menu-container'>
       <BtnUserMenu onClick={() => setIsOpenPopupMenu((prev) => !prev)}>
         <AvatarImage
           src={userAvatar}
