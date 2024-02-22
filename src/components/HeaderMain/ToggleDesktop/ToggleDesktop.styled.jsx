@@ -21,7 +21,9 @@ export const ThemeBtnIcon = styled.svg`
   fill: var(--primary-text-color);
 `;
 
-export const ThemeBtnBall = styled.svg`
+export const ThemeBtnBall = styled.svg.withConfig({
+  shouldForwardProp: (prop) => 'isdark' !== prop,
+})`
   width: 28px;
   height: 28px;
   fill: var(--background-color);
