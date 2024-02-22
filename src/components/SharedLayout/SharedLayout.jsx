@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 import HeaderMain from '../HeaderMain/HeaderMain';
 import { Footer } from '../Footer/Footer';
 import FollowCursor from '../../components/FollowCursor/FollowCursor';
-import { Loader } from 'src/components/Loader/Loader'
+import { Loader } from '../Loader/Loader';
 
 const SharedLayout = () => {
   return (
