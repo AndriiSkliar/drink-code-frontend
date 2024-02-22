@@ -4,7 +4,7 @@ const selectUserBirthDay = state => state.auth.user.birthDay;
 const selectAvatarURL = state => state.auth.user.avatarURL;
 
 const selectIsLoggedIn = state => state.auth.isLoggedIn;
-const selectIsRefreshing = state => state.auth.isRefreshing;
+// const selectIsRefreshing = state => state.auth.isRefreshing;
 const selectToken = state => state.auth.token;
 const selectSubscribe = state => state.auth.isSubscribed;
 
@@ -21,7 +21,7 @@ const authSelectors = {
   selectAvatarURL,
   selectToken,
   selectIsLoggedIn,
-  selectIsRefreshing,
+  // selectIsRefreshing,
   selectSubscribe,
   selectTheme,
   selectUserAuth,
