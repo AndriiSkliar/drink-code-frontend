@@ -1,13 +1,14 @@
 // @ts-nocheck
 import { Route, Routes } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import authSelectors from './redux/auth/authSelectors';
 import SharedLayout from './components/SharedLayout/SharedLayout';
 import PublicRoute from './helpers/PublicRoute';
 import WelcomePage from './pages/WelcomePage/WelcomePage';
 import SignUpPage from './pages/SignUpPage/signUpPage';
 import SignInPage from './pages/SignInPage/SignInPage';
-import { lazy } from 'react';
+import { lazy, useEffect } from 'react';
+import { refreshThunk } from './redux/auth/authOperations';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const ErrorPage = lazy(() => import('./pages/ErrorPage/ErrorPage'));
@@ -18,6 +19,11 @@ const MyDrinksPage = lazy(() => import('./pages/MyDrinksPage/MyDrinksPage'));
 
 function App() {
   const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(refreshThunk());
+  }, [dispatch]);
 
   return (
     <Routes>
