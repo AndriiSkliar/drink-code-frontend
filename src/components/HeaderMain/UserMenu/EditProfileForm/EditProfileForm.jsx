@@ -1,7 +1,9 @@
 // @ts-nocheck
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { authOperations } from '../../../../redux/auth/authOperations';
 import authSelectors from '../../../../redux/auth/authSelectors';
+import { toast } from 'react-toastify';
 import {
   Backdrop,
   BtnClose,
@@ -21,6 +23,7 @@ import {
 } from './EditProfileForm.styled';
 
 const EditProfileForm = ({ setIsEditOpen }) => {
+  const dispatch = useDispatch();
   const name = useSelector(authSelectors.selectUserName);
   const avatar = useSelector(authSelectors.selectAvatarURL);
   const [editName, setEditName] = useState(false);
@@ -44,14 +47,25 @@ const EditProfileForm = ({ setIsEditOpen }) => {
   }
  }
 
- const onSubmitChanges = (e) => {
-   e.preventDefault();
+ const onSubmitChanges = (event) => {
+   event.preventDefault();
   if(name !== newUserName) {
     formData.append("name", newUserName);
   } else if (imageURL !== '') {
     formData.append("avatarURL", imageURL);
   }
-    console.log(formData);
+   dispatch(authOperations.updateUser(formData)).unwrap().then(() => {
+    toast.success(`Success update`, {
+      position: "top-right",
+      autoClose: 1500,
+    });
+  })
+  .catch(() => {
+    toast.error(`Something went wrong. Try again`, {
+      position: "top-right",
+      autoClose: 1500,
+    });
+  });;
  }
 
   return (
@@ -65,7 +79,7 @@ const EditProfileForm = ({ setIsEditOpen }) => {
           </BtnClose>
         </div>
         <div>
-          <FormEdit>
+          <FormEdit onSubmit={onSubmitChanges}>
             <AvatarContainer>
               <Avatar
                 src={imageURL === '' ? avatar : imageURL}
@@ -93,7 +107,7 @@ const EditProfileForm = ({ setIsEditOpen }) => {
                 </SvgIcon>
               </EditNameButton>
             </LabelChangeName>
-            <SaveChangeBtn type="submit" onSubmit={onSubmitChanges}>Save changes</SaveChangeBtn>
+            <SaveChangeBtn type="submit">Save changes</SaveChangeBtn>
           </FormEdit>
         </div>
       </ModalWindow>
