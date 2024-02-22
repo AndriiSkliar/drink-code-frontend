@@ -29,6 +29,9 @@ export const AddAvatar = styled.input`
 export const Avatar = styled.img`
   border-radius: 50%;
   padding-top: 2px;
+  object-fit: cover;
+  width: 80px!important;
+  height:  80px!important;
 `;
 
 export const AvatarContainer = styled.div`

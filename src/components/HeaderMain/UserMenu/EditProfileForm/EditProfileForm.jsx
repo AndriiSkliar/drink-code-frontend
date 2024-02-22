@@ -28,12 +28,14 @@ const EditProfileForm = ({ setIsEditOpen }) => {
   const avatar = useSelector(authSelectors.selectAvatarURL);
   const [editName, setEditName] = useState(false);
   const [imageURL, setImageURL] = useState('');
+  const [fileAvatar, setFileAvatar] = useState();
   const [newUserName, setNewUserName] = useState(name);
   const formData = new FormData();
   const handleClick = () => setIsEditOpen(false);
 
  const handleUploadAvatar = (e) => {
   const nameOfFile = e.target.files[0];
+  setFileAvatar(nameOfFile);
   const fileURL = URL.createObjectURL(nameOfFile)
   setImageURL(fileURL);
  }
@@ -51,8 +53,8 @@ const EditProfileForm = ({ setIsEditOpen }) => {
    event.preventDefault();
   if(name !== newUserName) {
     formData.append("name", newUserName);
-  } else if (imageURL !== '') {
-    formData.append("avatarURL", imageURL);
+  } else if (fileAvatar) {
+    formData.append("avatarURL", fileAvatar);
   }
    dispatch(authOperations.updateUser(formData)).unwrap().then(() => {
     toast.success(`Success update`, {
