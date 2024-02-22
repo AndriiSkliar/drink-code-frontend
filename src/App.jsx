@@ -7,6 +7,7 @@ import PublicRoute from './helpers/PublicRoute';
 import WelcomePage from './pages/WelcomePage/WelcomePage';
 import SignUpPage from './pages/SignUpPage/signUpPage';
 import SignInPage from './pages/SignInPage/SignInPage';
+
 import { lazy } from 'react';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
