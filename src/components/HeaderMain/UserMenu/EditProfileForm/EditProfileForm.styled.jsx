@@ -22,12 +22,13 @@ export const AddAvatar = styled.input`
     justify-content: center;
     position: absolute;
     top: 64%;
-    left: 30%;
+    left: 33%;
   }
 `;
 
 export const Avatar = styled.img`
   border-radius: 50%;
+  padding-top: 2px;
 `;
 
 export const AvatarContainer = styled.div`

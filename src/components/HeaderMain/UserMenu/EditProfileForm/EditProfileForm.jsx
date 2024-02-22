@@ -1,5 +1,7 @@
 // @ts-nocheck
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import authSelectors from '../../../../redux/auth/authSelectors';
 import {
   Backdrop,
   BtnClose,
@@ -19,8 +21,17 @@ import {
 } from './EditProfileForm.styled';
 
 const EditProfileForm = ({ setIsEditOpen }) => {
+  const name = useSelector(authSelectors.selectUserName);
+  const avatar = useSelector(authSelectors.selectAvatarURL);
   const [editName, setEditName] = useState(false);
   const handleClick = () => setIsEditOpen(false);
+
+ const handleUploadAvatar = (e) => {
+  const nameOfFile = e.target.files[0];
+  const fileURL = URL.createObjectURL(nameOfFile)
+ console.log(fileURL);
+ }
+
   return (
     <Backdrop>
       <ModalWindow>
@@ -35,19 +46,19 @@ const EditProfileForm = ({ setIsEditOpen }) => {
           <FormEdit>
             <AvatarContainer>
               <Avatar
-                src="/src/assets/images/header/default-avatar.png"
+                src={avatar}
                 alt="avatar of the user"
                 width={80}
                 height={80}
               />
-              <AddAvatar type="file" name="avatar" id="avatar" />
+              <AddAvatar type="file" name="avatar" id="avatar" onChange={handleUploadAvatar}/>
             </AvatarContainer>
             <LabelChangeName htmlFor="name">
               <ChangeNameInput
                 type="text"
                 name="name"
                 id="name"
-                defaultValue="Vladyslav"
+                defaultValue={name}
                 readOnly={!editName ? true : false}
               />
               <EditNameButton
