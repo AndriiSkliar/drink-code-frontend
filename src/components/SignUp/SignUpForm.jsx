@@ -68,13 +68,12 @@ function SignUpForm() {
     dispatch(authOperations.signUp({ name, birthday, email, password }))
       .unwrap()
       .then(() => {
-        toast.success(`Success!`, {
+        toast.success(`A message with a verification has been sent to your email`, {
           position: "top-right",
-          autoClose: 1500,
+          autoClose: 5000,
         });
       })
       .catch((error) => {
-        console.log(error);
         toast.error(error, {
           position: "top-right",
           autoClose: 1500,
