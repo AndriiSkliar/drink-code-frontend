@@ -3,6 +3,7 @@
   --background-color: #0a0a11;
   --popup-bg: #161f37;
   --footer-bg: transparent;
+  --switcher-ball: #161f37;
 }
 
 [data-theme='light'] {
@@ -10,6 +11,7 @@
   --background-color: #f3f3f3;
   --popup-bg: #161f37;
   --footer-bg: #0a0a11;
+  --switcher-ball: #f3f3f3;
 }
 
 :root {
