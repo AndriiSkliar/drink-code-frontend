@@ -5,7 +5,7 @@ import authSelectors from './redux/auth/authSelectors';
 import SharedLayout from './components/SharedLayout/SharedLayout';
 import PublicRoute from './helpers/PublicRoute';
 import WelcomePage from './pages/WelcomePage/WelcomePage';
-import SignUpPage from './pages/SignUpPage/SignUpPage';
+import SignUpPage from './pages/SignUpPage/signUpPage';
 import SignInPage from './pages/SignInPage/SignInPage';
 import { lazy } from 'react';
 
