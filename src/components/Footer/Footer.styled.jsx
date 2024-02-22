@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const FooterContainer = styled.footer`
   border-top: 1px solid var(--primary-text-color-02);
-  background-color: #0a0a11;
+  background-color: var(--footer-bg);
   padding: 40px 20px 20px;
 
   @media (min-width: 768px) {
