@@ -1,12 +1,11 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { Form, Field } from 'formik';
 
-export const SubscrForm = styled.form`
+export const SubscrForm = styled(Form)`
   display: flex;
   flex-direction: column;
   justify-content: center;
   max-width: 767px;
-  /* margin-left: auto;
-  margin-right: auto; */
 
   @media (min-width: 768px) {
     max-width: 309px;
@@ -23,16 +22,15 @@ export const SubscrFormText = styled.p`
   }
 `;
 
-export const SubscrFormInput = styled.input`
+export const SubscrFormInput = styled(Field)`
   display: block;
-  margin-bottom: 18px;
+  /* margin-bottom: 18px; */
   color: var(--primary-text-color-footer);
   width: 100%;
   height: 56px;
   border-radius: 200px;
-  margin-bottom: 18px;
   border: 1px solid var(--primary-text-color-02);
-  background-color: transparent;
+  background-color: inherit;
   padding: 21px 24px;
   transition: border 250ms linear;
 
@@ -50,15 +48,24 @@ export const SubscrFormInput = styled.input`
     outline: none;
     border: 1px solid var(--primary-text-color-05);
   }
+
+  ${({ error }) =>
+    error === 'true' &&
+    css`
+      border: 1px solid #da1414;
+    `}
+  ${({ success }) =>
+    success === 'true' &&
+    css`
+      border: 1px solid var(--green-success-color-05);
+    `}
 `;
 
 export const SubscrFormBtn = styled.button`
   width: 100%;
   height: 56px;
   border-radius: 200px;
-  /* border: 1px solid var(--primary-text-color-footer);
-  background-color: transparent; */
-  /* color: var(--primary-text-color-footer); */
+  margin-top: 18px;
   border: 1px solid var(--primary-text-color-footer);
   color: var(--primary-black-color);
   background-color: var(--primary-text-color-footer);
@@ -75,14 +82,6 @@ export const SubscrFormBtn = styled.button`
   @media (min-width: 768px) {
     font-size: 17px;
   }
-
-  /* &:hover,
-  &:focus,
-  &:active {
-    border: 1px solid var(--primary-text-color-footer);
-    color: var(--primary-black-color);
-    background-color: var(--primary-text-color-footer);
-  } */
 
   &:disabled {
     border: 1px solid var(--primary-text-color-footer);
