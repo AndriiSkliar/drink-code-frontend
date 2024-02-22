@@ -22,10 +22,9 @@ import {
   LabelChangeName,
 } from './EditProfileForm.styled';
 
-const EditProfileForm = ({ setIsEditOpen, setUserAvatar }) => {
+const EditProfileForm = ({ setIsEditOpen, setUserAvatar, userAvatar }) => {
   const dispatch = useDispatch();
   const name = useSelector(authSelectors.selectUserName);
-  const avatar = useSelector(authSelectors.selectAvatarURL);
   const [editName, setEditName] = useState(false);
   const [imageURL, setImageURL] = useState('');
   const [fileAvatar, setFileAvatar] = useState();
@@ -58,6 +57,7 @@ const EditProfileForm = ({ setIsEditOpen, setUserAvatar }) => {
   }
    dispatch(authOperations.updateUser(formData)).unwrap().then((res) => {
     setUserAvatar(res.avatarURL);
+    setImageURL('');
     toast.success(`Success update`, {
       position: "top-right",
       autoClose: 1500,
@@ -85,7 +85,7 @@ const EditProfileForm = ({ setIsEditOpen, setUserAvatar }) => {
           <FormEdit onSubmit={onSubmitChanges}>
             <AvatarContainer>
               <Avatar
-                src={imageURL === '' ? avatar : imageURL}
+                src={imageURL === '' ? userAvatar : imageURL}
                 alt="avatar of the user"
                 width={80}
                 height={80}
