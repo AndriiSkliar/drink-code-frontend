@@ -8,7 +8,7 @@ const FollowCursor = () => {
   const handleMouseMove = (e) => {
     const target = e.target;
 
-    if (target.closest('a')) {
+    if (target.closest('a') || target.closest('button')) { //реагируем на ссылки и кнопки
       setIsActive(true);
     } else {
       setIsActive(false);
