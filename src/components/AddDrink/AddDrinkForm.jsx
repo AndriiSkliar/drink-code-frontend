@@ -3,10 +3,11 @@ import DrinkDescription from './DrinkDescription/DrinkDescription';
 import DrinkIngredients from './DrinkIngredients/DrinkIngredients';
 import RecipePreparation from './Recipe/Recipe';
 
-import { Formik, Form } from 'formik';
+import {Formik, Form} from 'formik';
 
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useMemo } from 'react';
 
 import { initialValues } from './addDrinkFormInitials';
 
@@ -31,200 +32,85 @@ const addDrinkSchema = () =>({
   instructions: string().required('This field is required'),
 });
 
-const AddDrinkForm = ({ theme }) => {
-  const dispatch = useDispatch();
-  let navigate = useNavigate();
+ const OptionsFromUsingId = (collection) =>
+  collection.map(({ title, _id }) => ({
+    value: _id,
+    label: title,
+  }));
 
-  useEffect(() => {
-    dispatch(fetchCategories('categories'));
-    dispatch(fetchGlass('glasses'));
-    dispatch(fetchIngredient('ingredients'));
-  }, [dispatch]);
-
-  const persistedForm = useSelector(selectForm);
-  if (!persistedForm?.form) {
-    // initiation persist form
-    dispatch(setForm(initialValues));
-  }
-  const formValues = persistedForm.form;
-
-  const isLoadingOwnDrink = useSelector(selectIsLoadingOwn);
-
-  const [file, setFile] = useState();
-  const [wrongIngredients, setWrongIngredients] = useState();
-
-  const isNonAlcoholicDrinkFreeAlcohol = (isNotify) => {
-    if (formValues.alcoholic === 'Alcoholic') {
-      return true;
-    }
-
-    if (formValues.alcoholic === 'Non alcoholic') {
-      const alcoholicIngredients = formValues.ingredients.filter(
-        (el) => el.alcohol === 'Yes',
-      );
-
-      if (alcoholicIngredients.length === 0) {
-        setWrongIngredients(null);
-        return true;
-      }
-
-      throw HttpError(404,
-          'The drink is labeled non-alcoholic but contains alcohol',
-        );
-
-      setWrongIngredients(true);
-      return false;
-    }
+  const filters = () => {
+    const categories = useSelector(selectCategories);
+    const ingredients = useSelector(selectIngredients);
+    const glasses = useSelector(selectGlasses);
+  
+    return { categories, ingredients, glasses };
   };
 
-  const isAlcoholicDrinkContainAlcohol = (isNotify) => {
-    if (formValues.alcoholic === 'Non alcoholic') {
-      return true;
-    }
 
-    if (formValues.ingredients.some((el) => el.alcohol === 'Yes')) {
-      return true;
-    }
 
-    throw HttpError(404,
-        `The drink is labeled as alcoholic, but it doesn't contain alcohol`,
-      );
+const AddDrinkForm = () => {
+  const {ingredients} = filters();
+  const authToken = useSelector(authHeaderToken);
+  const addedIngredients = [];
 
-    return false;
-  };
+  const ingredientsOptions = useMemo(
+    () => OptionsFromUsingId(ingredients ?? []),
+    [ingredients]
+  );
 
-  // Funkcja przetwarzania formularzy
-  const submitHandler = (values, actions) => {
-    if (!isAllIngredientsUniq()) {
-        throw HttpError(404, 'Duplicate ingredients are not allowed');
-    }
+  const onSubmit = (e) => {
+    e.preventDefault();
+    addedIngredients.length = 0;
 
-    if (
-      !isNonAlcoholicDrinkFreeAlcohol(true) ||
-      !isAlcoholicDrinkContainAlcohol(true)
-    ) {
-      return;
-    }
+    const formData = new FormData(e.currentTarget);
 
-    // Prośba o stworzenie własnego koktajlu bez obrazu
+    console.log(formData);
 
-    if (!file) {
-      const formWithImgUrl = {
-        ...formValues,
-      };
-
-      if (formWithImgUrl?.form) {
-        delete formWithImgUrl.form;
-      }
-      let tempArr = [];
-      formWithImgUrl.ingredients.filter((el) =>
-        tempArr.push({
-          title: el.title,
-          measure: el.measure,
-        }),
-      );
-      delete formWithImgUrl.ingredients;
-      formWithImgUrl.ingredients = tempArr;
-
-      const freshData = { drinkThumb: 'src/images/dummyDrinkThumb.png' };
-      Object.assign(formWithImgUrl, freshData);
-
-      sendForm(formWithImgUrl, values, actions);
-      return;
-    }
-
-    // wysłanie wybranego pliku na serwer
-    const formData = new FormData();
-    formData.append('cocktail', file);
-    dispatch(addOwnDrinkImg(formData))
-      .then((resp) => {
-        if (
-          typeof resp.payload === 'string' &&
-          resp.payload.startsWith('https://drink-code-backend.onrender.com')
-        ) {
-          const formWithImgUrl = {
-            ...formValues,
-          };
-          if (formWithImgUrl?.form) {
-            delete formWithImgUrl.form;
-          }
-          let tempArray = [];
-          formWithImgUrl.ingredients.filter((el) =>
-            tempArray.push({
-              title: el.title,
-              measure: el.measure,
-            }),
-          );
-          delete formWithImgUrl.ingredients;
-          formWithImgUrl.ingredients = tempArray;
-
-          const freshData = { drinkThumb: resp.payload };
-          Object.assign(formWithImgUrl, freshData);
-
-          sendForm(formWithImgUrl, values, actions);
-        } else {
-            throw HttpError(404,`Format "webp" not allowed. Try upload .jpeg or .png`);
-        }
-        // console.log(resp.payload.message);
-      })
-      .catch((e) => {
-        console.log(e);
+    formData.getAll('ingredientId').forEach((ingredientId, index) => {
+      const measure = formData.getAll('measure')[index];
+      addedIngredients.push({
+        title: ingredientsOptions.find(
+          (option) => option.value === ingredientId
+        ).label,
+        measure,
+        ingredientId,
       });
-  };
+    });
 
-  function onChangeHandler(payload, field, setFieldValue) {
-    const tempObj = {
-      ...formValues,
-    };
+    formData.delete('ingredientId');
+    formData.delete('measure');
 
-    const freshData = { [field]: payload };
+    addedIngredients.forEach((addedIngredient, index) => {
+      formData.append(`ingredients[${index}][title]`, addedIngredient.title);
+      formData.append(
+        `ingredients[${index}][measure]`,
+        addedIngredient.measure
+      );
+      formData.append(
+        `ingredients[${index}][ingredientId]`,
+        addedIngredient.ingredientId
+      );
+    });
 
-    Object.assign(tempObj, freshData);
+    formData.forEach((value, name) => {
+      console.log('name: ', name);
+      console.log('value: ', value);
+    });
 
-    setFieldValue(field, payload);
-    dispatch(setForm(tempObj));
-    if (wrongIngredients) {
-      isNonAlcoholicDrinkFreeAlcohol();
-    }
-  }
-
-  const sendForm = (formWithImgUrl, values, actions) => {
-    dispatch(addOwnDrink(formWithImgUrl, values)).then((resp) => {
-      if (resp.type === 'drinks/addOwnDrink/fulfilled') {
-       success('You added new cocktail!');
-        navigate('/my');
-        dispatch(setForm(initialValues));
-        actions.resetForm({ values: initialValues });
-        return;
+    fetch('https://drink-code-backend.onrender.com', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${authToken}`,
+      },
+      body: formData,
+    }).then((response) => {
+      if (response.ok) {
+        console.log('status 200');
+      } else {
+        console.log('Error:', response.statusText);
       }
-      // console.log(resp.payload.message);
-      errorsHandler(resp.payload.message);
     });
   };
-
-  const errorsHandler = (message) => {
-    if (!message) {
-      return;
-    }
-    if (message.includes('length must be at least')) {
-        throw HttpError(400, `All field must be at least 2 symbols long`);
-    }
-    if (message.includes('duplicate')) {
-        throw HttpError(400, 'Drink with that title already exist');
-    }
-  };
-
-  const isAllIngredientsUniq = () => {
-    const ingredients = formValues.ingredients;
-    const flatUniq = ingredients.flatMap((el) => el.title);
-
-    const duplicateElement = flatUniq.filter(
-      (item, index) => flatUniq.indexOf(item) !== index,
-    );
-
-    return duplicateElement.length > 0 ? false : true;
-  };
-  // dispatch(setForm(initialValues));
 
   return (
     <Wrapper>

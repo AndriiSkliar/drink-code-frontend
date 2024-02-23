@@ -5,7 +5,7 @@ export const PopularDrinks = () => {
     <WrapperList>
       <li>
         <a href="">
-          <img src="images/coctail.png" alt="img" />
+          <img src="assets/images/addDrink/coctail.png" alt="img" />
           <div>
             <h4>Gin Lemon</h4>
             <p>
@@ -20,7 +20,7 @@ export const PopularDrinks = () => {
       </li>
       <li>
         <a href="">
-          <img src="images/green.png" alt="img" />
+          <img src="assets/images/addDrink/green.png" alt="img" />
           <div>
             <h4>Gin Smash</h4>
             <p>
@@ -34,7 +34,7 @@ export const PopularDrinks = () => {
       </li>
       <li>
         <a href="">
-          <img src="images/orange.png" alt="img" />
+          <img src="assets/images/addDrink/orange.png" alt="img" />
           <div>
             <h4>Spring Punch</h4>
             <p>
@@ -47,7 +47,7 @@ export const PopularDrinks = () => {
       </li>
       <li>
         <a href="">
-          <img src="images/mandarin.png" alt="img" />
+          <img src="assets/images/addDrink/mandarin.png" alt="img" />
           <div>
             <h4>Lone Tree Cooler</h4>
             <p>

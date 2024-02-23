@@ -1,36 +1,32 @@
 import styled from 'styled-components';
-import { colors } from '../../components/AddDrink/colors';
+
+export const AddTitle = styled.h2`
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-top: 80px;
+  margin-bottom: 40px;
+
+  @media (min-width: 768px) {
+    font-size: 56px;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 64px;
+  }
+`;
 
 export const FlexBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 80px;
-  column-gap: 94px;
-  @media only screen and (min-width: 1280px) {
-    flex-direction: row;
+  @media (min-width: 1280px) {
+    display: flex;
+    gap: 94px;
+    margin-bottom: 125px;
   }
 `;
 
-export const DivFollowUs = styled.div`
-  margin-bottom: 40px;
-  @media only screen and (min-width: 768px) {
-    margin-bottom: 80px;
-  }
-`;
-
-export const Undertitle = styled.h3`
-  margin-bottom: 20px;
-  @media only screen and (min-width: 768px) {
-    margin-bottom: 24px;
-  }
-
-  font-size: 18px;
-  line-height: calc(24 / 18);
-  letter-spacing: 0;
-  color: ${({ theme }) =>
-    theme === 'dark' ? `${colors.light}` : `${colors.primaryDark}`};
-  @media only screen and (min-width: 768px) {
-    font-size: 24px;
-    line-height: calc(32 / 24);
+export const LinkWrapper = styled.div`
+  @media (min-width: 1280px) {
+    display: flex;
+    flex-direction: column;
   }
 `;

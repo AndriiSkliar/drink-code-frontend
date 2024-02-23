@@ -23,7 +23,7 @@ import {
     const persistedForm = useSelector(selectForm);
     const form = persistedForm.form;
   
-    const ingredientsData = useSelector(selectIngredient);
+    const ingredientsData = useSelector(selectIngredients);
   
     // Tablica składników jest zapisywana do zmiany, w zależności od ograniczeń Alcoholic/Non alcoholic
     const ingredientOptions = ingredientsData.filter((el) =>

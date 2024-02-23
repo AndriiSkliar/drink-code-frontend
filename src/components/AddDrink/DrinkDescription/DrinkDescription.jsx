@@ -20,11 +20,12 @@ import {
     RadioInput,
   } from './DrinkDescryption.styled';
   import { ErrorIcon } from '../Recipe/Recipe.styled';
+  import {getCategories, getGlasses} from '../../../redux/filters/operation.filters';
   
-  import { useState } from 'react';
+  import { useState, useEffect } from 'react';
   import { useSelector } from 'react-redux';
 
-  // import {DummyDrinkThumb} from '../../../assets/images/dummyDrinkThumb.png';
+  import {DummyDrinkThumb} from '../../../assets/images/addDrink/dummyDrinkThumb.png';
   
   
   const DrinkDescription = ({
@@ -34,8 +35,8 @@ import {
     errors,
     theme,
   }) => {
-    const categories = useSelector(selectCategory);
-    const glassArray = useSelector(selectGlass);
+    const categories = useSelector(getCategories);
+    const glassArray = useSelector(getGlasses);
   
     const persistedForm = useSelector(selectForm);
     const form = persistedForm.form;
@@ -55,7 +56,7 @@ import {
         return { value: item, label: item };
       });
   
-    // фPodgląd obrazu wybranego pliku
+    // Podgląd obrazu wybranego pliku
     const addImagePreview = (e) => {
       if (!e.target.files[0].type.startsWith('image/')) {
         throw HttpError(400,
