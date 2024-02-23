@@ -1,8 +1,8 @@
 // @ts-nocheck
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { authOperations } from '../../../../redux/auth/authOperations';
-import authSelectors from '../../../../redux/auth/authSelectors';
+import { authOperations } from '/src/redux/auth/authOperations.js';
+import authSelectors from '/src/redux/auth/authSelectors.js';
 import { toast } from 'react-toastify';
 import {
   Backdrop,

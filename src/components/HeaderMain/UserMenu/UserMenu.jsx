@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import UserPopup from './UserPopup/UserPopup';
 import { AvatarImage, BtnUserMenu, UserMenuContainer } from './UserMenu.styled';
-import authSelectors from '../../../redux/auth/authSelectors';
+import authSelectors from '/src/redux/auth/authSelectors.js';
 
 const UserMenu = () => {
   const [isOpenPopupMenu, setIsOpenPopupMenu] = useState(false);
