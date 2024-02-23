@@ -3,7 +3,8 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const instance = axios.create({
-  baseURL: 'https://drink-code-backend.onrender.com/api',
+    // baseURL: 'https://drink-code-backend.onrender.com/api',
+    baseURL: 'http://localhost:3000/api',
 });
 // для внешнего хостинга
 // axios.defaults.baseURL = 'https://drink-code-backend.onrender.com/api';   
@@ -146,7 +147,7 @@ export const updateUser = createAsyncThunk(
 );
 
 export const authOperations = {
-  signUp,
+  signUp,  
   signIn,
   signOut,
   currentUser,
