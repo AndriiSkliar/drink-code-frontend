@@ -1,31 +1,30 @@
 // @ts-nocheck
 import { Route, Routes } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-// import { lazy } from 'react';
-
+import { useDispatch, useSelector } from 'react-redux';
 import authSelectors from './redux/auth/authSelectors';
-// import { AppWrapper } from './App.styled';
+import SharedLayout from './components/SharedLayout/SharedLayout';
+import PublicRoute from './helpers/PublicRoute';
 import WelcomePage from './pages/WelcomePage/WelcomePage';
-import HomePage from './pages/HomePage/HomePage';
-import SharedLayout from 'components/SharedLayout/SharedLayout';
-import ErrorPage from 'pages/ErrorPage/ErrorPage';
-import FavoritesPage from 'pages/FavoritesPage/FavoritesPage';
 import SignUpPage from './pages/SignUpPage/signUpPage';
 import SignInPage from './pages/SignInPage/SignInPage';
-import PublicRoute from './helpers/PublicRoute';
-import DrinkPage from './pages/DrinkPage/DrinkPage';
+import { lazy, useEffect } from 'react';
+import { refreshThunk } from './redux/auth/authOperations';
 
-// const test = import.meta.env.VITE_API_TEST;
-
-// const WelcomePage = lazy(() => import('pages/WelcomePage/WelcomePage'));
-// const HomePage = lazy(() => import('pages/HomePage/HomePage'));
-// const ErrorPage = lazy(() => import('pages/ErrorPage/ErrorPage'));
-// const FavoritesPage = lazy(() => import('pages/FavoritesPage/FavoritesPage'));
-// const SignUpPage = lazy(() => import('pages/SignUpPage/signUpPage'));
-// const DrinkPage = lazy(() => import('pages/DrinkPage/DrinkPage'));
+const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
+const ErrorPage = lazy(() => import('./pages/ErrorPage/ErrorPage'));
+const FavoritesPage = lazy(() => import('./pages/FavoritesPage/FavoritesPage'));
+const AddDrinkPage = lazy(() => import('./pages/AddDrinkPage/AddDrinkPage'));
+const DrinksPage = lazy(() => import('./pages/DrinksPage/DrinksPage'));
+const MyDrinksPage = lazy(() => import('./pages/MyDrinksPage/MyDrinksPage'));
+const DrinkPage = lazy(() => import('./pages/DrinkPage/DrinkPage'));
 
 function App() {
   const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(refreshThunk());
+  }, [dispatch]);
 
   return (
     <Routes>

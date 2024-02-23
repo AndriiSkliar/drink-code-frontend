@@ -1,14 +1,33 @@
 // @ts-nocheck
 import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import UserPopup from './UserPopup/UserPopup';
 import { AvatarImage, BtnUserMenu, UserMenuContainer } from './UserMenu.styled';
+import authSelectors from '/src/redux/auth/authSelectors.js';
 
 const UserMenu = () => {
   const [isOpenPopupMenu, setIsOpenPopupMenu] = useState(false);
+  const name = useSelector(authSelectors.selectUserName);
+  const avatar = useSelector(authSelectors.selectAvatarURL);
+  const [userAvatar, setUserAvatar] = useState(avatar);
+
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      if (e.key === 'Escape') {
+        setIsOpenPopupMenu(false);
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyPress);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyPress);
+    };
+  }, []);
 
   useEffect(() => {
     const handleOutsideClick = (e) => {
-      if (!e.target.closest('div') && isOpenPopupMenu) {
+      if (!e.target.closest('.user-menu-container') && isOpenPopupMenu) {
         setIsOpenPopupMenu(false);
       }
     };
@@ -20,15 +39,15 @@ const UserMenu = () => {
   }, [isOpenPopupMenu]);
 
   return (
-    <UserMenuContainer>
+    <UserMenuContainer className='user-menu-container'>
       <BtnUserMenu onClick={() => setIsOpenPopupMenu((prev) => !prev)}>
         <AvatarImage
-          src="/src/assets/images/header/default-avatar.png"
+          src={userAvatar}
           alt="Avatar by defult"
         />
-        <p>Vladyslav</p>
+        <p>{name}</p>
       </BtnUserMenu>
-      {isOpenPopupMenu && <UserPopup />}
+      {isOpenPopupMenu && <UserPopup setUserAvatar={setUserAvatar} userAvatar={userAvatar}/>}
     </UserMenuContainer>
   );
 };

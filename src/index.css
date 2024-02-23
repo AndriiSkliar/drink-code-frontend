@@ -3,6 +3,12 @@
   --background-color: #0a0a11;
   --popup-bg: #161f37;
   --footer-bg: transparent;
+  
+  --switcher-ball: #161f37;
+  --border-header: rgba(243, 243, 243, 0.2);
+  --link-bg: #f3f3f3;
+  --link-text: #161f37;
+  --secondary-text-color: rgba(243, 243, 243, 0.5);
 }
 
 [data-theme='light'] {
@@ -10,6 +16,11 @@
   --background-color: #f3f3f3;
   --popup-bg: #161f37;
   --footer-bg: #0a0a11;
+  --switcher-ball: #f3f3f3;
+  --border-header: rgba(22, 31, 55, 0.1);
+  --link-bg: #161f37;
+  --link-bg-hover: #434d67;
+  --link-text: #f3f3f3;
 }
 
 :root {
@@ -122,15 +133,29 @@ img {
   height: auto;
 }
 
+input[type='file'] {
+  color: transparent;
+}
+
+.backdropEditForm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: rgba(0, 0, 0, 0.61);
+  z-index: 999;
+}
+
 .container {
   max-width: 375px;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 80px 10px;
 }
 
 @media screen and (min-width: 375px) {
   .container {
-    padding: 0 20px;
+    padding: 80px 20px;
   }
 }
 

@@ -2,14 +2,17 @@
 import { useState, useEffect } from "react"
 import {EditBtn, EditProfileText, PopupContainer, SvgIconEdit, FlexContainer, LogoutBtnPopup} from "./UserPopup.styled"
 import LogoutSure from "../LogoutSure/LogoutSure";
+import EditProfileForm from "../EditProfileForm/EditProfileForm";
 
-const UserPopup = () => {
+const UserPopup = ({setUserAvatar, userAvatar}) => {
   const [isOpenLogout, setIsOpenLogout] = useState(false);
+  const [isEditOpen, setIsEditOpen] = useState(false);
 
   useEffect(() => {
     const handleKeyPress = (e) => {
       if (e.key === 'Escape') {
         setIsOpenLogout(false);
+        setIsEditOpen(false);
       }
     };
 
@@ -23,14 +26,15 @@ const UserPopup = () => {
   return (
     <PopupContainer>
        <FlexContainer>
+         <EditBtn type="button" onClick={() => setIsEditOpen(true)}>
          <EditProfileText>Edit profile</EditProfileText>
-         <EditBtn type="button">
           <SvgIconEdit>
             <use xlinkHref="/src/assets/icons/icons.svg#icon-pencil"></use>
           </SvgIconEdit>
          </EditBtn>
        </FlexContainer>
        <LogoutBtnPopup onClick={() => setIsOpenLogout(prev => !prev)}>Log out</LogoutBtnPopup>
+       {isEditOpen && <EditProfileForm setIsEditOpen={setIsEditOpen} setUserAvatar={setUserAvatar} userAvatar={userAvatar}/>}
        {isOpenLogout && <LogoutSure setIsOpenLogout={setIsOpenLogout}/>}
     </PopupContainer>
   )

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { configureStore } from '@reduxjs/toolkit';
 import {
   persistStore,
@@ -11,7 +12,7 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-import { cocktailsReducer } from './cocktails/cocktails.reducer';
+import { cocktailsReducer } from './drinks/cocktails.reducer';
 import { authReducer } from './auth/authSlice';
 
 const authConfig = {

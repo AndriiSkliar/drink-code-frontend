@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
-export const LogoLink = styled.a`
+export const LogoLink = styled(NavLink)`
   font-family: 'Manrope', sans-serif;
   font-weight: 600;
   font-size: 16px;
@@ -10,7 +11,7 @@ export const LogoLink = styled.a`
   align-items: center;
   column-gap: 8px;
   cursor: pointer;
-  z-index: 2;
+  z-index: 101;
 `;
 
 export const SvgIcon = styled.svg`
