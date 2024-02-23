@@ -3,7 +3,6 @@ import DrinksList from '../../components/DrinksList/DrinksList';
 import Hero from '../../components/Hero/Hero';
 import { StyledHomePage } from './StyledHomePage';
 import { getHomepageDrinks } from '../../api/getHomepageDrinks';
-import FollowCursor from '../../components/FollowCursor/FollowCursor';
 import { NavLink } from 'react-router-dom';
 
 const HomePage = () => {
@@ -43,8 +42,6 @@ const HomePage = () => {
       <NavLink to="/drinks" className="otherDrinksLink">
         Other drinks
       </NavLink>
-
-      <FollowCursor />
     </StyledHomePage>
   );
 };

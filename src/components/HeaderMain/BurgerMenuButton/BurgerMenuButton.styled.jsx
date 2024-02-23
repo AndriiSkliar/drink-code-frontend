@@ -7,7 +7,7 @@ export const BtnBurger = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2;
+  z-index: 101;
 
   @media screen and (min-width: 1280px) {
     display: none;

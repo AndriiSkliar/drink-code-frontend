@@ -11,7 +11,7 @@ export const LogoLink = styled(NavLink)`
   align-items: center;
   column-gap: 8px;
   cursor: pointer;
-  z-index: 2;
+  z-index: 101;
 `;
 
 export const SvgIcon = styled.svg`

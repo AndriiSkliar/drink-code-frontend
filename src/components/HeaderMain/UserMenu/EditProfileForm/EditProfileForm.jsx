@@ -1,11 +1,10 @@
 // @ts-nocheck
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { authOperations } from '../../../../redux/auth/authOperations';
-import authSelectors from '../../../../redux/auth/authSelectors';
+import { authOperations } from '/src/redux/auth/authOperations.js';
+import authSelectors from '/src/redux/auth/authSelectors.js';
 import { toast } from 'react-toastify';
 import {
-  Backdrop,
   BtnClose,
   ModalWindow,
   SvgIconClose,
@@ -22,18 +21,19 @@ import {
   LabelChangeName,
 } from './EditProfileForm.styled';
 
-const EditProfileForm = ({ setIsEditOpen }) => {
+const EditProfileForm = ({ setIsEditOpen, setUserAvatar, userAvatar }) => {
   const dispatch = useDispatch();
   const name = useSelector(authSelectors.selectUserName);
-  const avatar = useSelector(authSelectors.selectAvatarURL);
   const [editName, setEditName] = useState(false);
   const [imageURL, setImageURL] = useState('');
+  const [fileAvatar, setFileAvatar] = useState();
   const [newUserName, setNewUserName] = useState(name);
   const formData = new FormData();
   const handleClick = () => setIsEditOpen(false);
 
  const handleUploadAvatar = (e) => {
   const nameOfFile = e.target.files[0];
+  setFileAvatar(nameOfFile);
   const fileURL = URL.createObjectURL(nameOfFile)
   setImageURL(fileURL);
  }
@@ -51,10 +51,12 @@ const EditProfileForm = ({ setIsEditOpen }) => {
    event.preventDefault();
   if(name !== newUserName) {
     formData.append("name", newUserName);
-  } else if (imageURL !== '') {
-    formData.append("avatarURL", imageURL);
+  } else if (fileAvatar) {
+    formData.append("avatarURL", fileAvatar);
   }
-   dispatch(authOperations.updateUser(formData)).unwrap().then(() => {
+   dispatch(authOperations.updateUser(formData)).unwrap().then((res) => {
+    setUserAvatar(res.avatarURL);
+    setImageURL('');
     toast.success(`Success update`, {
       position: "top-right",
       autoClose: 1500,
@@ -68,8 +70,14 @@ const EditProfileForm = ({ setIsEditOpen }) => {
   });;
  }
 
+ const onClickBackdrop = (e) => {
+    if (e.target.className === "backdropEditForm") {
+      setIsEditOpen(false);
+    }
+ }
+
   return (
-    <Backdrop>
+    <div onClick={onClickBackdrop} className='backdropEditForm'>
       <ModalWindow>
         <div>
           <BtnClose type="button" onClick={handleClick}>
@@ -82,7 +90,7 @@ const EditProfileForm = ({ setIsEditOpen }) => {
           <FormEdit onSubmit={onSubmitChanges}>
             <AvatarContainer>
               <Avatar
-                src={imageURL === '' ? avatar : imageURL}
+                src={imageURL === '' ? userAvatar : imageURL}
                 alt="avatar of the user"
                 width={80}
                 height={80}
@@ -111,7 +119,7 @@ const EditProfileForm = ({ setIsEditOpen }) => {
           </FormEdit>
         </div>
       </ModalWindow>
-    </Backdrop>
+    </div>
   );
 };
 

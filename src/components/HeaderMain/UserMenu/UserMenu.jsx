@@ -3,12 +3,13 @@ import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import UserPopup from './UserPopup/UserPopup';
 import { AvatarImage, BtnUserMenu, UserMenuContainer } from './UserMenu.styled';
-import authSelectors from '../../../redux/auth/authSelectors';
+import authSelectors from '/src/redux/auth/authSelectors.js';
 
 const UserMenu = () => {
   const [isOpenPopupMenu, setIsOpenPopupMenu] = useState(false);
   const name = useSelector(authSelectors.selectUserName);
   const avatar = useSelector(authSelectors.selectAvatarURL);
+  const [userAvatar, setUserAvatar] = useState(avatar);
 
   useEffect(() => {
     const handleKeyPress = (e) => {
@@ -26,7 +27,7 @@ const UserMenu = () => {
 
   useEffect(() => {
     const handleOutsideClick = (e) => {
-      if (!e.target.closest('div') && isOpenPopupMenu) {
+      if (!e.target.closest('.user-menu-container') && isOpenPopupMenu) {
         setIsOpenPopupMenu(false);
       }
     };
@@ -38,15 +39,15 @@ const UserMenu = () => {
   }, [isOpenPopupMenu]);
 
   return (
-    <UserMenuContainer>
+    <UserMenuContainer className='user-menu-container'>
       <BtnUserMenu onClick={() => setIsOpenPopupMenu((prev) => !prev)}>
         <AvatarImage
-          src={avatar}
+          src={userAvatar}
           alt="Avatar by defult"
         />
         <p>{name}</p>
       </BtnUserMenu>
-      {isOpenPopupMenu && <UserPopup />}
+      {isOpenPopupMenu && <UserPopup setUserAvatar={setUserAvatar} userAvatar={userAvatar}/>}
     </UserMenuContainer>
   );
 };
