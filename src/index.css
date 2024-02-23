@@ -150,12 +150,12 @@ input[type='file'] {
 .container {
   max-width: 375px;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 80px 10px;
 }
 
 @media screen and (min-width: 375px) {
   .container {
-    padding: 0 20px;
+    padding: 80px 20px;
   }
 }
 
