@@ -12,6 +12,8 @@ export const MobMenuContainer = styled.div`
   width: 100%;
   height: 100dvh;
   background-color: var(--background-color);
+  margin-top: 76px;
+  border-top: 2px solid rgba(243, 243, 243, 0.2);
 `;
 
 export const BackgroundsColores = styled.div`
@@ -23,7 +25,7 @@ export const BackgroundsColores = styled.div`
   align-items: center;
   background:
     url(${bg224}) no-repeat center center / cover,
-    url(${bg223}) no-repeat center center / cover,
+    url(${bg223}) no-repeat top left / cover,
     url(${bg222}) no-repeat center center / cover;
 `;
 

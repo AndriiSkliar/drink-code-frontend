@@ -10,6 +10,7 @@ export const MainHeader = styled.header`
   padding-top: 20px;
   padding-bottom: 20px;
   border-bottom: 2px solid rgba(243, 243, 243, 0.2);
+  background-color: transparent;
 `;
 
 export const MobileBox = styled.div`
