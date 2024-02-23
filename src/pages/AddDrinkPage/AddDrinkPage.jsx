@@ -1,5 +1,5 @@
 import { FlexBox, AddTitle, LinkWrapper } from './AddDrinkPage.styled';
-import  AddDrinkForm  from '../../components/AddDrink/AddDrinkForm';
+import  AddDrink  from '../../components/AddDrink';
 import  FollowUs  from '../../components/AddDrink/FollowUs/FollowUs';
 import {PopularDrinks}  from '../../components/AddDrink/PopularDrinks/PopularDrinks';
 
@@ -9,7 +9,7 @@ const AddDrinkPage = () => {
     <>
     <AddTitle>Add drink</AddTitle>
     <FlexBox>
-      <AddDrinkForm />
+      <AddDrink />
       <LinkWrapper>
         <FollowUs />
         <PopularDrinks />

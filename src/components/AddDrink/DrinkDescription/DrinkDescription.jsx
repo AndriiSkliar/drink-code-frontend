@@ -75,7 +75,7 @@ import {
               <LabelTranslucent
                 onClick={() => {
                   setFile();
-                  setUri(DummyDrinkThumb);
+                  setUri();
                 }}
               >
                 Without image
