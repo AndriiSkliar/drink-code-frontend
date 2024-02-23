@@ -16,6 +16,7 @@ const FavoritesPage = lazy(() => import('./pages/FavoritesPage/FavoritesPage'));
 const AddDrinkPage = lazy(() => import('./pages/AddDrinkPage/AddDrinkPage'));
 const DrinksPage = lazy(() => import('./pages/DrinksPage/DrinksPage'));
 const MyDrinksPage = lazy(() => import('./pages/MyDrinksPage/MyDrinksPage'));
+const DrinkPage = lazy(() => import('./pages/DrinkPage/DrinkPage'));
 
 
 function App() {
@@ -62,10 +63,11 @@ function App() {
       />
       <Route path="/" element={<SharedLayout />}>
         <Route index path="/home" element={<HomePage />} />
-        <Route path="/drinks" element={<DrinksPage />} />
-        <Route path="/add" element={<AddDrinkPage />} />
-        <Route path="/my" element={<MyDrinksPage />} />
+        <Route path="/drinks" element={''} />
+        <Route path="/add" element={''} />
+        <Route path="/my" element={''} />
         <Route path="/favorites" element={<FavoritesPage />} />
+        <Route path="/drink/:drinkId" element={<DrinkPage />} />
         <Route path="*" element={<ErrorPage />} />
       </Route>
     </Routes>

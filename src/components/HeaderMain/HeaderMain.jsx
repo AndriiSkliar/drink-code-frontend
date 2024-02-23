@@ -31,8 +31,8 @@ const HeaderMain = () => {
           <LogoHeader />
           <NavMenu/>
           <MobileBox>
-             <ToggleDesktop isOpenMenu={isOpenMenu}/>
-            {!isOpenMenu && <UserMenu />}
+          <ToggleDesktop isOpenMenu={isOpenMenu}/>
+          {!isOpenMenu && <UserMenu />}
             <BurgerMenuButton
               isOpenMenu={isOpenMenu}
               setIsOpenMenu={setIsOpenMenu}

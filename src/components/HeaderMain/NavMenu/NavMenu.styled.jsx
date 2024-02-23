@@ -28,7 +28,7 @@ export const StyledLink = styled(NavLink)`
   line-height: 1.43;
   transition: all 400ms ease;
 
-  &:active,
+  &.active,
   &:hover,
   &:focus {
     background-color: #161f37;
