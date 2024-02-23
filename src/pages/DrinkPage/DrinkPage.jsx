@@ -60,21 +60,23 @@ const DrinkPage = () => {
             height="400"
           />
 
-          <h2 className="title-sect-ingred">Інгредієнти</h2>
+          <h2 className="title-sect-ingred">Ingredients</h2>
 
           <ul className="ingred-list">
             {drinkDetails.ingredients.map(
               ({ ingredientId, title, measure }) => (
                 <li className="ingred-item" key={title}>
                   <img
+                    className="img-ingred"
                     src={ingredientId.ingredientThumb || defaultImg}
                     alt={title}
                     width="157"
                     height="157"
                   />
-                  <div className="ingred-descr"></div>
-                  <span className="ingred-name">{title}</span>
-                  <span className="ingred-quantity">{measure}</span>
+                  <div className="ingred-descr">
+                    <span className="ingred-name">{title}</span>
+                    <span className="ingred-quantity">{measure}</span>
+                  </div>
                 </li>
               )
             )}
