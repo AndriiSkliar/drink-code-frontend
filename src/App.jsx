@@ -61,9 +61,9 @@ function App() {
       />
       <Route path="/" element={<SharedLayout />}>
         <Route index path="/home" element={<HomePage />} />
-        <Route path="/drinks" element={''} />
-        <Route path="/add" element={''} />
-        <Route path="/my" element={''} />
+        <Route path="/drinks" element={<DrinksPage />} />
+        <Route path="/add" element={<AddDrinkPage />} />
+        <Route path="/my" element={<MyDrinksPage />} />
         <Route path="/favorites" element={<FavoritesPage />} />
         <Route path="*" element={<ErrorPage />} />
       </Route>
