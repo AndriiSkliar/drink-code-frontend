@@ -23,12 +23,25 @@ export const AddAvatar = styled.input`
     position: absolute;
     top: 64%;
     left: 33%;
+
+    @media screen and (min-width: 768px){
+      padding-top: 2px;
+      top: 68%;
+    }
   }
 `;
 
 export const Avatar = styled.img`
   border-radius: 50%;
   padding-top: 2px;
+  object-fit: cover;
+  width: 80px !important;
+  height: 80px !important;
+
+  @media screen and (min-width: 768px) {
+    width: 100px !important;
+    height: 100px !important;
+  }
 `;
 
 export const AvatarContainer = styled.div`
@@ -38,6 +51,10 @@ export const AvatarContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media screen and (min-width: 768px) {
+    max-width: 100px;
+  }
 `;
 
 export const ChangeNameInput = styled.input`
@@ -63,6 +80,12 @@ export const ChangeNameInput = styled.input`
   &:read-only {
     color: grey;
   }
+
+  @media screen and (min-width: 768px) {
+    width: 400px;
+    height: 56px;
+    margin: 50px 25px 25px 25px;
+  }
 `;
 
 export const SaveChangeBtn = styled.button`
@@ -81,22 +104,31 @@ export const SaveChangeBtn = styled.button`
     background-color: #161f37;
     border: 1px solid #f3f3f3;
   }
-`;
 
+  @media screen and (min-width: 768px) {
+    width: 400px;
+    height: 56px;
+  }
+`;
 
 export const FormEdit = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-`
+`;
 export const SvgIcon = styled.svg`
   width: 14px;
   height: 14px;
+
+  @media screen and (min-width: 768px) {
+    width: 20px;
+    height: 20px;
+  }
 `;
 
 export const LabelChangeName = styled.label`
   position: relative;
-`
+`;
 
 export const EditNameButton = styled.button`
   background-color: inherit;
@@ -109,4 +141,8 @@ export const EditNameButton = styled.button`
   &:hover {
     transform: scale(1.1);
   }
-`
+
+  @media screen and (min-width: 768px) {
+    top: 50%;
+  }
+`;
