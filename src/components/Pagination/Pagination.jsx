@@ -6,7 +6,9 @@ import {
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
-const PaginationPanel = ({ pageQuan, elementPerPage }) => {
+// Для використання цього компоненту потрібно передати в нього параметр pageQuan, кількість сторінок для якої потрібно рендерити пагінацію :)
+
+const PaginationPanel = ({ pageQuan }) => {
   const navigation = useNavigate();
   const [searchParams] = useSearchParams();
   const [currentPpage, setCurrentPage] = useState(1);
@@ -72,7 +74,7 @@ const PaginationPanel = ({ pageQuan, elementPerPage }) => {
           className={`${currentButton === 1 ? 'disabled' : ''}`}
           onClick={() => {
             navigation(
-              `?page=${parseInt(currentPage) - 1}&perPage=${elementPerPage}`
+              `?page=${parseInt(currentPage) - 1}`
             );
             setCurrentButton((prev) => (prev <= 1 ? prev : prev - 1));
           }}
@@ -86,11 +88,16 @@ const PaginationPanel = ({ pageQuan, elementPerPage }) => {
             <PaginationButton
               type="button"
               key={index}
-              className={`${currentButton === item ? 'active' : ''}`}
-              onClick={() => {
-                navigation(`?page=${item}&perPage=${elementPerPage}`);
+              data-pagination-value={item}
+              className={`${parseInt(currentPage) === item ? 'active' : ''}`}
+              onClick={(event) => {
                 setCurrentButton(item);
-              }}
+                if (event.target.dataset.paginationValue !== " ..." && event.target.dataset.paginationValue !== "... " && event.target.dataset.paginationValue !== "...") {
+                  navigation(`?page=${item}`)
+                } else { navigation(`?page=${currentPage}`);
+                  }
+                }
+              }
             >
               {item}
             </PaginationButton>
@@ -104,7 +111,7 @@ const PaginationPanel = ({ pageQuan, elementPerPage }) => {
           }`}
           onClick={() => {
             navigation(
-              `?page=${parseInt(currentPage) + 1}&perPage=${elementPerPage}`
+              `?page=${parseInt(currentPage) + 1}`
             );
             setCurrentButton((prev) =>
               prev >= numberOfPages.length ? prev : prev + 1

@@ -5,7 +5,7 @@ export const SocialLinks = () => {
     <SocialContainer>
       <SocialLink
         href="https://www.facebook.com/goITclub/"
-        rel="noreferrer"
+        rel="noopener noreferrer"
         target="_blank"
       >
         <SocialIcon
@@ -25,7 +25,7 @@ export const SocialLinks = () => {
       </SocialLink>
       <SocialLink
         href="https://www.instagram.com/goitclub/"
-        rel="noreferrer"
+        rel="noopener noreferrer"
         target="_blank"
       >
         <SocialIcon
@@ -49,7 +49,7 @@ export const SocialLinks = () => {
       </SocialLink>
       <SocialLink
         href="https://www.youtube.com/c/GoIT"
-        rel="noreferrer"
+        rel="noopener noreferrer"
         target="_blank"
       >
         <SocialIcon

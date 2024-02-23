@@ -5,40 +5,44 @@ import DrinkList from '../../components/DrinkList/DrinkList';
 import DrinkCard from '../../components/DrinkCard/DrinkCard';
 import { StyledDivNotFound } from './FavoritesPage.styled';
 import {
-  deleteFromFavorite,
+  deleteFromFavorites,
   fetchFavoriteCocktails,
-} from '../../redux/cocktails/cocktails.reducer';
+} from '../../redux/drinks/drinksOperations';
 import { selectFavoriteCocktails } from '../../redux/selectors';
+import { NotFoundCocktail } from '../../components/NotFoundDrink/NotFound';
 
 const FavoritesPage = () => {
   const dispatch = useDispatch();
 
   const cocktails = useSelector(selectFavoriteCocktails);
 
-  // useEffect(() => {
-  //   dispatch(fetchFavoriteCocktails());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(fetchFavoriteCocktails());
+  }, [dispatch]);
 
   return (
-    <div className="container">
+    <main className="container">
       <Title text={'Favorites'} />
       {cocktails.length === 0 ? (
         <StyledDivNotFound>
-          <img
-            srcSet="src/assets/images/404Cocktail.png, src/assets/images/404Cocktail2x.png 2x"
-            src="src/assets/images/404Cocktail2x.png"
-            alt="glass with cocktail"
-            width={198}
-            height={247}
-          />
+          <NotFoundCocktail />
           <p>You haven't added any favorite cocktails yet</p>
         </StyledDivNotFound>
       ) : (
         <DrinkList>
-          <DrinkCard />
+          {cocktails.map((cocktail) => (
+            <DrinkCard
+              name={cocktail.drink}
+              imgUrl={cocktail.drinkThumb}
+              description={cocktail.description}
+              alcoholic={cocktail.alcoholic}
+              cocktailLink={cocktail._id}
+              key={cocktail._id}
+            />
+          ))}
         </DrinkList>
       )}
-    </div>
+    </main>
   );
 };
 

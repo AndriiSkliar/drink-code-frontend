@@ -2,29 +2,28 @@ import React, { useState, useEffect } from 'react';
 import DrinksList from '../../components/DrinksList/DrinksList';
 import Hero from '../../components/Hero/Hero';
 import { StyledHomePage } from './StyledHomePage';
-import { getHomepageDrinks } from '../../api/getHomepageDrinks'; 
-
+import { getHomepageDrinks } from '../../api/getHomepageDrinks';
+import { NavLink } from 'react-router-dom';
 
 const HomePage = () => {
   const [drinks, setDrinks] = useState([]);
 
-    useEffect(() => {
-      const fetchData = async () => {
-        try {
-          const data = await getHomepageDrinks();
-          setDrinks(data);
-        } catch (error) {
-          console.error('Ошибка при загрузке данных:', error);
-        }
-      };
-  
-      fetchData();
-    }, []); // Пустой массив зависимостей гарантирует, что useEffect выполняется только после монтирования компонента
-  
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await getHomepageDrinks();
+        setDrinks(data);
+      } catch (error) {
+        console.error('Ошибка при загрузке данных:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
   return (
-    <StyledHomePage className='container'>
+    <StyledHomePage className="container">
       <Hero />
-      <div className='categoryListsContainer'>
+      <div className="categoryListsContainer">
         <DrinksList
           drinks={drinks}
           title={'Ordinary Drink'}
@@ -38,8 +37,11 @@ const HomePage = () => {
           key={'OtherUnknown'}
         />
       </div>
-      {/* //!! ссылка на страничку Drinks*/}
-      <a href="/drinks" className='otherDrinksLink'>Other drinks</a>
+
+      {/* Ссылка на страницу Drinks (там где сортировка, поиск по названию и тд) */}
+      <NavLink to="/drinks" className="otherDrinksLink">
+        Other drinks
+      </NavLink>
     </StyledHomePage>
   );
 };

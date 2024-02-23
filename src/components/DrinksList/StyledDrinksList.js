@@ -22,7 +22,7 @@ export const StyledDrinksList = styled.div`
     font-weight: 600;
     font-size: 28px;
     line-height: 1.14286;
-    color: #f3f3f3;
+    color: var( --primary-text-color);
 
     margin-bottom: 24px;
   }

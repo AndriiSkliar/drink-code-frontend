@@ -1,28 +1,70 @@
 // @ts-nocheck
 import { Route, Routes } from 'react-router-dom';
-// import { lazy } from 'react';
-// import { AppWrapper } from './App.styled';
+import { useDispatch, useSelector } from 'react-redux';
+import authSelectors from './redux/auth/authSelectors';
+import SharedLayout from './components/SharedLayout/SharedLayout';
+import PublicRoute from './helpers/PublicRoute';
 import WelcomePage from './pages/WelcomePage/WelcomePage';
-import HomePage from './pages/HomePage/HomePage';
-import SharedLayout from 'components/SharedLayout/SharedLayout';
-import ErrorPage from 'pages/ErrorPage/ErrorPage';
-import FavoritesPage from 'pages/FavoritesPage/FavoritesPage';
 import SignUpPage from './pages/SignUpPage/signUpPage';
-import AddDrinkPage from './pages/AddDrinkPage/AddDrinkPage';
-// const test = import.meta.env.VITE_API_TEST;
+import SignInPage from './pages/SignInPage/SignInPage';
+import { lazy, useEffect } from 'react';
+import { refreshThunk } from './redux/auth/authOperations';
 
-// const SignUpPage = lazy(() => import('./pages/SignUpPage/signUpPage'));
+const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
+const ErrorPage = lazy(() => import('./pages/ErrorPage/ErrorPage'));
+const FavoritesPage = lazy(() => import('./pages/FavoritesPage/FavoritesPage'));
+const AddDrinkPage = lazy(() => import('./pages/AddDrinkPage/AddDrinkPage'));
+const DrinksPage = lazy(() => import('./pages/DrinksPage/DrinksPage'));
+const MyDrinksPage = lazy(() => import('./pages/MyDrinksPage/MyDrinksPage'));
+
 
 function App() {
+  const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(refreshThunk());
+  }, [dispatch]);
+
   return (
     <Routes>
-      <Route path="/welcome" element={<WelcomePage />} />
-      <Route path="/signup" element={<SignUpPage />} />
+      <Route
+        path="/welcome"
+        element={
+          <PublicRoute
+            redirectTo="/home"
+            isLoggedIn={isLoggedIn}
+            component={<WelcomePage />}
+          />
+        }
+      />
+
+      <Route
+        path="/signin"
+        element={
+          <PublicRoute
+            redirectTo="/home"
+            isLoggedIn={isLoggedIn}
+            component={<SignInPage />}
+          />
+        }
+      />
+
+      <Route
+        path="/signup"
+        element={
+          <PublicRoute
+            redirectTo="/home"
+            isLoggedIn={isLoggedIn}
+            component={<SignUpPage />}
+          />
+        }
+      />
       <Route path="/" element={<SharedLayout />}>
         <Route index path="/home" element={<HomePage />} />
-        <Route path="/drinks" element={''} />
+        <Route path="/drinks" element={<DrinksPage />} />
         <Route path="/add" element={<AddDrinkPage />} />
-        <Route path="/my" element={''} />
+        <Route path="/my" element={<MyDrinksPage />} />
         <Route path="/favorites" element={<FavoritesPage />} />
         <Route path="*" element={<ErrorPage />} />
       </Route>
