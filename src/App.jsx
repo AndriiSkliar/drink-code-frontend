@@ -8,6 +8,7 @@ import WelcomePage from './pages/WelcomePage/WelcomePage';
 import SignUpPage from './pages/SignUpPage/signUpPage';
 import SignInPage from './pages/SignInPage/SignInPage';
 import { lazy } from 'react';
+import VerificationPage from './pages/VerificationPage/VerificationPage';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const ErrorPage = lazy(() => import('./pages/ErrorPage/ErrorPage'));
@@ -22,6 +23,7 @@ function App() {
 
   return (
       <Routes>
+        <Route path="/:id" element={<VerificationPage />}/>  
         <Route path="/welcome" element={
             <PublicRoute
               redirectTo="/home"
