@@ -1,6 +1,24 @@
 import React from 'react';
-
-const DrinkCard = () => {
+import { NavLink } from 'react-router-dom';
+import {
+  StyledButtonsWrapper,
+  StyledCocktailAlcoholic,
+  StyledCocktailDescription,
+  StyledCocktailImage,
+  StyledCocktailName,
+  StyledCocktailSeeMore,
+  StyledCocktailWrapper,
+  StyledDeleteButton,
+} from './DrinkCard.styled';
+import { useDispatch, useSelector } from 'react-redux';
+const DrinkCard = ({
+  name,
+  description,
+  alcoholic,
+  imgUrl,
+  handleDelete,
+  cocktailLink,
+}) => {
   const dispatch = useDispatch();
 
   const handleDeleteCocktail = (cocktailId) => {
@@ -8,21 +26,25 @@ const DrinkCard = () => {
   };
 
   return (
-    <li>
-      <a href="#">
-        <img src="./src/assets/example.png" alt="Cocktail" />
-        <h2>Cocktail name</h2>
-        <p>Alcoholic</p>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab voluptate
-          eligendi, corrupti cumque incidunt error quod, officiis praesentium
-          optio beatae est consequuntur rerum in culpa explicabo maxime!
-          Placeat, sint a!
-        </p>
-      </a>
-      <button>See more</button>
-      <button onClick={handleDeleteCocktail}>Delete</button>
-    </li>
+    <StyledCocktailWrapper>
+      <StyledCocktailImage src={imgUrl} alt={name} />
+      <div>
+        <StyledCocktailName>{name}</StyledCocktailName>
+        <StyledCocktailAlcoholic>{alcoholic}</StyledCocktailAlcoholic>
+      </div>
+      <StyledCocktailDescription>{description}</StyledCocktailDescription>
+      <StyledButtonsWrapper>
+        <NavLink to={cocktailLink}>
+          <StyledCocktailSeeMore>See more</StyledCocktailSeeMore>
+        </NavLink>
+
+        <StyledDeleteButton onClick={handleDelete}>
+          <svg>
+            <use xlinkHref="/src/assets/icons/icons.svg#icon-trash"></use>
+          </svg>
+        </StyledDeleteButton>
+      </StyledButtonsWrapper>
+    </StyledCocktailWrapper>
   );
 };
 

@@ -21,6 +21,10 @@ export const ModalWindow = styled.div`
   max-width: 500px;
   min-width: 300px;
   border-radius: 42px;
+
+  @media screen and (min-width: 768px){
+    padding: 18px 50px 50px 50px;
+  }
 `;
 
 export const BtnClose = styled.button`
