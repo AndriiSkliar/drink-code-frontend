@@ -38,7 +38,8 @@ const schema = Yup.object().shape({
     .required('Name is required')
     .matches(/[A-Za-z]+/, 'Name must contain at least one letter')
     .matches(/^[A-Za-z\s]+$/, 'Name must contain only letters and spaces'),
-  birthday: Yup.date().required('Date of Birth is required').max(new Date()),
+  birthday: Yup.date().required('Date of Birth is required')
+    .max(new Date('Please enter correct date')),
   email: Yup.string()
     .matches(
       /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
@@ -48,7 +49,7 @@ const schema = Yup.object().shape({
     .required('Email is required'),
   password: Yup.string()
     .min(6, 'Password must be at least 6 characters long')
-    .required('Password is required')
+    .required('Password is required. Example:Password123')
     .matches(/[a-zA-Z]/, 'Password must contain at least one letter')
     .matches(/[0-9]/, 'Password must contain at least one number'),
 });
