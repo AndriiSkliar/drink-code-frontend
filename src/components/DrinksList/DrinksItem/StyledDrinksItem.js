@@ -134,7 +134,7 @@ export const StyledDrinksItem = styled.li`
     font-weight: 500;
     font-size: 16px;
     line-height: 1.125;
-    color: #f3f3f3;
+    color: var(--primary-text-color);
 
     @media (min-width: 768px) {
       font-size: 18px;
@@ -148,7 +148,7 @@ export const StyledDrinksItem = styled.li`
     font-size: 14px;
     line-height: 1.28571;
     text-align: right;
-    color: rgba(243, 243, 243, 0.5);
+    color: var(--secondary-text-color);
 
     &:hover {
       text-decoration: underline;
