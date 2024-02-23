@@ -5,7 +5,6 @@ import { authOperations } from '/src/redux/auth/authOperations.js';
 import authSelectors from '/src/redux/auth/authSelectors.js';
 import { toast } from 'react-toastify';
 import {
-  Backdrop,
   BtnClose,
   ModalWindow,
   SvgIconClose,
@@ -72,14 +71,14 @@ const EditProfileForm = ({ setIsEditOpen, setUserAvatar, userAvatar }) => {
  }
 
  const onClickBackdrop = (e) => {
-    if (e.target.className === "sc-fLseNd cYBGkT backdropEditForm") {
+    if (e.target.className === "backdropEditForm") {
       setIsEditOpen(false);
     }
  }
 
   return (
-    <Backdrop onClick={onClickBackdrop} className='backdropEditForm'>
-      <ModalWindow className='modalWindow'>
+    <div onClick={onClickBackdrop} className='backdropEditForm'>
+      <ModalWindow>
         <div>
           <BtnClose type="button" onClick={handleClick}>
             <SvgIconClose>
@@ -120,7 +119,7 @@ const EditProfileForm = ({ setIsEditOpen, setUserAvatar, userAvatar }) => {
           </FormEdit>
         </div>
       </ModalWindow>
-    </Backdrop>
+    </div>
   );
 };
 

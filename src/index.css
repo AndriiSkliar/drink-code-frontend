@@ -137,6 +137,16 @@ input[type='file'] {
   color: transparent;
 }
 
+.backdropEditForm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: rgba(0, 0, 0, 0.61);
+  z-index: 999;
+}
+
 .container {
   max-width: 375px;
   margin: 0 auto;
