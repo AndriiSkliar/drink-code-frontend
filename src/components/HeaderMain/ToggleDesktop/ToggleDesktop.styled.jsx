@@ -22,7 +22,9 @@ export const ThemeBtnIcon = styled.svg`
   box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.1);
 `;
 
-export const ThemeBtnBall = styled.svg`
+export const ThemeBtnBall = styled.svg.withConfig({
+  shouldForwardProp: (prop) => 'isdark' !== prop,
+})`
   width: 26px;
   height: 26px;
   fill: var(--switcher-ball);
