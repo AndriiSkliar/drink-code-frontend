@@ -3,6 +3,9 @@
   --background-color: #0a0a11;
   --popup-bg: #161f37;
   --footer-bg: transparent;
+  --link-bg: #f3f3f3;
+  --link-text:#161f37;
+  --secondary-text-color:  rgba(243, 243, 243, 0.5);
 }
 
 [data-theme='light'] {
@@ -10,6 +13,10 @@
   --background-color: #f3f3f3;
   --popup-bg: #161f37;
   --footer-bg: #0a0a11;
+  --link-bg: #161f37;
+  --link-bg-hover: #434d67;
+  --link-text:#f3f3f3;
+  --secondary-text-color:  rgba(10, 10, 17, 0.5);
 }
 
 :root {
