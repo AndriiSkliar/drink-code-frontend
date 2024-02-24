@@ -21,7 +21,7 @@ import {
   LabelChangeName,
 } from './EditProfileForm.styled';
 
-const EditProfileForm = ({ setIsEditOpen, setUserAvatar, userAvatar }) => {
+const EditProfileForm = ({ setIsEditOpen, setUserAvatar, userAvatar, setIsOpenPopupMenu }) => {
   const dispatch = useDispatch();
   const name = useSelector(authSelectors.selectUserName);
   const avatar = useSelector(authSelectors.selectAvatarURL);
@@ -69,6 +69,8 @@ const EditProfileForm = ({ setIsEditOpen, setUserAvatar, userAvatar }) => {
       autoClose: 1500,
     });
   });;
+  setIsEditOpen(false);
+  setIsOpenPopupMenu(false);
  }
 
  const onClickBackdrop = (e) => {

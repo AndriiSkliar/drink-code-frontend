@@ -1,5 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 // @ts-nocheck
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import authSelectors from './redux/auth/authSelectors';
 import SharedLayout from './components/SharedLayout/SharedLayout';
@@ -20,17 +23,16 @@ const MyDrinksPage = lazy(() => import('./pages/MyDrinksPage/MyDrinksPage'));
 
 function App() {
   const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
-  const dispatch = useDispatch();
   const location = useLocation();
   const navigate = useNavigate();
+  const [currentPage, _] = useState(location.pathname);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(authOperations.currentUser());
-  }, [dispatch])
+    navigate(currentPage);
+  }, [dispatch]);
 
-  useEffect(() => {
-    navigate(location.pathname);
-  }, [location.pathname, navigate])
 
   return (
     <Routes>
@@ -38,7 +40,7 @@ function App() {
         path="/welcome"
         element={
           <PublicRoute
-            redirectTo="/home"
+            redirectTo="/"
             isLoggedIn={isLoggedIn}
             component={<WelcomePage />}
           />
@@ -49,7 +51,7 @@ function App() {
         path="/signin"
         element={
           <PublicRoute
-            redirectTo="/home"
+            redirectTo="/"
             isLoggedIn={isLoggedIn}
             component={<SignInPage />}
           />
@@ -60,18 +62,48 @@ function App() {
         path="/signup"
         element={
           <PublicRoute
-            redirectTo="/home"
+            redirectTo="/"
             isLoggedIn={isLoggedIn}
             component={<SignUpPage />}
           />
         }
       />
-      <Route path="/" element={<PrivateRoute redirectTo='/welcome' component={<SharedLayout/>}/>}>
-        <Route index path="/home" element={<PrivateRoute redirectTo='/welcome' component={<HomePage/>}/>} />
-        <Route path="/drinks" element={<PrivateRoute redirectTo='/welcome' component={<DrinksPage/>}/>} />
-        <Route path="/add" element={<PrivateRoute redirectTo='/welcome' component={<AddDrinkPage/>}/>} />
-        <Route path="/my" element={<PrivateRoute redirectTo='/welcome' component={<MyDrinksPage/>}/>} />
-        <Route path="/favorites" element={<PrivateRoute redirectTo='/welcome' component={<FavoritesPage/>}/>} />
+      <Route
+        path="/"
+        element={
+          <PrivateRoute redirectTo="/welcome" component={<SharedLayout />} />
+        }
+      >
+        <Route
+          index
+          element={
+            <PrivateRoute redirectTo="/welcome" component={<HomePage />} />
+          }
+        />
+        <Route
+          path="/drinks"
+          element={
+            <PrivateRoute redirectTo="/welcome" component={<DrinksPage />} />
+          }
+        />
+        <Route
+          path="/add"
+          element={
+            <PrivateRoute redirectTo="/welcome" component={<AddDrinkPage />} />
+          }
+        />
+        <Route
+          path="/my"
+          element={
+            <PrivateRoute redirectTo="/welcome" component={<MyDrinksPage />} />
+          }
+        />
+        <Route
+          path="/favorites"
+          element={
+            <PrivateRoute redirectTo="/welcome" component={<FavoritesPage />} />
+          }
+        />
         <Route path="*" element={<ErrorPage />} />
       </Route>
     </Routes>

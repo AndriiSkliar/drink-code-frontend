@@ -47,7 +47,7 @@ const UserMenu = () => {
         />
         <p>{name}</p>
       </BtnUserMenu>
-      {isOpenPopupMenu && <UserPopup setUserAvatar={setUserAvatar} userAvatar={userAvatar}/>}
+      {isOpenPopupMenu && <UserPopup setUserAvatar={setUserAvatar} userAvatar={userAvatar} setIsOpenPopupMenu={setIsOpenPopupMenu}/>}
     </UserMenuContainer>
   );
 };
