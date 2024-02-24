@@ -1,22 +1,21 @@
-import { SearchBarStyled } from './SearchBar.styled.js';
+import { SearchBarStyled, Icon } from './SearchBar.styled.js';
 
 const SearchBar = ({ onSubmit }) => {
   return (
     <SearchBarStyled>
       <div>
         <form className="SearchForm" onSubmit={onSubmit}>
-          <button type="submit" className="SearchForm-button">
-            <span className="SearchForm-button-label"></span>&#128270;
-          </button>
-
           <input
             className="SearchForm-input"
             type="text"
             autoComplete="off"
             autoFocus
-            placeholder="Search images and photos"
+            placeholder="Enter the text"
             // onChange={this.handleInputChange}
           />
+          <button type="submit" className="SearchForm-button">
+            <Icon />
+          </button>
         </form>
       </div>
     </SearchBarStyled>

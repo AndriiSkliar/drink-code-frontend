@@ -1,5 +1,4 @@
 import { SearchSelectStyled } from './SearchSelect.styled.js';
-import {} from './Select.js';
 
 const SearchSelect = () => {
   return (
