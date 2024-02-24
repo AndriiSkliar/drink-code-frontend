@@ -41,7 +41,7 @@ export const SubscriptionForm = () => {
         action.resetForm();
       })
       .catch((err) => {
-        toast.warn(err);
+        toast.warn(err.response.data.message);
       });
   };
 
