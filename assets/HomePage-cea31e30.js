@@ -1,4 +1,4 @@
-import{u as c,j as e,N as l,r as d,a as m}from"./index-9a2a2bb4.js";const g=c.li`
+import{u as c,j as e,N as l,r as d,a as m}from"./index-b1d2279e.js";const g=c.li`
   margin-bottom: 40px;
   border-radius: 8px;
   /* width: 335px;
