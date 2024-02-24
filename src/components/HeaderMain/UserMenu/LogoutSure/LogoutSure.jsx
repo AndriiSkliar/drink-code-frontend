@@ -1,5 +1,7 @@
 // @ts-nocheck
 
+import { useDispatch } from 'react-redux';
+import { authOperations } from '/src/redux/auth/authOperations.js'
 import {
   Backdrop,
   BtnClose,
@@ -12,6 +14,7 @@ import {
 } from './LogoutSure.styled';
 
 const LogoutSure = ({ setIsOpenLogout }) => {
+  const dispatch = useDispatch();
 
   const handleClick = () => setIsOpenLogout(false);
 
@@ -28,7 +31,7 @@ const LogoutSure = ({ setIsOpenLogout }) => {
         <div>
           <ModalLogoutText>Are you sure you want to logout?</ModalLogoutText>
           <ButtonsBlock>
-            <LogoutBtn type="button">Log out</LogoutBtn>
+            <LogoutBtn type="button" onClick={() => dispatch(authOperations.signOut())}>Log out</LogoutBtn>
             <CancelBtn type="button" onClick={handleClick}>Cancel</CancelBtn>
           </ButtonsBlock>
         </div>

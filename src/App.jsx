@@ -8,7 +8,8 @@ import WelcomePage from './pages/WelcomePage/WelcomePage';
 import SignUpPage from './pages/SignUpPage/signUpPage';
 import SignInPage from './pages/SignInPage/SignInPage';
 import { lazy, useEffect } from 'react';
-import { refreshThunk } from './redux/auth/authOperations';
+import { authOperations } from './redux/auth/authOperations';
+import { PrivateRoute } from './helpers/PrivateRoute';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const ErrorPage = lazy(() => import('./pages/ErrorPage/ErrorPage'));
@@ -22,7 +23,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(refreshThunk());
+    dispatch(authOperations.currentUser());
   }, [dispatch]);
 
   return (
@@ -59,12 +60,12 @@ function App() {
           />
         }
       />
-      <Route path="/" element={<SharedLayout />}>
-        <Route index path="/home" element={<HomePage />} />
-        <Route path="/drinks" element={<DrinksPage />} />
-        <Route path="/add" element={<AddDrinkPage />} />
-        <Route path="/my" element={<MyDrinksPage />} />
-        <Route path="/favorites" element={<FavoritesPage />} />
+      <Route path="/" element={<PrivateRoute redirectTo='/welcome' component={<SharedLayout/>}/>}>
+        <Route index path="/home" element={<PrivateRoute redirectTo='/welcome' component={<HomePage/>}/>} />
+        <Route path="/drinks" element={<PrivateRoute redirectTo='/welcome' component={<DrinksPage/>}/>} />
+        <Route path="/add" element={<PrivateRoute redirectTo='/welcome' component={<AddDrinkPage/>}/>} />
+        <Route path="/my" element={<PrivateRoute redirectTo='/welcome' component={<MyDrinksPage/>}/>} />
+        <Route path="/favorites" element={<PrivateRoute redirectTo='/welcome' component={<FavoritesPage/>}/>} />
         <Route path="*" element={<ErrorPage />} />
       </Route>
     </Routes>

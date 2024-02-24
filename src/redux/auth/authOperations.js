@@ -62,11 +62,9 @@ const currentUser = createAsyncThunk(
       return thunkAPI.rejectWithValue('Unable to fetch User');
     }
 
-    authHeaderToken.set(token);
-
     try {
+      authHeaderToken.set(token);
       const res = await instance.get('/users/current');
-
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
