@@ -38,17 +38,18 @@ const schema = Yup.object().shape({
     .required('Name is required')
     .matches(/[A-Za-z]+/, 'Name must contain at least one letter')
     .matches(/^[A-Za-z\s]+$/, 'Name must contain only letters and spaces'),
-  birthday: Yup.date().required('Date of Birth is required').max(new Date()),
+  birthday: Yup.date().required('Date of Birth is required')
+    .max(new Date(),'Please enter correct date'),
   email: Yup.string()
     .matches(
       /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
       'Emails: digits, letters, . - _ only, e.g., example@mail.com.'
     )
     .email('Invalid email format, example@mail.com')
-    .required('Email is required'),
+    .required('Email is required, example@mail.com.'),
   password: Yup.string()
     .min(6, 'Password must be at least 6 characters long')
-    .required('Password is required')
+    .required('Password is required. Example:Password123')
     .matches(/[a-zA-Z]/, 'Password must contain at least one letter')
     .matches(/[0-9]/, 'Password must contain at least one number'),
 });
@@ -68,13 +69,13 @@ function SignUpForm() {
     dispatch(authOperations.signUp({ name, birthday, email, password }))
       .unwrap()
       .then(() => {
-        toast.success(`Success!`, {
+        toast.success(`A message with a verification has been sent to your email`, {
           position: "top-right",
-          autoClose: 1500,
+          autoClose: 5000,
         });
       })
-      .catch(() => {
-        toast.error(`Something went wrong. Try again`, {
+      .catch((error) => {
+        toast.error(error, {
           position: "top-right",
           autoClose: 1500,
         });
