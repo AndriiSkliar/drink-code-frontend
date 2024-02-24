@@ -10,6 +10,7 @@ import { initialValues } from './addDrinkFormInitials';
 
 const AddDrinkForm = () => {
   const dispatch = useDispatch();
+  const [errors, setErrors] = useState([]);
   const formik = useFormik({
     initialValues,
     validationSchema: Yup.object().shape({
@@ -39,38 +40,21 @@ const AddDrinkForm = () => {
       }
     },
   });
+  console.log('FORMIK', formik.values.drink);
 
   return (
-    <Form>
+    <form>
       <Wrapper>
         <DrinkDescription
-          values={values}
+          formik={formik} //change here
           errors={errors}
-          touched={touched}
-          handleChange={handleChange}
-          handleBlur={handleBlur}
-          setFieldValue={setFieldValue}
         />
-        <DrinkIngredients
-          values={values}
-          errors={errors}
-          touched={touched}
-          handleChange={handleChange}
-          handleBlur={handleBlur}
-          setFieldValue={setFieldValue}
-        />
-        <Recipe
-          values={values}
-          errors={errors}
-          touched={touched}
-          handleChange={handleChange}
-          handleBlur={handleBlur}
-          setFieldValue={setFieldValue}
-        />
+        <DrinkIngredients formik={formik} errors={errors} />
+        <Recipe formik={formik} errors={errors} />
 
         <button type="submit">Add</button>
       </Wrapper>
-    </Form>
+    </form>
   );
 };
 

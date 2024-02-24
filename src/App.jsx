@@ -18,6 +18,8 @@ const DrinksPage = lazy(() => import('./pages/DrinksPage/DrinksPage'));
 const MyDrinksPage = lazy(() => import('./pages/MyDrinksPage/MyDrinksPage'));
 const DrinkPage = lazy(() => import('./pages/DrinkPage/DrinkPage'));
 
+import AddDrinkForm from './components/AddDrink/AddDrinkForm';
+import DrinkDescription from './components/AddDrink/DrinkDescription/DrinkDescription';
 
 function App() {
   const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
@@ -64,7 +66,7 @@ function App() {
       <Route path="/" element={<SharedLayout />}>
         <Route index path="/home" element={<HomePage />} />
         <Route path="/drinks" element={''} />
-        <Route path="/add" element={''} />
+        <Route path="/add" element={<AddDrinkForm />} />
         <Route path="/my" element={''} />
         <Route path="/favorites" element={<FavoritesPage />} />
         <Route path="/drink/:drinkId" element={<DrinkPage />} />
