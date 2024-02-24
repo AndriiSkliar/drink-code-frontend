@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { authOperations } from '/src/redux/auth/authOperations.js';
 import authSelectors from '/src/redux/auth/authSelectors.js';
 import { toast } from 'react-toastify';
+import sprite from '/src/assets/icons/icons.svg';
 import {
   BtnClose,
   ModalWindow,
@@ -21,7 +22,12 @@ import {
   LabelChangeName,
 } from './EditProfileForm.styled';
 
-const EditProfileForm = ({ setIsEditOpen, setUserAvatar, userAvatar, setIsOpenPopupMenu }) => {
+const EditProfileForm = ({
+  setIsEditOpen,
+  setUserAvatar,
+  userAvatar,
+  setIsOpenPopupMenu,
+}) => {
   const dispatch = useDispatch();
   const name = useSelector(authSelectors.selectUserName);
   const avatar = useSelector(authSelectors.selectAvatarURL);
@@ -32,60 +38,62 @@ const EditProfileForm = ({ setIsEditOpen, setUserAvatar, userAvatar, setIsOpenPo
   const formData = new FormData();
   const handleClick = () => setIsEditOpen(false);
 
- const handleUploadAvatar = (e) => {
-  const nameOfFile = e.target.files[0];
-  setFileAvatar(nameOfFile);
-  const fileURL = URL.createObjectURL(nameOfFile)
-  setImageURL(fileURL);
- }
+  const handleUploadAvatar = (e) => {
+    const nameOfFile = e.target.files[0];
+    setFileAvatar(nameOfFile);
+    const fileURL = URL.createObjectURL(nameOfFile);
+    setImageURL(fileURL);
+  };
 
- const handleChangeUsername = (e) => {
-  const newName = e.target.value;
-  if (newName === name) {
-    return;
-  } else {
-    setNewUserName(newName);
-  }
- }
+  const handleChangeUsername = (e) => {
+    const newName = e.target.value;
+    if (newName === name) {
+      return;
+    } else {
+      setNewUserName(newName);
+    }
+  };
 
- const onSubmitChanges = (event) => {
-   event.preventDefault();
-  if(name !== newUserName) {
-    formData.append("name", newUserName);
-  } else if (fileAvatar) {
-    formData.append("avatarURL", fileAvatar);
-  }
-   dispatch(authOperations.updateUser(formData)).unwrap().then((res) => {
-    setUserAvatar(res.avatarURL);
-    setImageURL('');
-    toast.success(`Success update`, {
-      position: "top-right",
-      autoClose: 1500,
-    });
-  })
-  .catch(() => {
-    toast.error(`Something went wrong. Try again`, {
-      position: "top-right",
-      autoClose: 1500,
-    });
-  });;
-  setIsEditOpen(false);
-  setIsOpenPopupMenu(false);
- }
+  const onSubmitChanges = (event) => {
+    event.preventDefault();
+    if (name !== newUserName) {
+      formData.append('name', newUserName);
+    } else if (fileAvatar) {
+      formData.append('avatarURL', fileAvatar);
+    }
+    dispatch(authOperations.updateUser(formData))
+      .unwrap()
+      .then((res) => {
+        setUserAvatar(res.avatarURL);
+        setImageURL('');
+        toast.success(`Success update`, {
+          position: 'top-right',
+          autoClose: 1500,
+        });
+      })
+      .catch(() => {
+        toast.error(`Something went wrong. Try again`, {
+          position: 'top-right',
+          autoClose: 1500,
+        });
+      });
+    setIsEditOpen(false);
+    setIsOpenPopupMenu(false);
+  };
 
- const onClickBackdrop = (e) => {
-    if (e.target.className === "backdropEditForm") {
+  const onClickBackdrop = (e) => {
+    if (e.target.className === 'backdropEditForm') {
       setIsEditOpen(false);
     }
- }
+  };
 
   return (
-    <div onClick={onClickBackdrop} className='backdropEditForm'>
+    <div onClick={onClickBackdrop} className="backdropEditForm">
       <ModalWindow>
         <div>
           <BtnClose type="button" onClick={handleClick}>
             <SvgIconClose>
-              <use xlinkHref="/src/assets/icons/icons.svg#icon-close"></use>
+              <use xlinkHref={`${sprite}#icon-close`}></use>
             </SvgIconClose>
           </BtnClose>
         </div>
@@ -98,7 +106,12 @@ const EditProfileForm = ({ setIsEditOpen, setUserAvatar, userAvatar, setIsOpenPo
                 width={80}
                 height={80}
               />
-              <AddAvatar type="file" name="avatar" id="avatar" onChange={handleUploadAvatar}/>
+              <AddAvatar
+                type="file"
+                name="avatar"
+                id="avatar"
+                onChange={handleUploadAvatar}
+              />
             </AvatarContainer>
             <LabelChangeName htmlFor="name">
               <ChangeNameInput
@@ -114,7 +127,7 @@ const EditProfileForm = ({ setIsEditOpen, setUserAvatar, userAvatar, setIsOpenPo
                 onClick={() => setEditName((prev) => !prev)}
               >
                 <SvgIcon>
-                  <use xlinkHref="/src/assets/icons/icons.svg#icon-pencil"></use>
+                  <use xlinkHref={`${sprite}#icon-pencil`}></use>
                 </SvgIcon>
               </EditNameButton>
             </LabelChangeName>
