@@ -1,9 +1,11 @@
+// @ts-nocheck
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 
 import { drinksOperations } from './drinksOperations';
 
 const initialState = {
   cocktails: [],
+  popularDrinks: [],
   favoriteCocktails: [],
   isLoading: false,
   error: null,
@@ -23,6 +25,10 @@ const cocktailsSlice = createSlice({
           state.cocktails = payload;
         }
       )
+      .addCase(drinksOperations.fetchPopularDrinks.fullfilled, (state, {payload}) => {
+        state.isLoading = false;
+        state.popularDrinks = payload;
+      })
       .addCase(
         drinksOperations.fetchFavoriteCocktails.fulfilled,
         (state, { payload }) => {
