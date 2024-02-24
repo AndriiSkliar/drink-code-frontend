@@ -11,11 +11,12 @@ export const Icon = styled(SearchIcon)`
   }
 `;
 export const SearchBarStyled = styled.div`
+ 
   .SearchForm {
     display: flex;
     align-items: center;
     width: 100%;
-    max-width: 264px;
+    max-width: 335px;
     height: 56px;
     background-color: transparent;
     border: 1px solid #f3f3f3;
@@ -72,4 +73,15 @@ export const SearchBarStyled = styled.div`
     font: inherit;
     font-size: 18px;
   }
+  
+  }
+   @media (min-width: 768px) {
+     .SearchForm {
+
+    max-width: 264px;
+    
+    
+  }
+  }
+
 `;

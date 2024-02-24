@@ -62,7 +62,7 @@ export const StyledDrinkInfo = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 400px;
+  width: calc(100% - 2px);
   @media screen and (min-width: 768px) {
     gap: 24px;
     width: 342px;

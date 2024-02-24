@@ -5,19 +5,19 @@ const BASE_URL = 'https://drink-code-backend.onrender.com';
 export const getDrinksPageDrinks = async () => {
   try {
     // !Чтобы проверить что работает - вставь сюда токен
-    const token =
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDllYTgyZGQ1ZDAzMWYzZDNlNmI1OCIsImlhdCI6MTcwODc5OTYzMywiZXhwIjoxNzA4ODgyNDMzfQ.7bt8fPBDNbMl-G4XnO54dKU1gZdrZ9gGogW78WfLaXo';
+    // const token =
+    //   '';
 
     // ! Добавь токен в заголовок запроса
-    const config = {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    };
+    // const config = {
+    //   headers: {
+    //     Authorization: `Bearer ${token}`,
+    //   },
+    // };
 
     const resp = await axios.get(
-      `${BASE_URL}/api/drinks`,
-      config
+      `${BASE_URL}/api/drinks`
+
       // config
     );
     const data = resp.data;

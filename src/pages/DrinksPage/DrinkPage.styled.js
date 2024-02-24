@@ -6,19 +6,18 @@ export const StyledDrinksPage = styled.div`
     margin: 160px 0 140px 0;
   }
 
-  @media (min-width: 768px) {
-  }
-
+  /* Стили для мобильной версии */
+  padding: 80px 20px;
   .searchingContainer {
-    width: 678px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
     gap: 20px;
   }
   .categoryListsContainer {
     margin-bottom: 60px;
   }
-  /* Стили для мобильной версии */
+
   .drinksTitle {
     font-weight: 600;
     font-size: 28px;
@@ -36,12 +35,23 @@ export const StyledDrinksPage = styled.div`
 
       margin-bottom: 40px;
     }
+    .searchingContainer {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 20px;
+    }
   }
 
   /* Стили для десктопной версии (если они отличаются от мобильной и планшетной) */
   @media (min-width: 1280px) {
     .drinksTitle {
       line-height: 1.1;
+    }
+    .searchingContainer {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
     }
   }
 `;

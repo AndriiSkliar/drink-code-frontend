@@ -1,12 +1,6 @@
 import styled from 'styled-components';
 
 export const SearchSelectStyled = styled.div`
-  .select-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 20px;
-  }
   .select {
     cursor: pointer;
     display: inline-block;
@@ -15,10 +9,10 @@ export const SearchSelectStyled = styled.div`
     font-weight: regular;
     font-size: 17px;
     color: #f3f3f3;
-    width: 199px;
+    width: 335px;
     height: 56px;
     border: 1px solid transparent;
-    border-radius: 20px;
+    border-radius: 30px;
     role: listbox;
   }
   .select-styled {
@@ -87,6 +81,20 @@ export const SearchSelectStyled = styled.div`
       &[rel='hide'] {
         display: none;
       }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .select {
+      width: 199px;
+      height: 56px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .select {
+      width: 199px;
+      height: 56px;
     }
   }
 `;
