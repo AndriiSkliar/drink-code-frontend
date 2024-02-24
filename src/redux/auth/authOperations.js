@@ -59,15 +59,13 @@ const currentUser = createAsyncThunk(
   async (_, thunkAPI) => {
     const { token } = thunkAPI.getState().auth;
 
-    if (!token) {
+    if (token === null) {
       return thunkAPI.rejectWithValue('Unable to fetch User');
     }
 
-    authHeaderToken.set(token);
-
     try {
+      authHeaderToken.set(token);
       const res = await instance.get('/users/current');
-
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data.message);
@@ -113,7 +111,7 @@ export const subscribeEmail = createAsyncThunk(
     try {
       await instance.post('/users/subscribe', data);
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error);
     }
   }
 );
@@ -152,6 +150,7 @@ export const authOperations = {
   signOut,
   currentUser,
   subscribeEmail,
+  refreshThunk,
   themeThunk,
   updateUser,
 };
