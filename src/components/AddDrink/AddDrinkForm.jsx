@@ -1,7 +1,7 @@
 import { Wrapper } from './AddDrinkForm.styled';
-import DrinkDescription from './DrinkDescription/DrinkDescription';
+import {DrinkDescription} from './DrinkDescription/DrinkDescription';
 import DrinkIngredients from './DrinkIngredients/DrinkIngredients';
-import Recipe from './Recipe/Recipe';
+import {Recipe}  from './Recipe/Recipe';
 import * as Yup from 'yup';
 import { Form, useFormik } from 'formik';
 import { useState, useEffect } from 'react';

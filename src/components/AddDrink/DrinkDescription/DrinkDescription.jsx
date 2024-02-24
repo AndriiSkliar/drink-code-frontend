@@ -19,18 +19,15 @@ import {
   LabelNonAlcoholic,
   RadioInput,
 } from './DrinkDescryption.styled';
-import { ErrorIcon } from '../Recipe/Recipe.styled';
+// import dummyThumb from '../../../assets/images/addDrink/' Не бачи фото!!!
 import {
   getCategories,
   getGlasses,
 } from '../../../redux/filters/operation.filters';
-
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import DummyDrinkThumb from '../../../assets/images/addDrink/dummyDrinkThumb.png';
-
-const DrinkDescription = ({
+export const DrinkDescription = ({
   formik, // change here
   setFile,
   onChangeHandler,
@@ -51,7 +48,6 @@ const DrinkDescription = ({
   // ) {
   //   onChangeHandler('Non alcoholic', 'alcoholic', setFieldValue);
   // } // coment here
-
   const [uri, setUri] = useState();
 
   // Funkcja rejestrująca tablicę obiektów składników w formie wymaganej do zaznaczenia.
@@ -77,7 +73,7 @@ const DrinkDescription = ({
 
   return (
     <Wrapper>
-      <ImageThumb uri={uri} theme={theme}>
+      <ImageThumb uri={uri}>
         {uri ? (
           <DivTranslucent>
             <LabelTranslucent
@@ -101,7 +97,7 @@ const DrinkDescription = ({
           </DivTranslucent>
         ) : (
           <DivAddImage>
-            <Label theme={theme}>
+            <Label>
               +
               <HiddenInput
                 type="file"
@@ -158,19 +154,15 @@ const DrinkDescription = ({
             <DivFlexSelect>
               <SpanSelect theme={theme}>Category</SpanSelect>
               <select name="category" onChange={formik.handleChange}>
-                {/* {arrayCategory.map(category => {
-                  return <option value={category.name}>{category.name}</option>;
-                })} //приклад рендеру компоненту */}
-
                 {/* // theme={theme} //change here name="category" options= */}
                 {/* {selectOptions(categories)}
-                value=
-                {formik.values.category === ''
-                  ? null
-                  : {
-                      value: formik.values.category,
-                      label: formik.values.category,
-                    }} // change here */}
+            value=
+            {formik.values.category === ''
+              ? null
+              : {
+                  value: formik.values.category,
+                  label: formik.values.category,
+                }} // change here */}
               </select>
             </DivFlexSelect>
             <ErrorText errors={errors.category} value={formik.values.category}>
@@ -187,10 +179,10 @@ const DrinkDescription = ({
               <select name="glass" onChange={formik.handleChange}>
                 {/* theme={theme} */}
                 {/* {selectOptions(glassArray)}
-                value=
-                {formik.values.glass === ''
-                  ? null
-                  : { value: formik.values.glass, label: formik.values.glass }} // change here*/}
+            value=
+            {formik.values.glass === ''
+              ? null
+              : { value: formik.values.glass, label: formik.values.glass }} // change here*/}
               </select>
             </DivFlexSelect>
             <ErrorText errors={errors.glass} value={formik.values.glass}>
@@ -203,8 +195,7 @@ const DrinkDescription = ({
         </DivDesription>
 
         <DivAlcoholic theme={theme}>
-          <LabelAlcoholic>
-            {/* remove isAlcoholic={formik.values.alcoholic} in 206 */}
+          <LabelAlcoholic isAlcoholic={formik.values.alcoholic}>
             <RadioInput
               theme={theme}
               type="radio"
@@ -214,12 +205,10 @@ const DrinkDescription = ({
               onChange={(e) => {
                 onChangeHandler(e.target.value, 'alcoholic', setFieldValue);
               }}
-              // disabled={isUserAdult(user.birthday) ? false : true} //change here
             />
             Alcoholic
           </LabelAlcoholic>
-          <LabelNonAlcoholic>
-            {/* remove isAlcoholic={formik.values.alcoholic} in 221 */}
+          <LabelNonAlcoholic isAlcoholic={formik.values.alcoholic}>
             <RadioInput
               theme={theme}
               type="radio"
@@ -241,4 +230,3 @@ const DrinkDescription = ({
     </Wrapper>
   );
 };
-export default DrinkDescription;

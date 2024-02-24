@@ -12,9 +12,51 @@ export const DivTop = styled.div`
 `;
 
 export const Title = styled.h2`
-  color: ${({ theme }) =>
-    theme === 'dark' ? `${colors.light}` : `${colors.primaryDark}`};
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  .titleIngredientsForm {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 1.14286;
+    color: #f3f3f3;
+    @media screen and (min-width: 768px) {
+      font-size: 40px;
+      line-height: 1.1;
+    }
+  }
+  .containerIngredientInputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    gap: 16px;
+    border: 1px solid rgba(243, 243, 243, 0.5);
+    border-radius: 200px;
+    width: 104px;
+    height: 38px;
+    @media screen and (min-width: 768px) {
+      gap: 18px;
+      width: 114px;
+      height: 44px;
+    }
+  }
+  .quantityTitle {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.56;
+    text-align: center;
+    color: #f3f3f3;
+    @media screen and (min-width: 768px) {
+      font-size: 17px;
+    }
+  }
 `;
+
 
 export const DivIncrement = styled.div`
   padding: 0px 12px;
@@ -24,8 +66,7 @@ export const DivIncrement = styled.div`
   justify-content: space-between;
   line-height: calc(18 / 14);
   align-items: center;
-  border: ${({ theme }) =>
-    theme === 'dark' ? '1px solid #f3f3f350' : '1px solid #0A0A1150'};
+  border:  #0A0A1150;
   border-radius: 200px;
   @media only screen and (min-width: 768px) {
     width: 114px;
@@ -35,31 +76,30 @@ export const DivIncrement = styled.div`
 `;
 
 export const Button = styled.button`
+   border: none;
+  background: none;
   padding: 0;
-  letter-spacing: -0.05em;
-  color: ${({ theme }) => (theme === 'dark' ? '#f3f3f330' : '#0A0A1130')};
-  :hover {
-    color: ${({ theme }) =>
-      theme === 'dark' ? '#f3f3f380' : `${colors.primaryDark}`};
-    scale: 1.25;
-  }
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
 `;
+
 export const ButtonIncr = styled.button`
   padding: 0;
   font-size: 20px;
   letter-spacing: -0.05em;
-  color: ${({ theme }) =>
-    theme === 'dark' ? `${colors.light}` : `${colors.primaryDark}`};
-  :hover {
-    color: ${({ theme }) =>
-      theme === 'dark' ? '#f3f3f380' : `${colors.primaryDark}`};
+
+:hover {
     scale: 1.45;
   }
 `;
 
 export const SpanIncrement = styled.span`
-  color: ${({ theme }) =>
-    theme === 'dark' ? `${colors.light}` : `${colors.primaryDark}`};
   font-size: 14px;
   line-height: calc(18 / 14);
   @media only screen and (min-width: 768px) {

@@ -19,7 +19,7 @@ const MyDrinksPage = lazy(() => import('./pages/MyDrinksPage/MyDrinksPage'));
 const DrinkPage = lazy(() => import('./pages/DrinkPage/DrinkPage'));
 
 import AddDrinkForm from './components/AddDrink/AddDrinkForm';
-import DrinkDescription from './components/AddDrink/DrinkDescription/DrinkDescription';
+import {DrinkDescription} from './components/AddDrink/DrinkDescription/DrinkDescription';
 
 function App() {
   const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);

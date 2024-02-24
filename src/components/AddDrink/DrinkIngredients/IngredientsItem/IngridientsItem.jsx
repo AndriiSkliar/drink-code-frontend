@@ -7,6 +7,7 @@ import {
 } from './IngridientsItem.styled';
 
 const IngredientItem = ({
+formik,
   chosenIngredients,
   ingredients,
   index,
@@ -16,7 +17,6 @@ const IngredientItem = ({
   chosenIngredientSelect,
   errors,
   wrongIngredients,
-  theme,
 }) => {
   // Funkcja złożona kontrolowanego przetwarzania dwóch wsadów (składnika i jego ilości)
   const onChangeIngredientHandler = (payload, field) => {
@@ -41,18 +41,6 @@ const IngredientItem = ({
 
   return (
     <Wrapper>
-      <select>
-        {/* theme={theme}
-        name="title" */}
-        {/* options={ingredients}
-        value=
-        {chosenIngredients[index].title === '' ? null : chosenIngredientSelect}
-        onChangeIngredientHandler={onChangeIngredientHandler}
-        setFieldValue={setFieldValue}
-        errors={errors?.ingredients}
-        wrongIngredient=
-        {wrongIngredients ? wrongIngredients[index]?.title : null} // coment here */}
-      </select>
       <ErrorText>
         {!chosenIngredients[index]?.title &&
           errors?.ingredients?.length > 0 &&
@@ -62,15 +50,14 @@ const IngredientItem = ({
           `That ingredient is not fit the chosen type Alcoholic/Non alcoholic drink`}
         {errors?.ingredients?.length > 0 &&
           errors.ingredients[index]?.title && (
-            <ErrorIcon value={chosenIngredients[index].title}>
+            <ErrorIcon value={formik.chosenIngredients[index].title}>
               {chosenIngredients[index]?.title ? '✔' : '!'}
             </ErrorIcon>
           )}
       </ErrorText>
       <div>
         <Input
-          theme={theme}
-          errors={errors.ingredients}
+          errors={formik.errors.ingredients}
           type="text"
           name="measure"
           placeholder="1 cl"
@@ -86,11 +73,11 @@ const IngredientItem = ({
         />
         <ErrorText>
           {!chosenIngredients[index]?.measure &&
-            errors?.ingredients?.length > 0 &&
-            errors.ingredients[index]?.measure}
+           errors?.ingredients?.length > 0 &&
+          errors.ingredients[index]?.measure}
           {!chosenIngredients[index]?.measure &&
-            errors?.ingredients?.length > 0 &&
-            errors.ingredients[index]?.measure && (
+           errors?.ingredients?.length > 0 &&
+           errors.ingredients[index]?.measure && (
               <ErrorIcon measure={'measure'}>
                 {errors.ingredients ? '!' : '✔'}
               </ErrorIcon>
@@ -99,7 +86,6 @@ const IngredientItem = ({
       </div>
 
       <Button
-        theme={theme}
         type="button"
         title="Remove ingredient"
         onClick={() => deleteIngredient(index)}

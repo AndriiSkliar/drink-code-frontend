@@ -3,8 +3,8 @@ import {
   DivTop,
   Title,
   DivIncrement,
-  Button,
   SpanIncrement,
+  Button,
   ButtonIncr,
   List,
 } from './DrinkIngredients.styled';
@@ -19,14 +19,23 @@ const DrinkIngredients = ({
   setFieldValue,
   errors,
   wrongIngredients,
-  theme,
 }) => {
   // const persistedForm = useSelector(selectForm);
   // const form = persistedForm.form; // change here
 
   // const ingredientsData = useSelector(selectIngredients); //change here
-  const ingredientsData = []; // Не працює селектор для списку інградієнтів
-
+  const ingredientsData = [
+    { value: "g", label: "g" },
+    { value: "kg", label: "kg" },
+    { value: "l", label: "l" },
+    { value: "ml", label: "ml" },
+    { value: "tbs", label: "tbs" },
+    { value: "tsp", label: "tsp" },
+    { value: "pcs", label: "pcs" },
+    { value: "pin", label: "pin" },
+    { value: "qrt ", label: "qrt " },
+  ]; // Не працює селектор для списку інградієнтів
+  console.log(ingredientsData[0].value);
   // Tablica składników jest zapisywana do zmiany, w zależności od ograniczeń Alcoholic/Non alcoholic
   const ingredientOptions = ingredientsData.filter((el) =>
     formik.values.alcoholic === 'Alcoholic' ? el.alcohol : el.alcohol === 'No'
@@ -65,15 +74,15 @@ const DrinkIngredients = ({
   return (
     <Wrapper>
       <DivTop>
-        <Title theme={theme}>Ingredients</Title>
-        <DivIncrement theme={theme}>
-          <Button type="button" onClick={() => decrement()} theme={theme}>
+        <Title>Ingredients</Title>
+        <DivIncrement>
+          <Button type="button" onClick={() => decrement()}>
             ---
           </Button>
-          <SpanIncrement theme={theme}>
+          <SpanIncrement >
             {formik.values.ingredients.length}
           </SpanIncrement>
-          <ButtonIncr type="button" onClick={() => increment()} theme={theme}>
+          <ButtonIncr type="button" onClick={() => increment()}>
             +
           </ButtonIncr>
         </DivIncrement>
@@ -82,7 +91,7 @@ const DrinkIngredients = ({
         {formik.values.ingredients.map((el, index) => (
           <li key={index}>
             <IngredientItem
-              theme={theme}
+      
               chosenIngredients={formik.values.ingredients}
               onChangeHandler={formik.handleChange}
               setFieldValue={setFieldValue}

@@ -29,7 +29,7 @@ export const Wrapper = styled.div`
       line-height: 1.125;
     }
     &:hover {
-      background: rgba(64, 112, 205, 0.5);
+      background: #4070cd7f;
       color: #f3f3f3;
     }
   }

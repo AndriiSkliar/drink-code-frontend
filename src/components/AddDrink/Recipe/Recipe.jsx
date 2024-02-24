@@ -1,43 +1,42 @@
-import {
-  Div,
-  Title,
-  TextareaDiv,
-  Textarea,
-  MockPlaceholder,
-  ErrorText,
-  ErrorIcon,
-} from './Recipe.styled';
+import { Title, Wrapper } from './Recipe.styled';
+import { useFormik, Field } from 'formik';
 
 import { useSelector } from 'react-redux';
 
-const Recipe = ({ formik, errors, theme }) => {
+const formik = useFormik({
+  initialValues: {
+
+    instructions: '',
+  },
+  onSubmit: values => {
+    // handle form submission
+    console.log(values);
+  },
+});
+
+export const Recipe = ({ formik, errors, handleChange }) => {
   // const persistedForm = useSelector(selectForm);
   // const form = persistedForm.form; // change here
-
+  
   return (
-    <Div>
-      <Title theme={theme}>Recipe Preparation</Title>
-      <TextareaDiv></TextareaDiv>
-      {formik.values.instructions ? (
-        <MockPlaceholder theme={theme}>Enter the recipe</MockPlaceholder>
-      ) : (
-        <ErrorText>
-          {!formik.values.instructions && errors.instructions}
-          {!formik.values.instructions && errors.instructions && (
-            <ErrorIcon>!</ErrorIcon>
-          )}
-        </ErrorText>
-      )}
-      <Textarea
-        theme={theme}
+    <Wrapper>
+      <Title>
+     
+        <h4> Recipe Preparation </h4>
+      </Title>
+
+      <Field
         errors={errors.instructions}
         name="instructions"
+        onChange={(e) => {
+          formik.handleChange(e);
+        }}
         placeholder="Enter the recipe"
         rows={6}
         value={formik.values.instructions}
-        onChange={formik.handleChange}
+        // onChange={formik.handleChange}
       />
-    </Div>
+    </Wrapper>
   );
 };
-export default Recipe;
+// export default Recipe;
