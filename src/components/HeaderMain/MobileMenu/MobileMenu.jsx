@@ -5,12 +5,14 @@ import {
   NavItem,
   MobMenuContainer,
   BackgroundsColores,
+  LineMobile,
 } from './MobileMenu.styled';
 
 const MobileMenu = () => {
   return (
     <MobMenuContainer>
       <BackgroundsColores>
+        <LineMobile></LineMobile>
         <NavigationList>
           <NavItem>
             <StyledLink to="/home">Home</StyledLink>
