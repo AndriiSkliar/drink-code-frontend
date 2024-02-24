@@ -4,29 +4,31 @@ const SearchSelect = () => {
   return (
     <SearchSelectStyled>
       <div>
-        <select id="mounth">
-          <option value="hide">-- Month --</option>
-          <option value="january">January</option>
-          <option value="february">February</option>
-          <option value="march">March</option>
-          <option value="april">April</option>
-          <option value="may">May</option>
-          <option value="june">June</option>
-          <option value="july">July</option>
-          <option value="august">August</option>
-          <option value="september">September</option>
-          <option value="october">October</option>
-          <option value="november">November</option>
-          <option value="december">December</option>
+        <select id="categories">
+          <option value="hide">All categories</option>
+          <option value="ordinary drink">Ordinary Drink</option>
+          <option value="cocktail">Cocktail</option>
+          <option value="shake">Shake</option>
+          <option value="other">Other/Unknown</option>
+          <option value="cocoa">Cocoa</option>
+          <option value="shot">Shot</option>
+          <option value="coffee tea">Coffee / Tea</option>
+          <option value="homemade liqueur">Homemade Liqueur</option>
+          <option value="punch">Punch / Party Drink</option>
+          <option value="beer">Beer</option>
+          <option value="soft drink">Soft Drink</option>
         </select>
-        <select id="year">
-          <option value="hide">-- Year --</option>
-          <option value="2020">2020</option>
-          <option value="2021">2021</option>
-          <option value="2022">2022</option>
-          <option value="2023">2023</option>
-          <option value="2024">2024</option>
-          <option value="2025">2025</option>
+        <select id="ingredients">
+          <option value="hide">Ingredients</option>
+          <option value="Light rum">Light rum</option>
+          <option value="Applejack">Applejack</option>
+          <option value="gin">Gin</option>
+          <option value="Dark rum">Dark rum</option>
+          <option value="Sweet Vermouth">Sweet Vermouth</option>
+          <option value="Strawberry">Strawberry Schnapps</option>
+          <option value="Scotch">Scotch</option>
+          <option value="Apricot brandy">Apricot brandy</option>
+          <option value="gin">Gin</option>
         </select>
       </div>
     </SearchSelectStyled>

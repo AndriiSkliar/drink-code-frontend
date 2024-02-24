@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
-import DrinksItem from './DrinksItem/DrinksItem'; 
+import DrinksItem from './DrinksItem/DrinksItem';
 import { StyledDrinksList } from './StyledDrinksList';
 
 const DrinksList = ({ title, drinks }) => {
   // Фильтруем коктейли по указанной категории
-  const filteredDrinks = drinks.filter(drink => drink.category === title);
+  const filteredDrinks = drinks.filter((drink) => drink.category === title);
 
   // Хук состояния для отслеживания видимого количества коктейлей в зависимости от ширины экрана
   const [visibleDrinks, setVisibleDrinks] = useState(1);
@@ -29,7 +29,7 @@ const DrinksList = ({ title, drinks }) => {
     // Добавляем слушателя события изменения размера экрана и вызываем функцию handleResize при монтировании компонента
     window.addEventListener('resize', handleResize);
     handleResize();
-
+    console.log('drinks', drinks);
     // Очищаем слушателя события при размонтировании компонента, чтобы избежать утечек памяти
     return () => {
       window.removeEventListener('resize', handleResize);
@@ -46,7 +46,7 @@ const DrinksList = ({ title, drinks }) => {
 
       {/* Список коктейлей */}
       <ul className="drinksList">
-        {limitedDrinks.map(drink => (
+        {limitedDrinks.map((drink) => (
           <DrinksItem
             key={drink._id}
             className="drinksListItem"

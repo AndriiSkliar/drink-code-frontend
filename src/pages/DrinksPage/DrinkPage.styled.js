@@ -19,7 +19,6 @@ export const StyledDrinksPage = styled.div`
 
   .searchingContainer {
     width: 678px;
-    height: 465px;
     display: flex;
     flex-direction: row;
     gap: 20px;
