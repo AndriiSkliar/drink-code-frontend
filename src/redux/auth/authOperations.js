@@ -110,7 +110,7 @@ export const subscribeEmail = createAsyncThunk(
     try {
       await instance.post('/users/subscribe', data);
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error);
     }
   }
 );
