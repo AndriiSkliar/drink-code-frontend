@@ -25,12 +25,14 @@ function App() {
   const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
   const location = useLocation();
   const navigate = useNavigate();
-  const [currentPage, _] = useState(location.pathname);
+  const [currentPage, setCurrentPage] = useState(location.pathname);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(authOperations.currentUser());
-    navigate(currentPage);
+    if (currentPage !== "/") {
+      navigate(currentPage);
+    }
   }, [dispatch]);
 
 
