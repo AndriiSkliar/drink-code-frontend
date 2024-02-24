@@ -3,7 +3,7 @@ import { Icon, IconText, LogoLink } from './Logo.styled';
 
 export const Logo = () => {
   return (
-    <LogoLink to="/main" relative="path">
+    <LogoLink to="/" relative="path">
       <Icon />
       <IconText>Drink Master</IconText>
     </LogoLink>
