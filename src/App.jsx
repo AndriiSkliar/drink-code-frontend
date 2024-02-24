@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import authSelectors from './redux/auth/authSelectors';
 import SharedLayout from './components/SharedLayout/SharedLayout';
@@ -21,10 +21,16 @@ const MyDrinksPage = lazy(() => import('./pages/MyDrinksPage/MyDrinksPage'));
 function App() {
   const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
   const dispatch = useDispatch();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(authOperations.currentUser());
-  }, [dispatch]);
+  }, [dispatch])
+
+  useEffect(() => {
+    navigate(location.pathname);
+  }, [location.pathname, navigate])
 
   return (
     <Routes>
