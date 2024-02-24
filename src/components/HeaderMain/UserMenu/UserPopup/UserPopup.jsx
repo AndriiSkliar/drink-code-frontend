@@ -4,7 +4,7 @@ import {EditBtn, EditProfileText, PopupContainer, SvgIconEdit, FlexContainer, Lo
 import LogoutSure from "../LogoutSure/LogoutSure";
 import EditProfileForm from "../EditProfileForm/EditProfileForm";
 
-const UserPopup = ({setUserAvatar, userAvatar}) => {
+const UserPopup = ({setUserAvatar, userAvatar, setIsOpenPopupMenu}) => {
   const [isOpenLogout, setIsOpenLogout] = useState(false);
   const [isEditOpen, setIsEditOpen] = useState(false);
 
@@ -34,7 +34,7 @@ const UserPopup = ({setUserAvatar, userAvatar}) => {
          </EditBtn>
        </FlexContainer>
        <LogoutBtnPopup onClick={() => setIsOpenLogout(prev => !prev)}>Log out</LogoutBtnPopup>
-       {isEditOpen && <EditProfileForm setIsEditOpen={setIsEditOpen} setUserAvatar={setUserAvatar} userAvatar={userAvatar}/>}
+       {isEditOpen && <EditProfileForm setIsEditOpen={setIsEditOpen} setUserAvatar={setUserAvatar} userAvatar={userAvatar} setIsOpenPopupMenu={setIsOpenPopupMenu}/>}
        {isOpenLogout && <LogoutSure setIsOpenLogout={setIsOpenLogout}/>}
     </PopupContainer>
   )

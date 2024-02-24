@@ -58,7 +58,7 @@ const currentUser = createAsyncThunk(
   async (_, thunkAPI) => {
     const { token } = thunkAPI.getState().auth;
 
-    if (!token) {
+    if (token === null) {
       return thunkAPI.rejectWithValue('Unable to fetch User');
     }
 
@@ -149,6 +149,7 @@ export const authOperations = {
   signOut,
   currentUser,
   subscribeEmail,
+  refreshThunk,
   themeThunk,
   updateUser,
 };
