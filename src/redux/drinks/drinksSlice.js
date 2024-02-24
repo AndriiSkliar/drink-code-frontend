@@ -25,7 +25,7 @@ const cocktailsSlice = createSlice({
           state.cocktails = payload;
         }
       )
-      .addCase(drinksOperations.fetchPopularDrinks.fullfilled, (state, {payload}) => {
+      .addCase(drinksOperations.fetchPopularDrinks.fulfilled, (state, {payload}) => {
         state.isLoading = false;
         state.popularDrinks = payload;
       })
@@ -78,6 +78,7 @@ const cocktailsSlice = createSlice({
           drinksOperations.addCocktail.pending,
           drinksOperations.deleteOwnCocktail.pending,
           drinksOperations.addToFavorites.pending,
+          drinksOperations.fetchPopularDrinks.pending,
           drinksOperations.deleteFromFavorites.pending
         ),
         (state) => {
@@ -88,6 +89,7 @@ const cocktailsSlice = createSlice({
       .addMatcher(
         isAnyOf(
           drinksOperations.fetchCocktails.rejected,
+          drinksOperations.fetchPopularDrinks.rejected,
           drinksOperations.fetchFavoriteCocktails.rejected,
           drinksOperations.addCocktail.rejected,
           drinksOperations.deleteOwnCocktail.rejected,
