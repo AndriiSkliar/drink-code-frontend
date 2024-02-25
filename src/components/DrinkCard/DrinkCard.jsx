@@ -10,21 +10,15 @@ import {
   StyledCocktailWrapper,
   StyledDeleteButton,
 } from './DrinkCard.styled';
-import { useDispatch, useSelector } from 'react-redux';
+
 const DrinkCard = ({
   name,
   description,
   alcoholic,
   imgUrl,
   handleDelete,
-  cocktailLink,
+  id,
 }) => {
-  const dispatch = useDispatch();
-
-  const handleDeleteCocktail = (cocktailId) => {
-    dispatch(deleteCocktails(cocktailId));
-  };
-
   return (
     <StyledCocktailWrapper>
       <StyledCocktailImage src={imgUrl} alt={name} />
@@ -34,7 +28,7 @@ const DrinkCard = ({
       </div>
       <StyledCocktailDescription>{description}</StyledCocktailDescription>
       <StyledButtonsWrapper>
-        <NavLink to={cocktailLink}>
+        <NavLink to={`/drink/${id}`}>
           <StyledCocktailSeeMore>See more</StyledCocktailSeeMore>
         </NavLink>
 

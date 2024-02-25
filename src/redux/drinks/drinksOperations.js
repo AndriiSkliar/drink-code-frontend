@@ -19,8 +19,8 @@ export const fetchFavoriteCocktails = createAsyncThunk(
   async (_, thunkApi) => {
     try {
       const { data } = await instance.get('/drinks/favorites');
-      console.log(data);
-      return data.drinks;
+
+      return data;
     } catch (err) {
       return thunkApi.rejectWithValue(err.message);
     }
