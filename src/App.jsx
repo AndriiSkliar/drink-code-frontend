@@ -34,11 +34,11 @@ function App() {
     dispatch(authOperations.currentUser());
     if(!isLoggedIn) {
       navigate("/welcome");
+    } else if (isLoggedIn && currentPage === "/my" || currentPage === "/add" || currentPage === "/drinks" || currentPage === "/favorites") {
+        navigate(currentPage);
     }
 
-    if (currentPage !== '/' && isLoggedIn) {
-      navigate(currentPage);
-    }
+    // if (isLoggedIn && currentPage === "/my" || currentPage === "/add" || currentPage === "/drinks" || currentPage === "/favorites") {
   }, [dispatch]);
 
   return (
