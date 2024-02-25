@@ -1,5 +1,4 @@
 import { styled } from 'styled-components';
-import { Link } from 'react-router-dom';
 
 import drinksMobile from '../../assets/images/drink-page/drinks-mobile.jpg';
 import drinksMobile2x from '../../assets/images/drink-page/drinks-mobile@2x.jpg';
