@@ -31,20 +31,15 @@ const authSlice = createSlice({
         state.token = payload.token;
         state.isLoggedIn = true;
       })
-      .addCase(authOperations.signOut.pending, state => {
-        state.isRefreshing = true;
-      })
       .addCase(authOperations.signOut.fulfilled, state => {
         state.user = { name: '', email: '', birthday: '', avatar: '' };
         state.token = '';
         state.isLoggedIn = false;
-        state.isRefreshing = false;
       })
       .addCase(authOperations.signOut.rejected, state => {
         state.user = { name: '', email: '', birthday: '', avatar: '' };
         state.token = '';
         state.isLoggedIn = false;
-        state.isRefreshing = false;
       })
       .addCase(authOperations.currentUser.pending, state => {
         state.isRefreshing = true;
@@ -61,16 +56,9 @@ const authSlice = createSlice({
       .addCase(authOperations.subscribeEmail.fulfilled, state => {
         state.isSubscribed = true;
       })
-      .addCase(authOperations.updateUser.pending, state => {
-        state.isRefreshing = true;
-      })
       .addCase(authOperations.updateUser.fulfilled, (state, { payload }) => {
         state.user.name = payload.name;
-        state.isRefreshing = false;
         payload.avatar && (state.user.avatar = payload.avatar);
-      })
-      .addCase(authOperations.updateUser.rejected, state => {
-        state.isRefreshing = false;
       })
 });
 
