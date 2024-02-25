@@ -1,4 +1,4 @@
-import{u as d,j as e,N as h,r as x,a as b,b as p,f as k,L as f}from"./index-3b60cef1.js";const u=d.li`
+import{u as d,j as e,N as h,r as x,a as b,b as p,f,L as k}from"./index-7bde485d.js";const u=d.li`
   margin-bottom: 40px;
   border-radius: 8px;
   /* width: 335px;
@@ -157,7 +157,7 @@ import{u as d,j as e,N as h,r as x,a as b,b as p,f as k,L as f}from"./index-3b60
     align-items: center;
     justify-content: space-between;
   }
-`,w=({id:i,drinkName:t,img:r})=>e.jsxs(u,{children:[e.jsx("div",{className:"imgContainer",children:e.jsx("div",{className:"drinkImgWrapper",children:e.jsx("img",{src:`${r}`,alt:t,className:"drinkImg"})})}),e.jsxs("div",{className:"contentContainer",children:[e.jsx("h3",{className:"drinkName",children:t}),e.jsx(h,{to:`/drink/${i}`,className:"seeMoreLink",children:"See more"})]})]}),_=d.div`
+`,w=({id:i,drinkName:n,img:r})=>e.jsxs(u,{children:[e.jsx("div",{className:"imgContainer",children:e.jsx("div",{className:"drinkImgWrapper",children:e.jsx("img",{src:`${r}`,alt:n,className:"drinkImg"})})}),e.jsxs("div",{className:"contentContainer",children:[e.jsx("h3",{className:"drinkName",children:n}),e.jsx(h,{to:`/drink/${i}`,className:"seeMoreLink",children:"See more"})]})]}),_=d.div`
   .drinksList {
     list-style: none;
     padding: 0;
@@ -200,7 +200,7 @@ import{u as d,j as e,N as h,r as x,a as b,b as p,f as k,L as f}from"./index-3b60
       line-height: 1.1;
     }
   }
-`,a=({title:i,drinks:t})=>{const r=t.filter(n=>n.category===i),[s,c]=x.useState(1);x.useEffect(()=>{const n=()=>{const m=window.innerWidth;m>=1280?c(3):m>=768?c(2):c(1)};return window.addEventListener("resize",n),n(),()=>{window.removeEventListener("resize",n)}},[]);const g=r.slice(0,s);return e.jsxs(_,{children:[e.jsx("h2",{className:"drinksListTitle",children:i}),e.jsx("ul",{className:"drinksList",children:g.map(n=>e.jsx(w,{className:"drinksListItem",drinkName:n.drink,img:n.drinkThumb},n._id))})]})},v=d.div`
+`,a=({title:i,drinks:n})=>{const r=n.filter(t=>t.category===i),[s,c]=x.useState(1);x.useEffect(()=>{const t=()=>{const m=window.innerWidth;m>=1280?c(3):m>=768?c(2):c(1)};return window.addEventListener("resize",t),t(),()=>{window.removeEventListener("resize",t)}},[]);const g=r.slice(0,s);return e.jsxs(_,{children:[e.jsx("h2",{className:"drinksListTitle",children:i}),e.jsx("ul",{className:"drinksList",children:g.map(t=>e.jsx(w,{id:t._id,className:"drinksListItem",drinkName:t.drink,img:t.drinkThumb},t._id))})]})},v=d.div`
   display: block;
   margin-top: 80px;
   margin-bottom: 112px;
@@ -410,4 +410,4 @@ import{u as d,j as e,N as h,r as x,a as b,b as p,f as k,L as f}from"./index-3b60
     box-shadow: 0 0 20px rgba(64, 112, 205, 0.7);
     background-color: var( --link-bg-hover)
   }
-`,O=i=>i.cocktails.homepageDrinks,P=i=>i.cocktails.isLoading,W=i=>i.cocktails.error,l={selectHomepageDrinks:O,selectIsLoading:P,selectError:W},$=()=>{const i=b(),t=p(l.selectHomepageDrinks),r=p(l.selectIsLoading),s=p(l.selectError);return x.useEffect(()=>{i(k())},[i]),e.jsxs(M,{className:"container",children:[e.jsx(H,{}),r&&e.jsx(f,{}),s&&e.jsxs("p",{children:["Error: ",s]}),e.jsxs("div",{className:"categoryListsContainer",children:[e.jsx(a,{drinks:t,title:"Ordinary Drink"},"OrdinaryDrink"),e.jsx(a,{drinks:t,title:"Cocktail"},"Cocktail"),e.jsx(a,{drinks:t,title:"Shake"},"Shake"),e.jsx(a,{drinks:t,title:"Other/Unknown"},"OtherUnknown")]}),e.jsx(h,{to:"/drinks",className:"otherDrinksLink",children:"Other drinks"})]})};export{$ as default};
+`,O=i=>i.cocktails.homepageDrinks,P=i=>i.cocktails.isLoading,W=i=>i.cocktails.error,l={selectHomepageDrinks:O,selectIsLoading:P,selectError:W},$=()=>{const i=b(),n=p(l.selectHomepageDrinks),r=p(l.selectIsLoading),s=p(l.selectError);return x.useEffect(()=>{i(f())},[i]),e.jsxs(M,{className:"container",children:[e.jsx(H,{}),r&&e.jsx(k,{}),s&&e.jsxs("p",{children:["Error: ",s]}),e.jsxs("div",{className:"categoryListsContainer",children:[e.jsx(a,{drinks:n,title:"Ordinary Drink"},"OrdinaryDrink"),e.jsx(a,{drinks:n,title:"Cocktail"},"Cocktail"),e.jsx(a,{drinks:n,title:"Shake"},"Shake"),e.jsx(a,{drinks:n,title:"Other/Unknown"},"OtherUnknown")]}),e.jsx(h,{to:"/drinks",className:"otherDrinksLink",children:"Other drinks"})]})};export{$ as default};
