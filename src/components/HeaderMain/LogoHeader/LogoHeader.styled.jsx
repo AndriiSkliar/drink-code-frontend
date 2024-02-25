@@ -12,10 +12,29 @@ export const LogoLink = styled(NavLink)`
   column-gap: 8px;
   cursor: pointer;
   z-index: 101;
+
+  @media screen and (min-width: 768px) {
+    column-gap: 15px;
+  }
 `;
 
 export const SvgIcon = styled.svg`
   width: 22px;
   height: 22px;
   fill: var(--primary-text-color);
+
+  @media screen and (min-width: 768px) {
+    width: 28px;
+    height: 28px;
+  }
+`;
+
+export const IconText = styled.p`
+  font-size: 16px;
+  font-weight: 600px;
+  color: var(--primary-text-color);
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+  }
 `;

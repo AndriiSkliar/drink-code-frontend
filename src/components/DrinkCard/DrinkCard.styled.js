@@ -36,7 +36,7 @@ export const StyledCocktailDescription = styled.p`
   font-weight: 400;
   font-size: 14px;
   line-height: 1.28571;
-  color: #f3f3f3;
+  color: var(--primary-text-color);
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -54,7 +54,13 @@ export const StyledCocktailName = styled.h2`
   font-weight: 500;
   font-size: 18px;
   line-height: 1.33333;
-  color: #f3f3f3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  white-space: pre-wrap;
+  color: var(--primary-text-color);
 
   @media screen and (min-width: 768px) {
     font-size: 24px;
@@ -66,7 +72,7 @@ export const StyledCocktailAlcoholic = styled.p`
   font-weight: 400;
   font-size: 14px;
   line-height: 1.28571;
-  color: rgba(243, 243, 243, 0.5);
+  color: var(--secondary-text-color);
 
   @media screen and (min-width: 768px) {
     font-size: 16px;
@@ -78,11 +84,15 @@ export const StyledCocktailSeeMore = styled.button`
   border-radius: 42px;
   border: none;
   padding: 14px 40px;
-  background: #161f37;
+  background: var(--primary-black-color);
   font-weight: 600;
   font-size: 14px;
   line-height: 1.28571;
   color: #f3f3f3;
+
+  &:hover {
+    background: #050e24;
+  }
 
   @media screen and (min-width: 768px) {
     padding: 18px 44px;
@@ -96,8 +106,12 @@ export const StyledDeleteButton = styled.button`
   border: none;
   width: 46px;
   height: 46px;
-  background: #161f37;
+  background: var(--primary-black-color);
   color: #f3f3f3;
+
+  &:hover {
+    background: #050e24;
+  }
 
   @media screen and (min-width: 768px) {
     width: 56px;

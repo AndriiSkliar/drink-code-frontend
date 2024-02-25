@@ -22,6 +22,7 @@ const FavoritesPage = lazy(() => import('./pages/FavoritesPage/FavoritesPage'));
 const AddDrinkPage = lazy(() => import('./pages/AddDrinkPage/AddDrinkPage'));
 const DrinksPage = lazy(() => import('./pages/DrinksPage/DrinksPage'));
 const MyDrinksPage = lazy(() => import('./pages/MyDrinksPage/MyDrinksPage'));
+const DrinkPage = lazy(() => import('./pages/DrinkPage/DrinkPage'));
 
 function App() {
   const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
@@ -38,18 +39,19 @@ function App() {
   }, [dispatch]);
 
   return (
-
-      <Routes>
-        <Route path="/:id" element={<VerificationPage />}/>  
-        <Route path="/welcome" element={
-            <PublicRoute
-              redirectTo="/"
-              isLoggedIn={isLoggedIn}
-              component={<WelcomePage />}
-            />
-          }
+    <Routes>
+      <Route path="/:id" element={<VerificationPage />} />
+      <Route
+        path="/welcome"
+        element={
+          <PublicRoute
+            redirectTo="/"
+            isLoggedIn={isLoggedIn}
+            component={<WelcomePage />}
+          />
+        }
       />
-      
+
       <Route
         path="/signin"
         element={
@@ -79,6 +81,7 @@ function App() {
       >
         <Route
           index
+          path="/home"
           element={
             <PrivateRoute redirectTo="/welcome" component={<HomePage />} />
           }
@@ -105,6 +108,12 @@ function App() {
           path="/favorites"
           element={
             <PrivateRoute redirectTo="/welcome" component={<FavoritesPage />} />
+          }
+        />
+        <Route
+          path="/drink/:id"
+          element={
+            <PrivateRoute redirectTo="/welcome" component={<DrinkPage />} />
           }
         />
         <Route path="*" element={<ErrorPage />} />

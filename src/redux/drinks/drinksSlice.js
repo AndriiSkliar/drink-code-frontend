@@ -4,9 +4,11 @@ import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import { drinksOperations } from './drinksOperations';
 
 const initialState = {
+  ownCocktails: [],
   cocktails: [],
   popularDrinks: [],
   favoriteCocktails: [],
+  totalFavorites: null,
   isLoading: false,
   error: null,
 };
@@ -25,50 +27,55 @@ const cocktailsSlice = createSlice({
           state.cocktails = payload;
         }
       )
-      .addCase(drinksOperations.fetchPopularDrinks.fulfilled, (state, {payload}) => {
-        state.isLoading = false;
-        state.popularDrinks = payload;
-      })
+      .addCase(
+        drinksOperations.fetchPopularDrinks.fulfilled,
+        (state, { payload }) => {
+          state.isLoading = false;
+          state.popularDrinks = payload;
+        }
+      )
       .addCase(
         drinksOperations.fetchFavoriteCocktails.fulfilled,
         (state, { payload }) => {
           state.isLoading = false;
-          state.favoriteCocktails = payload;
+          state.favoriteCocktails = payload.drinks;
+          state.totalFavorites = payload.total;
         }
       )
       .addCase(drinksOperations.addCocktail.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        state.cocktails = [...state.cocktails, payload];
+        state.cocktails = [...state.ownCocktails, payload];
         // toast.success(`Now ${payload.name} added`);
       })
       .addCase(
         drinksOperations.deleteOwnCocktail.fulfilled,
         (state, { payload }) => {
           state.isLoading = false;
-          state.cocktails = state.cocktails.filter(
+          state.cocktails = state.ownCocktails.filter(
             (cocktail) => cocktail._id !== payload._id
           );
-          // toast(`❌ ${payload.name} was deleted`);
+          toast(`❌ ${payload.name} was deleted`);
         }
       )
       .addCase(
         drinksOperations.addToFavorites.fulfilled,
         (state, { payload }) => {
           state.isLoading = false;
-          state.cocktails = state.cocktails.filter(
-            (cocktail) => cocktail._id !== payload._id
-          );
-          state.cocktails = [...state.cocktails, payload];
+          state.favoriteCocktails = [
+            ...state.favoriteCocktails,
+            payload.result,
+          ];
+          state.totalFavorites = state.totalFavorites += 1;
         }
       )
       .addCase(
         drinksOperations.deleteFromFavorites.fulfilled,
         (state, { payload }) => {
           state.isLoading = false;
-          state.cocktails = state.cocktails.filter(
-            (cocktail) => cocktail._id !== payload._id
+          state.favoriteCocktails = state.favoriteCocktails.filter(
+            (cocktail) => cocktail._id !== payload.result._id
           );
-          state.cocktails = [...state.cocktails, payload];
+          state.totalFavorites = state.totalFavorites -= 1;
         }
       )
       .addMatcher(

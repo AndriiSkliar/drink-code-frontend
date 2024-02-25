@@ -1,5 +1,14 @@
-import cocktail from '../../assets/images/404Cocktail2x.png';
+import cocktail2x from '../../assets/images/404Cocktail2x.png';
+import cocktail from '../../assets/images/404Cocktail.png';
 
-export const NotFoundCocktail = () => {
-  return <img src={cocktail} alt="cocktail" width="198" height="247" />;
+export const NotFoundCocktail = ({ width, height }) => {
+  return (
+    <img
+      srcSet={cocktail}
+      src={cocktail2x}
+      alt="cocktail"
+      width={width}
+      height={height}
+    />
+  );
 };
