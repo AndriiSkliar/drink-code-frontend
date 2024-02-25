@@ -3,6 +3,7 @@ import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import { drinksOperations } from './drinksOperations';
 
 const initialState = {
+  ownCocktails: [],
   cocktails: [],
   favoriteCocktails: [],
   isLoading: false,
@@ -32,14 +33,14 @@ const cocktailsSlice = createSlice({
       )
       .addCase(drinksOperations.addCocktail.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        state.cocktails = [...state.cocktails, payload];
+        state.cocktails = [...state.ownCocktails, payload];
         // toast.success(`Now ${payload.name} added`);
       })
       .addCase(
         drinksOperations.deleteOwnCocktail.fulfilled,
         (state, { payload }) => {
           state.isLoading = false;
-          state.cocktails = state.cocktails.filter(
+          state.cocktails = state.ownCocktails.filter(
             (cocktail) => cocktail._id !== payload._id
           );
           // toast(`❌ ${payload.name} was deleted`);

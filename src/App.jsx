@@ -60,12 +60,43 @@ function App() {
           />
         }
       />
-      <Route path="/" element={<PrivateRoute redirectTo='/welcome' component={<SharedLayout/>}/>}>
-        <Route index path="/home" element={<PrivateRoute redirectTo='/welcome' component={<HomePage/>}/>} />
-        <Route path="/drinks" element={<PrivateRoute redirectTo='/welcome' component={<DrinksPage/>}/>} />
-        <Route path="/add" element={<PrivateRoute redirectTo='/welcome' component={<AddDrinkPage/>}/>} />
-        <Route path="/my" element={<PrivateRoute redirectTo='/welcome' component={<MyDrinksPage/>}/>} />
-        <Route path="/favorites" element={<PrivateRoute redirectTo='/welcome' component={<FavoritesPage/>}/>} />
+      <Route
+        path="/"
+        element={
+          <PrivateRoute redirectTo="/welcome" component={<SharedLayout />} />
+        }
+      >
+        <Route
+          index
+          path="/home"
+          element={
+            <PrivateRoute redirectTo="/welcome" component={<HomePage />} />
+          }
+        />
+        <Route
+          path="/drinks"
+          element={
+            <PrivateRoute redirectTo="/welcome" component={<DrinksPage />} />
+          }
+        />
+        <Route
+          path="/add"
+          element={
+            <PrivateRoute redirectTo="/welcome" component={<AddDrinkPage />} />
+          }
+        />
+        <Route
+          path="/my"
+          element={
+            <PrivateRoute redirectTo="/welcome" component={<MyDrinksPage />} />
+          }
+        />
+        <Route
+          path="/favorites"
+          element={
+            <PrivateRoute redirectTo="/welcome" component={<FavoritesPage />} />
+          }
+        />
         <Route path="*" element={<ErrorPage />} />
       </Route>
     </Routes>
