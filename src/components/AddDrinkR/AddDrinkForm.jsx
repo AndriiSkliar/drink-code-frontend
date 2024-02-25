@@ -5,7 +5,7 @@ import { useState } from 'react';
 import DrinkDescription from './DrinkDescription/DrinkDescription';
 import Ingredients from './Ingredients/Ingredients';
 import Recipe from './Recipe/Recipe';
-import { AddDrinktoDB } from '../../api/addDrink';
+import { addDrinktoDB } from '../../api/addDrink';
 import { initialValues } from './initianValues';
 
 const AddDrinkForm = () => {
@@ -35,7 +35,7 @@ const AddDrinkForm = () => {
         formData.append(`ingredients[${index}][measure]`, ingredient.measure);
       });
       try {
-        const resp = await AddDrinktoDB(formData);
+        const resp = await addDrinktoDB(formData);
         console.log('RESP', resp);
       } catch (error) {
         console.error('Error message', error);
