@@ -46,10 +46,9 @@ export const fetchDrinksByIngredient = createAsyncThunk(
   'drinks/getByIngredient',
   async (ingredient, thunkApi) => {
     try {
-      const { data } = await instance.get(
-        '/drinks/search/ingredients',
-        ingredient
-      );
+      const { data } = await instance.get('/drinks/search/ingredients', {
+        body: ingredient,
+      });
 
       return data;
     } catch (err) {
