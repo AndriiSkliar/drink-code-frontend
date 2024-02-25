@@ -7,7 +7,6 @@ import {
 } from './Header.styled';
 import { useState, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
-import { useLocation } from 'react-router-dom';
 import BurgerMenuButton from './BurgerMenuButton/BurgerMenuButton';
 import LogoHeader from './LogoHeader/LogoHeader';
 import UserMenu from './UserMenu/UserMenu';
@@ -17,12 +16,17 @@ import NavMenu from './NavMenu/NavMenu';
 
 const HeaderMain = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
-  const location = useLocation();
   const isDesktop = useMediaQuery({minWidth: 1280});
 
   useEffect(() => {
-    setIsOpenMenu(false);
-  }, [location.pathname]);
+   if(typeof window !== "undefined") {
+    if(isOpenMenu) {
+      window.document.body.style.overflow = "hidden";
+    } else {
+      window.document.body.style.overflow = "auto";
+    }
+   }
+  }, [isOpenMenu])
 
   return (
     <MainHeader>
