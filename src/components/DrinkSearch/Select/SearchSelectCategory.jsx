@@ -10,11 +10,10 @@ const SearchSelectCategory = () => {
 
   const searchByCategory = (event) => {
     const searchCategory = event.target.value;
-    console.log('category', searchCategory);
     const formData = {
       category: searchCategory,
     };
-
+    console.log('category', JSON.stringify(formData));
     dispatch(fetchDrinksByCategory(JSON.stringify(formData)));
   };
   return (

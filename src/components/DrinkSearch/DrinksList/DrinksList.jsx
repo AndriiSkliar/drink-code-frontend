@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import DrinksItem from './DrinksItem/DrinksItem';
 import { StyledDrinksList } from './StyledDrinksList';
 
-const DrinksList = ({ title, drinks }) => {
+const DrinksList = ({ drinks }) => {
   // Фильтруем коктейли по указанной категории
   // const filteredDrinks = drinks.filter((drink) => drink.category === title);
 
@@ -29,7 +29,7 @@ const DrinksList = ({ title, drinks }) => {
     // Добавляем слушателя события изменения размера экрана и вызываем функцию handleResize при монтировании компонента
     window.addEventListener('resize', handleResize);
     handleResize();
-    console.log('drinks', drinks);
+    console.log('drinks', drinks.length);
     // Очищаем слушателя события при размонтировании компонента, чтобы избежать утечек памяти
     return () => {
       window.removeEventListener('resize', handleResize);

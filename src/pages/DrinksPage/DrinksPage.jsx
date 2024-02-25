@@ -7,14 +7,15 @@ import SearchSelectCategory from '../../components/DrinkSearch/Select/SearchSele
 import SearchSelectIngredients from '../../components/DrinkSearch/Select/SearchSelectIngredients';
 import { StyledDrinksPage } from './DrinkPage.styled.js';
 import { fetchDrinks } from '../../redux/drinks/drinksSearch.js';
-import { selectDrinks } from '../../redux/selectors';
+import { selectDrinks, selectIsLoading } from '../../redux/selectors';
 // import Loader from '../../components/Loader/Loader';
 
 const DrinksPage = () => {
   const dispatch = useDispatch();
 
   const drinks = useSelector(selectDrinks);
-
+  // const isLoading = useSelector(selectIsLoading);
+  console.log(drinks.length);
   useEffect(() => {
     dispatch(fetchDrinks());
   }, [dispatch]);
@@ -31,7 +32,7 @@ const DrinksPage = () => {
       <div className="categoryListsContainer">
         <DrinksList drinks={drinks} />
       </div>
-      <Pagination />
+      <Pagination pageQuan={drinks.length} />
     </StyledDrinksPage>
   );
 };

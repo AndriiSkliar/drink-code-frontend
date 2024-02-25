@@ -18,7 +18,7 @@ export const fetchDrinksByLetter = createAsyncThunk(
   'drinks/getByLetter',
   async (letter, thunkApi) => {
     try {
-      const { data } = await instance.get('/drinks/search', letter);
+      const { data } = await instance.get('/drinks/search', { body: letter });
 
       return data;
     } catch (err) {
@@ -31,7 +31,9 @@ export const fetchDrinksByCategory = createAsyncThunk(
   'drinks/getByCategory',
   async (category, thunkApi) => {
     try {
-      const { data } = await instance.get('/drinks/search/category', category);
+      const { data } = await instance.get('/drinks/search/category', {
+        body: category,
+      });
 
       return data;
     } catch (err) {

@@ -10,7 +10,6 @@ const SearchSelectIngredients = () => {
 
   const searchByIngredient = (event) => {
     const ingredient = event.target.value;
-    console.log('ingredient', ingredient);
     const formData = {
       searchIngredient: ingredient,
     };

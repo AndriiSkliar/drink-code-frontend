@@ -15,12 +15,12 @@ const SearchBar = () => {
     event.preventDefault();
 
     const letter = event.currentTarget.elements.searchLetter.value;
-    console.log('letter', letter);
+
     const formData = {
       letter: letter,
     };
-
-    dispatch(fetchDrinksByLetter(formData))
+    console.log('data', JSON.stringify(formData));
+    dispatch(fetchDrinksByLetter(JSON.stringify(formData)))
       .unwrap()
       .then(() => event.target.reset());
   };
