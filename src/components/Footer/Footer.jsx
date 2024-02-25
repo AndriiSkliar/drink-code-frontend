@@ -11,7 +11,8 @@ import { Logo } from './Logo/Logo';
 import { FooterNavigation } from './FooterNavigation/FooterNavigation';
 import { SocialLinks } from '../SocialLinks/SocialLinks';
 import { SubscriptionForm } from './SubscriptionForm/SubscriptionForm';
-// import { Link } from 'react-router-dom';
+import PrivacyPolicy from '../../assets/docs/PrivacyPolicy.txt';
+import PublicAgreement from '../../assets/docs/PublicAgreement.txt';
 
 export const Footer = () => {
   return (
@@ -34,16 +35,10 @@ export const Footer = () => {
           ©2023 Drink Master. All rights reserved.
         </DocsLink>
         <DocsSubContainer>
-          <DocsLink
-            href="/drink-code-frontend/src/assets/docs/PrivacyPolicy.txt"
-            download
-          >
+          <DocsLink href={PrivacyPolicy} download>
             Privacy Policy
           </DocsLink>
-          <DocsLink
-            href="/drink-code-frontend/src/assets/docs/PublicAgreement.txt"
-            download
-          >
+          <DocsLink href={PublicAgreement} download>
             Terms of Service
           </DocsLink>
         </DocsSubContainer>

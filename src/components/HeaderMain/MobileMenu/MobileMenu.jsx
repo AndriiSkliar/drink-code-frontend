@@ -15,7 +15,7 @@ const MobileMenu = () => {
         <LineMobile></LineMobile>
         <NavigationList>
           <NavItem>
-            <StyledLink to="/home">Home</StyledLink>
+            <StyledLink to="/">Home</StyledLink>
           </NavItem>
           <NavItem>
             <StyledLink to="/drinks">Drinks</StyledLink>

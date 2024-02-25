@@ -42,12 +42,12 @@ const UserMenu = () => {
     <UserMenuContainer className='user-menu-container'>
       <BtnUserMenu onClick={() => setIsOpenPopupMenu((prev) => !prev)}>
         <AvatarImage
-          src={userAvatar}
+          src={userAvatar || avatar}
           alt="Avatar by defult"
         />
         <p>{name}</p>
       </BtnUserMenu>
-      {isOpenPopupMenu && <UserPopup setUserAvatar={setUserAvatar} userAvatar={userAvatar}/>}
+      {isOpenPopupMenu && <UserPopup setUserAvatar={setUserAvatar} userAvatar={userAvatar} setIsOpenPopupMenu={setIsOpenPopupMenu}/>}
     </UserMenuContainer>
   );
 };

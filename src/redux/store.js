@@ -12,7 +12,7 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-import { cocktailsReducer } from './drinks/cocktails.reducer';
+import { cocktailsReducer } from './drinks/drinksSlice';
 import { authReducer } from './auth/authSlice';
 
 const authConfig = {
