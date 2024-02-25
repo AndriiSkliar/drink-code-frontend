@@ -13,7 +13,7 @@ export const StyledDivNotFound = styled.div`
     font-size: 14px;
     line-height: 1.28571;
     text-align: center;
-    color: #f3f3f3;
+    color: var(--primary-text-color);
 
     @media screen and (min-width: 768px) {
       font-size: 16px;
