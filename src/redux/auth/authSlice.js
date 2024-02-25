@@ -30,7 +30,6 @@ const authSlice = createSlice({
         state.user = payload.user;
         state.token = payload.token;
         state.isLoggedIn = true;
-        console.log(state.token);
       })
       .addCase(authOperations.signOut.pending, state => {
         state.isRefreshing = true;
