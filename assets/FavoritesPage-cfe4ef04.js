@@ -1,4 +1,4 @@
-import{u as t,j as e,N as d,b as c,c as l,r as p,f as x}from"./index-4fa3fb4b.js";import{T as h,S as m,N as f,D as g}from"./NotFound-1ae7f950.js";import{s as w}from"./selectors-5d6c5d01.js";const k=t.li`
+import{u as t,j as e,N as d,b as c,c as l,r as p,f as x}from"./index-c4692de3.js";import{T as h}from"./Title-f233d8e5.js";import{S as m,N as f,D as g}from"./NotFound-53bed4c5.js";import{s as w}from"./selectors-5d6c5d01.js";const k=t.li`
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -105,4 +105,4 @@ import{u as t,j as e,N as d,b as c,c as l,r as p,f as x}from"./index-4fa3fb4b.js
 `,C=t.div`
   display: flex;
   gap: 8px;
-`,z=({name:o,description:r,alcoholic:i,imgUrl:n,handleDelete:s,id:a})=>e.jsxs(k,{children:[e.jsx(u,{src:n,alt:o}),e.jsxs("div",{children:[e.jsx(b,{children:o}),e.jsx(j,{children:i})]}),e.jsx(v,{children:r}),e.jsxs(C,{children:[e.jsx(d,{to:`/drink/${a}`,children:e.jsx(y,{children:"See more"})}),e.jsx(S,{onClick:s,children:e.jsx("svg",{children:e.jsx("use",{xlinkHref:"/src/assets/icons/icons.svg#icon-trash"})})})]})]}),E=()=>{const o=c(),r=l(w);return p.useEffect(()=>{o(x())},[o]),e.jsxs("main",{className:"container",children:[e.jsx(h,{text:"Favorites"}),r.length===0?e.jsxs(m,{children:[e.jsx(f,{}),e.jsx("p",{children:"You haven't added any favorite cocktails yet"})]}):e.jsx(g,{children:r.map(i=>e.jsx(z,{name:i.drink,imgUrl:i.drinkThumb,description:i.description,alcoholic:i.alcoholic,id:i._id},i._id))})]})};export{E as default};
+`,z=({name:o,description:r,alcoholic:i,imgUrl:n,handleDelete:s,id:a})=>e.jsxs(k,{children:[e.jsx(u,{src:n,alt:o}),e.jsxs("div",{children:[e.jsx(b,{children:o}),e.jsx(j,{children:i})]}),e.jsx(v,{children:r}),e.jsxs(C,{children:[e.jsx(d,{to:`/drink/${a}`,children:e.jsx(y,{children:"See more"})}),e.jsx(S,{onClick:s,children:e.jsx("svg",{children:e.jsx("use",{xlinkHref:"/src/assets/icons/icons.svg#icon-trash"})})})]})]}),T=()=>{const o=c(),r=l(w);return p.useEffect(()=>{o(x())},[o]),e.jsxs("main",{className:"container",children:[e.jsx(h,{text:"Favorites"}),r.length===0?e.jsxs(m,{children:[e.jsx(f,{}),e.jsx("p",{children:"You haven't added any favorite cocktails yet"})]}):e.jsx(g,{children:r.map(i=>e.jsx(z,{name:i.drink,imgUrl:i.drinkThumb,description:i.description,alcoholic:i.alcoholic,id:i._id},i._id))})]})};export{T as default};
