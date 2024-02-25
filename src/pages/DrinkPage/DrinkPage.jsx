@@ -8,7 +8,7 @@ import Title from '../../components/Title/Title';
 const defaultImg = 'https://dummyimage.com/335x400';
 
 const DrinkPage = () => {
-  const { drinkId } = useParams();
+  const { id } = useParams();
 
   const [drinkDetails, setDrinkDetails] = useState(null);
   const [isLoading, setIsLoading] = useState(null);
@@ -18,7 +18,7 @@ const DrinkPage = () => {
     const getDrinkDetails = async () => {
       try {
         setIsLoading(true);
-        const data = await getDrinkByID(drinkId);
+        const data = await getDrinkByID(id);
 
         setDrinkDetails(data);
         console.log('data: ', data);
@@ -31,7 +31,7 @@ const DrinkPage = () => {
     };
 
     getDrinkDetails();
-  }, [drinkId]);
+  }, [id]);
   return (
     <StyledDrinkPage className="container">
       {error !== null && <p>{error}</p>}
