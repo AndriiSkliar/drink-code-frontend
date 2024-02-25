@@ -11,7 +11,7 @@ import { useState, useEffect } from 'react';
 const PaginationPanel = ({ pageQuan }) => {
   const navigation = useNavigate();
   const [searchParams] = useSearchParams();
-  const [currentPpage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
 
   //Set number of pages
   const numberOfPages = [];
@@ -73,9 +73,7 @@ const PaginationPanel = ({ pageQuan }) => {
           type="button"
           className={`${currentButton === 1 ? 'disabled' : ''}`}
           onClick={() => {
-            navigation(
-              `?page=${parseInt(currentPage) - 1}`
-            );
+            navigation(`?page=${parseInt(currentPage) - 1}`);
             setCurrentButton((prev) => (prev <= 1 ? prev : prev - 1));
           }}
           disabled={parseInt(currentPage) <= 1}
@@ -92,12 +90,16 @@ const PaginationPanel = ({ pageQuan }) => {
               className={`${parseInt(currentPage) === item ? 'active' : ''}`}
               onClick={(event) => {
                 setCurrentButton(item);
-                if (event.target.dataset.paginationValue !== " ..." && event.target.dataset.paginationValue !== "... " && event.target.dataset.paginationValue !== "...") {
-                  navigation(`?page=${item}`)
-                } else { navigation(`?page=${currentPage}`);
-                  }
+                if (
+                  event.target.dataset.paginationValue !== ' ...' &&
+                  event.target.dataset.paginationValue !== '... ' &&
+                  event.target.dataset.paginationValue !== '...'
+                ) {
+                  navigation(`?page=${item}`);
+                } else {
+                  navigation(`?page=${currentPage}`);
                 }
-              }
+              }}
             >
               {item}
             </PaginationButton>
@@ -110,9 +112,7 @@ const PaginationPanel = ({ pageQuan }) => {
             currentButton === numberOfPages.length ? 'disabled' : ''
           }`}
           onClick={() => {
-            navigation(
-              `?page=${parseInt(currentPage) + 1}`
-            );
+            navigation(`?page=${parseInt(currentPage) + 1}`);
             setCurrentButton((prev) =>
               prev >= numberOfPages.length ? prev : prev + 1
             );
