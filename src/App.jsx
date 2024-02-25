@@ -42,7 +42,7 @@ function App() {
         <Route path="/:id" element={<VerificationPage />}/>  
         <Route path="/welcome" element={
             <PublicRoute
-              redirectTo="/home"
+              redirectTo="/"
               isLoggedIn={isLoggedIn}
               component={<WelcomePage />}
             />
