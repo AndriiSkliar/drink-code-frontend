@@ -5,7 +5,7 @@ import { StyledDrinksList } from './StyledDrinksList';
 
 const DrinksList = ({ title, drinks }) => {
   // Фильтруем коктейли по указанной категории
-  const filteredDrinks = drinks.filter((drink) => drink.category === title);
+  // const filteredDrinks = drinks.filter((drink) => drink.category === title);
 
   // Хук состояния для отслеживания видимого количества коктейлей в зависимости от ширины экрана
   const [visibleDrinks, setVisibleDrinks] = useState(1);
@@ -18,11 +18,11 @@ const DrinksList = ({ title, drinks }) => {
 
       // Установка видимого количества коктейлей в зависимости от ширины экрана
       if (screenWidth >= 1280) {
-        setVisibleDrinks(3);
+        setVisibleDrinks(9);
       } else if (screenWidth >= 768) {
-        setVisibleDrinks(2);
+        setVisibleDrinks(8);
       } else {
-        setVisibleDrinks(1);
+        setVisibleDrinks(10);
       }
     };
 
@@ -37,20 +37,17 @@ const DrinksList = ({ title, drinks }) => {
   }, []); // Пустой массив зависимостей гарантирует вызов useEffect только при монтировании и размонтировании
 
   // Получаем ограниченное количество коктейлей в соответствии с видимым количеством
-  const limitedDrinks = filteredDrinks.slice(0, visibleDrinks);
+  const limitedDrinks = drinks.slice(0, visibleDrinks);
 
   return (
     <StyledDrinksList>
-      {/* Заголовок категории */}
-      <h2 className="drinksListTitle">{title}</h2>
-
-      {/* Список коктейлей */}
       <ul className="drinksList">
         {limitedDrinks.map((drink) => (
           <DrinksItem
             key={drink._id}
             className="drinksListItem"
-            drinkName={drink.drink}
+            id={drink._id}
+            name={drink.drink}
             img={drink.drinkThumb}
           />
         ))}
