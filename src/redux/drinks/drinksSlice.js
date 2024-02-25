@@ -7,6 +7,7 @@ const initialState = {
   cocktails: [],
   popularDrinks: [],
   favoriteCocktails: [],
+  totalFavorites: null,
   isLoading: false,
   error: null,
 };
@@ -33,13 +34,14 @@ const cocktailsSlice = createSlice({
         drinksOperations.fetchFavoriteCocktails.fulfilled,
         (state, { payload }) => {
           state.isLoading = false;
-          state.favoriteCocktails = payload;
+          state.favoriteCocktails = payload.drinks;
+          state.totalFavorites = payload.total;
         }
       )
       .addCase(drinksOperations.addCocktail.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.cocktails = [...state.cocktails, payload];
-        // toast.success(`Now ${payload.name} added`);
+        toast.success(`Now ${payload.name} added`);
       })
       .addCase(
         drinksOperations.deleteOwnCocktail.fulfilled,
@@ -48,7 +50,7 @@ const cocktailsSlice = createSlice({
           state.cocktails = state.cocktails.filter(
             (cocktail) => cocktail._id !== payload._id
           );
-          // toast(`❌ ${payload.name} was deleted`);
+          toast(`❌ ${payload.name} was deleted`);
         }
       )
       .addCase(
