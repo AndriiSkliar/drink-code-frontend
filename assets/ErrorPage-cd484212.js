@@ -1,4 +1,4 @@
-import{n as i,j as e}from"./index-c4692de3.js";const n=i.section`
+import{n as e,j as i}from"./index-1a24e705.js";import{N as n}from"./NotFound-3c651b22.js";const d=e.section`
   background-color: #0a0a11;
   padding-top: 188px;
   padding-bottom: 260px;
@@ -38,7 +38,7 @@ import{n as i,j as e}from"./index-c4692de3.js";const n=i.section`
       bottom: -245px;
     }
   }
-`,d=i.div`
+`,a=e.div`
   width: 241px;
   margin: 0 auto;
   position: relative;
@@ -53,7 +53,7 @@ import{n as i,j as e}from"./index-c4692de3.js";const n=i.section`
   @media screen and (min-width: 1280px) {
     width: 402px;
   }
-`,t=i.p`
+`,t=e.p`
   font-weight: 600;
   font-size: 120px;
   line-height: 102%;
@@ -68,7 +68,7 @@ import{n as i,j as e}from"./index-c4692de3.js";const n=i.section`
     font-size: 200px;
     line-height: 100%;
   }
-`,a=i.span`
+`;e.span`
   width: 123px;
   height: 156px;
   position: absolute;
@@ -91,4 +91,4 @@ import{n as i,j as e}from"./index-c4692de3.js";const n=i.section`
     height: 201px;
     left: 122px;
   }
-`,r=()=>e.jsx(n,{children:e.jsx("div",{className:"container",children:e.jsxs(d,{children:[e.jsx(t,{children:"4"}),e.jsx(a,{}),e.jsx(t,{children:"4"})]})})});export{r as default};
+`;const r=()=>i.jsx(d,{children:i.jsx("div",{className:"container",children:i.jsxs(a,{children:[i.jsx(t,{children:"4"}),i.jsx(n,{width:"123",height:"156"}),i.jsx(t,{children:"4"})]})})});export{r as default};

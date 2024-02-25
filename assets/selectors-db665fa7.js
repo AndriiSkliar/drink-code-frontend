@@ -1,0 +1,1 @@
+const t=s=>s.cocktails.popularDrinks,o=s=>s.cocktails.favoriteCocktails,a=s=>s.cocktails.totalFavorites,c=s=>s.cocktails.isLoading,i=s=>s.cocktails.ownCocktails;export{c as a,a as b,t as c,i as d,o as s};

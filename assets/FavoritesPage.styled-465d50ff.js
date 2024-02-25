@@ -1,10 +1,10 @@
-import{u as t,j as e}from"./index-c4692de3.js";const n=t.ul`
+import{u as t,j as i}from"./index-1a24e705.js";const n=t.ul`
   margin-top: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-`,r=({children:i})=>e.jsx(n,{children:i}),a=t.div`
+`,r=({children:e})=>i.jsx(n,{children:e}),s=t.div`
   margin-top: 40px;
   display: flex;
   justify-content: center;
@@ -31,4 +31,4 @@ import{u as t,j as e}from"./index-c4692de3.js";const n=t.ul`
       height: 326px;
     }
   }
-`,o="/drink-code-frontend/assets/404Cocktail2x-edf5c5fe.png",c="/drink-code-frontend/assets/404Cocktail-5c1fb6aa.png",l=()=>e.jsx("img",{srcSet:c,src:o,alt:"cocktail",width:"198",height:"247"});export{r as D,l as N,a as S};
+`;export{r as D,s as S};
