@@ -1,12 +1,29 @@
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchDrinksByCategory } from '../../../redux/drinks/drinks.reducer.js';
 import { SearchSelectStyled } from './SearchSelect.styled.js';
+import { selectCategory } from '../../../redux/selectors.js';
 
 const SearchSelectCategory = () => {
+  const category = useSelector(selectCategory);
+
+  const dispatch = useDispatch();
+
+  const searchByCategory = (event) => {
+    const searchCategory = event.target.value;
+    const formData = {
+      category: searchCategory,
+    };
+    console.log('category', JSON.stringify(formData));
+    dispatch(fetchDrinksByCategory(JSON.stringify(formData)));
+  };
   return (
     <SearchSelectStyled>
       <select
         id="categories"
-        name="categories"
+        name="category"
+        value={category}
         className="select select-styled"
+        onChange={searchByCategory}
       >
         <option value="hide">All categories</option>
         <option value="ordinary drink">Ordinary Drink</option>
