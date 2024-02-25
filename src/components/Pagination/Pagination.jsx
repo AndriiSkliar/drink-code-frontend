@@ -11,7 +11,7 @@ import { useState, useEffect } from 'react';
 const PaginationPanel = ({ pageQuan }) => {
   const navigation = useNavigate();
   const [searchParams] = useSearchParams();
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPpage, setCurrentPage] = useState(1);
 
   //Set number of pages
   const numberOfPages = [];
