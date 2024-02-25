@@ -11,7 +11,7 @@ import {
   REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-
+import { drinksReducer } from './drinks/drinks.reducer';
 import { cocktailsReducer } from './drinks/cocktails.reducer';
 import { authReducer } from './auth/authSlice';
 
@@ -25,6 +25,7 @@ export const store = configureStore({
   reducer: {
     cocktails: cocktailsReducer,
     auth: persistReducer(authConfig, authReducer),
+    drinks: drinksReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

@@ -11,6 +11,7 @@ import WelcomePage from './pages/WelcomePage/WelcomePage';
 import SignUpPage from './pages/SignUpPage/signUpPage';
 import SignInPage from './pages/SignInPage/SignInPage';
 import VerificationPage from './pages/VerificationPage/VerificationPage';
+
 import { lazy, useEffect } from 'react';
 import { authOperations } from './redux/auth/authOperations';
 import { PrivateRoute } from './helpers/PrivateRoute';
@@ -31,23 +32,24 @@ function App() {
 
   useEffect(() => {
     dispatch(authOperations.currentUser());
-    if (currentPage !== "/") {
+    if (currentPage !== '/') {
       navigate(currentPage);
     }
   }, [dispatch]);
 
-
   return (
-      <Routes>
-        <Route path="/:id" element={<VerificationPage />}/>  
-        <Route path="/welcome" element={
-            <PublicRoute
-              redirectTo="/home"
-              isLoggedIn={isLoggedIn}
-              component={<WelcomePage />}
-            />
-          }
-        />
+    <Routes>
+      <Route path="/:id" element={<VerificationPage />} />
+      <Route
+        path="/welcome"
+        element={
+          <PublicRoute
+            redirectTo="/home"
+            isLoggedIn={isLoggedIn}
+            component={<WelcomePage />}
+          />
+        }
+      />
       <Route
         path="/signin"
         element={
