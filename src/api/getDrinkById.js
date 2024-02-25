@@ -5,7 +5,7 @@ const BASE_URL = 'https://drink-code-backend.onrender.com';
 export const getDrinkByID = async (drinkId) => {
   try {
     const token =
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDhiNjk5MjM4ODViMWJmNjk4NTUyYiIsImlhdCI6MTcwODcwMTM3MywiZXhwIjoxNzA4Nzg0MTczfQ.p3KTjE54SBfCkC6ZYy8xF7G7Tny6eTreZOnAEQTBBlk';
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDhiNjk5MjM4ODViMWJmNjk4NTUyYiIsImlhdCI6MTcwODg1NTk4MiwiZXhwIjoxNzA4OTM4NzgyfQ.kv2PT7GmtO63ox4yZsUg_5PsS8dxMtkktTKNkIgpe-U';
     const config = {
       headers: {
         Authorization: `Bearer ${token}`,
