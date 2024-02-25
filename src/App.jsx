@@ -7,7 +7,6 @@ import WelcomePage from './pages/WelcomePage/WelcomePage';
 import SignUpPage from './pages/SignUpPage/signUpPage';
 import SignInPage from './pages/SignInPage/SignInPage';
 import VerificationPage from './pages/VerificationPage/VerificationPage';
-
 import { Suspense, lazy, useEffect } from 'react';
 import { authOperations } from './redux/auth/authOperations';
 import { PrivateRoute } from './helpers/PrivateRoute';
