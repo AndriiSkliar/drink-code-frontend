@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { getCategoryList } from '../../../api/getCategoryList';
 
 import { CATEGORY } from './category';
 import { GLASSES } from './glasses';
