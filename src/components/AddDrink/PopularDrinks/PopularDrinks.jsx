@@ -32,7 +32,7 @@ export const PopularDrinks = () => {
         {popDrinks.map((drinkPop) => {
           const { drink, description, drinkThumb, _id } = drinkPop;
           return (
-            <LinkDrink key={_id}>
+            <LinkDrink key={_id} to="/drinks/:_id">
               <PopDrinkImage
                 src={drinkThumb}
                 alt={description}
