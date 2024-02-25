@@ -1,4 +1,4 @@
-import{u as m,h,z as k,r as d,j as i}from"./index-dd371cc1.js";import{T as u}from"./Title-522b32fb.js";const l="/drink-code-frontend/assets/drinks-mobile-b94d9f31.jpg",f="/drink-code-frontend/assets/drinks-mobile@2x-cfc7bd4d.jpg",b="/drink-code-frontend/assets/drinks-tablet-ce0a3bb4.jpg",w="/drink-code-frontend/assets/drinks-tablet@2x-2ec4efe3.jpg",j="/drink-code-frontend/assets/drinks-desktop-0dda4d57.jpg",y="/drink-code-frontend/assets/drinks-desktop@2x-eb8bc799.jpg",v=m.div`
+import{u as m,h,z as k,r as d,j as i}from"./index-3b60cef1.js";import{T as u}from"./Title-5b7099e5.js";const l="/drink-code-frontend/assets/drinks-mobile-b94d9f31.jpg",f="/drink-code-frontend/assets/drinks-mobile@2x-cfc7bd4d.jpg",b="/drink-code-frontend/assets/drinks-tablet-ce0a3bb4.jpg",w="/drink-code-frontend/assets/drinks-tablet@2x-2ec4efe3.jpg",j="/drink-code-frontend/assets/drinks-desktop-0dda4d57.jpg",y="/drink-code-frontend/assets/drinks-desktop@2x-eb8bc799.jpg",v=m.div`
   .desc-glass-alco {
     font-weight: 400;
     font-size: 12px;
