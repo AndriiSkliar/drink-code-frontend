@@ -1,7 +1,11 @@
+import AddDrinkFrom from '../../components/AddDrinkR/AddDrinkForm';
+
 const AddDrinkPage = () => {
-    return <div>
-      AddDrinkPage
-  </div>
+  return (
+    <div>
+      <AddDrinkFrom />
+    </div>
+  );
 };
 
 export default AddDrinkPage;
