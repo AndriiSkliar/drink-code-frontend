@@ -11,8 +11,10 @@ import {
   REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+
 import { drinksReducer } from './drinks/drinks.reducer';
 import { cocktailsReducer } from './drinks/cocktails.reducer';
+
 import { authReducer } from './auth/authSlice';
 
 const authConfig = {
