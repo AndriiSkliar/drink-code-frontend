@@ -1,7 +1,7 @@
-import{u as i,j as e,b as o,N as a,c as l,r as p,f as x}from"./index-49c25144.js";import{s as h}from"./selectors-a8ab154e.js";const f=i.h1`
+import{u as i,j as e,N as c,b as d,c as l,r as p,f as x}from"./index-d62e7a3c.js";import{s as h}from"./selectors-a8ab154e.js";const m=i.h1`
   font-size: 32px;
   line-height: 1.1875;
-  color: #f3f3f3;
+  color: var(--primary-text-color);
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     font-size: 56px;
     line-height: 1.07143;
@@ -11,7 +11,7 @@ import{u as i,j as e,b as o,N as a,c as l,r as p,f as x}from"./index-49c25144.js
     font-size: 64px;
     line-height: 1.0625;
   }
-`,g=({text:t})=>e.jsx(f,{children:t}),m=i.ul`
+`,f=({text:t})=>e.jsx(m,{children:t}),g=i.ul`
   margin-top: 40px;
   display: flex;
   justify-content: center;
@@ -27,7 +27,7 @@ import{u as i,j as e,b as o,N as a,c as l,r as p,f as x}from"./index-49c25144.js
     row-gap: 80px;
     justify-content: flex-start;
   }
-`,w=({children:t})=>e.jsx(m,{children:t}),u=i.li`
+`,w=({children:t})=>e.jsx(g,{children:t}),u=i.li`
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -47,18 +47,18 @@ import{u as i,j as e,b as o,N as a,c as l,r as p,f as x}from"./index-49c25144.js
     height: 24px;
     stroke: #f3f3f3;
   }
-`,j=i.img`
+`,k=i.img`
   border-radius: 8px;
   height: 360px;
 
   @media screen and (min-width: 1280px) {
     height: 400px;
   }
-`,k=i.p`
+`,v=i.p`
   font-weight: 400;
   font-size: 14px;
   line-height: 1.28571;
-  color: #f3f3f3;
+  color: var(--primary-text-color);
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -74,31 +74,41 @@ import{u as i,j as e,b as o,N as a,c as l,r as p,f as x}from"./index-49c25144.js
   font-weight: 500;
   font-size: 18px;
   line-height: 1.33333;
-  color: #f3f3f3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  white-space: pre-wrap;
+  color: var(--secondary-text-color);
 
   @media screen and (min-width: 768px) {
     font-size: 24px;
   }
-`,b=i.p`
+`,j=i.p`
   margin-top: 4px;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.28571;
-  color: rgba(243, 243, 243, 0.5);
+  color: var(--secondary-text-color);
 
   @media screen and (min-width: 768px) {
     font-size: 16px;
     line-height: 1.125;
   }
-`,v=i.button`
+`,b=i.button`
   border-radius: 42px;
   border: none;
   padding: 14px 40px;
-  background: #161f37;
+  background: var(--primary-black-color);
   font-weight: 600;
   font-size: 14px;
   line-height: 1.28571;
   color: #f3f3f3;
+
+  &:hover {
+    background: #050e24;
+  }
 
   @media screen and (min-width: 768px) {
     padding: 18px 44px;
@@ -110,8 +120,12 @@ import{u as i,j as e,b as o,N as a,c as l,r as p,f as x}from"./index-49c25144.js
   border: none;
   width: 46px;
   height: 46px;
-  background: #161f37;
+  background: var(--primary-black-color);
   color: #f3f3f3;
+
+  &:hover {
+    background: #050e24;
+  }
 
   @media screen and (min-width: 768px) {
     width: 56px;
@@ -120,7 +134,7 @@ import{u as i,j as e,b as o,N as a,c as l,r as p,f as x}from"./index-49c25144.js
 `,z=i.div`
   display: flex;
   gap: 8px;
-`,C=({name:t,description:s,alcoholic:n,imgUrl:r,handleDelete:d,cocktailLink:c})=>(o(),e.jsxs(u,{children:[e.jsx(j,{src:r,alt:t}),e.jsxs("div",{children:[e.jsx(y,{children:t}),e.jsx(b,{children:n})]}),e.jsx(k,{children:s}),e.jsxs(z,{children:[e.jsx(a,{to:c,children:e.jsx(v,{children:"See more"})}),e.jsx(S,{onClick:d,children:e.jsx("svg",{children:e.jsx("use",{xlinkHref:"/src/assets/icons/icons.svg#icon-trash"})})})]})]})),D=i.div`
+`,C=({name:t,description:o,alcoholic:n,imgUrl:r,handleDelete:s,id:a})=>e.jsxs(u,{children:[e.jsx(k,{src:r,alt:t}),e.jsxs("div",{children:[e.jsx(y,{children:t}),e.jsx(j,{children:n})]}),e.jsx(v,{children:o}),e.jsxs(z,{children:[e.jsx(c,{to:`/drink/${a}`,children:e.jsx(b,{children:"See more"})}),e.jsx(S,{onClick:s,children:e.jsx("svg",{children:e.jsx("use",{xlinkHref:"/src/assets/icons/icons.svg#icon-trash"})})})]})]}),D=i.div`
   margin-top: 40px;
   display: flex;
   justify-content: center;
@@ -133,7 +147,7 @@ import{u as i,j as e,b as o,N as a,c as l,r as p,f as x}from"./index-49c25144.js
     font-size: 14px;
     line-height: 1.28571;
     text-align: center;
-    color: #f3f3f3;
+    color: var(--primary-text-color);
 
     @media screen and (min-width: 768px) {
       font-size: 16px;
@@ -147,4 +161,4 @@ import{u as i,j as e,b as o,N as a,c as l,r as p,f as x}from"./index-49c25144.js
       height: 326px;
     }
   }
-`,F="/drink-code-frontend/assets/404Cocktail2x-edf5c5fe.png",N=()=>e.jsx("img",{src:F,alt:"cocktail",width:"198",height:"247"}),T=()=>{const t=o(),s=l(h);return p.useEffect(()=>{t(x())},[t]),e.jsxs("main",{className:"container",children:[e.jsx(g,{text:"Favorites"}),s.length===0?e.jsxs(D,{children:[e.jsx(N,{}),e.jsx("p",{children:"You haven't added any favorite cocktails yet"})]}):e.jsx(w,{children:s.map(n=>e.jsx(C,{name:n.drink,imgUrl:n.drinkThumb,description:n.description,alcoholic:n.alcoholic,cocktailLink:n._id},n._id))})]})};export{T as default};
+`,F="/drink-code-frontend/assets/404Cocktail2x-edf5c5fe.png",N="/drink-code-frontend/assets/404Cocktail-5c1fb6aa.png",E=()=>e.jsx("img",{srcSet:N,src:F,alt:"cocktail",width:"198",height:"247"}),B=()=>{const t=d(),o=l(h);return p.useEffect(()=>{t(x())},[t]),e.jsxs("main",{className:"container",children:[e.jsx(f,{text:"Favorites"}),o.length===0?e.jsxs(D,{children:[e.jsx(E,{}),e.jsx("p",{children:"You haven't added any favorite cocktails yet"})]}):e.jsx(w,{children:o.map(n=>e.jsx(C,{name:n.drink,imgUrl:n.drinkThumb,description:n.description,alcoholic:n.alcoholic,id:n._id},n._id))})]})};export{B as default};
