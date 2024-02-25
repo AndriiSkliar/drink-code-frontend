@@ -7,10 +7,6 @@ export const StyledDrinkPage = styled.div`
     line-height: 1.16667;
     color: var(--primary-text-color-05);
     margin-top: 8px;
-
-    /* @media (min-width: 768px) {
-      margin-bottom: 0;
-    } */
   }
 
   .desc-drink {
@@ -95,6 +91,8 @@ export const StyledDrinkPage = styled.div`
   .img-ingred {
     background: rgba(22, 31, 55, 0.5);
     border-radius: 8px;
+    width: 157px;
+    height: 157px;
   }
 
   .descr-drink-title {
@@ -119,5 +117,104 @@ export const StyledDrinkPage = styled.div`
     height: 430px;
     margin-top: 40px;
     margin-bottom: 60px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    .container {
+      padding-top: 140px;
+      padding-bottom: 140px;
+    }
+
+    .img-drink {
+      width: 704px;
+    }
+
+    .img-three-drinks {
+      width: 704px;
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    .container {
+      padding-left: 100px;
+      padding-right: 100px;
+      padding-bottom: 140px;
+      padding-top: 132px;
+    }
+    .img-drink {
+      width: 400px;
+    }
+
+    .ingred-list {
+      row-gap: 35px;
+      column-gap: 35px;
+    }
+
+    .descr-drink-title {
+      margin-top: 100px;
+    }
+
+    .img-three-drinks {
+      width: 631px;
+      height: 480px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .desc-glass-alco {
+      font-size: 16px;
+      line-height: 1.25;
+    }
+
+    .desc-drink {
+      font-size: 16px;
+      line-height: 1.375;
+    }
+
+    .btn-add-rem-fav {
+      line-height: 1.125;
+
+      padding-top: 18px;
+      padding-bottom: 18px;
+
+      width: 250px;
+      height: 54px;
+    }
+
+    .img-ingred {
+      background: rgba(22, 31, 55, 0.5);
+      width: 220px;
+      height: 220px;
+    }
+
+    .ingred-name {
+      font-size: 18px;
+      line-height: 1.3333;
+    }
+
+    .ingred-quantity {
+      font-size: 16px;
+      line-height: 1.25;
+    }
+
+    .ingred-descr {
+      margin-top: 14px;
+    }
+
+    .ingred-list {
+      row-gap: 22px;
+      column-gap: 22px;
+      margin-top: 24px;
+    }
+
+    .descr-drink-title {
+      font-size: 40px;
+      line-height: 1.1;
+    }
+
+    .recipe-text {
+      font-size: 16px;
+      line-height: 1.375;
+    }
   }
 `;

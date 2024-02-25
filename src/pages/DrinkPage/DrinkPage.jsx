@@ -56,8 +56,6 @@ const DrinkPage = () => {
                 : defaultImg
             }
             alt={drinkDetails.drink}
-            width="335"
-            height="400"
           />
 
           <h2 className="title-sect-ingred">Ingredients</h2>
@@ -70,8 +68,6 @@ const DrinkPage = () => {
                     className="img-ingred"
                     src={ingredientId.ingredientThumb || defaultImg}
                     alt={title}
-                    width="157"
-                    height="157"
                   />
                   <div className="ingred-descr">
                     <span className="ingred-name">{title}</span>
