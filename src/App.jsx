@@ -36,95 +36,82 @@ function App() {
     }
   }, [dispatch]);
 
-  return (
-    <Suspense fallback={<Loader />}>
-      <Routes>
-        <Route path="/:id" element={<VerificationPage />} />
-        <Route
-          path="/welcome"
-          element={
-            <PublicRoute
-              redirectTo="/"
-              isLoggedIn={isLoggedIn}
-              component={<WelcomePage />}
-            />
-          }
-        />
-        <Route
-          path="/signup"
-          element={
-            <PublicRoute
-              redirectTo="/"
-              isLoggedIn={isLoggedIn}
-              component={<SignUpPage />}
-            />
-          }
-        />
 
+  return (
+    <Suspense fallback={<Loader/>}>
+    <Routes>
+      <Route path="/:id" element={<VerificationPage />} />
+      <Route
+        path="/welcome"
+        element={
+          <PublicRoute
+            redirectTo="/"
+            isLoggedIn={isLoggedIn}
+            component={<WelcomePage />}
+          />
+        }
+      />
+      <Route
+        path="/signup"
+        element={
+          <PublicRoute
+            redirectTo="/"
+            isLoggedIn={isLoggedIn}
+            component={<SignUpPage />}
+          />
+        }
+      />
+
+      <Route
+        path="/signin"
+        element={
+          <PublicRoute
+            redirectTo="/"
+            isLoggedIn={isLoggedIn}
+            component={<SignInPage />}
+          />
+        }
+      />
+      <Route path="/" element={<PrivateRoute redirectTo="/welcome" component={<SharedLayout />}/>} >
         <Route
-          path="/signin"
+          index
           element={
-            <PublicRoute
-              redirectTo="/"
-              isLoggedIn={isLoggedIn}
-              component={<SignInPage />}
-            />
+            <PrivateRoute redirectTo="/welcome" component={<HomePage />} />
           }
         />
         <Route
-          path="/"
+          path="/drinks"
           element={
-            <PrivateRoute redirectTo="/welcome" component={<SharedLayout />} />
+            <PrivateRoute redirectTo="/welcome" component={<DrinksPage />} />
           }
-        >
-          <Route
-            index
-            element={
-              <PrivateRoute redirectTo="/welcome" component={<HomePage />} />
-            }
-          />
-          <Route
-            path="/drinks"
-            element={
-              <PrivateRoute redirectTo="/welcome" component={<DrinksPage />} />
-            }
-          />
-          <Route
-            path="/add"
-            element={
-              <PrivateRoute
-                redirectTo="/welcome"
-                component={<AddDrinkPage />}
-              />
-            }
-          />
-          <Route
-            path="/my"
-            element={
-              <PrivateRoute
-                redirectTo="/welcome"
-                component={<MyDrinksPage />}
-              />
-            }
-          />
-          <Route
-            path="/favorites"
-            element={
-              <PrivateRoute
-                redirectTo="/welcome"
-                component={<FavoritesPage />}
-              />
-            }
-          />
-          <Route
-            path="/drink/:id"
-            element={
-              <PrivateRoute redirectTo="/welcome" component={<DrinkPage />} />
-            }
-          />
-          <Route path="*" element={<ErrorPage />} />
-        </Route>
-      </Routes>
+        />
+        <Route
+          path="/add"
+          element={
+            <PrivateRoute redirectTo="/welcome" component={<AddDrinkPage />} />
+          }
+        />
+        <Route
+          path="/my"
+          element={
+            <PrivateRoute redirectTo="/welcome" component={<MyDrinksPage />} />
+          }
+        />
+        <Route
+          path="/favorites"
+          element={
+            <PrivateRoute redirectTo="/welcome" component={<FavoritesPage />} />
+          }
+        />
+        <Route
+          path="/drink/:id"
+          element={
+            <PrivateRoute redirectTo="/welcome" component={<DrinkPage />} />
+          }
+        />
+        <Route path="*" element={<ErrorPage />} />
+      </Route>
+    </Routes>
     </Suspense>
   );
 }
