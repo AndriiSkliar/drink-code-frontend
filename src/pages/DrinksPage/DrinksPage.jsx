@@ -25,15 +25,12 @@ const DrinksPage = () => {
     const screenWidth = window.innerWidth;
 
     if (screenWidth >= 1280) {
-      console.log('drinks.length', drinks.length);
       pageQuan = Math.ceil(drinks.length / 9);
     } else if (screenWidth >= 768) {
-      console.log('drinks.length', drinks.length);
       pageQuan = Math.ceil(drinks.length / 8);
     } else {
       pageQuan = Math.ceil(drinks.length / 10);
     }
-    console.log('PageQuan', pageQuan);
   }
   return (
     <StyledDrinksPage>
