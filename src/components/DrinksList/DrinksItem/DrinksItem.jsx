@@ -3,7 +3,6 @@ import { StyledDrinksItem } from './StyledDrinksItem';
 import { NavLink } from 'react-router-dom';
 
 const DrinksItem = ({ id, drinkName, img }) => {
-  console.log('drink', drinkName);
   return (
     <StyledDrinksItem>
       <div className="imgContainer">

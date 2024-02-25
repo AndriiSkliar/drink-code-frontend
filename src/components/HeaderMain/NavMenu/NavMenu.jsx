@@ -1,12 +1,11 @@
 // @ts-nocheck
-import { NavigationList, NavItem, StyledLink } from "./NavMenu.styled"
-
+import { NavigationList, NavItem, StyledLink } from './NavMenu.styled';
 
 const NavMenu = () => {
   return (
     <NavigationList>
       <NavItem>
-        <StyledLink to="/">Home</StyledLink>
+        <StyledLink to="/home">Home</StyledLink>
       </NavItem>
       <NavItem>
         <StyledLink to="/drinks">Drinks</StyledLink>
@@ -21,7 +20,7 @@ const NavMenu = () => {
         <StyledLink to="favorites">Favorites</StyledLink>
       </NavItem>
     </NavigationList>
-  )
-}
+  );
+};
 
-export default NavMenu
+export default NavMenu;

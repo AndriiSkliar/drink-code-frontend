@@ -45,7 +45,7 @@ function App() {
         path="/welcome"
         element={
           <PublicRoute
-            redirectTo="/"
+            redirectTo="/home"
             isLoggedIn={isLoggedIn}
             component={<WelcomePage />}
           />
@@ -56,7 +56,7 @@ function App() {
         path="/signin"
         element={
           <PublicRoute
-            redirectTo="/"
+            redirectTo="/home"
             isLoggedIn={isLoggedIn}
             component={<SignInPage />}
           />
@@ -67,7 +67,7 @@ function App() {
         path="/signup"
         element={
           <PublicRoute
-            redirectTo="/"
+            redirectTo="/home"
             isLoggedIn={isLoggedIn}
             component={<SignUpPage />}
           />
