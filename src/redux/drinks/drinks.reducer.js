@@ -18,7 +18,7 @@ export const fetchDrinksByLetter = createAsyncThunk(
   'drinks/getByLetter',
   async (letter, thunkApi) => {
     try {
-      const { data } = await instance.get('/drinks/search', { body: letter });
+      const { data } = await instance.get(`/drinks/search?letter=${letter}`);
 
       return data;
     } catch (err) {

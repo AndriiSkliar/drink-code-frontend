@@ -16,11 +16,11 @@ const SearchBar = () => {
 
     const letter = event.currentTarget.elements.searchLetter.value;
 
-    const formData = {
-      letter: letter,
-    };
-    console.log('data', JSON.stringify(formData));
-    dispatch(fetchDrinksByLetter(JSON.stringify(formData)))
+    // const formData = {
+    //   letter: letter,
+    // };
+    // console.log('data', JSON.stringify(formData));
+    dispatch(fetchDrinksByLetter(letter))
       .unwrap()
       .then(() => event.target.reset());
   };
