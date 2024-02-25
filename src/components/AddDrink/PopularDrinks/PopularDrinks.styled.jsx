@@ -1,6 +1,18 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
+export const AsideContainer = styled.aside`
+  @media screen and (min-width: 768px) {
+    max-width: 704px;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 1440px) {
+    max-width: 313px;
+    margin: 0 0 0 auto;
+  }
+`;
+
 export const TitlePopularDrinks = styled.h3`
   font-weight: 500;
   font-size: 18px;
@@ -9,7 +21,7 @@ export const TitlePopularDrinks = styled.h3`
   margin-bottom: 28px;
   margin-top: 40px;
 
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     font-size: 24px;
     margin-bottom: 40px;
     margin-top: 80px;
@@ -22,14 +34,14 @@ export const Content = styled.div`
   align-items: center;
   row-gap: 24px;
 
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     flex-direction: row;
     flex-wrap: wrap;
     row-gap: 32px;
     column-gap: 32px;
   }
 
-  @media screen and (min-width: 1440px){
+  @media screen and (min-width: 1440px) {
     flex-direction: column;
     flex-wrap: nowrap;
     row-gap: 28px;
@@ -40,10 +52,19 @@ export const LinkDrink = styled(NavLink)`
   display: flex;
   align-items: flex-start;
   column-gap: 14px;
+  &:hover,
+  &:focus {
+    img {
+      -webkit-box-shadow: 0px 0px 17px 1px rgba(14, 20, 92, 1);
+      -moz-box-shadow: 0px 0px 17px 1px rgba(14, 20, 92, 1);
+      box-shadow: 0px 0px 17px 1px rgba(14, 20, 92, 1);
+    }
+  }
 `;
 
 export const PopDrinkImage = styled.img`
   border-radius: 8px;
+  transition: all 400ms ease;
 `;
 
 export const NameDrink = styled.h4`
@@ -67,7 +88,7 @@ export const DrinkDescription = styled.p`
   overflow: hidden;
   text-overflow: ellipsis;
 
-  @media screen and (min-width: 1440px){
+  @media screen and (min-width: 1440px) {
     line-height: 1.428;
   }
 `;

@@ -10,6 +10,7 @@ import {
   LinkDrink,
   Content,
   TitlePopularDrinks,
+  AsideContainer,
 } from './PopularDrinks.styled';
 
 export const PopularDrinks = () => {
@@ -21,7 +22,7 @@ export const PopularDrinks = () => {
   }, [dispatch]);
 
   return (
-    <div >
+    <AsideContainer>
       <TitlePopularDrinks>Popular drinks</TitlePopularDrinks>
       <Content>
         {popDrinks.map((drinkPop) => {
@@ -42,6 +43,6 @@ export const PopularDrinks = () => {
           );
         })}
       </Content>
-    </div>
+    </AsideContainer>
   );
 };
