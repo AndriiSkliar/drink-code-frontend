@@ -1,17 +1,16 @@
 // @ts-nocheck
 import { Route, Routes } from 'react-router-dom';
-import {useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import SharedLayout from './components/SharedLayout/SharedLayout';
 import PublicRoute from './helpers/PublicRoute';
 import WelcomePage from './pages/WelcomePage/WelcomePage';
 import SignUpPage from './pages/SignUpPage/signUpPage';
 import SignInPage from './pages/SignInPage/SignInPage';
 import VerificationPage from './pages/VerificationPage/VerificationPage';
-import { Suspense, lazy, useEffect } from 'react';
+import { lazy, useEffect } from 'react';
 import { authOperations } from './redux/auth/authOperations';
 import authSelectors from './redux/auth/authSelectors';
 import { PrivateRoute } from './helpers/PrivateRoute';
-import { Loader } from './components/Loader/Loader';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const ErrorPage = lazy(() => import('./pages/ErrorPage/ErrorPage'));
@@ -30,7 +29,6 @@ function App() {
   }, [dispatch]);
 
   return (
-
     <Routes>
       <Route path="/:id" element={<VerificationPage />} />
       <Route
@@ -43,7 +41,7 @@ function App() {
           />
         }
       />
-       <Route
+      <Route
         path="/signup"
         element={
           <PublicRoute
@@ -64,18 +62,13 @@ function App() {
           />
         }
       />
+      <Route path="/" element={<SharedLayout />} >
         <Route
-          path="/"
+          index
           element={
-            <PrivateRoute redirectTo="/welcome" component={<SharedLayout />} />
+            <PrivateRoute redirectTo="/welcome" component={<HomePage />} />
           }
-        >
-          <Route
-            index
-            element={
-              <PrivateRoute redirectTo="/welcome" component={<HomePage />} />
-            }
-          /></Route>
+        />
         <Route
           path="/drinks"
           element={
@@ -107,7 +100,8 @@ function App() {
           }
         />
         <Route path="*" element={<ErrorPage />} />
+      </Route>
     </Routes>
   );
-        }
+}
 export default App;
