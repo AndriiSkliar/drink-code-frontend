@@ -61,20 +61,21 @@ const cocktailsSlice = createSlice({
         drinksOperations.addToFavorites.fulfilled,
         (state, { payload }) => {
           state.isLoading = false;
-          state.cocktails = state.cocktails.filter(
-            (cocktail) => cocktail._id !== payload._id
-          );
-          state.cocktails = [...state.cocktails, payload];
+          state.favoriteCocktails = [
+            ...state.favoriteCocktails,
+            payload.result,
+          ];
+          state.totalFavorites = state.totalFavorites += 1;
         }
       )
       .addCase(
         drinksOperations.deleteFromFavorites.fulfilled,
         (state, { payload }) => {
           state.isLoading = false;
-          state.cocktails = state.cocktails.filter(
-            (cocktail) => cocktail._id !== payload._id
+          state.favoriteCocktails = state.favoriteCocktails.filter(
+            (cocktail) => cocktail._id !== payload.result._id
           );
-          state.cocktails = [...state.cocktails, payload];
+          state.totalFavorites = state.totalFavorites -= 1;
         }
       )
       .addMatcher(
