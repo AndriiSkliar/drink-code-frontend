@@ -1,7 +1,7 @@
 import cocktail2x from '../../assets/images/404Cocktail2x.png';
 import cocktail from '../../assets/images/404Cocktail.png';
 
-export const NotFoundCocktail = ({ width, height }) => {
+const NotFoundCocktail = ({ width, height }) => {
   return (
     <img
       srcSet={cocktail}
@@ -12,3 +12,5 @@ export const NotFoundCocktail = ({ width, height }) => {
     />
   );
 };
+
+export default NotFoundCocktail;

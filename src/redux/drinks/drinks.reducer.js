@@ -31,9 +31,7 @@ export const fetchDrinksByCategory = createAsyncThunk(
   'drinks/getByCategory',
   async (category, thunkApi) => {
     try {
-      const { data } = await instance.get('/drinks/search/category', {
-        body: category,
-      });
+      const { data } = await instance.get(`/drinks/search/category?category=${category}`);
 
       return data;
     } catch (err) {
@@ -46,9 +44,7 @@ export const fetchDrinksByIngredient = createAsyncThunk(
   'drinks/getByIngredient',
   async (ingredient, thunkApi) => {
     try {
-      const { data } = await instance.get('/drinks/search/ingredients', {
-        body: ingredient,
-      });
+      const { data } = await instance.get(`/drinks/search/ingredients?ingredient=${ingredient}`);
 
       return data;
     } catch (err) {
