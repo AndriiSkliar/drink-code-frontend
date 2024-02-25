@@ -3,7 +3,6 @@ import { PopularDrinks } from "../../components/AddDrink/PopularDrinks/PopularDr
 
 const AddDrinkPage = () => {
     return <div className="container">
-      AddDrinkPage
       <PopularDrinks/>
   </div>
 };

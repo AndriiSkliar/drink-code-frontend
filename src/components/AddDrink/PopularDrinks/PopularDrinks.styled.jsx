@@ -28,6 +28,19 @@ export const TitlePopularDrinks = styled.h3`
   }
 `;
 
+export const TitleFollowUs = styled.h3`
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.33333;
+  color: var(--primary-text-color);
+  margin-bottom: 20px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+`
+
 export const Content = styled.div`
   display: flex;
   flex-direction: column;

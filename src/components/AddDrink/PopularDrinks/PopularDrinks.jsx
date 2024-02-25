@@ -11,7 +11,9 @@ import {
   Content,
   TitlePopularDrinks,
   AsideContainer,
+  TitleFollowUs,
 } from './PopularDrinks.styled';
+import FollowUs from '../FollowUs/FollowUs';
 
 export const PopularDrinks = () => {
   const popDrinks = useSelector(selectPopularDrinks);
@@ -23,6 +25,8 @@ export const PopularDrinks = () => {
 
   return (
     <AsideContainer>
+      <TitleFollowUs>Follow Us</TitleFollowUs>
+      <FollowUs/>
       <TitlePopularDrinks>Popular drinks</TitlePopularDrinks>
       <Content>
         {popDrinks.map((drinkPop) => {
