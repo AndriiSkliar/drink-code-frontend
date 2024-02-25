@@ -130,11 +130,11 @@ export default function SigninForm() {
                 </InputWrapper>
               </>
 
-              <Button type="submit">Sign In</Button>
+                <Button type="submit">Sign In</Button>
+                <Link to="/signup">Sign Up</Link>
             </AuthForm>
           )}
         </Formik>
-        <Link to="/signup">Sign Up</Link>
       </Container>
     </WelcomeWrapper>
   );
