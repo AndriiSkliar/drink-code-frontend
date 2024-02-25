@@ -12,5 +12,5 @@ export default defineConfig({
       assets: '/src/assets',
     },
   },
-  base: '/drink-code-frontend/',
+  base: '/drink-code-frontend',
 });

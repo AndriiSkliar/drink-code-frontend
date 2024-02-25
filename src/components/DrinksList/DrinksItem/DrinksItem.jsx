@@ -14,7 +14,6 @@ const DrinksItem = ({ id, drinkName, img }) => {
       <div className="contentContainer">
         <h3 className="drinkName">{drinkName}</h3>
 
-        {/* Ссылка на страницу с рецептом коктейля */}
         <NavLink to={`/drink/${id}`} className="seeMoreLink">
           See more
         </NavLink>

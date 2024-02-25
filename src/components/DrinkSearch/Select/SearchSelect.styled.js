@@ -23,8 +23,8 @@ export const SearchSelectStyled = styled.div`
     // left: 0;
     background-color: #161f37;
     border: 2px solid transparent;
-    border-radius: 20px;
-    padding: 8px 15px;
+    border-radius: 30px;
+    padding: 10px;
     @include transition(all 0.2s ease-in);
     &:after {
       content: '';

@@ -16,17 +16,19 @@ export const AddAvatar = styled.input`
     color: #f3f3f3;
     font-size: 32px;
     font-weight: 400;
+    padding-top: 2px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
     top: 64%;
-    left: 33%;
+    left: 30%;
 
     @media screen and (min-width: 768px){
       padding-top: 2px;
       top: 68%;
+      left: 36%;
     }
   }
 `;

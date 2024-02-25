@@ -5,6 +5,7 @@ const NavMenu = () => {
   return (
     <NavigationList>
       <NavItem>
+        {/* //! /home-это правильно  не трогать бо ПРИДУШУ!!! */}
         <StyledLink to="/home">Home</StyledLink>
       </NavItem>
       <NavItem>

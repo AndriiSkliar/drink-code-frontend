@@ -25,13 +25,13 @@ export const FollowIconLink = styled.a`
   justify-content: center;
 
   border-radius: 10px;
-  border: 1px solid #ffff;
+  border: 1px solid var(--primary-text-color);
 
   transition: border-color 250ms ease;
 
   &:hover,
   &:focus {
-    border: 1px solid #ffff;
+    border: 1px solid var(--primary-text-color);
   }
 
   @media screen and (min-width: 768px) {
@@ -43,7 +43,7 @@ export const FollowIconLink = styled.a`
 export const IconSvg = styled.svg`
   width: 22px;
   height: 22px;
-  fill: #ffff;
+  fill: var(--primary-text-color);
 
   @media screen and (min-width: 768px) {
     width: 28px;
