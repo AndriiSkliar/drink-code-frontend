@@ -2,6 +2,33 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { instance } from '../auth/authOperations';
 
+export const fetchHomePageDrinks = createAsyncThunk(
+  'cocktails/fetchHomepage',
+  async (_, thunkApi) => {
+    try {
+      const { token } = thunkApi.getState().auth; //берем токен из auth
+      // console.log(token)
+      if (!token) {
+        return null;
+      }
+
+      const config = {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      };
+
+      const resp = await instance.get('/drinks/mainpage', config);
+      const data = resp.data;
+      // console.log('fetchHomePageDrinks data', data);
+      return data;
+    } catch (error) {
+      console.error('Error while fetching data', error);
+      throw error;
+    }
+  }
+);
+
 export const fetchCocktails = createAsyncThunk(
   'cocktails/getAll',
   async (_, thunkApi) => {
@@ -19,7 +46,7 @@ export const fetchOwnCoctails = createAsyncThunk(
   async (_, thunkApi) => {
     try {
       const { data } = await instance.get('/drinks/own');
-      
+
       return data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);
@@ -98,12 +125,9 @@ export const addToFavorites = createAsyncThunk(
 
 export const deleteFromFavorites = createAsyncThunk(
   'cocktails/deleteFromFavorites',
-  async (cocktail, thunkApi) => {
+  async (id, thunkApi) => {
     try {
-      const { data } = await instance.delete(
-        `/drinks/favorites/remove/${cocktail.id}`,
-        cocktail
-      );
+      const { data } = await instance.delete(`/drinks/favorites/remove/${id}`);
 
       return data;
     } catch (err) {
@@ -119,5 +143,5 @@ export const drinksOperations = {
   deleteOwnCocktail,
   addToFavorites,
   deleteFromFavorites,
-  fetchOwnCoctails,
+  fetchHomePageDrinks,
 };

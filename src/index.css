@@ -6,8 +6,10 @@
   --switcher-ball: #161f37;
   --border-header: rgba(243, 243, 243, 0.2);
   --link-bg: #f3f3f3;
+  --link-bg-hover: #f3f3f3;
   --link-text: #161f37;
   --secondary-text-color: rgba(243, 243, 243, 0.5);
+  --pagination-color: hsla(220, 59%, 53%, 0.5);
 }
 
 [data-theme='light'] {
@@ -20,7 +22,8 @@
   --link-bg: #161f37;
   --link-bg-hover: #434d67;
   --link-text: #f3f3f3;
-  --secondary-text-color:  rgba(10, 10, 17, 0.5);
+  --secondary-text-color: rgba(10, 10, 17, 0.5);
+  --pagination-color: #4070cd;
 }
 
 :root {
