@@ -25,19 +25,15 @@ const DrinkPage = lazy(() => import('./pages/DrinkPage/DrinkPage'));
 function App() {
   const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
   const location = useLocation();
-  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [currentPage, setCurrentPage] = useState(location.pathname);
-  
-useEffect(() => {
-  if(!isLoggedIn) {
-    setCurrentPage('/welcome');
-  }
-}, [])
+  const [currentPage] = useState(location.pathname);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(authOperations.currentUser());
-       navigate(currentPage);
+    if (currentPage !== '/') {
+      navigate(currentPage);
+    }
   }, [dispatch]);
 
 
