@@ -1,11 +1,11 @@
 import axios from 'axios';
-// const BASE_URL = 'https://drink-code-backend.onrender.com';
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'https://drink-code-backend.onrender.com';
+// const BASE_URL = 'http://localhost:3000';
 
 export const getDrinkByID = async (drinkId) => {
   try {
     const token =
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDhiNjk5MjM4ODViMWJmNjk4NTUyYiIsImlhdCI6MTcwODg1NjYzNSwiZXhwIjoxNzA4OTM5NDM1fQ.eo5HX__0KGmD9dpSnGvg_e1v4nPUlEhVcAZLUwP2_uQ';
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZGIxZWJlOTVlMWJiNzg5YzM1ZGQyNyIsImlhdCI6MTcwODg2NjA0OSwiZXhwIjoxNzA4OTQ4ODQ5fQ.osp_1ZqYZdy5i0U9T89EM5FyIwkFMkjxuuIF-rxf3Fs';
     const config = {
       headers: {
         Authorization: `Bearer ${token}`,
