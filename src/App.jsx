@@ -23,10 +23,10 @@ const DrinkPage = lazy(() => import('./pages/DrinkPage/DrinkPage'));
 function App() {
   const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(authOperations.currentUser());
   }, [dispatch]);
+
 
   return (
     <Routes>
