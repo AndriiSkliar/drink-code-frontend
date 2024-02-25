@@ -2,7 +2,6 @@
 /* eslint-disable no-unused-vars */
 // @ts-nocheck
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import authSelectors from './redux/auth/authSelectors';
 import SharedLayout from './components/SharedLayout/SharedLayout';
@@ -27,14 +26,13 @@ function App() {
   const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
   const location = useLocation();
   const navigate = useNavigate();
-  const [currentPage, setCurrentPage] = useState(location.pathname);
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(authOperations.currentUser());
-    if (currentPage !== '/') {
-      navigate(currentPage);
+    if(!isLoggedIn) {
+      navigate("/welcome");
     }
+      navigate(location.pathname);
   }, [dispatch]);
 
   return (
@@ -44,7 +42,6 @@ function App() {
         <Route path="/welcome" element={
             <PublicRoute
               redirectTo="/"
-              isLoggedIn={isLoggedIn}
               component={<WelcomePage />}
             />
           }
@@ -55,7 +52,6 @@ function App() {
         element={
           <PublicRoute
             redirectTo="/"
-            isLoggedIn={isLoggedIn}
             component={<SignInPage />}
           />
         }
