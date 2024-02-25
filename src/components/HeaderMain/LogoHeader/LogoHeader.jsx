@@ -1,6 +1,6 @@
 // @ts-nocheck
 import sprite from '/src/assets/icons/icons.svg';
-import { SvgIcon, LogoLink } from './LogoHeader.styled';
+import { SvgIcon, LogoLink, IconText } from './LogoHeader.styled';
 
 const LogoHeader = () => {
   return (
@@ -9,7 +9,7 @@ const LogoHeader = () => {
         <SvgIcon>
           <use xlinkHref={`${sprite}#icon-Vector`}></use>
         </SvgIcon>
-        Drink Master
+        <IconText>Drink Master</IconText>
       </LogoLink>
     </>
   );
