@@ -1,10 +1,5 @@
 // @ts-nocheck
-import {
-  ContainerHeader,
-  MainHeader,
-  MobileBox,
-  NavigationHeader,
-} from './Header.styled';
+import { MainHeader, MobileBox, NavigationHeader } from './Header.styled';
 import { useState, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import BurgerMenuButton from './BurgerMenuButton/BurgerMenuButton';
@@ -16,7 +11,7 @@ import NavMenu from './NavMenu/NavMenu';
 
 const HeaderMain = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
-  const isDesktop = useMediaQuery({minWidth: 1280});
+  const isDesktop = useMediaQuery({ minWidth: 1280 });
 
   useEffect(() => {
    if(typeof window !== "undefined") {
@@ -30,21 +25,19 @@ const HeaderMain = () => {
 
   return (
     <MainHeader>
-      <ContainerHeader>
-        <NavigationHeader>
-          <LogoHeader />
-          <NavMenu/>
-          <MobileBox>
-          <ToggleDesktop isOpenMenu={isOpenMenu}/>
+      <NavigationHeader>
+        <LogoHeader />
+        <NavMenu />
+        <MobileBox>
+          <ToggleDesktop isOpenMenu={isOpenMenu} />
           {!isOpenMenu && <UserMenu />}
-            <BurgerMenuButton
-              isOpenMenu={isOpenMenu}
-              setIsOpenMenu={setIsOpenMenu}
-            />
-          </MobileBox>
-          {isOpenMenu && !isDesktop && <MobileMenu />}
-        </NavigationHeader>
-      </ContainerHeader>
+          <BurgerMenuButton
+            isOpenMenu={isOpenMenu}
+            setIsOpenMenu={setIsOpenMenu}
+          />
+        </MobileBox>
+        {isOpenMenu && !isDesktop && <MobileMenu />}
+      </NavigationHeader>
     </MainHeader>
   );
 };
