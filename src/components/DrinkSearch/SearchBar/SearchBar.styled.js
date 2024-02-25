@@ -1,19 +1,35 @@
 import styled from 'styled-components';
-import { ReactComponent as SearchIcon } from '../../../assets/icons/search.svg';
+import { ReactComponent as SearchIcon } from 'src/assets/icons/search.svg';
 
 export const Icon = styled(SearchIcon)`
-  width: 20px;
-  height: 20px;
-  fill: #f3f3f3;
+  width: 28px;
+  height: 28px;
+
   @media (min-width: 768px) {
-    width: 28px;
-    height: 28px;
+    width: 20px;
+    height: 20px;
   }
 `;
+
+export const StyledSearchButton = styled.button`
+  border: none;
+  width: 28px;
+  height: 28px;
+  background: transparent;
+  color: #f3f3f3;
+  text-align: center;
+
+  @media screen and (min-width: 768px) {
+    width: 20px;
+    height: 20px;
+  }
+`;
+
 export const SearchBarStyled = styled.div`
  
   .SearchForm {
     display: flex;
+    padding:18px;
     align-items: center;
     width: 100%;
     max-width: 335px;
@@ -33,13 +49,12 @@ export const SearchBarStyled = styled.div`
     // height: 48px;
     bacground-color: transparent;
     opacity: 0;
+    padding:18px;
     // transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
     // cursor: pointer;
     // outline: none;
   }
-  .serch-icon{
-    fiil; #f3f3f3;
-  }
+  
   .SearchForm-button:hover {
     opacity: 1;
   }
@@ -77,11 +92,9 @@ export const SearchBarStyled = styled.div`
   }
    @media (min-width: 768px) {
      .SearchForm {
-
     max-width: 264px;
-    
-    
   }
+  
   }
 
 `;
