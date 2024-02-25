@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { instance } from '../auth/authOperations';
 
@@ -14,13 +15,24 @@ export const fetchCocktails = createAsyncThunk(
   }
 );
 
+export const fetchPopularDrinks = createAsyncThunk('cocktails/getPopular',
+ async (_, thunkApi) => {
+  try {
+    const {data} = await instance.get('/drinks/popular');
+    return data;
+  } catch (error) {
+    return thunkApi.rejectWithValue(error.message);
+  }
+ }
+);
+
 export const fetchFavoriteCocktails = createAsyncThunk(
   'cocktails/getFavorite',
   async (_, thunkApi) => {
     try {
       const { data } = await instance.get('/drinks/favorites');
-      console.log(data);
-      return data.drinks;
+
+      return data;
     } catch (err) {
       return thunkApi.rejectWithValue(err.message);
     }
@@ -88,6 +100,7 @@ export const deleteFromFavorites = createAsyncThunk(
 );
 export const drinksOperations = {
   fetchCocktails,
+  fetchPopularDrinks,
   fetchFavoriteCocktails,
   addCocktail,
   deleteOwnCocktail,

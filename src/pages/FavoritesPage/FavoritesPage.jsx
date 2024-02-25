@@ -36,7 +36,7 @@ const FavoritesPage = () => {
               imgUrl={cocktail.drinkThumb}
               description={cocktail.description}
               alcoholic={cocktail.alcoholic}
-              cocktailLink={cocktail._id}
+              id={cocktail._id}
               key={cocktail._id}
             />
           ))}

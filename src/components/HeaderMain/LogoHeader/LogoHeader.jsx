@@ -1,18 +1,18 @@
 // @ts-nocheck
-
-import { SvgIcon, LogoLink } from "./LogoHeader.styled"
+import sprite from '/src/assets/icons/icons.svg';
+import { SvgIcon, LogoLink, IconText } from './LogoHeader.styled';
 
 const LogoHeader = () => {
   return (
     <>
-        <LogoLink to="/home">
-           <SvgIcon>
-            <use xlinkHref="/src/assets/icons/icons.svg#icon-Vector"></use>
-           </SvgIcon>
-            Drink Master
-        </LogoLink>
+      <LogoLink to="/">
+        <SvgIcon>
+          <use xlinkHref={`${sprite}#icon-Vector`}></use>
+        </SvgIcon>
+        <IconText>Drink Master</IconText>
+      </LogoLink>
     </>
-  )
-}
+  );
+};
 
-export default LogoHeader
+export default LogoHeader;

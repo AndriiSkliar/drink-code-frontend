@@ -3,11 +3,12 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const instance = axios.create({
-  baseURL: 'https://drink-code-backend.onrender.com/api',
+    baseURL: 'https://drink-code-backend.onrender.com/api',
+    // baseURL: 'http://localhost:3000/api',
 });
 // для внешнего хостинга
-instance.defaults.baseURL = 'https://drink-code-backend.onrender.com/api';
-// instance.defaults.baseURL = 'http://localhost:3000/api';
+axios.defaults.baseURL = 'https://drink-code-backend.onrender.com/api';   
+// axios.defaults.baseURL = 'http://localhost:3000/api';
 
 const authHeaderToken = {
   set(token) {
@@ -26,7 +27,7 @@ const signUp = createAsyncThunk(
       authHeaderToken.set(data.token);
       return data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error.response.data.message); 
     }
   }
 );
@@ -39,7 +40,7 @@ const signIn = createAsyncThunk(
       authHeaderToken.set(data.token);
       return data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error.response.data.message);
     }
   }
 );
@@ -49,7 +50,7 @@ const signOut = createAsyncThunk('auth/signout', async (_, thunkAPI) => {
     await instance.post('/auth/signout');
     authHeaderToken.unset();
   } catch (error) {
-    return thunkAPI.rejectWithValue(error.message);
+    return thunkAPI.rejectWithValue(error.response.data.message);
   }
 });
 
@@ -58,7 +59,7 @@ const currentUser = createAsyncThunk(
   async (_, thunkAPI) => {
     const { token } = thunkAPI.getState().auth;
 
-    if (!token) {
+    if (token === null) {
       return thunkAPI.rejectWithValue('Unable to fetch User');
     }
 
@@ -67,7 +68,7 @@ const currentUser = createAsyncThunk(
       const res = await instance.get('/users/current');
       return res.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error.response.data.message);
     }
   },
   {
@@ -110,7 +111,7 @@ export const subscribeEmail = createAsyncThunk(
     try {
       await instance.post('/users/subscribe', data);
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error);
     }
   }
 );
@@ -144,11 +145,12 @@ export const updateUser = createAsyncThunk(
 );
 
 export const authOperations = {
-  signUp,
+  signUp,  
   signIn,
   signOut,
   currentUser,
   subscribeEmail,
+  refreshThunk,
   themeThunk,
   updateUser,
 };

@@ -1,10 +1,18 @@
 // @ts-nocheck
-import { useState, useEffect } from "react"
-import {EditBtn, EditProfileText, PopupContainer, SvgIconEdit, FlexContainer, LogoutBtnPopup} from "./UserPopup.styled"
-import LogoutSure from "../LogoutSure/LogoutSure";
-import EditProfileForm from "../EditProfileForm/EditProfileForm";
+import { useState, useEffect } from 'react';
+import {
+  EditBtn,
+  EditProfileText,
+  PopupContainer,
+  SvgIconEdit,
+  FlexContainer,
+  LogoutBtnPopup,
+} from './UserPopup.styled';
+import LogoutSure from '../LogoutSure/LogoutSure';
+import EditProfileForm from '../EditProfileForm/EditProfileForm';
+import sprite from '/src/assets/icons/icons.svg';
 
-const UserPopup = ({setUserAvatar, userAvatar}) => {
+const UserPopup = ({ setUserAvatar, userAvatar, setIsOpenPopupMenu }) => {
   const [isOpenLogout, setIsOpenLogout] = useState(false);
   const [isEditOpen, setIsEditOpen] = useState(false);
 
@@ -25,19 +33,28 @@ const UserPopup = ({setUserAvatar, userAvatar}) => {
 
   return (
     <PopupContainer>
-       <FlexContainer>
-         <EditBtn type="button" onClick={() => setIsEditOpen(true)}>
-         <EditProfileText>Edit profile</EditProfileText>
+      <FlexContainer>
+        <EditBtn type="button" onClick={() => setIsEditOpen(true)}>
+          <EditProfileText>Edit profile</EditProfileText>
           <SvgIconEdit>
-            <use xlinkHref="/src/assets/icons/icons.svg#icon-pencil"></use>
+            <use xlinkHref={`${sprite}#icon-pencil`}></use>
           </SvgIconEdit>
-         </EditBtn>
-       </FlexContainer>
-       <LogoutBtnPopup onClick={() => setIsOpenLogout(prev => !prev)}>Log out</LogoutBtnPopup>
-       {isEditOpen && <EditProfileForm setIsEditOpen={setIsEditOpen} setUserAvatar={setUserAvatar} userAvatar={userAvatar}/>}
-       {isOpenLogout && <LogoutSure setIsOpenLogout={setIsOpenLogout}/>}
+        </EditBtn>
+      </FlexContainer>
+      <LogoutBtnPopup onClick={() => setIsOpenLogout((prev) => !prev)}>
+        Log out
+      </LogoutBtnPopup>
+      {isEditOpen && (
+        <EditProfileForm
+          setIsEditOpen={setIsEditOpen}
+          setUserAvatar={setUserAvatar}
+          userAvatar={userAvatar}
+          setIsOpenPopupMenu={setIsOpenPopupMenu}
+        />
+      )}
+      {isOpenLogout && <LogoutSure setIsOpenLogout={setIsOpenLogout} />}
     </PopupContainer>
-  )
-}
+  );
+};
 
-export default UserPopup
+export default UserPopup;
