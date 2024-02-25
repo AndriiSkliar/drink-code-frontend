@@ -1,4 +1,4 @@
-import{u as d,N as w,j as e,f as k,b as v,r as p,h as S,a as T,i as _,k as C,l as m,m as A}from"./index-1a24e705.js";import{c as M}from"./selectors-db665fa7.js";const I=d.aside`
+import{u as d,N as w,j as e,b as k,a as v,r as p,h as S,i as T,k as _,l as C,m,o as A}from"./index-2f979c0e.js";import{c as M}from"./selectors-db665fa7.js";const I=d.aside`
   @media screen and (min-width: 768px) {
     max-width: 704px;
     margin: 0 auto;
