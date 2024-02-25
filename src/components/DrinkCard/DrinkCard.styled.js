@@ -60,7 +60,7 @@ export const StyledCocktailName = styled.h2`
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
   white-space: pre-wrap;
-  color: var(--secondary-text-color);
+  color: var(--primary-text-color);
 
   @media screen and (min-width: 768px) {
     font-size: 24px;

@@ -6,7 +6,7 @@ export const PaginationList = styled.ul`
   align-items: center;
   margin-left: 40px;
   margin-right: 40px;
-  gap: 5px;
+  gap: 24px;
 `;
 
 export const PaginationArrow = styled.button`
@@ -14,25 +14,30 @@ export const PaginationArrow = styled.button`
   padding-bottom: 2px;
   background-color: transparent;
   border: none;
-  color: rgba(243, 243, 243, 0.3);
+  color: var(--secondary-text-color);
   font-size: 25px;
 `;
 
 export const PaginationButton = styled.button`
-  padding: 6px 11px;
   background-color: transparent;
   border: none;
-  color: #f3f3f3;
+  color: var(--primary-text-color);
   font-weight: 500;
   font-size: 12px;
   text-align: center;
 
   &.active {
-    background-color: rgba(64, 112, 205, 0.5);
+    width: 27px;
+    height: 27px;
+    color: var(--primary-text-color-footer);
+    background-color: var(--pagination-color);
     border-radius: 100%;
   }
 `;
 export const PaginationContainer = styled.div`
+  padding-top: 14px;
+  padding-bottom: 14px;
+  margin-top: 40px;
   display: flex;
   justify-content: center;
   align-items: center;

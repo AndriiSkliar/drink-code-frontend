@@ -1,3 +1,4 @@
+import { NotFoundCocktail } from '../../components/NotFoundDrink/NotFound';
 import {
   ErrorSection,
   ErrorImg,
@@ -11,7 +12,7 @@ const ErrorPage = () => {
       <div className="container">
         <TitleContainer>
           <TitleElement>4</TitleElement>
-          <ErrorImg />
+          <NotFoundCocktail width={'123'} height={'156'} />
           <TitleElement>4</TitleElement>
         </TitleContainer>
       </div>

@@ -15,15 +15,16 @@ export const fetchCocktails = createAsyncThunk(
   }
 );
 
-export const fetchPopularDrinks = createAsyncThunk('cocktails/getPopular',
- async (_, thunkApi) => {
-  try {
-    const {data} = await instance.get('/drinks/popular');
-    return data;
-  } catch (error) {
-    return thunkApi.rejectWithValue(error.message);
+export const fetchPopularDrinks = createAsyncThunk(
+  'cocktails/getPopular',
+  async (_, thunkApi) => {
+    try {
+      const { data } = await instance.get('/drinks/popular');
+      return data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
+    }
   }
- }
 );
 
 export const fetchFavoriteCocktails = createAsyncThunk(
@@ -85,12 +86,9 @@ export const addToFavorites = createAsyncThunk(
 
 export const deleteFromFavorites = createAsyncThunk(
   'cocktails/deleteFromFavorites',
-  async (cocktail, thunkApi) => {
+  async (id, thunkApi) => {
     try {
-      const { data } = await instance.delete(
-        `/drinks/favorites/remove/${cocktail.id}`,
-        cocktail
-      );
+      const { data } = await instance.delete(`/drinks/favorites/remove/${id}`);
 
       return data;
     } catch (err) {
