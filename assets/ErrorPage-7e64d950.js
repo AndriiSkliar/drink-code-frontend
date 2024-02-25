@@ -1,4 +1,4 @@
-import{n as e,j as i}from"./index-7bde485d.js";import{N as n}from"./NotFound-149aa99b.js";const d=e.section`
+import{n as e,j as i}from"./index-58b0adbb.js";import{N as n}from"./NotFound-3753ed77.js";const d=e.section`
   background-color: #0a0a11;
   padding-top: 188px;
   padding-bottom: 260px;
