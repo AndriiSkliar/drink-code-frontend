@@ -1,4 +1,4 @@
-import{u as c,j as e,N as l,r as d,a as m}from"./index-5dccbdd0.js";const g=c.li`
+import{u as c,j as e,N as l,r as d,a as m}from"./index-38122e36.js";const g=c.li`
   margin-bottom: 40px;
   border-radius: 8px;
   /* width: 335px;
@@ -157,7 +157,7 @@ import{u as c,j as e,N as l,r as d,a as m}from"./index-5dccbdd0.js";const g=c.li
     align-items: center;
     justify-content: space-between;
   }
-`,b=({id:i,drinkName:t,img:a})=>e.jsxs(g,{children:[e.jsx("div",{className:"imgContainer",children:e.jsx("div",{className:"drinkImgWrapper",children:e.jsx("img",{src:`${a}`,alt:t,className:"drinkImg"})})}),e.jsxs("div",{className:"contentContainer",children:[e.jsx("h3",{className:"drinkName",children:t}),e.jsx(l,{to:`/drink/${i}`,className:"seeMoreLink",children:"See more"})]})]}),f=c.div`
+`,b=({id:i,drinkName:t,img:s})=>(console.log("drink",t),e.jsxs(g,{children:[e.jsx("div",{className:"imgContainer",children:e.jsx("div",{className:"drinkImgWrapper",children:e.jsx("img",{src:`${s}`,alt:t,className:"drinkImg"})})}),e.jsxs("div",{className:"contentContainer",children:[e.jsx("h3",{className:"drinkName",children:t}),e.jsx(l,{to:`/drink/${i}`,className:"seeMoreLink",children:"See more"})]})]})),f=c.div`
   .drinksList {
     list-style: none;
     padding: 0;
@@ -200,7 +200,7 @@ import{u as c,j as e,N as l,r as d,a as m}from"./index-5dccbdd0.js";const g=c.li
       line-height: 1.1;
     }
   }
-`,s=({title:i,drinks:t})=>{const a=t.filter(n=>n.category===i),[r,p]=d.useState(1);d.useEffect(()=>{const n=()=>{const h=window.innerWidth;h>=1280?p(3):h>=768?p(2):p(1)};return window.addEventListener("resize",n),n(),()=>{window.removeEventListener("resize",n)}},[]);const x=a.slice(0,r);return e.jsxs(f,{children:[e.jsx("h2",{className:"drinksListTitle",children:i}),e.jsx("ul",{className:"drinksList",children:x.map(n=>e.jsx(b,{className:"drinksListItem",drinkName:n.drink,img:n.drinkThumb},n._id))})]})},k=c.div`
+`,a=({title:i,drinks:t})=>{const s=t.filter(n=>n.category===i),[r,p]=d.useState(1);d.useEffect(()=>{const n=()=>{const h=window.innerWidth;h>=1280?p(3):h>=768?p(2):p(1)};return window.addEventListener("resize",n),n(),console.log("drinks",t),()=>{window.removeEventListener("resize",n)}},[]);const x=s.slice(0,r);return e.jsxs(f,{children:[e.jsx("h2",{className:"drinksListTitle",children:i}),e.jsx("ul",{className:"drinksList",children:x.map(n=>e.jsx(b,{className:"drinksListItem",drinkName:n.drink,img:n.drinkThumb},n._id))})]})},k=c.div`
   display: block;
   margin-top: 80px;
   margin-bottom: 112px;
@@ -410,4 +410,4 @@ import{u as c,j as e,N as l,r as d,a as m}from"./index-5dccbdd0.js";const g=c.li
     box-shadow: 0 0 20px rgba(64, 112, 205, 0.7);
     background-color: var( --link-bg-hover)
   }
-`,E="https://drink-code-backend.onrender.com",I=async()=>{try{const t=(await m.get(`${E}/api/drinks/mainpage`)).data;return console.log("data",t),t}catch(i){throw console.error("Ошибка при получении данных:",i),i}},M=()=>{const[i,t]=d.useState([]);return d.useEffect(()=>{(async()=>{try{const r=await I();t(r)}catch(r){console.error("Ошибка при загрузке данных:",r)}})()},[]),e.jsxs(T,{className:"container",children:[e.jsx(S,{}),e.jsxs("div",{className:"categoryListsContainer",children:[e.jsx(s,{drinks:i,title:"Ordinary Drink"},"OrdinaryDrink"),e.jsx(s,{drinks:i,title:"Cocktail"},"Cocktail"),e.jsx(s,{drinks:i,title:"Shake"},"Shake"),e.jsx(s,{drinks:i,title:"Other/Unknown"},"OtherUnknown")]}),e.jsx(l,{to:"/drinks",className:"otherDrinksLink",children:"Other drinks"})]})};export{M as default};
+`,E="https://drink-code-backend.onrender.com",I=async()=>{try{const t=(await m.get(`${E}/api/drinks/mainpage`)).data;return console.log("data",t),t}catch(i){throw console.error("Ошибка при получении данных:",i),i}},M=()=>{const[i,t]=d.useState([]);return d.useEffect(()=>{(async()=>{try{const r=await I();t(r)}catch(r){console.error("Ошибка при загрузке данных:",r)}})()},[]),e.jsxs(T,{className:"container",children:[e.jsx(S,{}),e.jsxs("div",{className:"categoryListsContainer",children:[e.jsx(a,{drinks:i,title:"Ordinary Drink"},"OrdinaryDrink"),e.jsx(a,{drinks:i,title:"Cocktail"},"Cocktail"),e.jsx(a,{drinks:i,title:"Shake"},"Shake"),e.jsx(a,{drinks:i,title:"Other/Unknown"},"OtherUnknown")]}),e.jsx(l,{to:"/drinks",className:"otherDrinksLink",children:"Other drinks"})]})};export{M as default};
