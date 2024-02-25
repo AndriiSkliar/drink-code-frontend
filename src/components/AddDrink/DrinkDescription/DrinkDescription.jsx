@@ -122,7 +122,6 @@ export const DrinkDescription = ({
               title="Enter item title"
               value={formik.values.drink}
               onChange={formik.handleChange}
-              theme={theme}
             />
             <ErrorText errors={errors.drink} value={formik.values.drink}>
               {formik.values.drink && errors.drink}
@@ -208,7 +207,7 @@ export const DrinkDescription = ({
             />
             Alcoholic
           </LabelAlcoholic>
-          <LabelNonAlcoholic isAlcoholic={formik.values.alcoholic}>
+          <LabelNonAlcoholic alcoholic={formik.values.alcoholic}>
             <RadioInput
               theme={theme}
               type="radio"
