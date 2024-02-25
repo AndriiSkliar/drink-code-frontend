@@ -7,7 +7,7 @@ export const fetchHomePageDrinks = createAsyncThunk(
   async (_, thunkApi) => {
     try {
       const { token } = thunkApi.getState().auth; //берем токен из auth
-      console.log(token)
+      // console.log(token)
       if (!token) {
         return null;
       }
@@ -20,7 +20,7 @@ export const fetchHomePageDrinks = createAsyncThunk(
 
       const resp = await instance.get('/drinks/mainpage', config);
       const data = resp.data;
-      console.log('fetchHomePageDrinks data', data);
+      // console.log('fetchHomePageDrinks data', data);
       return data;
     } catch (error) {
       console.error('Error while fetching data', error);
