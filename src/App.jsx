@@ -79,6 +79,7 @@ function App() {
       >
         <Route
           index
+          path="/home"
           element={
             <PrivateRoute redirectTo="/welcome" component={<HomePage />} />
           }

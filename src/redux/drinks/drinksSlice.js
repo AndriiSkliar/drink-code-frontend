@@ -4,6 +4,7 @@ import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import { drinksOperations } from './drinksOperations';
 
 const initialState = {
+  ownCocktails: [],
   cocktails: [],
   popularDrinks: [],
   favoriteCocktails: [],
@@ -26,10 +27,13 @@ const cocktailsSlice = createSlice({
           state.cocktails = payload;
         }
       )
-      .addCase(drinksOperations.fetchPopularDrinks.fulfilled, (state, {payload}) => {
-        state.isLoading = false;
-        state.popularDrinks = payload;
-      })
+      .addCase(
+        drinksOperations.fetchPopularDrinks.fulfilled,
+        (state, { payload }) => {
+          state.isLoading = false;
+          state.popularDrinks = payload;
+        }
+      )
       .addCase(
         drinksOperations.fetchFavoriteCocktails.fulfilled,
         (state, { payload }) => {
@@ -40,14 +44,14 @@ const cocktailsSlice = createSlice({
       )
       .addCase(drinksOperations.addCocktail.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        state.cocktails = [...state.cocktails, payload];
-        toast.success(`Now ${payload.name} added`);
+        state.cocktails = [...state.ownCocktails, payload];
+        // toast.success(`Now ${payload.name} added`);
       })
       .addCase(
         drinksOperations.deleteOwnCocktail.fulfilled,
         (state, { payload }) => {
           state.isLoading = false;
-          state.cocktails = state.cocktails.filter(
+          state.cocktails = state.ownCocktails.filter(
             (cocktail) => cocktail._id !== payload._id
           );
           toast(`❌ ${payload.name} was deleted`);
