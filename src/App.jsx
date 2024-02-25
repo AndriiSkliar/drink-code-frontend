@@ -1,5 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 // @ts-nocheck
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import SharedLayout from './components/SharedLayout/SharedLayout';
 import PublicRoute from './helpers/PublicRoute';
@@ -7,10 +8,11 @@ import WelcomePage from './pages/WelcomePage/WelcomePage';
 import SignUpPage from './pages/SignUpPage/signUpPage';
 import SignInPage from './pages/SignInPage/SignInPage';
 import VerificationPage from './pages/VerificationPage/VerificationPage';
-import { lazy, useEffect } from 'react';
+import { lazy, useEffect, useState, Suspense } from 'react';
 import { authOperations } from './redux/auth/authOperations';
 import authSelectors from './redux/auth/authSelectors';
 import { PrivateRoute } from './helpers/PrivateRoute';
+import { Loader } from './components/Loader/Loader';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const ErrorPage = lazy(() => import('./pages/ErrorPage/ErrorPage'));
@@ -22,13 +24,18 @@ const DrinkPage = lazy(() => import('./pages/DrinkPage/DrinkPage'));
 
 function App() {
   const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
+  const location = useLocation();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [currentPage] = useState(location.pathname); 
   useEffect(() => {
     dispatch(authOperations.currentUser());
+       navigate(currentPage);
   }, [dispatch]);
 
 
   return (
+    <Suspense fallback={<Loader/>}>
     <Routes>
       <Route path="/:id" element={<VerificationPage />} />
       <Route
@@ -102,6 +109,7 @@ function App() {
         <Route path="*" element={<ErrorPage />} />
       </Route>
     </Routes>
+    </Suspense>
   );
 }
 export default App;
