@@ -1,4 +1,5 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import {
   StyledButtonsWrapper,
@@ -10,15 +11,14 @@ import {
   StyledCocktailWrapper,
   StyledDeleteButton,
 } from './DrinkCard.styled';
+import { deleteFromFavorites } from '../../redux/drinks/drinksOperations';
 
-const DrinkCard = ({
-  name,
-  description,
-  alcoholic,
-  imgUrl,
-  handleDelete,
-  id,
-}) => {
+const DrinkCard = ({ name, description, alcoholic, imgUrl, id }) => {
+  const dispatch = useDispatch();
+  const handleDelete = (cocktailId) => {
+    dispatch(deleteFromFavorites(cocktailId));
+  };
+
   return (
     <StyledCocktailWrapper>
       <StyledCocktailImage src={imgUrl} alt={name} />
@@ -32,7 +32,7 @@ const DrinkCard = ({
           <StyledCocktailSeeMore>See more</StyledCocktailSeeMore>
         </NavLink>
 
-        <StyledDeleteButton onClick={handleDelete}>
+        <StyledDeleteButton onClick={() => handleDelete(id)}>
           <svg>
             <use xlinkHref="/src/assets/icons/icons.svg#icon-trash"></use>
           </svg>
