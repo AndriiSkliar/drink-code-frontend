@@ -27,7 +27,14 @@ function App() {
   const location = useLocation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [currentPage] = useState(location.pathname); 
+  const [currentPage, setCurrentPage] = useState(location.pathname);
+  
+useEffect(() => {
+  if(!isLoggedIn) {
+    setCurrentPage('/welcome');
+  }
+}, [])
+
   useEffect(() => {
     dispatch(authOperations.currentUser());
        navigate(currentPage);
@@ -69,7 +76,7 @@ function App() {
           />
         }
       />
-      <Route path="/" element={<SharedLayout />} >
+      <Route path="/" element={<PrivateRoute redirectTo="/welcome" component={<SharedLayout />}/>} >
         <Route
           index
           element={
