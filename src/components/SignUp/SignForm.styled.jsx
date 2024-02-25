@@ -95,8 +95,8 @@ export const Button = styled.button`
   font-size: 14px;
   font-weight: 600;
   line-height: 1.28571;
-  margin-bottom: 14px;
-  margin-top: 14px;
+  // margin-bottom: 14px;
+  // margin-top: 14px;
   display: flex;
   justify-content: center;
   border: 1px solid var(--primary-text-color-05);

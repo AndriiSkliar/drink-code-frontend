@@ -2,6 +2,7 @@
 
 import { useDispatch } from 'react-redux';
 import { authOperations } from '/src/redux/auth/authOperations.js'
+import sprite from '/src/assets/icons/icons.svg'
 import {
   Backdrop,
   BtnClose,
@@ -24,7 +25,7 @@ const LogoutSure = ({ setIsOpenLogout }) => {
         <div>
           <BtnClose type="button" onClick={handleClick}>
             <SvgIconClose>
-              <use xlinkHref="/src/assets/icons/icons.svg#icon-close"></use>
+              <use xlinkHref={`${sprite}#icon-close`}></use>
             </SvgIconClose>
           </BtnClose>
         </div>

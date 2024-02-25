@@ -10,10 +10,6 @@ const selectSubscribe = state => state.auth.isSubscribed;
 
 const selectTheme = state => state.auth.theme;
 
-const selectUserAuth = state => state.auth.user.userAuth;
-
-const selectUserFavorite = state => state.auth.user.userFavorite;
-
 const authSelectors = {
   selectUser,
   selectUserName,
@@ -24,8 +20,6 @@ const authSelectors = {
   selectIsRefreshing,
   selectSubscribe,
   selectTheme,
-  selectUserAuth,
-  selectUserFavorite,
 };
 
 export default authSelectors;
