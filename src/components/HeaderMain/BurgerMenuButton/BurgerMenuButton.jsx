@@ -1,6 +1,7 @@
 // @ts-nocheck
 
 import { BtnBurger, SvgIconBurger } from "./BurgerMenuButton.styled"
+import sprite from '/src/assets/icons/icons.svg'
 
 
 const BurgerMenuButton = ({isOpenMenu, setIsOpenMenu}) => {
@@ -16,7 +17,7 @@ const toggleBurgerMenu = () => {
   return (
       <BtnBurger type="button" onClick={toggleBurgerMenu}>
         <SvgIconBurger>
-            <use xlinkHref={isOpenMenu ? "/src/assets/icons/icons.svg#icon-close" : "/src/assets/icons/icons.svg#icon-menu-burger"}></use>
+            <use xlinkHref={isOpenMenu ? `${sprite}#icon-close` : `${sprite}#icon-menu-burger` }></use>
         </SvgIconBurger>
       </BtnBurger>
   )

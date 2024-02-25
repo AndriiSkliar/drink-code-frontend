@@ -3,7 +3,6 @@
   --background-color: #0a0a11;
   --popup-bg: #161f37;
   --footer-bg: transparent;
-  
   --switcher-ball: #161f37;
   --border-header: rgba(243, 243, 243, 0.2);
   --link-bg: #f3f3f3;
@@ -21,6 +20,7 @@
   --link-bg: #161f37;
   --link-bg-hover: #434d67;
   --link-text: #f3f3f3;
+  --secondary-text-color:  rgba(10, 10, 17, 0.5);
 }
 
 :root {

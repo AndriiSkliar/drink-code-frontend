@@ -1,5 +1,8 @@
 // @ts-nocheck
 
+import { useDispatch } from 'react-redux';
+import { authOperations } from '/src/redux/auth/authOperations.js'
+import sprite from '/src/assets/icons/icons.svg'
 import {
   Backdrop,
   BtnClose,
@@ -12,6 +15,7 @@ import {
 } from './LogoutSure.styled';
 
 const LogoutSure = ({ setIsOpenLogout }) => {
+  const dispatch = useDispatch();
 
   const handleClick = () => setIsOpenLogout(false);
 
@@ -21,14 +25,14 @@ const LogoutSure = ({ setIsOpenLogout }) => {
         <div>
           <BtnClose type="button" onClick={handleClick}>
             <SvgIconClose>
-              <use xlinkHref="/src/assets/icons/icons.svg#icon-close"></use>
+              <use xlinkHref={`${sprite}#icon-close`}></use>
             </SvgIconClose>
           </BtnClose>
         </div>
         <div>
           <ModalLogoutText>Are you sure you want to logout?</ModalLogoutText>
           <ButtonsBlock>
-            <LogoutBtn type="button">Log out</LogoutBtn>
+            <LogoutBtn type="button" onClick={() => dispatch(authOperations.signOut())}>Log out</LogoutBtn>
             <CancelBtn type="button" onClick={handleClick}>Cancel</CancelBtn>
           </ButtonsBlock>
         </div>
