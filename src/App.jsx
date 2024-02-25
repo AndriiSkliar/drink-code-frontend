@@ -38,18 +38,18 @@ function App() {
   }, [dispatch]);
 
   return (
-    <Routes>
-      <Route path="/:id" element={<VerificationPage />} />
-      <Route
-        path="/welcome"
-        element={
-          <PublicRoute
-            redirectTo="/home"
-            isLoggedIn={isLoggedIn}
-            component={<WelcomePage />}
-          />
-        }
+
+      <Routes>
+        <Route path="/:id" element={<VerificationPage />}/>  
+        <Route path="/welcome" element={
+            <PublicRoute
+              redirectTo="/"
+              isLoggedIn={isLoggedIn}
+              component={<WelcomePage />}
+            />
+          }
       />
+      
       <Route
         path="/signin"
         element={
