@@ -1,7 +1,6 @@
 // @ts-nocheck
 import { NavigationList, NavItem, StyledLink } from "./NavMenu.styled"
 
-
 const NavMenu = () => {
   return (
     <NavigationList>
@@ -18,7 +17,7 @@ const NavMenu = () => {
         <StyledLink to="/my">My drinks</StyledLink>
       </NavItem>
       <NavItem>
-        <StyledLink to="favorites">Favorites</StyledLink>
+        <StyledLink to="/favorites">Favorites</StyledLink>
       </NavItem>
     </NavigationList>
   )

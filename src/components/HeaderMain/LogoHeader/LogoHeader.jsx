@@ -2,10 +2,10 @@
 import sprite from '/src/assets/icons/icons.svg';
 import { SvgIcon, LogoLink, IconText } from './LogoHeader.styled';
 
-const LogoHeader = () => {
+const LogoHeader = ({handleClick}) => {
   return (
     <>
-      <LogoLink to="/">
+      <LogoLink to="/" onClick={handleClick}>
         <SvgIcon>
           <use xlinkHref={`${sprite}#icon-Vector`}></use>
         </SvgIcon>
