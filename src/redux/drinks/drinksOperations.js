@@ -46,6 +46,7 @@ export const fetchOwnCoctails = createAsyncThunk(
   async (_, thunkApi) => {
     try {
       const { data } = await instance.get('/drinks/own');
+
       return data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);
