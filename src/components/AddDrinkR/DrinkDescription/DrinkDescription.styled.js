@@ -133,7 +133,7 @@ export const TabletContainer = styled.div`
 export const DrinkInput = styled.input`
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid rgba(243, 243, 243, 0.5);
+  border-bottom: 1px solid var(--secondary-text-color);
   margin-bottom: 31px;
   color: #f3f3f3;
   width: 335px;
@@ -152,7 +152,7 @@ export const DrinkInput = styled.input`
 export const DrinkLabel = styled.label`
   font-weight: 400;
   font-size: 14px;
-  color: rgba(243, 243, 243, 0.5);
+  color: var(--secondary-text-color);
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     font-size: 16px;
   }
@@ -166,8 +166,8 @@ export const SelectLabel = styled.p`
   width: 335px;
   height: 34px;
   margin-bottom: 34px;
-  border-bottom: 1px solid rgba(243, 243, 243, 0.5);
-  color: rgba(243, 243, 243, 0.5);
+  border-bottom: 1px solid var(--secondary-text-color);
+  color: var(--secondary-text-color);
   font-size: 14px;
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     font-size: 16px;
@@ -198,7 +198,7 @@ export const CategoryInput = styled.select`
   border-radius: 200px;
   background-color: transparent;
   border-radius: 200px;
-  color: #f3f3f3;
+  color: var(--secondary-text-color);
   cursor: pointer;
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     font-size: 16px;
@@ -217,11 +217,17 @@ export const RadioMainContainer = styled.div`
 `;
 
 export const RadioSecondaryContainer = styled.div`
+  color: var(--secondary-text-color);
   display: flex;
   gap: 8px;
   font-weight: 400;
   font-size: 16px;
   letter-spacing: -0.02em;
+  accent-color: var(--secondary-text-color);
+
+  input:checked + label {
+    color: var(--primary-text-color);
+  }
 `;
 export const StyledDeleteButton = styled.button`
   position: absolute;

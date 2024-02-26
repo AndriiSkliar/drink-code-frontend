@@ -10,6 +10,7 @@
   --link-text: #161f37;
   --secondary-text-color: rgba(243, 243, 243, 0.5);
   --pagination-color: hsla(220, 59%, 53%, 0.5);
+  --ingredient-bg: rgba(22, 31, 55, 0.5);
 }
 
 [data-theme='light'] {
@@ -24,6 +25,7 @@
   --link-text: #f3f3f3;
   --secondary-text-color: rgba(10, 10, 17, 0.5);
   --pagination-color: #4070cd;
+  --ingredient-bg: #161f37;
 }
 
 :root {

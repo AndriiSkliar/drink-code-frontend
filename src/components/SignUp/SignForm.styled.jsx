@@ -4,7 +4,7 @@ import { ReactComponent as ErrorSvg } from '../../assets/images/signSvg/error.sv
 import { ReactComponent as CheckSvg } from '../../assets/images/signSvg/done.svg';
 import { NavLink } from 'react-router-dom';
 
-const transition = '300ms cubic-bezier(0.46, 0.03, 0.52, 0.96)'
+const transition = '300ms cubic-bezier(0.46, 0.03, 0.52, 0.96)';
 
 export const Container = styled.div`
   display: flex;
@@ -45,7 +45,7 @@ export const AuthForm = styled(Form)`
 `;
 
 export const Input = styled(Field)`
-  width: 285px;
+  width: 100%;
   display: block;
   padding: 18px 24px;
   border: 1px solid var(--primary-text-color-02);
@@ -75,7 +75,7 @@ export const Input = styled(Field)`
     `}
     
   @media screen and (min-width: 768px) {
-    width: 350px;
+    width: 400px;
     font-size: 17px;
     line-height: 1.56;
     padding: 14px 24px;
@@ -101,7 +101,9 @@ export const Button = styled.button`
   justify-content: center;
   border: 1px solid var(--primary-text-color-05);
   cursor: pointer;
-  transition: border ${transition}, background-color ${transition};
+  transition:
+    border ${transition},
+    background-color ${transition};
   &:focus,
   &:hover {
     background-color: var(--grey-color);
@@ -145,7 +147,7 @@ export const ErrorText = styled.p`
   text-align: ${({ select }) => (select === 'true' ? 'right' : 'left')};
 `;
 
-ErrorText.shouldForwardProp = prop => prop !== 'error';
+ErrorText.shouldForwardProp = (prop) => prop !== 'error';
 
 export const ErrorSvgStyled = styled(ErrorSvg)`
   position: absolute;
@@ -162,11 +164,11 @@ export const CheckSvgStyled = styled(CheckSvg)`
 export const Link = styled(NavLink)`
   color: var(--primary-text-color-footer);
   border: 1px solid var(--primary-text-color-05);
-//   font-size: 12px;
-//   font-weight: 600;
-//   line-height: 1.33px;
-//   text-decoration-line: none;
-//   text-align: center;
+  //   font-size: 12px;
+  //   font-weight: 600;
+  //   line-height: 1.33px;
+  //   text-decoration-line: none;
+  //   text-align: center;
 
   position: relative;
   padding: 18px;
@@ -176,7 +178,7 @@ export const Link = styled(NavLink)`
   justify-content: center;
   border-radius: 42px;
   background-color: transparent;
-//   border: 1px solid transparent;
+  //   border: 1px solid transparent;
   transition: border ${transition};
 
   &:focus,
