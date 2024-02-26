@@ -197,7 +197,7 @@ export const RadioSecondaryContainer = styled.div`
   font-weight: 400;
   font-size: 16px;
   letter-spacing: -0.02em;
-  accent-color: var(--secondary-text-color);
+  /* accent-color: var(--secondary-text-color); */
 
   input:checked + label {
     color: var(--primary-text-color);
