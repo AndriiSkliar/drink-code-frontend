@@ -12,6 +12,7 @@ const initialState = {
   totalFavorites: null,
   isLoading: false,
   error: null,
+  drinkDetails: null,
 };
 
 const cocktailsSlice = createSlice({
@@ -86,6 +87,13 @@ const cocktailsSlice = createSlice({
           state.homepageDrinks = payload;
         }
       )
+      .addCase(
+        drinksOperations.fetchDrinkDetails.fulfilled,
+        (state, { payload }) => {
+          state.isLoading = false;
+          state.drinkDetails = payload;
+        }
+      )
       .addMatcher(
         isAnyOf(
           drinksOperations.fetchCocktails.pending,
@@ -95,7 +103,8 @@ const cocktailsSlice = createSlice({
           drinksOperations.addToFavorites.pending,
           drinksOperations.fetchPopularDrinks.pending,
           drinksOperations.deleteFromFavorites.pending,
-          drinksOperations.fetchHomePageDrinks.pending
+          drinksOperations.fetchHomePageDrinks.pending,
+          drinksOperations.fetchDrinkDetails.pending
         ),
         (state) => {
           state.isLoading = true;
@@ -111,7 +120,8 @@ const cocktailsSlice = createSlice({
           drinksOperations.deleteOwnCocktail.rejected,
           drinksOperations.addToFavorites.rejected,
           drinksOperations.deleteFromFavorites.rejected,
-          drinksOperations.fetchHomePageDrinks.rejected
+          drinksOperations.fetchHomePageDrinks.rejected,
+          drinksOperations.fetchDrinkDetails.rejected
         ),
         (state, { payload }) => {
           state.isLoading = false;
