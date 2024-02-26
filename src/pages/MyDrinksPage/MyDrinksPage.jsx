@@ -1,3 +1,5 @@
+// MyDrinksPage.jsx
+
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -11,7 +13,7 @@ import {
   fetchOwnCoctails,
 } from '../../redux/drinks/drinksOperations.js';
 import { StyledDivNotFound } from './MyDrinks.styled.js';
-import DrinkCard from '../../components/DrinkCard/DrinkCard.jsx';
+import OwnDrinkCard from '../../components/DrinkCard/OwnDrinkCard.jsx';
 import PaginationPanel from '../../components/Pagination/Pagination.jsx';
 import { selectTotalOwnCocktails } from '../../redux/selectors.js';
 
@@ -46,13 +48,6 @@ const MyDrinksPage = () => {
     };
   }, [perPage, page]);
 
-  const handleDeleteCocktail = (id) => {
-    dispatch(deleteOwnCocktail(id)).then(() => {
-      console.log(id);
-      dispatch(fetchOwnCoctails());
-    });
-  };
-
   const totalPages = Math.ceil(totalOwn / perPage);
   const startIndex = (page - 1) * perPage;
   const endIndex = Math.min(startIndex + perPage, totalOwn);
@@ -71,14 +66,14 @@ const MyDrinksPage = () => {
           {totalOwn !== null && (
             <DrinkList>
               {ownCocktails.slice(startIndex, endIndex).map((cocktail) => (
-                <DrinkCard
+                <OwnDrinkCard
                   name={cocktail.drink}
                   imgUrl={cocktail.drinkThumb}
                   description={cocktail.description}
                   alcoholic={cocktail.alcoholic}
                   id={cocktail._id}
                   key={cocktail._id}
-                  handleDelete={() => handleDeleteCocktail(cocktail._id)}
+                  handleDelete={deleteOwnCocktail}
                 />
               ))}
             </DrinkList>

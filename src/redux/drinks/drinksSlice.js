@@ -14,7 +14,6 @@ const initialState = {
   error: null,
   totalOwn: null,
   drinkDetails: null,
-
 };
 
 const cocktailsSlice = createSlice({
@@ -65,7 +64,7 @@ const cocktailsSlice = createSlice({
         (state, { payload }) => {
           state.isLoading = false;
           state.cocktails = state.ownCocktails.filter(
-            (cocktail) => cocktail._id !== payload._id
+            (cocktail) => cocktail._id !== payload.result._id
           );
           state.totalOwn -= 1;
           // toast(`❌ ${payload.name} was deleted`);
