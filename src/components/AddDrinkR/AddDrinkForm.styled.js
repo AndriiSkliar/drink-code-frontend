@@ -44,11 +44,12 @@ export const SubmitButton = styled.button`
   font-weight: 600;
   font-size: 14px;
   line-height: 129%;
-  color: #161f37;
-  transition: all 0.3s ease;
+  color: var(--switcher-ball);
+  transition: border-color 0.3s ease;
+  background-color: var(--link-bg);
 
   &:hover {
-    background-color: #f3f3f3;
+    /* background-color: #f3f3f3; */
     border-color: rgba(64, 112, 205, 0.5);
   }
 
