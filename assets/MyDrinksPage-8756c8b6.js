@@ -1,4 +1,4 @@
-import{u as w,a as j,b as o,c as P,r,t as h,j as t,L as v,v as y}from"./index-f01e9f46.js";import{T as C}from"./Title-4e321e20.js";import{D,a as k}from"./DrinkCard-e41d2379.js";import{N as L}from"./NotFound-a474b446.js";import{g as E,a as z,h as O}from"./selectors-339aa893.js";import{P as S}from"./Pagination-991d7fdd.js";const M=w.div`
+import{u as w,a as j,b as o,c as P,r,t as h,j as t,L as v,v as y}from"./index-f9d8ab13.js";import{T as C}from"./Title-7ba98360.js";import{D,a as k}from"./DrinkCard-a98c7243.js";import{N as L}from"./NotFound-4ddb8526.js";import{g as E,a as z,h as O}from"./selectors-339aa893.js";import{P as S}from"./Pagination-c31b7e41.js";const M=w.div`
   margin-top: 40px;
   display: flex;
   justify-content: center;
