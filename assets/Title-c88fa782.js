@@ -1,4 +1,4 @@
-import{u as i,j as t}from"./index-1de72f6f.js";const n=i.h1`
+import{u as i,j as t}from"./index-7597830d.js";const n=i.h1`
   font-size: 32px;
   line-height: 1.1875;
   color: var(--primary-text-color);
