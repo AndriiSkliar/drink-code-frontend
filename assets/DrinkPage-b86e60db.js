@@ -1,4 +1,4 @@
-import{u as g,a as h,b as n,x as m,r as f,y as k,j as i,L as b}from"./index-d75126a6.js";import{T as j}from"./Title-ac4d64fe.js";import{d}from"./drinkSelectors-5b86cb2e.js";import{a as u}from"./selectors-339aa893.js";import w from"./ErrorPage-60b52cb2.js";import"./NotFound-46c3d573.js";const v=g.div`
+import{u as g,a as h,b as n,x as m,r as f,y as k,j as i,L as b}from"./index-86c131cd.js";import{T as j}from"./Title-4e689814.js";import{d}from"./drinkSelectors-5b86cb2e.js";import{a as u}from"./selectors-339aa893.js";import w from"./ErrorPage-cfb4d091.js";import"./NotFound-13cfaf91.js";const v=g.div`
   .desc-glass-alco {
     font-weight: 400;
     font-size: 12px;
