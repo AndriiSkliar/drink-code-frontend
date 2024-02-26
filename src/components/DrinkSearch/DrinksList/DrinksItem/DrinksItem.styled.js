@@ -28,14 +28,20 @@ export const StyledCocktailName = styled.h2`
   font-weight: 500;
   font-size: 18px;
   line-height: 1.33333;
-  color: #f3f3f3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  white-space: pre-wrap;
+  color: var(--primary-text-color);
 
   @media screen and (min-width: 768px) {
     font-size: 24px;
   }
 `;
 
-export const StyledCocktailSeeMore = styled.a`
+export const StyledCocktailSeeMore = styled.p`
   cursor: pointer;
   font-weight: 500;
   font-size: 14px;

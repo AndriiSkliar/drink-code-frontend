@@ -83,7 +83,7 @@ const FavoritesPage = () => {
               ))}
             </DrinkList>
           )}
-          <PaginationPanel pageQuan={totalPages} />
+          {totalPages > 1 && <PaginationPanel pageQuan={totalPages} />}
         </>
       )}
     </main>
