@@ -1,8 +1,10 @@
+import { RecipeField, RecipeTitle } from './Recipe.styled';
+
 const Recipe = ({ formik }) => {
   return (
     <>
-      <h2>Recipe Preparation</h2>
-      <textarea
+      <RecipeTitle>Recipe Preparation</RecipeTitle>
+      <RecipeField
         name="instruction"
         placeholder="Enter the recipe"
         rows={6}
