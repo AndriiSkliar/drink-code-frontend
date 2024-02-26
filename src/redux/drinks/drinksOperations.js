@@ -123,6 +123,20 @@ export const deleteFromFavorites = createAsyncThunk(
     }
   }
 );
+
+export const fetchDrinkDetails = createAsyncThunk(
+  'cocktails/fetchDrinkDetails',
+  async (id, thunkApi) => {
+    try {
+      const { data } = await instance.get(`/drinks/${id}`);
+
+      return data;
+    } catch (err) {
+      return thunkApi.rejectWithValue(err.message);
+    }
+  }
+);
+
 export const drinksOperations = {
   fetchCocktails,
   fetchPopularDrinks,
@@ -131,5 +145,6 @@ export const drinksOperations = {
   deleteOwnCocktail,
   addToFavorites,
   deleteFromFavorites,
-  fetchHomePageDrinks
+  fetchHomePageDrinks,
+  fetchDrinkDetails,
 };
