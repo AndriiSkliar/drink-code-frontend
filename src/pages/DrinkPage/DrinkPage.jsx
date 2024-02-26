@@ -26,7 +26,7 @@ const DrinkPage = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <>
       {error !== null ? (
         <ErrorPage />
       ) : (
@@ -89,7 +89,7 @@ const DrinkPage = () => {
           )}
         </StyledDrinkPage>
       )}
-    </div>
+    </>
   );
 };
 
