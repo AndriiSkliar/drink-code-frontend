@@ -41,6 +41,17 @@ export const fetchCocktails = createAsyncThunk(
     }
   }
 );
+export const fetchOwnCoctails = createAsyncThunk(
+  'coctails/fetchOwnCoctails',
+  async (_, thunkApi) => {
+    try {
+      const { data } = await instance.get('/drinks/own');
+      return data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
+    }
+  }
+);
 
 export const fetchPopularDrinks = createAsyncThunk(
   'cocktails/getPopular',
@@ -138,6 +149,7 @@ export const fetchDrinkDetails = createAsyncThunk(
 );
 
 export const drinksOperations = {
+  fetchOwnCoctails,
   fetchCocktails,
   fetchPopularDrinks,
   fetchFavoriteCocktails,

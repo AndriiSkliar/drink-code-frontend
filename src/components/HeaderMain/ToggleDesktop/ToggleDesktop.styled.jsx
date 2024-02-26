@@ -30,8 +30,8 @@ export const ThemeBtnBall = styled.svg.withConfig({
   fill: var(--switcher-ball);
   position: absolute;
   top: 0%;
-  left: 10%;
+  left: 6%;
   transform: ${(props) =>
-    props.isdark === 'dark' ? 'translateX(0)' : 'translateX(70%)'};
+    props.isdark === 'dark' ? 'translateX(0)' : 'translateX(76%)'};
   transition: all 400ms ease;
 `;

@@ -21,7 +21,9 @@ const DrinksList = ({ title, drinks }) => {
 
     window.addEventListener('resize', handleResize);
     handleResize();
-    // console.log('drinks in HomePage:', drinks);
+
+    // Очищаем слушателя события при размонтировании компонента, чтобы избежать утечек памяти
+
     return () => {
       window.removeEventListener('resize', handleResize);
     };

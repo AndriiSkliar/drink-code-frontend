@@ -12,6 +12,7 @@ const initialState = {
   totalFavorites: null,
   isLoading: false,
   error: null,
+  totalOwn: null,
   drinkDetails: null,
 };
 
@@ -22,6 +23,14 @@ const cocktailsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) =>
     builder
+      .addCase(
+        drinksOperations.fetchOwnCoctails.fulfilled,
+        (state, { payload }) => {
+          state.isLoading = false;
+          state.ownCocktails = payload.drinks;
+          state.totalOwn = payload.total;
+        }
+      )
       .addCase(
         drinksOperations.fetchCocktails.fulfilled,
         (state, { payload }) => {
@@ -47,6 +56,7 @@ const cocktailsSlice = createSlice({
       .addCase(drinksOperations.addCocktail.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.cocktails = [...state.ownCocktails, payload];
+        state.totalOwn += 1;
         // toast.success(`Now ${payload.name} added`);
       })
       .addCase(
@@ -54,9 +64,10 @@ const cocktailsSlice = createSlice({
         (state, { payload }) => {
           state.isLoading = false;
           state.cocktails = state.ownCocktails.filter(
-            (cocktail) => cocktail._id !== payload._id
+            (cocktail) => cocktail._id !== payload.result._id
           );
-          toast(`❌ ${payload.name} was deleted`);
+          state.totalOwn -= 1;
+          // toast(`❌ ${payload.name} was deleted`);
         }
       )
       .addCase(
@@ -96,6 +107,7 @@ const cocktailsSlice = createSlice({
       )
       .addMatcher(
         isAnyOf(
+          drinksOperations.fetchOwnCoctails.pending,
           drinksOperations.fetchCocktails.pending,
           drinksOperations.fetchFavoriteCocktails.pending,
           drinksOperations.addCocktail.pending,
@@ -113,6 +125,7 @@ const cocktailsSlice = createSlice({
       )
       .addMatcher(
         isAnyOf(
+          drinksOperations.fetchOwnCoctails.rejected,
           drinksOperations.fetchCocktails.rejected,
           drinksOperations.fetchPopularDrinks.rejected,
           drinksOperations.fetchFavoriteCocktails.rejected,
