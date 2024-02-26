@@ -1,23 +1,4 @@
-import{u as e,j as t}from"./index-86c131cd.js";const o=e.ul`
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 40px;
-
-  @media screen and (min-width: 768px) {
-    margin-top: 40px;
-    flex-direction: row;
-    row-gap: 80px;
-    column-gap: 20px;
-    flex-wrap: wrap;
-  }
-  @media screen and (min-width: 1280px) {
-    margin-top: 62px;
-    width: auto;
-  }
-`,r=({children:i})=>t.jsx(o,{children:i}),a=e.li`
+import{u as e}from"./index-83de2921.js";const t=e.li`
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -37,14 +18,14 @@ import{u as e,j as t}from"./index-86c131cd.js";const o=e.ul`
     height: 24px;
     stroke: #f3f3f3;
   }
-`,p=e.img`
+`,o=e.img`
   border-radius: 8px;
   height: 360px;
 
   @media screen and (min-width: 1280px) {
     height: 400px;
   }
-`,d=e.p`
+`,n=e.p`
   font-weight: 400;
   font-size: 14px;
   line-height: 1.28571;
@@ -60,7 +41,7 @@ import{u as e,j as t}from"./index-86c131cd.js";const o=e.ul`
     font-size: 16px;
     line-height: 1.375;
   }
-`,l=e.h2`
+`,r=e.h2`
   font-weight: 500;
   font-size: 18px;
   line-height: 1.33333;
@@ -75,7 +56,7 @@ import{u as e,j as t}from"./index-86c131cd.js";const o=e.ul`
   @media screen and (min-width: 768px) {
     font-size: 24px;
   }
-`,x=e.p`
+`,a=e.p`
   margin-top: 4px;
   font-weight: 400;
   font-size: 14px;
@@ -86,7 +67,7 @@ import{u as e,j as t}from"./index-86c131cd.js";const o=e.ul`
     font-size: 16px;
     line-height: 1.125;
   }
-`,s=e.button`
+`,p=e.button`
   border-radius: 42px;
   border: none;
   padding: 14px 40px;
@@ -105,7 +86,7 @@ import{u as e,j as t}from"./index-86c131cd.js";const o=e.ul`
     font-size: 16px;
     line-height: 1.125;
   }
-`,c=e.button`
+`,d=e.button`
   border-radius: 40px;
   border: none;
   width: 46px;
@@ -121,7 +102,7 @@ import{u as e,j as t}from"./index-86c131cd.js";const o=e.ul`
     width: 56px;
     height: 54px;
   }
-`,h=e.div`
+`,l=e.div`
   display: flex;
   gap: 8px;
-`;export{r as D,a as S,p as a,l as b,x as c,d,h as e,s as f,c as g};
+`;export{t as S,o as a,r as b,a as c,n as d,l as e,p as f,d as g};
