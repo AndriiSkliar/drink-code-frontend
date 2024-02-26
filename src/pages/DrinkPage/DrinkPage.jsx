@@ -33,7 +33,7 @@ const DrinkPage = () => {
 
   useEffect(() => {
     dispatch(fetchDrinkDetails(id));
-  }, [dispatch]);
+  }, [dispatch, inFavorites]);
 
   const handleAddToFavorite = (cocktailId) => {
     dispatch(addToFavorites(cocktailId));
