@@ -7,8 +7,15 @@ import images from 'src/assets/images/drink-page/images';
 import Title from '../../components/Title/Title';
 import drinksSelectors from '../../redux/drinks/drinkSelectors';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchDrinkDetails } from '../../redux/drinks/drinksOperations.js';
-import { selectIsLoading } from '../../redux/selectors';
+import {
+  addToFavorites,
+  deleteFromFavorites,
+  fetchDrinkDetails,
+} from '../../redux/drinks/drinksOperations.js';
+import {
+  selectFavoriteCocktails,
+  selectIsLoading,
+} from '../../redux/selectors';
 import { Loader } from '../../components/Loader/Loader';
 import ErrorPage from '../ErrorPage/ErrorPage.jsx';
 
@@ -19,12 +26,22 @@ const DrinkPage = () => {
   const drinkDetails = useSelector(drinksSelectors.drinkDetails);
   const error = useSelector(drinksSelectors.selectError);
   const isLoading = useSelector(selectIsLoading);
-
+  const favoriteCocktails = useSelector(selectFavoriteCocktails);
   const { id } = useParams();
+
+  const inFavorites = favoriteCocktails.some((cocktail) => cocktail._id === id);
 
   useEffect(() => {
     dispatch(fetchDrinkDetails(id));
   }, [dispatch]);
+
+  const handleAddToFavorite = (cocktailId) => {
+    dispatch(addToFavorites(cocktailId));
+  };
+
+  const handleDeleteFromFavorites = (cocktailId) => {
+    dispatch(deleteFromFavorites(cocktailId));
+  };
 
   return (
     <>
@@ -35,31 +52,37 @@ const DrinkPage = () => {
           {isLoading === true && <Loader />}
           {drinkDetails !== null && (
             <div>
-              <div className="drink-container">
-                <div>
-                  <Title text={drinkDetails.drink} />
-                  <div className="desc-glass-alco">
-                    <span>{drinkDetails.glass}</span>
-                    <span> / </span>
-                    <span>{drinkDetails.alcoholic}</span>
-                  </div>
-                  <p className="desc-drink">{drinkDetails.description}</p>
-
-                  <button className="btn-add-rem-fav">
-                    Add to favorite drinks
-                  </button>
-                </div>
-
-                <img
-                  className="img-drink"
-                  src={
-                    drinkDetails.drinkThumb
-                      ? `${drinkDetails.drinkThumb}`
-                      : defaultImg
-                  }
-                  alt={drinkDetails.drink}
-                />
+              <Title text={drinkDetails.drink} />
+              <div className="desc-glass-alco">
+                <span>{drinkDetails.glass}</span>
+                <span> / </span>
+                <span>{drinkDetails.alcoholic}</span>
               </div>
+              <p className="desc-drink">{drinkDetails.description}</p>
+              {inFavorites ? (
+                <button
+                  className="btn-add-rem-fav"
+                  onClick={() => handleDeleteFromFavorites(id)}
+                >
+                  Remove from favorites
+                </button>
+              ) : (
+                <button
+                  className="btn-add-rem-fav"
+                  onClick={() => handleAddToFavorite(id)}
+                >
+                  Add to favorite drinks
+                </button>
+              )}
+              <img
+                className="img-drink"
+                src={
+                  drinkDetails.drinkThumb
+                    ? `${drinkDetails.drinkThumb}`
+                    : defaultImg
+                }
+                alt={drinkDetails.drink}
+              />
 
               <h2 className="title-sect-ingred">Ingredients</h2>
 

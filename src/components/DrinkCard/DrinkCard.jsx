@@ -12,6 +12,7 @@ import {
   StyledDeleteButton,
 } from './DrinkCard.styled';
 import { deleteFromFavorites } from '../../redux/drinks/drinksOperations';
+import sprite from '/src/assets/icons/icons.svg';
 
 const DrinkCard = ({ name, description, alcoholic, imgUrl, id }) => {
   const dispatch = useDispatch();
@@ -34,7 +35,7 @@ const DrinkCard = ({ name, description, alcoholic, imgUrl, id }) => {
 
         <StyledDeleteButton onClick={() => handleDelete(id)}>
           <svg>
-            <use xlinkHref="/src/assets/icons/icons.svg#icon-trash"></use>
+            <use xlinkHref={`${sprite}#icon-trash`}></use>
           </svg>
         </StyledDeleteButton>
       </StyledButtonsWrapper>
