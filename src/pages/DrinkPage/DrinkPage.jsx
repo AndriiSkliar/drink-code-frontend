@@ -2,7 +2,8 @@ import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { StyledDrinkPage } from './DrinkPage.styled';
 // import { getDrinkByID } from '../../api/getDrinkById';
-import drinks from '../../assets/images/drink-page/drinks-mobile.jpg';
+import images from 'src/assets/images/drink-page/images';
+
 import Title from '../../components/Title/Title';
 import drinksSelectors from '../../redux/drinks/drinkSelectors';
 import { useSelector, useDispatch } from 'react-redux';
@@ -85,11 +86,45 @@ const DrinkPage = () => {
               <h2 className="descr-drink-title">Recipe Preparation</h2>
               <div className="recipe-container">
                 <p className="recipe-text">{drinkDetails.instructions}</p>
-                <img
+
+                {/* <img
                   className="img-three-drinks"
+                  srcSet={
+                    ({ drinksMobile }, { drinksTablet }, { drinksDesktop })
+                  }
                   src={drinks}
                   alt="three drinks"
-                />
+                /> */}
+                <picture>
+                  <source
+                    srcSet={images.drinks_mobile}
+                    type="image/jpg"
+                    media="(min-width:280px)"
+                    width="335px"
+                    height="430px"
+                  />
+                  <source
+                    srcSet={images.drinks_tablet}
+                    type="image/jpg"
+                    media="(min-width:768px)"
+                    width="704px"
+                    height="430px"
+                  />
+                  <source
+                    srcSet={images.drinks_desktop}
+                    type="image/jpg"
+                    media="(min-width:1200px)"
+                    width="631px"
+                    height="480px"
+                  />
+                  <img
+                    src={images.drinks_mobile}
+                    alt="three drinks"
+                    className="img-three-drinks"
+                    // width="335px"
+                    // height="430px"
+                  />
+                </picture>
               </div>
             </div>
           )}

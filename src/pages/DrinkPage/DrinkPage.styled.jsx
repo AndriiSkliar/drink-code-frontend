@@ -1,12 +1,5 @@
 import { styled } from 'styled-components';
 
-import drinksMobile from '../../assets/images/drink-page/drinks-mobile.jpg';
-import drinksMobile2x from '../../assets/images/drink-page/drinks-mobile@2x.jpg';
-import drinksTablet from '../../assets/images/drink-page/drinks-tablet.jpg';
-import drinksTablet2x from '../../assets/images/drink-page/drinks-tablet@2x.jpg';
-import drinksDesktop from '../../assets/images/drink-page/drinks-desktop.jpg';
-import drinksDesktop2x from '../../assets/images/drink-page/drinks-desktop@2x.jpg';
-
 export const StyledDrinkPage = styled.div`
   .desc-glass-alco {
     font-weight: 400;
@@ -128,17 +121,10 @@ export const StyledDrinkPage = styled.div`
   }
 
   .img-three-drinks {
-    image: url(${drinksMobile});
     border-radius: 11px;
     width: 335px;
     height: 430px;
     margin-top: 40px;
-  }
-
-  @media (min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-    image: url(${drinksMobile2x});
   }
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
@@ -152,14 +138,7 @@ export const StyledDrinkPage = styled.div`
     }
 
     .img-three-drinks {
-      image: url(${drinksTablet});
       width: 704px;
-    }
-
-    @media (min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
-      image: url(${drinksTablet2x});
     }
   }
 
@@ -199,15 +178,8 @@ export const StyledDrinkPage = styled.div`
     }
 
     .img-three-drinks {
-      image: url(${drinksDesktop});
       width: 631px;
       height: 480px;
-    }
-
-    @media (min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
-      image: url(${drinksDesktop2x});
     }
   }
 
