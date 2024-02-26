@@ -11,3 +11,4 @@ export const selectIngredient = (state) => state.drinks.ingredient;
 
 export const selectOwnCocktails = (state) => state.cocktails.ownCocktails;
 export const selectError = (state) => state.cocktails.error;
+export const selectTotalOwnCocktails = (state) => state.cocktails.totalOwn;

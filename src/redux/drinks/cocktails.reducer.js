@@ -7,7 +7,7 @@ export const fetchHomePageDrinks = createAsyncThunk(
   async (_, thunkApi) => {
     try {
       const { token } = thunkApi.getState().auth; //берем токен из auth
-      console.log(token)
+      console.log(token);
       if (!token) {
         return null;
       }
@@ -112,22 +112,9 @@ export const deleteFromFavorite = createAsyncThunk(
     }
   }
 );
-export const fetchOwnCoctails = createAsyncThunk(
-  'coctails/fetchOwnCoctails',
-  async (_, thunkApi) => {
-    try {
-      const { data } = await instance.get('/drinks/own');
-      console.log(data);
-      return data;
-    } catch (error) {
-      return thunkApi.rejectWithValue(error.message);
-    }
-  }
-);
 
 const initialState = {
   cocktails: [],
-  ownCocktails: [],
   favoriteCocktails: [],
   homepageDrinks: [],
   isLoading: false,
@@ -141,10 +128,6 @@ const cocktailsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) =>
     builder
-      .addCase(fetchOwnCoctails.fulfilled, (state, { payload }) => {
-        state.isLoading = false;
-        state.ownCocktails = payload;
-      })
       .addCase(fetchCocktails.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.cocktails = payload;
@@ -179,16 +162,12 @@ const cocktailsSlice = createSlice({
         );
         state.cocktails = [...state.cocktails, payload];
       })
-      .addCase(
-        drinksOperations.fetchHomePageDrinks.fulfilled,
-        (state, { payload }) => {
-          state.isLoading = false;
-          state.homepageDrinks = payload;
-        }
-      )
+      .addCase(fetchHomePageDrinks.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.homepageDrinks = payload;
+      })
       .addMatcher(
         isAnyOf(
-          fetchOwnCoctails.pending,
           fetchCocktails.pending,
           fetchFavoriteCocktails.pending,
           addCocktails.pending,
@@ -204,7 +183,6 @@ const cocktailsSlice = createSlice({
       )
       .addMatcher(
         isAnyOf(
-          fetchOwnCoctails.rejected,
           fetchCocktails.rejected,
           fetchFavoriteCocktails.rejected,
           addCocktails.rejected,
