@@ -51,9 +51,7 @@ export const InputImage = styled.input`
 `;
 
 export const DescHelper = styled.div`
-  @media screen and (min-width: 1280px) {
-    position: relative;
-  }
+  position: relative;
 `;
 
 export const InputBG = styled.div`

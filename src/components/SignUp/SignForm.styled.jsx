@@ -45,7 +45,7 @@ export const AuthForm = styled(Form)`
 `;
 
 export const Input = styled(Field)`
-  width: 335px;
+  width: 100%;
   display: block;
   padding: 18px 24px;
   border: 1px solid var(--primary-text-color-02);
