@@ -1,4 +1,23 @@
-import{u as i,a as g,j as e,N as k,d as f,b as l,c as b,r as p,e as j,L as y}from"./index-7d0f1e8d.js";import{T as S}from"./Title-e94107f0.js";import{S as P,D as C}from"./FavoritesPage.styled-4a4b8e20.js";import{s as z,a as F,b as D}from"./selectors-d3804845.js";import{N as L}from"./NotFound-c08ea732.js";import{P as N}from"./Pagination-458a709e.js";const E=i.li`
+import{u as i,j as e,a as l,N as c,e as x}from"./index-f01e9f46.js";const h=i.ul`
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 40px;
+    flex-direction: row;
+    row-gap: 80px;
+    column-gap: 20px;
+    flex-wrap: wrap;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-top: 62px;
+    width: auto;
+  }
+`,j=({children:t})=>e.jsx(h,{children:t}),m=i.li`
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -18,14 +37,14 @@ import{u as i,a as g,j as e,N as k,d as f,b as l,c as b,r as p,e as j,L as y}fro
     height: 24px;
     stroke: #f3f3f3;
   }
-`,W=i.img`
+`,w=i.img`
   border-radius: 8px;
   height: 360px;
 
   @media screen and (min-width: 1280px) {
     height: 400px;
   }
-`,I=i.p`
+`,g=i.p`
   font-weight: 400;
   font-size: 14px;
   line-height: 1.28571;
@@ -41,7 +60,7 @@ import{u as i,a as g,j as e,N as k,d as f,b as l,c as b,r as p,e as j,L as y}fro
     font-size: 16px;
     line-height: 1.375;
   }
-`,T=i.h2`
+`,f=i.h2`
   font-weight: 500;
   font-size: 18px;
   line-height: 1.33333;
@@ -56,7 +75,7 @@ import{u as i,a as g,j as e,N as k,d as f,b as l,c as b,r as p,e as j,L as y}fro
   @media screen and (min-width: 768px) {
     font-size: 24px;
   }
-`,M=i.p`
+`,k=i.p`
   margin-top: 4px;
   font-weight: 400;
   font-size: 14px;
@@ -67,7 +86,7 @@ import{u as i,a as g,j as e,N as k,d as f,b as l,c as b,r as p,e as j,L as y}fro
     font-size: 16px;
     line-height: 1.125;
   }
-`,B=i.button`
+`,u=i.button`
   border-radius: 42px;
   border: none;
   padding: 14px 40px;
@@ -86,7 +105,7 @@ import{u as i,a as g,j as e,N as k,d as f,b as l,c as b,r as p,e as j,L as y}fro
     font-size: 16px;
     line-height: 1.125;
   }
-`,R=i.button`
+`,b=i.button`
   border-radius: 40px;
   border: none;
   width: 46px;
@@ -102,7 +121,7 @@ import{u as i,a as g,j as e,N as k,d as f,b as l,c as b,r as p,e as j,L as y}fro
     width: 56px;
     height: 54px;
   }
-`,_=i.div`
+`,v=i.div`
   display: flex;
   gap: 8px;
-`,A=({name:n,description:r,alcoholic:c,imgUrl:o,id:a})=>{const h=g(),d=s=>{h(f(s))};return e.jsxs(E,{children:[e.jsx(W,{src:o,alt:n}),e.jsxs("div",{children:[e.jsx(T,{children:n}),e.jsx(M,{children:c})]}),e.jsx(I,{children:r}),e.jsxs(_,{children:[e.jsx(k,{to:`/drink/${a}`,children:e.jsx(B,{children:"See more"})}),e.jsx(R,{onClick:()=>d(a),children:e.jsx("svg",{children:e.jsx("use",{xlinkHref:"/src/assets/icons/icons.svg#icon-trash"})})})]})]})},J=()=>{const n=g(),r=l(z),c=l(F),o=l(D),[a,h]=b(),d=a.get("page")||1,[s,w]=p.useState(8);p.useEffect(()=>{n(j())},[n]),p.useEffect(()=>{const t=()=>{const m=window.innerWidth>=1200?9:8;m!==s&&w(m)};return window.addEventListener("resize",t),t(),()=>{window.removeEventListener("resize",t)}},[s,d]);const u=Math.ceil(o/s),x=(d-1)*s,v=Math.min(x+s,o);return e.jsxs("main",{className:"container",children:[c===!0&&e.jsx(y,{}),e.jsx(S,{text:"Favorites"}),r.length===0?e.jsxs(P,{children:[e.jsx(L,{}),e.jsx("p",{children:"You haven't added any favorite cocktails yet"})]}):e.jsxs(e.Fragment,{children:[o!==null&&e.jsx(C,{children:r.slice(x,v).map(t=>e.jsx(A,{name:t.drink,imgUrl:t.drinkThumb,description:t.description,alcoholic:t.alcoholic,id:t._id,handleDelete:f},t._id))}),e.jsx(N,{pageQuan:u})]})]})};export{J as default};
+`,S=({name:t,description:o,alcoholic:r,imgUrl:a,id:n})=>{const s=l(),d=p=>{s(x(p))};return e.jsxs(m,{children:[e.jsx(w,{src:a,alt:t}),e.jsxs("div",{children:[e.jsx(f,{children:t}),e.jsx(k,{children:r})]}),e.jsx(g,{children:o}),e.jsxs(v,{children:[e.jsx(c,{to:`/drink/${n}`,children:e.jsx(u,{children:"See more"})}),e.jsx(b,{onClick:()=>d(n),children:e.jsx("svg",{children:e.jsx("use",{xlinkHref:"/src/assets/icons/icons.svg#icon-trash"})})})]})]})};export{j as D,S as a};
