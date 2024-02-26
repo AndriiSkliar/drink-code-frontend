@@ -2,7 +2,8 @@ import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { StyledDrinkPage } from './DrinkPage.styled';
 // import { getDrinkByID } from '../../api/getDrinkById';
-import drinks from '../../assets/images/drink-page/drinks-mobile.jpg';
+import images from 'src/assets/images/drink-page/images';
+
 import Title from '../../components/Title/Title';
 import drinksSelectors from '../../redux/drinks/drinkSelectors';
 import { useSelector, useDispatch } from 'react-redux';
@@ -34,27 +35,31 @@ const DrinkPage = () => {
           {isLoading === true && <Loader />}
           {drinkDetails !== null && (
             <div>
-              <Title text={drinkDetails.drink} />
-              <div className="desc-glass-alco">
-                <span>{drinkDetails.glass}</span>
-                <span> / </span>
-                <span>{drinkDetails.alcoholic}</span>
+              <div className="drink-container">
+                <div>
+                  <Title text={drinkDetails.drink} />
+                  <div className="desc-glass-alco">
+                    <span>{drinkDetails.glass}</span>
+                    <span> / </span>
+                    <span>{drinkDetails.alcoholic}</span>
+                  </div>
+                  <p className="desc-drink">{drinkDetails.description}</p>
+
+                  <button className="btn-add-rem-fav">
+                    Add to favorite drinks
+                  </button>
+                </div>
+
+                <img
+                  className="img-drink"
+                  src={
+                    drinkDetails.drinkThumb
+                      ? `${drinkDetails.drinkThumb}`
+                      : defaultImg
+                  }
+                  alt={drinkDetails.drink}
+                />
               </div>
-              <p className="desc-drink">{drinkDetails.description}</p>
-
-              <button className="btn-add-rem-fav">
-                Add to favorite drinks
-              </button>
-
-              <img
-                className="img-drink"
-                src={
-                  drinkDetails.drinkThumb
-                    ? `${drinkDetails.drinkThumb}`
-                    : defaultImg
-                }
-                alt={drinkDetails.drink}
-              />
 
               <h2 className="title-sect-ingred">Ingredients</h2>
 
@@ -62,11 +67,13 @@ const DrinkPage = () => {
                 {drinkDetails.ingredients.map(
                   ({ ingredientId, title, measure }) => (
                     <li className="ingred-item" key={title}>
-                      <img
-                        className="img-ingred"
-                        src={ingredientId.ingredientThumb || defaultImg}
-                        alt={title}
-                      />
+                      <div className="img-container">
+                        <img
+                          className="img-ingred"
+                          src={ingredientId.ingredientThumb || defaultImg}
+                          alt={title}
+                        />
+                      </div>
                       <div className="ingred-descr">
                         <span className="ingred-name">{title}</span>
                         <span className="ingred-quantity">{measure}</span>
@@ -77,14 +84,48 @@ const DrinkPage = () => {
               </ul>
 
               <h2 className="descr-drink-title">Recipe Preparation</h2>
-              <p className="recipe-text">{drinkDetails.instructions}</p>
-              <img
-                className="img-three-drinks"
-                src={drinks}
-                alt="three drinks"
-                width="335"
-                height="430"
-              />
+              <div className="recipe-container">
+                <p className="recipe-text">{drinkDetails.instructions}</p>
+
+                {/* <img
+                  className="img-three-drinks"
+                  srcSet={
+                    ({ drinksMobile }, { drinksTablet }, { drinksDesktop })
+                  }
+                  src={drinks}
+                  alt="three drinks"
+                /> */}
+                <picture>
+                  <source
+                    srcSet={images.drinks_mobile}
+                    type="image/jpg"
+                    media="(min-width:280px)"
+                    width="335px"
+                    height="430px"
+                  />
+                  <source
+                    srcSet={images.drinks_tablet}
+                    type="image/jpg"
+                    media="(min-width:768px)"
+                    width="704px"
+                    height="430px"
+                  />
+                  <source
+                    srcSet={images.drinks_desktop}
+                    type="image/jpg"
+                    media="(min-width:1200px)"
+                    width="631px"
+                    height="480px"
+                  />
+                  <img
+                    src={images.drinks_mobile}
+                    alt="three drinks"
+                    className="img-three-drinks"
+                    // width="335px"
+                    // height="430px"
+                  />
+                </picture>
+              </div>
             </div>
           )}
         </StyledDrinkPage>

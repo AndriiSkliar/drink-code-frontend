@@ -1,12 +1,5 @@
 import { styled } from 'styled-components';
 
-import drinksMobile from '../../assets/images/drink-page/drinks-mobile.jpg';
-import drinksMobile2x from '../../assets/images/drink-page/drinks-mobile@2x.jpg';
-import drinksTablet from '../../assets/images/drink-page/drinks-tablet.jpg';
-import drinksTablet2x from '../../assets/images/drink-page/drinks-tablet@2x.jpg';
-import drinksDesktop from '../../assets/images/drink-page/drinks-desktop.jpg';
-import drinksDesktop2x from '../../assets/images/drink-page/drinks-desktop@2x.jpg';
-
 export const StyledDrinkPage = styled.div`
   .desc-glass-alco {
     font-weight: 400;
@@ -49,6 +42,7 @@ export const StyledDrinkPage = styled.div`
   }
 
   .img-drink {
+    object-fit: cover;
     border-radius: 8px;
     width: 335px;
     height: 400px;
@@ -93,13 +87,21 @@ export const StyledDrinkPage = styled.div`
   }
 
   .ingred-item {
+    width: 157px;
+    height: 183px;
+  }
+
+  .img-container {
+    width: 157px;
+    height: 157px;
+    padding: 25px;
+    background: rgba(22, 31, 55, 0.5);
+    border-radius: 8px;
   }
 
   .img-ingred {
-    background: rgba(22, 31, 55, 0.5);
-    border-radius: 8px;
-    width: 157px;
-    height: 157px;
+    width: 107px;
+    height: 107px;
   }
 
   .descr-drink-title {
@@ -119,51 +121,36 @@ export const StyledDrinkPage = styled.div`
   }
 
   .img-three-drinks {
-    image: url(${drinksMobile});
-    border-radius: 8px;
+    border-radius: 11px;
     width: 335px;
     height: 430px;
     margin-top: 40px;
-    margin-bottom: 60px;
-  }
-
-  @media (min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-    image: url(${drinksMobile2x});
   }
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
-    .container {
-      padding-top: 140px;
-      padding-bottom: 140px;
+    .img-drink {
+      object-position: inherit;
+      width: 704px;
     }
 
-    .img-drink {
-      width: 704px;
+    .title-sect-ingred {
+      margin-top: 80px;
     }
 
     .img-three-drinks {
-      image: url(${drinksTablet});
       width: 704px;
-    }
-
-    @media (min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
-      image: url(${drinksTablet2x});
     }
   }
 
   @media screen and (min-width: 1280px) {
-    .container {
-      padding-left: 100px;
-      padding-right: 100px;
-      padding-bottom: 140px;
-      padding-top: 132px;
+    .drink-container {
+      display: flex;
+      justify-content: space-between;
     }
+
     .img-drink {
       width: 400px;
+      margin-top: 0px;
     }
 
     .ingred-list {
@@ -171,20 +158,28 @@ export const StyledDrinkPage = styled.div`
       column-gap: 35px;
     }
 
+    .desc-drink {
+      width: 600px;
+    }
+
     .descr-drink-title {
       margin-top: 100px;
     }
 
-    .img-three-drinks {
-      image: url(${drinksDesktop});
-      width: 631px;
-      height: 480px;
+    .title-sect-ingred {
+      margin-top: 100px;
     }
 
-    @media (min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
-      image: url(${drinksDesktop2x});
+    .recipe-container {
+      display: flex;
+      flex-direction: row-reverse;
+      column-gap: 60px;
+      justify-content: flex-end;
+    }
+
+    .img-three-drinks {
+      width: 631px;
+      height: 480px;
     }
   }
 
@@ -200,6 +195,7 @@ export const StyledDrinkPage = styled.div`
     }
 
     .btn-add-rem-fav {
+      font-size: 16px;
       line-height: 1.125;
 
       padding-top: 18px;
@@ -207,12 +203,6 @@ export const StyledDrinkPage = styled.div`
 
       width: 250px;
       height: 54px;
-    }
-
-    .img-ingred {
-      background: rgba(22, 31, 55, 0.5);
-      width: 220px;
-      height: 220px;
     }
 
     .ingred-name {
@@ -227,6 +217,22 @@ export const StyledDrinkPage = styled.div`
 
     .ingred-descr {
       margin-top: 14px;
+    }
+
+    .ingred-item {
+      width: 220px;
+      height: 258px;
+    }
+
+    .img-container {
+      width: 220px;
+      height: 220px;
+      padding: 22px 23px 23px 22px;
+    }
+
+    .img-ingred {
+      width: 175px;
+      height: 175px;
     }
 
     .ingred-list {
