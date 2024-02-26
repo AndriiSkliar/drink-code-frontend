@@ -55,6 +55,7 @@ const cocktailsSlice = createSlice({
       .addCase(drinksOperations.addCocktail.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.cocktails = [...state.ownCocktails, payload];
+        state.totalOwn += 1;
         // toast.success(`Now ${payload.name} added`);
       })
       .addCase(
@@ -64,6 +65,7 @@ const cocktailsSlice = createSlice({
           state.cocktails = state.ownCocktails.filter(
             (cocktail) => cocktail._id !== payload._id
           );
+          state.totalOwn -= 1;
           // toast(`❌ ${payload.name} was deleted`);
         }
       )

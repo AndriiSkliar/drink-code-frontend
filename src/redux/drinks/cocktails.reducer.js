@@ -7,7 +7,7 @@ export const fetchHomePageDrinks = createAsyncThunk(
   async (_, thunkApi) => {
     try {
       const { token } = thunkApi.getState().auth; //берем токен из auth
-      console.log(token)
+      console.log(token);
       if (!token) {
         return null;
       }
@@ -115,7 +115,6 @@ export const deleteFromFavorite = createAsyncThunk(
 
 const initialState = {
   cocktails: [],
-  ownCocktails: [],
   favoriteCocktails: [],
   homepageDrinks: [],
   isLoading: false,
@@ -163,13 +162,10 @@ const cocktailsSlice = createSlice({
         );
         state.cocktails = [...state.cocktails, payload];
       })
-      .addCase(
-        drinksOperations.fetchHomePageDrinks.fulfilled,
-        (state, { payload }) => {
-          state.isLoading = false;
-          state.homepageDrinks = payload;
-        }
-      )
+      .addCase(fetchHomePageDrinks.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.homepageDrinks = payload;
+      })
       .addMatcher(
         isAnyOf(
           fetchCocktails.pending,

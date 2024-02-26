@@ -46,7 +46,7 @@ export const fetchOwnCoctails = createAsyncThunk(
   async (_, thunkApi) => {
     try {
       const { data } = await instance.get('/drinks/own');
-
+      console.log(data);
       return data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);
@@ -136,6 +136,7 @@ export const deleteFromFavorites = createAsyncThunk(
   }
 );
 export const drinksOperations = {
+  fetchOwnCoctails,
   fetchCocktails,
   fetchPopularDrinks,
   fetchFavoriteCocktails,

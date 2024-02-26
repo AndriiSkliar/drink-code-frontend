@@ -3,11 +3,13 @@ import { useSearchParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Title from '../../components/Title/Title';
 import { Loader } from '../../components/Loader/Loader.jsx';
-import DrinkList from '../../components/DrinkList/DrinkList';
+import DrinkList from '../../components/DrinkList/DrinkList.jsx';
 import { NotFoundCocktail } from '../../components/NotFoundDrink/NotFound';
-import { fetchOwnCoctails } from '../../redux/drinks/drinksOperations.js';
 import { selectIsLoading, selectOwnCocktails } from '../../redux/selectors.js';
-import { deleteOwnCocktail } from '../../redux/drinks/drinksOperations.js';
+import {
+  deleteOwnCocktail,
+  fetchOwnCoctails,
+} from '../../redux/drinks/drinksOperations.js';
 import { StyledDivNotFound } from './MyDrinks.styled.js';
 import DrinkCard from '../../components/DrinkCard/DrinkCard.jsx';
 import PaginationPanel from '../../components/Pagination/Pagination.jsx';
@@ -46,6 +48,7 @@ const MyDrinksPage = () => {
 
   const handleDeleteCocktail = (id) => {
     dispatch(deleteOwnCocktail(id)).then(() => {
+      console.log(id);
       dispatch(fetchOwnCoctails());
     });
   };
