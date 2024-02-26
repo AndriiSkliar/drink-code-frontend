@@ -36,6 +36,7 @@ const DrinksList = ({ title, drinks }) => {
         {limitedDrinks.map((drink) => (
           <DrinksItem
             key={drink._id}
+            id={drink._id}
             className="drinksListItem"
             drinkName={drink.drink}
             img={drink.drinkThumb}

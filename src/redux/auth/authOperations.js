@@ -55,7 +55,7 @@ const signOut = createAsyncThunk('auth/signout', async (_, thunkAPI) => {
 });
 
 const currentUser = createAsyncThunk(
-  'auth/currentUser',
+  'auth/refresh',
   async (_, thunkAPI) => {
     const { token } = thunkAPI.getState().auth;
 
@@ -81,29 +81,29 @@ const currentUser = createAsyncThunk(
   }
 );
 
-export const refreshThunk = createAsyncThunk(
-  'auth/refresh',
-  async (_, thunkApi) => {
-    try {
-      const state = thunkApi.getState();
-      const token = state.auth.token;
-      authHeaderToken.set(token);
-      const { data } = await instance.get('/users/current');
+// export const refreshThunk = createAsyncThunk(
+//   'auth/current',
+//   async (_, thunkApi) => {
+//     try {
+//       const state = thunkApi.getState();
+//       const token = state.auth.token;
+//       authHeaderToken.set(token);
+//       const { data } = await instance.get('/users/current');
 
-      return data;
-    } catch (err) {
-      return thunkApi.rejectWithValue(err.message);
-    }
-  },
-  {
-    condition: (_, thunkApi) => {
-      const state = thunkApi.getState();
-      const token = state.auth.token;
-      if (!token) return false;
-      return true;
-    },
-  }
-);
+//       return data;
+//     } catch (err) {
+//       return thunkApi.rejectWithValue(err.message);
+//     }
+//   },
+//   {
+//     condition: (_, thunkApi) => {
+//       const state = thunkApi.getState();
+//       const token = state.auth.token;
+//       if (!token) return false;
+//       return true;
+//     },
+//   }
+// );
 
 export const subscribeEmail = createAsyncThunk(
   '/auth/subscribe',
@@ -150,7 +150,7 @@ export const authOperations = {
   signOut,
   currentUser,
   subscribeEmail,
-  refreshThunk,
+  // refreshThunk,
   themeThunk,
   updateUser,
 };

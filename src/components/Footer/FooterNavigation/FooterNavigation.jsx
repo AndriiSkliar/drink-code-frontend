@@ -6,10 +6,16 @@ export const FooterNavigation = () => {
 
   return (
     <FooterNav>
-      <FooterNavLink to="/drinks">Drinks</FooterNavLink>
-      <FooterNavLink to="/add">Add drink</FooterNavLink>
-      <FooterNavLink to="/my">My drinks</FooterNavLink>
-      <FooterNavLink to="/favorites">
+      <FooterNavLink to="/drinks" onClick={() => window.scrollTo(0, 0)}>
+        Drinks
+      </FooterNavLink>
+      <FooterNavLink to="/add" onClick={() => window.scrollTo(0, 0)}>
+        Add drink
+      </FooterNavLink>
+      <FooterNavLink to="/my" onClick={() => window.scrollTo(0, 0)}>
+        My drinks
+      </FooterNavLink>
+      <FooterNavLink to="/favorites" onClick={() => window.scrollTo(0, 0)}>
         {isDesktop ? 'Favorites' : 'Favorites drinks'}
       </FooterNavLink>
     </FooterNav>
