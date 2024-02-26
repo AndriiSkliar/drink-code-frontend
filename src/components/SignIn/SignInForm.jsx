@@ -58,8 +58,8 @@ export default function SigninForm() {
           autoClose: 1500,
         });
       })
-      .catch(() => {
-        toast.error(`Something went wrong. Try again`, {
+      .catch((error) => {
+        toast.error(error, {
           position: "top-right",
           autoClose: 1500,
         });
