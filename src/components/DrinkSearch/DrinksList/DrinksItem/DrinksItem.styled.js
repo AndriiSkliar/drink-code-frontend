@@ -4,16 +4,42 @@ export const StyledCocktailWrapper = styled.li`
   flex-direction: column;
   gap: 18px;
   width: 335px;
+  margin-bottom: 28px;
 
   @media screen and (min-width: 768px) {
-    gap: 24px;
+    row-gap: 14px;
     width: 342px;
+    margin-bottom: 0;
+
   }
 
   @media screen and (min-width: 1280px) {
     width: 400px;
   }
 `;
+
+
+
+export const StyledCocktailImageContainer = styled.div`
+        position: relative;
+
+      /* Градиент для затемнения на фото коктейля */
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 8px;
+        background: linear-gradient(
+          180deg,
+          rgba(10, 10, 17, 0.03) 2.37%,
+          rgba(10, 10, 17, 0.96) 95.31%
+        );
+        z-index: 1;
+      }
+    `
 
 export const StyledCocktailImage = styled.img`
   border-radius: 8px;
@@ -26,19 +52,13 @@ export const StyledCocktailImage = styled.img`
 
 export const StyledCocktailName = styled.h2`
   font-weight: 500;
-  font-size: 18px;
-  line-height: 1.33333;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-  white-space: pre-wrap;
+  font-size: 16px;
+  line-height: 1.125;
   color: var(--primary-text-color);
 
   @media screen and (min-width: 768px) {
-    font-size: 24px;
-  }
+    font-size: 18px;
+    line-height: 1.33333;  }
 `;
 
 export const StyledCocktailSeeMore = styled.p`
@@ -59,28 +79,28 @@ export const StyledCocktailSeeMore = styled.p`
   }
 `;
 
-export const StyledButtonsWrapper = styled.div`
-  display: flex;
-  gap: 8px;
-`;
+// export const StyledButtonsWrapper = styled.div`
+//   display: flex;
+//   gap: 8px;
+// `;
 
 export const StyledDrinkInfo = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: calc(100% - 2px);
+
   @media screen and (min-width: 768px) {
-    gap: 24px;
     width: 342px;
   }
 
-  @media screen and (min-width: 1280px) {
-    width: 400px;
-  }
+@media screen and (min-width: 1280px) {
+ width: 400px;
+   }
 
-  svg {
+  /* svg {
     width: 24px;
-    height: 24px;
-    stroke: #f3f3f3;
-  }
-`;
+     height: 24px;
+     stroke: #f3f3f3;
+   } */
+ `;

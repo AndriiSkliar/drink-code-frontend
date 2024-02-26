@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import {
   StyledCocktailImage,
+  StyledCocktailImageContainer,
   StyledCocktailName,
   StyledCocktailSeeMore,
   StyledCocktailWrapper,
@@ -11,7 +12,9 @@ import {
 const DrinksItem = ({ id, name, img }) => {
   return (
     <StyledCocktailWrapper>
+      <StyledCocktailImageContainer>
       <StyledCocktailImage src={img} alt={name} />
+      </StyledCocktailImageContainer>
       <StyledDrinkInfo>
         <StyledCocktailName>{name}</StyledCocktailName>
         <NavLink to={`/drink/${id}`}>

@@ -1,57 +1,60 @@
 import styled from 'styled-components';
-
 export const StyledDrinksPage = styled.div`
-  @media (min-width: 1280px) {
-    padding: 0 100px;
-    margin: 160px 0 140px 0;
-  }
+  margin-top: 80px;
+  margin-bottom: 80px;
 
-  /* Стили для мобильной версии */
-  padding: 80px 20px;
-  .searchingContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 20px;
-  }
-  .categoryListsContainer {
+  /* Планшетная версия  */
+  @media (min-width: 768px) {
+    margin-top: 60px;
     margin-bottom: 60px;
+  }
+  /* Десктопная версия  */
+  @media (min-width: 1280px) {
+    margin-top: 80px;
   }
 
   .drinksTitle {
     font-weight: 600;
-    font-size: 28px;
-    line-height: 1.14286;
+    font-size: 32px;
+    line-height: 1.1875;
     color: var(--primary-text-color);
 
-    margin-bottom: 80px;
+    margin-bottom: 40px;
   }
 
-  /* Стили для планшетной версии (если они отличаются от мобильной) */
+  /* Стили для планшетной версии */
   @media (min-width: 768px) {
     .drinksTitle {
-      font-size: 40px;
+      font-size: 56px;
       line-height: 1.1;
 
-      margin-bottom: 40px;
-    }
-    .searchingContainer {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      gap: 20px;
+      margin-bottom: 60px;
     }
   }
 
-  /* Стили для десктопной версии (если они отличаются от мобильной и планшетной) */
-  @media (min-width: 1280px) {
-    .drinksTitle {
-      line-height: 1.1;
+    /* Десктопная версия  */
+    @media (min-width: 1280px) {
+      .drinksTitle {
+        font-size: 64px;
+
+        margin-bottom: 80px;
+      }
     }
+
     .searchingContainer {
       display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      row-gap: 20px;
+    }
+  
+
+  /* Стили для планшетной версии */
+  @media (min-width: 768px) {
+    .searchingContainer {
       flex-direction: row;
-      gap: 20px;
+      row-gap: 0;
+      column-gap: 8px;
     }
   }
 `;
