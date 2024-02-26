@@ -39,7 +39,7 @@ export const TitleFollowUs = styled.h3`
     font-size: 24px;
     margin-bottom: 24px;
   }
-`
+`;
 
 export const Content = styled.div`
   display: flex;
@@ -51,7 +51,7 @@ export const Content = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     row-gap: 32px;
-    column-gap: 32px;
+    column-gap: 24px;
   }
 
   @media screen and (min-width: 1440px) {

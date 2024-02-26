@@ -12,7 +12,7 @@ export const RecipeTitle = styled.h2`
   font-weight: 600;
   font-size: 28px;
   line-height: 114%;
-  color: #f3f3f3;
+  color: var(--primary-text-color);
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     font-weight: 600;
@@ -30,8 +30,8 @@ export const RecipeTitle = styled.h2`
 
 export const RecipeField = styled.textarea`
   background-color: transparent;
-  border: 1px solid rgba(243, 243, 243, 0.5);
-  color: #f3f3f3;
+  border: 1px solid var(--secondary-text-color);
+  color: var(--primary-text-color);
   border-radius: 14px;
   width: 335px;
   height: 184px;
