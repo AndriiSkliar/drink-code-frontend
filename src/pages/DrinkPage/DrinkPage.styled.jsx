@@ -5,7 +5,7 @@ export const StyledDrinkPage = styled.div`
     font-weight: 400;
     font-size: 12px;
     line-height: 1.16667;
-    color: var(--primary-text-color-05);
+    color: var(--secondary-text-color);
     margin-top: 8px;
   }
 
@@ -21,7 +21,7 @@ export const StyledDrinkPage = styled.div`
     font-weight: 600;
     font-size: 14px;
     line-height: 1.28571;
-    color: var(--primary-black-color);
+    color: var(--link-text);
     border-radius: 42px;
     border: none;
 
@@ -30,15 +30,15 @@ export const StyledDrinkPage = styled.div`
 
     width: 222px;
     height: 46px;
-    background: #f3f3f3;
+    background: var(--link-bg);
     margin-top: 40px;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .btn-add-rem-fav:hover,
   .btn-add-rem-fav:focus {
-    color: var(--primary-text-color);
-    background: var(--primary-black-color);
+    color: var(--link-bg-hover);
+    background: var(--link-text);
   }
 
   .img-drink {
@@ -53,7 +53,7 @@ export const StyledDrinkPage = styled.div`
     font-weight: 500;
     font-size: 16px;
     line-height: 1.25;
-    color: rgba(243, 243, 243, 0.5);
+    color: var(--secondary-text-color);
     margin-top: 18px;
   }
 
@@ -83,7 +83,7 @@ export const StyledDrinkPage = styled.div`
     font-weight: 500;
     font-size: 14px;
     line-height: 1.28571;
-    color: var(--primary-text-color-05);
+    color: var(--secondary-text-color);
   }
 
   .ingred-item {
@@ -128,6 +128,11 @@ export const StyledDrinkPage = styled.div`
   }
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
+    .container-page {
+      max-width: 768px;
+      padding: 140px 32px;
+    }
+
     .img-drink {
       object-position: inherit;
       width: 704px;
@@ -143,6 +148,11 @@ export const StyledDrinkPage = styled.div`
   }
 
   @media screen and (min-width: 1280px) {
+    .container-page {
+      max-width: 1280px;
+      padding: 158px 100px 140px 100px;
+    }
+
     .drink-container {
       display: flex;
       justify-content: space-between;
