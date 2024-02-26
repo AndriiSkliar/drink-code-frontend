@@ -1,9 +1,15 @@
-import{u as k,a as b,b as s,y as j,r as u,z as w,j as e,L as v,A as y,d as _}from"./index-83de2921.js";import{T as N}from"./Title-bfdf808c.js";import{d as p}from"./drinkSelectors-5b86cb2e.js";import{a as z,s as F}from"./selectors-339aa893.js";import D from"./ErrorPage-98a96249.js";import"./NotFound-8e703388.js";const T=k.div`
+import{u as f,a as b,b as s,y as j,r as u,z as w,j as e,L as v,A as y,d as _}from"./index-88338c00.js";import{T as N}from"./Title-e9d0634e.js";import{d as p}from"./drinkSelectors-5b86cb2e.js";import{a as z,s as D}from"./selectors-339aa893.js";import F from"./ErrorPage-e065f7c0.js";import"./NotFound-6e0ab3d2.js";const T=f.div`
+  .container-page {
+    margin: 0 auto;
+    max-width: 375px;
+    padding: 80px 20px;
+  }
+
   .desc-glass-alco {
     font-weight: 400;
     font-size: 12px;
     line-height: 1.16667;
-    color: var(--primary-text-color-05);
+    color: var(--secondary-text-color);
     margin-top: 8px;
   }
 
@@ -19,7 +25,7 @@ import{u as k,a as b,b as s,y as j,r as u,z as w,j as e,L as v,A as y,d as _}fro
     font-weight: 600;
     font-size: 14px;
     line-height: 1.28571;
-    color: var(--primary-black-color);
+    color: var(--link-text);
     border-radius: 42px;
     border: none;
 
@@ -28,19 +34,20 @@ import{u as k,a as b,b as s,y as j,r as u,z as w,j as e,L as v,A as y,d as _}fro
 
     width: 222px;
     height: 46px;
-    background: #f3f3f3;
+    background: var(--link-bg);
     margin-top: 40px;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .btn-add-rem-fav:hover,
   .btn-add-rem-fav:focus {
-    color: var(--primary-text-color);
-    background: var(--primary-black-color);
+    color: var(--link-bg-hover);
+    background: var(--link-text);
   }
 
   .img-drink {
     object-fit: cover;
+    object-position: top;
     border-radius: 8px;
     width: 335px;
     height: 400px;
@@ -51,7 +58,7 @@ import{u as k,a as b,b as s,y as j,r as u,z as w,j as e,L as v,A as y,d as _}fro
     font-weight: 500;
     font-size: 16px;
     line-height: 1.25;
-    color: rgba(243, 243, 243, 0.5);
+    color: var(--secondary-text-color);
     margin-top: 18px;
   }
 
@@ -67,6 +74,7 @@ import{u as k,a as b,b as s,y as j,r as u,z as w,j as e,L as v,A as y,d as _}fro
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-top: 8px;
   }
 
@@ -81,7 +89,7 @@ import{u as k,a as b,b as s,y as j,r as u,z as w,j as e,L as v,A as y,d as _}fro
     font-weight: 500;
     font-size: 14px;
     line-height: 1.28571;
-    color: var(--primary-text-color-05);
+    color: var(--secondary-text-color);
   }
 
   .ingred-item {
@@ -93,7 +101,7 @@ import{u as k,a as b,b as s,y as j,r as u,z as w,j as e,L as v,A as y,d as _}fro
     width: 157px;
     height: 157px;
     padding: 25px;
-    background: rgba(22, 31, 55, 0.5);
+    background: var(--ingredient-bg);
     border-radius: 8px;
   }
 
@@ -126,8 +134,12 @@ import{u as k,a as b,b as s,y as j,r as u,z as w,j as e,L as v,A as y,d as _}fro
   }
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
+    .container-page {
+      max-width: 768px;
+      padding: 140px 32px;
+    }
+
     .img-drink {
-      object-position: inherit;
       width: 704px;
     }
 
@@ -141,6 +153,11 @@ import{u as k,a as b,b as s,y as j,r as u,z as w,j as e,L as v,A as y,d as _}fro
   }
 
   @media screen and (min-width: 1280px) {
+    .container-page {
+      max-width: 1280px;
+      padding: 158px 100px 140px 100px;
+    }
+
     .drink-container {
       display: flex;
       justify-content: space-between;
@@ -249,4 +266,4 @@ import{u as k,a as b,b as s,y as j,r as u,z as w,j as e,L as v,A as y,d as _}fro
       line-height: 1.375;
     }
   }
-`,S="/drink-code-frontend/assets/drinks_mobile-b94d9f31.jpg",E="/drink-code-frontend/assets/drinks_mobile@2x-cfc7bd4d.jpg",P="/drink-code-frontend/assets/drinks_tablet-ce0a3bb4.jpg",C="/drink-code-frontend/assets/drinks_tablet@2x-2ec4efe3.jpg",L="/drink-code-frontend/assets/drinks_desktop-0dda4d57.jpg",q="/drink-code-frontend/assets/drinks_desktop@2x-eb8bc799.jpg",d={drinks_mobile:S,drinks_mobile_2x:E,drinks_tablet:P,drinks_tablet_2x:C,drinks_desktop:L,drinks_desktop_2x:q},c="https://dummyimage.com/335x400",H=()=>{const r=b(),i=s(p.drinkDetails),x=s(p.selectError),l=s(z),g=s(F),{id:n}=j(),o=g.some(t=>t._id===n);u.useEffect(()=>{r(w(n))},[r,o]);const h=t=>{r(y(t))},m=t=>{r(_(t))};return e.jsx(e.Fragment,{children:x!==null?e.jsx(D,{}):e.jsxs(T,{className:"container",children:[l===!0&&e.jsx(v,{}),i!==null&&e.jsxs("div",{children:[e.jsx(N,{text:i.drink}),e.jsxs("div",{className:"desc-glass-alco",children:[e.jsx("span",{children:i.glass}),e.jsx("span",{children:" / "}),e.jsx("span",{children:i.alcoholic})]}),e.jsx("p",{className:"desc-drink",children:i.description}),o?e.jsx("button",{className:"btn-add-rem-fav",onClick:()=>m(n),children:"Remove from favorites"}):e.jsx("button",{className:"btn-add-rem-fav",onClick:()=>h(n),children:"Add to favorite drinks"}),e.jsx("img",{className:"img-drink",src:i.drinkThumb?`${i.drinkThumb}`:c,alt:i.drink}),e.jsx("h2",{className:"title-sect-ingred",children:"Ingredients"}),e.jsx("ul",{className:"ingred-list",children:i.ingredients.map(({ingredientId:t,title:a,measure:f})=>e.jsxs("li",{className:"ingred-item",children:[e.jsx("div",{className:"img-container",children:e.jsx("img",{className:"img-ingred",src:t.ingredientThumb||c,alt:a})}),e.jsxs("div",{className:"ingred-descr",children:[e.jsx("span",{className:"ingred-name",children:a}),e.jsx("span",{className:"ingred-quantity",children:f})]})]},a))}),e.jsx("h2",{className:"descr-drink-title",children:"Recipe Preparation"}),e.jsxs("div",{className:"recipe-container",children:[e.jsx("p",{className:"recipe-text",children:i.instructions}),e.jsxs("picture",{children:[e.jsx("source",{srcSet:d.drinks_mobile,type:"image/jpg",media:"(min-width:280px)",width:"335px",height:"430px"}),e.jsx("source",{srcSet:d.drinks_tablet,type:"image/jpg",media:"(min-width:768px)",width:"704px",height:"430px"}),e.jsx("source",{srcSet:d.drinks_desktop,type:"image/jpg",media:"(min-width:1200px)",width:"631px",height:"480px"}),e.jsx("img",{src:d.drinks_mobile,alt:"three drinks",className:"img-three-drinks"})]})]})]})]})})};export{H as default};
+`,S="/drink-code-frontend/assets/drinks_mobile-b94d9f31.jpg",E="/drink-code-frontend/assets/drinks_mobile@2x-cfc7bd4d.jpg",P="/drink-code-frontend/assets/drinks_tablet-ce0a3bb4.jpg",C="/drink-code-frontend/assets/drinks_tablet@2x-2ec4efe3.jpg",L="/drink-code-frontend/assets/drinks_desktop-0dda4d57.jpg",q="/drink-code-frontend/assets/drinks_desktop@2x-eb8bc799.jpg",d={drinks_mobile:S,drinks_mobile_2x:E,drinks_tablet:P,drinks_tablet_2x:C,drinks_desktop:L,drinks_desktop_2x:q},c="https://dummyimage.com/335x400",H=()=>{const n=b(),i=s(p.drinkDetails),x=s(p.selectError),l=s(z),g=s(D),{id:r}=j(),o=g.some(t=>t._id===r);u.useEffect(()=>{n(w(r))},[n,o]);const h=t=>{n(y(t))},m=t=>{n(_(t))};return e.jsx(T,{children:e.jsx("div",{className:"container-page",children:x!==null?e.jsx(F,{}):e.jsxs("div",{children:[l===!0&&e.jsx(v,{}),i!==null&&e.jsxs("div",{children:[e.jsxs("div",{className:"drink-container",children:[e.jsxs("div",{children:[e.jsx(N,{text:i.drink}),e.jsxs("div",{className:"desc-glass-alco",children:[e.jsx("span",{children:i.glass}),e.jsx("span",{children:" / "}),e.jsx("span",{children:i.alcoholic})]}),e.jsx("p",{className:"desc-drink",children:i.description}),o?e.jsx("button",{className:"btn-add-rem-fav",onClick:()=>m(r),children:"Remove from favorites"}):e.jsx("button",{className:"btn-add-rem-fav",onClick:()=>h(r),children:"Add to favorite drinks"})]}),e.jsx("img",{className:"img-drink",src:i.drinkThumb?`${i.drinkThumb}`:c,alt:i.drink})]}),e.jsx("h2",{className:"title-sect-ingred",children:"Ingredients"}),e.jsx("ul",{className:"ingred-list",children:i.ingredients.map(({ingredientId:t,title:a,measure:k})=>e.jsxs("li",{className:"ingred-item",children:[e.jsx("div",{className:"img-container",children:e.jsx("img",{className:"img-ingred",src:t.ingredientThumb||c,alt:a})}),e.jsxs("div",{className:"ingred-descr",children:[e.jsx("span",{className:"ingred-name",children:a}),e.jsx("span",{className:"ingred-quantity",children:k})]})]},a))}),e.jsx("h2",{className:"descr-drink-title",children:"Recipe Preparation"}),e.jsxs("div",{className:"recipe-container",children:[e.jsx("p",{className:"recipe-text",children:i.instructions}),e.jsxs("picture",{children:[e.jsx("source",{srcSet:d.drinks_mobile,type:"image/jpg",media:"(min-width:280px)",width:"335px",height:"430px"}),e.jsx("source",{srcSet:d.drinks_tablet,type:"image/jpg",media:"(min-width:768px)",width:"704px",height:"430px"}),e.jsx("source",{srcSet:d.drinks_desktop,type:"image/jpg",media:"(min-width:1200px)",width:"631px",height:"480px"}),e.jsx("img",{src:d.drinks_mobile,alt:"three drinks",className:"img-three-drinks"})]})]})]})]})})})};export{H as default};
