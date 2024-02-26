@@ -9,12 +9,9 @@ const SearchSelectCategory = () => {
   const dispatch = useDispatch();
 
   const searchByCategory = (event) => {
-    const searchCategory = event.target.value;
-    const formData = {
-      category: searchCategory,
-    };
-    console.log('category', JSON.stringify(formData));
-    dispatch(fetchDrinksByCategory(JSON.stringify(formData)));
+    const category = event.target.value;
+
+    dispatch(fetchDrinksByCategory(category));
   };
   return (
     <SearchSelectStyled>

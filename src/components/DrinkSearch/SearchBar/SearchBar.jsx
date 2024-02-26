@@ -35,6 +35,8 @@ const SearchBar = () => {
             autoFocus
             placeholder="Enter the text"
             name="searchLetter"
+            min="1"
+            max="20"
           />
           <StyledSearchButton type="submit">
             <Icon />
