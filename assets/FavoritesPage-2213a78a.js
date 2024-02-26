@@ -1,4 +1,4 @@
-import{u as i,a as g,j as e,N as k,d as f,b as l,c as b,r as p,e as j,L as y}from"./index-e4677a76.js";import{T as S}from"./Title-bcbab48a.js";import{S as P,D as C}from"./FavoritesPage.styled-3c00edc8.js";import{s as z,a as F,b as D}from"./selectors-d3804845.js";import{N as L}from"./NotFound-72ff3242.js";import{P as N}from"./Pagination-b73466ee.js";const E=i.li`
+import{u as i,a as g,j as e,N as k,d as f,b as l,c as b,r as p,e as j,L as y}from"./index-adddee4c.js";import{T as S}from"./Title-877cb272.js";import{S as P,D as C}from"./FavoritesPage.styled-9202279b.js";import{s as z,a as F,b as D}from"./selectors-d3804845.js";import{N as L}from"./NotFound-9bd4ada6.js";import{P as N}from"./Pagination-d934601c.js";const E=i.li`
   display: flex;
   flex-direction: column;
   gap: 18px;

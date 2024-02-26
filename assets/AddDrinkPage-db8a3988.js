@@ -1,4 +1,4 @@
-import{u as d,N as w,j as e,b as k,a as v,r as p,g as S,h as T,i as _,k as C,l as m,m as A}from"./index-e4677a76.js";import{c as M}from"./selectors-d3804845.js";const I=d.aside`
+import{u as i,N as x,j as e,b as A,a as M,r as c,g as I,h as q,i as B,k as G,l as g,m as j,B as P}from"./index-adddee4c.js";import{c as L}from"./selectors-d3804845.js";const R=i.aside`
   @media screen and (min-width: 768px) {
     max-width: 704px;
     margin: 0 auto;
@@ -8,7 +8,7 @@ import{u as d,N as w,j as e,b as k,a as v,r as p,g as S,h as T,i as _,k as C,l a
     max-width: 313px;
     margin: 0 0 0 auto;
   }
-`,q=d.h3`
+`,N=i.h3`
   font-weight: 500;
   font-size: 18px;
   line-height: 1.33333;
@@ -21,7 +21,7 @@ import{u as d,N as w,j as e,b as k,a as v,r as p,g as S,h as T,i as _,k as C,l a
     margin-bottom: 40px;
     margin-top: 80px;
   }
-`,x=d.h3`
+`,F=i.h3`
   font-weight: 500;
   font-size: 18px;
   line-height: 1.33333;
@@ -32,7 +32,7 @@ import{u as d,N as w,j as e,b as k,a as v,r as p,g as S,h as T,i as _,k as C,l a
     font-size: 24px;
     margin-bottom: 24px;
   }
-`,B=d.div`
+`,$=i.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,7 +50,7 @@ import{u as d,N as w,j as e,b as k,a as v,r as p,g as S,h as T,i as _,k as C,l a
     flex-wrap: nowrap;
     row-gap: 28px;
   }
-`,G=d(w)`
+`,z=i(x)`
   display: flex;
   align-items: flex-start;
   column-gap: 14px;
@@ -62,16 +62,16 @@ import{u as d,N as w,j as e,b as k,a as v,r as p,g as S,h as T,i as _,k as C,l a
       box-shadow: 0px 0px 17px 1px rgba(14, 20, 92, 1);
     }
   }
-`,P=d.img`
+`,W=i.img`
   border-radius: 8px;
   transition: all 400ms ease;
-`,L=d.h4`
+`,D=i.h4`
   font-weight: 500;
   font-size: 16px;
   line-height: 1.375;
   color: var(--primary-text-color);
   margin-bottom: 8px;
-`,j=d.p`
+`,V=i.p`
   font-weight: 400;
   font-size: 14px;
   line-height: 1.28571;
@@ -87,17 +87,17 @@ import{u as d,N as w,j as e,b as k,a as v,r as p,g as S,h as T,i as _,k as C,l a
   @media screen and (min-width: 1440px) {
     line-height: 1.428;
   }
-`,R=d.ul`
+`,E=i.ul`
   display: inline-flex;
   column-gap: 14px;
-`,f=d.li`
+`,f=i.li`
   opacity: 0.8;
   transition: opacity 250ms ease;
   &:hover,
   &:focus {
     opacity: 1;
   }
-`,y=d.a`
+`,y=i.a`
   display: inline-flex;
 
   width: 38px;
@@ -121,7 +121,7 @@ import{u as d,N as w,j as e,b as k,a as v,r as p,g as S,h as T,i as _,k as C,l a
     width: 44px;
     height: 44px;
   }
-`,b=d.svg`
+`,b=i.svg`
   width: 22px;
   height: 22px;
   fill: var(--primary-text-color);
@@ -130,7 +130,176 @@ import{u as d,N as w,j as e,b as k,a as v,r as p,g as S,h as T,i as _,k as C,l a
     width: 28px;
     height: 28px;
   }
-`,N=()=>e.jsxs(R,{children:[e.jsx(f,{children:e.jsx(y,{href:"https://www.facebook.com/goITclub/",target:"_blank",rel:"noopener noreferrer",children:e.jsx(b,{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 28 28",children:e.jsx("path",{d:"M17.0804 4.06011C17.2904 4.06011 17.5004 4.06011 17.9204 4.06011V7.21011C17.7104 7.21011 17.2904 7.21011 16.8704 7.21011C16.4504 7.21011 16.0304 7.21011 15.8204 7.42011C15.6104 7.63011 15.6104 7.84011 15.6104 8.33011C15.6104 8.75011 15.6104 9.03011 15.6104 9.45011H17.9204V12.1101H15.6104V23.6601H12.0404V12.0401H10.1504V9.38011H12.0404V8.47011C12.0404 6.93011 12.2504 5.81011 12.6704 5.32011C13.3004 4.41011 14.5604 3.99011 16.4504 3.99011C16.6604 4.06011 16.8704 4.06011 17.0804 4.06011Z"})})})}),e.jsx(f,{children:e.jsx(y,{href:"https://www.instagram.com/goitclub/",target:"_blank",rel:"noopener noreferrer",children:e.jsxs(b,{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 28 28",children:[e.jsx("path",{d:"M25.1277 9.41152C25.114 8.47146 24.9398 7.53885 24.6065 6.65964C24.0231 5.15827 22.8352 3.97109 21.3313 3.38991C20.4618 3.06332 19.5426 2.88822 18.6122 2.86835C17.4155 2.81495 17.0361 2.80005 13.9986 2.80005C10.961 2.80005 10.5716 2.80005 9.38372 2.86835C8.45454 2.88822 7.5353 3.06332 6.66582 3.38991C5.16196 3.97109 3.97279 5.15827 3.39065 6.65964C3.06351 7.52767 2.88688 8.44538 2.86946 9.37302C2.81598 10.5689 2.7998 10.9477 2.7998 13.9802C2.7998 17.0127 2.7998 17.4002 2.86946 18.5873C2.88812 19.5162 3.06351 20.4327 3.39065 21.3032C3.97404 22.8033 5.16195 23.9905 6.66706 24.5717C7.53281 24.9095 8.45205 25.1007 9.38497 25.1305C10.5828 25.1839 10.9622 25.2001 13.9998 25.2001C17.0374 25.2001 17.4267 25.2001 18.6146 25.1305C19.5438 25.1119 20.4631 24.9368 21.3338 24.6102C22.8377 24.0278 24.0256 22.8406 24.609 21.3405C24.9361 20.4712 25.1115 19.5547 25.1301 18.6246C25.1836 17.43 25.1998 17.0512 25.1998 14.0174C25.1973 10.9849 25.1973 10.5999 25.1277 9.41152ZM13.9911 19.7149C10.8142 19.7149 8.24059 17.1456 8.24059 13.974C8.24059 10.8024 10.8142 8.23302 13.9911 8.23302C17.1655 8.23302 19.7416 10.8024 19.7416 13.974C19.7416 17.1456 17.1655 19.7149 13.9911 19.7149ZM19.9705 9.35936C19.2279 9.35936 18.6296 8.7608 18.6296 8.02067C18.6296 7.28055 19.2279 6.68199 19.9705 6.68199C20.7106 6.68199 21.3102 7.28055 21.3102 8.02067C21.3102 8.7608 20.7106 9.35936 19.9705 9.35936Z"}),e.jsx("path",{d:"M13.9928 17.4789C15.9277 17.4789 17.4963 15.9104 17.4963 13.9754C17.4963 12.0405 15.9277 10.4719 13.9928 10.4719C12.0578 10.4719 10.4893 12.0405 10.4893 13.9754C10.4893 15.9104 12.0578 17.4789 13.9928 17.4789Z"})]})})}),e.jsx(f,{children:e.jsx(y,{href:"https://www.youtube.com/c/GoIT",target:"_blank",rel:"noopener noreferrer",children:e.jsx(b,{xmlns:"http://www.w3.org/2000/svg",width:"28",height:"28",viewBox:"0 0 28 28",children:e.jsx("path",{fillRule:"evenodd",clipRule:"evenodd",d:"M21.2103 5.24986C20.0203 5.17986 17.5704 5.10986 13.8604 5.10986H13.3703C9.80034 5.10986 7.42038 5.17986 6.23038 5.31986C4.62038 5.45986 3.50034 5.87986 2.87034 6.43986C2.31034 6.92986 1.89036 7.83986 1.75036 9.02986C1.68036 9.79986 1.61035 11.4099 1.61035 13.8599V14.2099C1.61035 16.5199 1.68034 18.1299 1.82034 18.8999C2.03034 20.0199 2.38038 20.8599 3.08038 21.3499C3.78038 21.9099 4.97036 22.2599 6.65036 22.3999C7.84036 22.4699 10.2904 22.5399 14.0004 22.5399H14.4904C18.0604 22.5399 20.4404 22.4699 21.6304 22.3299C23.2404 22.1899 24.3604 21.7699 24.9904 21.2099C25.5504 20.7199 25.9703 19.8099 26.1103 18.6199C26.1803 17.8499 26.2504 16.2399 26.2504 13.7899V13.4399C26.2504 11.1299 26.1804 9.51986 26.0404 8.74986C25.8304 7.62986 25.4804 6.78986 24.7804 6.29986C24.0804 5.73986 22.8903 5.38986 21.2103 5.24986ZM18.4804 13.8599L10.7804 18.4799V9.23986L18.4804 13.8599Z"})})})})]}),$=()=>{const i=k(M),r=v();return p.useEffect(()=>{r(S())},[r]),e.jsxs(I,{children:[e.jsx(x,{children:"Follow Us"}),e.jsx(N,{}),e.jsx(q,{children:"Popular drinks"}),e.jsx(B,{children:i.map(o=>{const{drink:s,description:a,drinkThumb:t,_id:n}=o;return e.jsxs(G,{to:`/drink/${n}`,children:[e.jsx(P,{src:t,alt:a,width:90,height:90}),e.jsxs("div",{children:[e.jsx(L,{children:s}),e.jsx(j,{children:a})]})]},n)})})]})},F=["Ordinary Drink","Cocktail","Shake","Other/Unknown","Cocoa","Shot","Coffee/Tea","Homemade Liqueur","Punch/Party Drink","Beer","Soft Drink"],W=["Highball glass","Cocktail glass","Old-fashioned glass","Whiskey Glass","Collins glass","Pousse cafe glass","Champagne flute","Whiskey sour glass","Cordial glass","Brandy snifter","White wine glass","Nick and Nora Glass","Hurricane glass","Coffee mug","Shot glass","Jar","Irish coffee cup","Punch bowl","Pitcher","Pint glass","Copper Mug","Wine Glass","Beer mug","Margarita/Coupette glass","Beer pilsner","Beer Glass","Parfait glass","Mason jar","Margarita glass","Martini Glass","Balloon Glass","Coupe Glass"],z=({formik:i,setFileAvatar:r})=>{const[o,s]=p.useState(""),a=t=>{const n=t.target.files[0];r(n);const l=URL.createObjectURL(n);s(l)};return e.jsxs(e.Fragment,{children:[e.jsx("label",{htmlFor:"drinkThumb",children:"+"}),e.jsx("input",{type:"file",id:"drinkThumb",name:"drinkThumb",onChange:a}),o&&e.jsx("img",{src:o===""?null:o,alt:"avatar of the user",width:335,height:400}),e.jsx("input",{type:"text",name:"drink",value:i.values.drink,placeholder:"Enter item title",onChange:i.handleChange}),e.jsx("input",{type:"text",name:"description",value:i.values.description,onChange:i.handleChange,placeholder:"Enter about recipe"}),e.jsx("select",{name:"category",onChange:i.handleChange,children:F.map((t,n)=>e.jsx("option",{value:t,children:t},n))}),e.jsx("select",{name:"glass",onChange:i.handleChange,children:W.map((t,n)=>e.jsx("option",{value:t,children:t},n))}),e.jsxs("div",{children:[e.jsx("input",{type:"radio",id:"alcoholic",name:"alcoholic",value:"Alcoholic",onChange:i.handleChange,checked:i.values.alcoholic==="Alcoholic"}),e.jsx("label",{htmlFor:"alcoholic",children:"Alcoholic"}),e.jsx("input",{type:"radio",id:"non-alcoholic",name:"alcoholic",value:"Non-alcoholic",onChange:i.handleChange,checked:i.values.alcoholic==="Non-alcoholic"}),e.jsx("label",{htmlFor:"non-alcoholic",children:"Non-alcoholic"})]})]})},D=[{_id:{$oid:"64aebb7f82d96cc69e0eb4a4"},title:"Light rum",ingredientThumb:"https://ftp.goit.study/img/drinkify/ingredients/Light_rum.png","thumb-medium":"https://ftp.goit.study/img/drinkify/ingredients/Light_rum-Medium.png","thumb-small":"https://ftp.goit.study/img/drinkify/ingredients/Light_rum-Small.png",abv:"40",alcohol:"Yes",description:'Light rums, also referred to as "silver"or "white"rums, in general, have very little flavour aside from a general sweetness. Light rums are sometimes filtered after aging to remove any colour. The majority of light rums come from Puerto Rico. Their milder flavours make them popular for use in mixed drinks, as opposed to drinking them straight. Light rums are included in some of the most popular cocktails including the Mojito and the Daiquiri.',type:"Rum",flavour:"light, sweet",country:"Puerto Rico"},{_id:{$oid:"64aebb7f82d96cc69e0eb4a5"},title:"Applejack",ingredientThumb:"https://ftp.goit.study/img/drinkify/ingredients/Applejack.png","thumb-medium":"https://ftp.goit.study/img/drinkify/ingredients/Applejack-Medium.png","thumb-small":"https://ftp.goit.study/img/drinkify/ingredients/Applejack-Small.png",abv:"40",alcohol:"Yes",description:"Applejack is a strong apple-flavoured alcoholic drink produced from apples. Popular in the American colonial era, the drink's prevalence declined in the 19th and 20th centuries amid competition from other spirits.",type:"Beverage",flavour:"apples, oak",country:"United States"},{_id:{$oid:"64aebb7f82d96cc69e0eb4a6"},title:"Gin",ingredientThumb:"https://ftp.goit.study/img/drinkify/ingredients/Gin.png","thumb-medium":"https://ftp.goit.study/img/drinkify/ingredients/Gin-Medium.png","thumb-small":"https://ftp.goit.study/img/drinkify/ingredients/Gin-Small.png",abv:"40",alcohol:"Yes",description:"Gin is liquor which derives its predominant flavour from juniper berries (Juniperus communis). From its earliest origins in the Middle Ages, gin has evolved over the course of a millennium from a herbal medicine to an object of commerce in the spirits industry. Gin was developed on the basis of the older jenever, and became popular in Great Britain (particularly in London) when William of Orange, leader of the Dutch Republic, occupied the English, Scottish, and Irish thrones with his wife Mary. Gin is one of the broadest categories of spirits, represented by products of Globalorigins, styles, and flavour profiles that all revolve around juniper as a common ingredient.",type:"Gin",flavour:"English-style gin, citrus, juniper",country:"United States"},{_id:{$oid:"64aebb7f82d96cc69e0eb4a7"},title:"Dark rum",ingredientThumb:"https://ftp.goit.study/img/drinkify/ingredients/Dark_rum.png","thumb-medium":"https://ftp.goit.study/img/drinkify/ingredients/Dark_rum-Medium.png","thumb-small":"https://ftp.goit.study/img/drinkify/ingredients/Dark_rum-Small.png",abv:"40",alcohol:"Yes",description:`Dark rum, also known as black rum, classes as a grade darker than gold rum. It is generally aged longer, in heavily charred barrels. Dark rum has a much stronger flavour than either light or gold rum, and hints of spices can be detected, along with a strong molasses or caramel overtone. It is used to provide substance in rum drinks, as well as color.\r
+`,U=()=>e.jsxs(E,{children:[e.jsx(f,{children:e.jsx(y,{href:"https://www.facebook.com/goITclub/",target:"_blank",rel:"noopener noreferrer",children:e.jsx(b,{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 28 28",children:e.jsx("path",{d:"M17.0804 4.06011C17.2904 4.06011 17.5004 4.06011 17.9204 4.06011V7.21011C17.7104 7.21011 17.2904 7.21011 16.8704 7.21011C16.4504 7.21011 16.0304 7.21011 15.8204 7.42011C15.6104 7.63011 15.6104 7.84011 15.6104 8.33011C15.6104 8.75011 15.6104 9.03011 15.6104 9.45011H17.9204V12.1101H15.6104V23.6601H12.0404V12.0401H10.1504V9.38011H12.0404V8.47011C12.0404 6.93011 12.2504 5.81011 12.6704 5.32011C13.3004 4.41011 14.5604 3.99011 16.4504 3.99011C16.6604 4.06011 16.8704 4.06011 17.0804 4.06011Z"})})})}),e.jsx(f,{children:e.jsx(y,{href:"https://www.instagram.com/goitclub/",target:"_blank",rel:"noopener noreferrer",children:e.jsxs(b,{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 28 28",children:[e.jsx("path",{d:"M25.1277 9.41152C25.114 8.47146 24.9398 7.53885 24.6065 6.65964C24.0231 5.15827 22.8352 3.97109 21.3313 3.38991C20.4618 3.06332 19.5426 2.88822 18.6122 2.86835C17.4155 2.81495 17.0361 2.80005 13.9986 2.80005C10.961 2.80005 10.5716 2.80005 9.38372 2.86835C8.45454 2.88822 7.5353 3.06332 6.66582 3.38991C5.16196 3.97109 3.97279 5.15827 3.39065 6.65964C3.06351 7.52767 2.88688 8.44538 2.86946 9.37302C2.81598 10.5689 2.7998 10.9477 2.7998 13.9802C2.7998 17.0127 2.7998 17.4002 2.86946 18.5873C2.88812 19.5162 3.06351 20.4327 3.39065 21.3032C3.97404 22.8033 5.16195 23.9905 6.66706 24.5717C7.53281 24.9095 8.45205 25.1007 9.38497 25.1305C10.5828 25.1839 10.9622 25.2001 13.9998 25.2001C17.0374 25.2001 17.4267 25.2001 18.6146 25.1305C19.5438 25.1119 20.4631 24.9368 21.3338 24.6102C22.8377 24.0278 24.0256 22.8406 24.609 21.3405C24.9361 20.4712 25.1115 19.5547 25.1301 18.6246C25.1836 17.43 25.1998 17.0512 25.1998 14.0174C25.1973 10.9849 25.1973 10.5999 25.1277 9.41152ZM13.9911 19.7149C10.8142 19.7149 8.24059 17.1456 8.24059 13.974C8.24059 10.8024 10.8142 8.23302 13.9911 8.23302C17.1655 8.23302 19.7416 10.8024 19.7416 13.974C19.7416 17.1456 17.1655 19.7149 13.9911 19.7149ZM19.9705 9.35936C19.2279 9.35936 18.6296 8.7608 18.6296 8.02067C18.6296 7.28055 19.2279 6.68199 19.9705 6.68199C20.7106 6.68199 21.3102 7.28055 21.3102 8.02067C21.3102 8.7608 20.7106 9.35936 19.9705 9.35936Z"}),e.jsx("path",{d:"M13.9928 17.4789C15.9277 17.4789 17.4963 15.9104 17.4963 13.9754C17.4963 12.0405 15.9277 10.4719 13.9928 10.4719C12.0578 10.4719 10.4893 12.0405 10.4893 13.9754C10.4893 15.9104 12.0578 17.4789 13.9928 17.4789Z"})]})})}),e.jsx(f,{children:e.jsx(y,{href:"https://www.youtube.com/c/GoIT",target:"_blank",rel:"noopener noreferrer",children:e.jsx(b,{xmlns:"http://www.w3.org/2000/svg",width:"28",height:"28",viewBox:"0 0 28 28",children:e.jsx("path",{fillRule:"evenodd",clipRule:"evenodd",d:"M21.2103 5.24986C20.0203 5.17986 17.5704 5.10986 13.8604 5.10986H13.3703C9.80034 5.10986 7.42038 5.17986 6.23038 5.31986C4.62038 5.45986 3.50034 5.87986 2.87034 6.43986C2.31034 6.92986 1.89036 7.83986 1.75036 9.02986C1.68036 9.79986 1.61035 11.4099 1.61035 13.8599V14.2099C1.61035 16.5199 1.68034 18.1299 1.82034 18.8999C2.03034 20.0199 2.38038 20.8599 3.08038 21.3499C3.78038 21.9099 4.97036 22.2599 6.65036 22.3999C7.84036 22.4699 10.2904 22.5399 14.0004 22.5399H14.4904C18.0604 22.5399 20.4404 22.4699 21.6304 22.3299C23.2404 22.1899 24.3604 21.7699 24.9904 21.2099C25.5504 20.7199 25.9703 19.8099 26.1103 18.6199C26.1803 17.8499 26.2504 16.2399 26.2504 13.7899V13.4399C26.2504 11.1299 26.1804 9.51986 26.0404 8.74986C25.8304 7.62986 25.4804 6.78986 24.7804 6.29986C24.0804 5.73986 22.8903 5.38986 21.2103 5.24986ZM18.4804 13.8599L10.7804 18.4799V9.23986L18.4804 13.8599Z"})})})})]}),O=()=>{const a=A(L),r=M();return c.useEffect(()=>{r(I())},[r]),e.jsxs(R,{children:[e.jsx(F,{children:"Follow Us"}),e.jsx(U,{}),e.jsx(N,{children:"Popular drinks"}),e.jsx($,{children:a.map(d=>{const{drink:h,description:l,drinkThumb:o,_id:u}=d;return e.jsxs(z,{to:`/drink/${u}`,children:[e.jsx(W,{src:o,alt:l,width:90,height:90}),e.jsxs("div",{children:[e.jsx(D,{children:h}),e.jsx(V,{children:l})]})]},u)})})]})},Y=["Ordinary Drink","Cocktail","Shake","Other/Unknown","Cocoa","Shot","Coffee/Tea","Homemade Liqueur","Punch/Party Drink","Beer","Soft Drink"],H=["Highball glass","Cocktail glass","Old-fashioned glass","Whiskey Glass","Collins glass","Pousse cafe glass","Champagne flute","Whiskey sour glass","Cordial glass","Brandy snifter","White wine glass","Nick and Nora Glass","Hurricane glass","Coffee mug","Shot glass","Jar","Irish coffee cup","Punch bowl","Pitcher","Pint glass","Copper Mug","Wine Glass","Beer mug","Margarita/Coupette glass","Beer pilsner","Beer Glass","Parfait glass","Mason jar","Margarita glass","Martini Glass","Balloon Glass","Coupe Glass"],J=i.label`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  width: 50px;
+  height: 50px;
+  background-color: #f3f3f3;
+  color: black;
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  font-size: 35px;
+
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    left: 185px;
+    top: 185px;
+    transform: translate(-100%, -100%);
+  }
+
+  @media screen and (min-width: 1280px) {
+    left: 225px;
+    top: 206px;
+
+    transform: translate(-100%, -100%);
+  }
+`,K=i.input`
+  width: 100%;
+  margin-bottom: 40px;
+  background-color: transparent;
+
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    width: 80px;
+    margin-bottom: 0;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 80px;
+    margin-bottom: 0;
+  }
+`,Z=i.div`
+  @media screen and (min-width: 1280px) {
+    position: relative;
+  }
+`,Q=i.div`
+  position: relative;
+  width: 335px;
+  height: 320px;
+  background-color: rgba(22, 31, 55, 0.5);
+  border-radius: 5px;
+
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    width: 320px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 400px;
+    height: 400px;
+    position: relative;
+  }
+`,X=i.img`
+  margin-bottom: 40px;
+  display: block;
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    margin-bottom: 0;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 400px;
+    height: 400px;
+  }
+`,ee=i.div`
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    display: flex;
+    gap: 32px;
+  }
+  @media screen and (min-width: 1280px) {
+    display: flex;
+    gap: 40px;
+  }
+`,ie=i.div`
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    width: 352px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 393px;
+  }
+`,w=i.input`
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(243, 243, 243, 0.5);
+  margin-bottom: 31px;
+  color: #f3f3f3;
+  width: 335px;
+  height: 34px;
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    height: 41px;
+    width: 352px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 393px;
+    height: 41px;
+    margin-bottom: 41px;
+  }
+`,k=i.label`
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(243, 243, 243, 0.5);
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    font-size: 16px;
+  }
+  @media screen and (min-width: 1280px) {
+    font-size: 16px;
+    letter-spacing: -0.02em;
+  }
+`,v=i.p`
+  width: 335px;
+  height: 34px;
+  margin-bottom: 34px;
+  border-bottom: 1px solid rgba(243, 243, 243, 0.5);
+  color: rgba(243, 243, 243, 0.5);
+  font-size: 14px;
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    font-size: 16px;
+    height: 41px;
+    width: 352px;
+    margin-bottom: 31px;
+    &.glassmargin {
+      margin-bottom: 39px;
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    font-size: 16px;
+    width: 393px;
+    height: 41px;
+    &.glassmargin {
+      margin-bottom: 40px;
+    }
+  }
+`,S=i.select`
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  text-align: end;
+  width: 170px;
+  border-radius: 200px;
+  background-color: transparent;
+  border-radius: 200px;
+  color: #f3f3f3;
+  cursor: pointer;
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    font-size: 16px;
+  }
+  @media screen and (min-width: 1280px) {
+    font-size: 16px;
+  }
+`,T=i.div`
+  position: relative;
+`,te=i.div`
+  display: flex;
+  gap: 14px;
+`,_=i.div`
+  display: flex;
+  gap: 8px;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+`,ae=({formik:a,setFileAvatar:r,pictureActive:d,setPictureActive:h})=>{const[l,o]=c.useState(""),u=t=>{const n=t.target.files[0];if(!n)return;if(!(n.name.endsWith(".jpg")||n.name.endsWith(".png"))){alert("Please select jpg or png file!");return}r(n),h(!0);const m=URL.createObjectURL(n);o(m)};return e.jsxs(ee,{children:[e.jsxs(Z,{children:[!d&&e.jsx(Q,{}),e.jsx(K,{type:"file",id:"drinkThumb",name:"drinkThumb",onChange:u,required:!0}),!d&&e.jsx(J,{htmlFor:"drinkThumb",children:"+"}),d&&e.jsx(X,{src:l===""?null:l,alt:"avatar of the user",width:335,height:400})]}),e.jsxs(ie,{children:[e.jsx(k,{htmlFor:"drinkInput",children:"Enter item title"}),e.jsx(w,{type:"text",name:"drink",id:"drinkInput",value:a.values.drink,onChange:a.handleChange,required:!0}),e.jsx(k,{htmlFor:"descriptionInput",children:"Enter about recipe"}),e.jsx(w,{type:"text",name:"description",id:"descriptionInput",value:a.values.description,onChange:a.handleChange,required:!0}),e.jsxs(T,{children:[e.jsx(v,{children:"Category"}),e.jsxs(S,{name:"category",onChange:a.handleChange,children:[e.jsx("option",{value:"undefined",children:"Category"}),Y.map((t,n)=>e.jsx("option",{value:t,children:t},n))]})]}),e.jsxs(T,{children:[e.jsx(v,{className:"glassmargin",children:"Glass"}),e.jsxs(S,{name:"glass",onChange:a.handleChange,children:[e.jsx("option",{value:"undefined",children:"Glass"}),H.map((t,n)=>e.jsx("option",{value:t,children:t},n))]})]}),e.jsxs(te,{children:[e.jsxs(_,{children:[e.jsx("input",{type:"radio",id:"alcoholic",name:"alcoholic",value:"Alcoholic",onChange:a.handleChange,checked:a.values.alcoholic==="Alcoholic"}),e.jsx("label",{htmlFor:"alcoholic",children:"Alcoholic"})]}),e.jsxs(_,{children:[e.jsx("input",{type:"radio",id:"non-alcoholic",name:"alcoholic",value:"Non-alcoholic",onChange:a.handleChange,checked:a.values.alcoholic==="Non-alcoholic"}),e.jsx("label",{htmlFor:"non-alcoholic",children:"Non-alcoholic"})]})]})]})]})},ne=[{_id:{$oid:"64aebb7f82d96cc69e0eb4a4"},title:"Light rum",ingredientThumb:"https://ftp.goit.study/img/drinkify/ingredients/Light_rum.png","thumb-medium":"https://ftp.goit.study/img/drinkify/ingredients/Light_rum-Medium.png","thumb-small":"https://ftp.goit.study/img/drinkify/ingredients/Light_rum-Small.png",abv:"40",alcohol:"Yes",description:'Light rums, also referred to as "silver"or "white"rums, in general, have very little flavour aside from a general sweetness. Light rums are sometimes filtered after aging to remove any colour. The majority of light rums come from Puerto Rico. Their milder flavours make them popular for use in mixed drinks, as opposed to drinking them straight. Light rums are included in some of the most popular cocktails including the Mojito and the Daiquiri.',type:"Rum",flavour:"light, sweet",country:"Puerto Rico"},{_id:{$oid:"64aebb7f82d96cc69e0eb4a5"},title:"Applejack",ingredientThumb:"https://ftp.goit.study/img/drinkify/ingredients/Applejack.png","thumb-medium":"https://ftp.goit.study/img/drinkify/ingredients/Applejack-Medium.png","thumb-small":"https://ftp.goit.study/img/drinkify/ingredients/Applejack-Small.png",abv:"40",alcohol:"Yes",description:"Applejack is a strong apple-flavoured alcoholic drink produced from apples. Popular in the American colonial era, the drink's prevalence declined in the 19th and 20th centuries amid competition from other spirits.",type:"Beverage",flavour:"apples, oak",country:"United States"},{_id:{$oid:"64aebb7f82d96cc69e0eb4a6"},title:"Gin",ingredientThumb:"https://ftp.goit.study/img/drinkify/ingredients/Gin.png","thumb-medium":"https://ftp.goit.study/img/drinkify/ingredients/Gin-Medium.png","thumb-small":"https://ftp.goit.study/img/drinkify/ingredients/Gin-Small.png",abv:"40",alcohol:"Yes",description:"Gin is liquor which derives its predominant flavour from juniper berries (Juniperus communis). From its earliest origins in the Middle Ages, gin has evolved over the course of a millennium from a herbal medicine to an object of commerce in the spirits industry. Gin was developed on the basis of the older jenever, and became popular in Great Britain (particularly in London) when William of Orange, leader of the Dutch Republic, occupied the English, Scottish, and Irish thrones with his wife Mary. Gin is one of the broadest categories of spirits, represented by products of Globalorigins, styles, and flavour profiles that all revolve around juniper as a common ingredient.",type:"Gin",flavour:"English-style gin, citrus, juniper",country:"United States"},{_id:{$oid:"64aebb7f82d96cc69e0eb4a7"},title:"Dark rum",ingredientThumb:"https://ftp.goit.study/img/drinkify/ingredients/Dark_rum.png","thumb-medium":"https://ftp.goit.study/img/drinkify/ingredients/Dark_rum-Medium.png","thumb-small":"https://ftp.goit.study/img/drinkify/ingredients/Dark_rum-Small.png",abv:"40",alcohol:"Yes",description:`Dark rum, also known as black rum, classes as a grade darker than gold rum. It is generally aged longer, in heavily charred barrels. Dark rum has a much stronger flavour than either light or gold rum, and hints of spices can be detected, along with a strong molasses or caramel overtone. It is used to provide substance in rum drinks, as well as color.\r
 \r
 In addition to uses in mixed drinks, dark rum is the type of rum most commonly used in cooking.`,type:"Rum",flavour:"sugar",country:"United States"},{_id:{$oid:"64aebb7f82d96cc69e0eb4a8"},title:"Sweet Vermouth",ingredientThumb:"https://ftp.goit.study/img/drinkify/ingredients/Sweet_Vermouth.png","thumb-medium":"https://ftp.goit.study/img/drinkify/ingredients/Sweet_Vermouth-Medium.png","thumb-small":"https://ftp.goit.study/img/drinkify/ingredients/Sweet_Vermouth-Small.png",abv:"16.5",alcohol:"Yes",description:`Vermouth (/vərˈmuːθ/ ver-MOOTH; also UK: /ˈvɜːrməθ/;) is an aromatized, fortified wine flavoured with Globalbotanicals (roots, barks, flowers, seeds, herbs, and spices).\r
 \r
@@ -827,4 +996,229 @@ The daiquiri is one of the six basic drinks listed in David A. Embury's classic 
 \r
 Originally the drink was served in a tall glass packed with cracked ice. A teaspoon of sugar was poured over the ice and the juice of one or two limes was squeezed over the sugar. Two or three ounces of white rum completed the mixture. The glass was then frosted by stirring with a long-handled spoon. Later the daiquiri evolved to be mixed in a shaker with the same ingredients but with shaved ice. After a thorough shaking, it was poured into a chilled flute glass.`,type:"Mix",alcohol:"No",abv:"0",flavour:"sweet",country:"Cuba"},{_id:{$oid:"64f1d62769d8333cf1310131"},ingredientThumb:"https://ftp.goit.study/img/drinkify/ingredients/Cucumber.png","thumb-medium":"https://ftp.goit.study/img/drinkify/ingredients/Cucumber-Medium.png","thumb-small":"https://ftp.goit.study/img/drinkify/ingredients/Cucumber-Small.png",title:"Cucumber",description:`Cucumber (Cucumis sativus) is a widely cultivated plant in the gourd family, Cucurbitaceae. It is a creeping vine that bears cucumiform fruits that are used as vegetables. There are three main varieties of cucumber: slicing, pickling, and seedless. Within these varieties, several cultivars have been created. In North America, the term "wild cucumber"refers to plants in the genera Echinocystis and Marah, but these are not closely related. The cucumber is originally from South Asia, but now grows on most continents. Many different types of cucumber are traded on the global market.\r
 \r
-The cucumber is a creeping vine that roots in the ground and grows up trellises or other supporting frames, wrapping around supports with thin, spiraling tendrils. The plant may also root in a soilless medium and will sprawl along the ground if it does not have supports. The vine has large leaves that form a canopy over the fruits. The fruit of typical cultivars of cucumber is roughly cylindrical, but elongated with tapered ends, and may be as large as 60 centimeters (24 in) long and 10 centimeters (3.9 in) in diameter. Botanically speaking, the cucumber is classified as a pepo, a type of botanical berry with a hard outer rind and no internal divisions. Much like tomato and squash, it is often perceived, prepared and eaten as a vegetable. Cucumber fruits consist of 95% water (see nutrition table).`,type:"Vegetable",alcohol:"No",abv:"0",flavour:"fresh",country:"India"},{_id:{$oid:"64f1d62869d8333cf1310148"},ingredientThumb:"https://ftp.goit.study/img/drinkify/ingredients/Vanilla_vodka.png","thumb-medium":"https://ftp.goit.study/img/drinkify/ingredients/Vanilla_vodka-Medium.png","thumb-small":"https://ftp.goit.study/img/drinkify/ingredients/Vanilla_vodka-Small.png",title:"Vanilla vodka",description:"Vanilla vodka is vodka with a vanilla taste. It is made either by using vanilla-flavored liquor or by blending plain vodka with vanilla extract. Some brands make their product with a base of neutral grain spirit.",type:"Vodka",alcohol:"Yes",abv:"35",flavour:"vanilla",country:"Global"},{_id:{$oid:"64f1d62969d8333cf1310150"},ingredientThumb:"https://ftp.goit.study/img/drinkify/ingredients/Melon_Liqueur.png","thumb-medium":"https://ftp.goit.study/img/drinkify/ingredients/Melon_Liqueur-Medium.png","thumb-small":"https://ftp.goit.study/img/drinkify/ingredients/Melon_Liqueur-Small.png",title:"Melon Liqueur",description:'Midori is a bright, sweet, honeydew melon-flavored liqueur made in Japan. It is manufactured by Suntory and sold in a unique bottle that is hand-blown in Mexico. Midori is typically 20–21% alcohol by volume. Its name is the Japanese word for "green".',type:"Liqueur",alcohol:"Yes",abv:"20",flavour:"melon",country:"Japan"},{_id:{$oid:"64f1d62c69d8333cf1310181"},ingredientThumb:"https://ftp.goit.study/img/drinkify/ingredients/Roses_sweetened_lime_juice.png","thumb-medium":"https://ftp.goit.study/img/drinkify/ingredients/Roses_sweetened_lime_juice-Medium.png","thumb-small":"https://ftp.goit.study/img/drinkify/ingredients/Roses_sweetened_lime_juice-Small.png",title:"Roses sweetened lime juice",description:"A tangy and sweet lime juice concentrate, commonly used in cocktails and culinary dishes.",type:"Juice",alcohol:"No",abv:"0",flavour:"lime",country:"Global"},{_id:{$oid:"64f1d62c69d8333cf1310186"},ingredientThumb:"https://ftp.goit.study/img/drinkify/ingredients/Creme_De_Banane.png","thumb-medium":"https://ftp.goit.study/img/drinkify/ingredients/Creme_De_Banane-Medium.png","thumb-small":"https://ftp.goit.study/img/drinkify/ingredients/Creme_De_Banane-Small.png",title:"Creme De Banane",description:'Banana liqueur is an alcoholic liqueur flavored with banana, either artificially or by maceration. The recipe for banana liqueur is flavored with banana or banana flavoring. In addition to bananas, it is possible to produce banana-flavored liqueur from "banana ...',type:"Liquer",alcohol:"Yes",abv:"17",flavour:"banana",country:"France"}],V=({formik:i})=>{const[r,o]=p.useState([{title:"",measure:""}]);p.useEffect(()=>{i.setValues({...i.values,ingredients:r})},[r,i.setValues]);const s=(l,h)=>{const{name:u,value:g}=h.target,c=[...r];c[l][u]=g,o(c)},a=(l,h)=>{const{name:u,value:g}=h.target,c=[...r];c[l][u]=g,o(c)},t=()=>{const l=[...r];l.pop(),o(l)},n=()=>{o([...r,{title:"",measure:""}])};return e.jsxs(e.Fragment,{children:[r.map((l,h)=>e.jsxs("div",{children:[e.jsx("select",{name:"title",value:l.title,onChange:u=>a(h,u),children:D.map(u=>e.jsx("option",{value:u.title,children:u.title},u._id.$oid))}),e.jsx("input",{name:"measure",type:"text",value:l.measure,onChange:u=>s(h,u)}),e.jsx("button",{type:"button",onClick:()=>t(),children:"x"})]},h)),e.jsx("button",{type:"button",onClick:t,children:"-"}),e.jsx("p",{children:r.length}),e.jsx("button",{type:"button",onClick:n,children:"+"})]})},E=({formik:i})=>e.jsxs(e.Fragment,{children:[e.jsx("h2",{children:"Recipe Preparation"}),e.jsx("textarea",{name:"instruction",placeholder:"Enter the recipe",rows:6,value:i.values.instruction,onChange:i.handleChange})]}),U=async i=>{const r=localStorage.getItem("persist:auth"),s=JSON.parse(r).token,a=JSON.parse(s);console.log("TOKEN",a),console.log("Data",i);const t={headers:{Authorization:`Bearer ${a}`,"Content-Type":"multipart/form-data"}};try{return(await T.post("https://drink-code-backend.onrender.com/api/drinks/own/add",i,t)).data.message}catch(n){throw console.error("Помилка при отриманні даних:",n),n}},O={drinkThumb:"",drink:"",description:"",category:"",glass:"",alcoholic:"Alcoholic",ingredients:[{title:"",measure:""}],instruction:""},Y=()=>{const[i,r]=p.useState(),o=_({initialValues:O,validationSchema:C().shape({drink:m().required("This field is mandatory"),description:m().required("This field is mandatory"),category:m().required("This field is required"),glass:m().required("This field is mandatory"),alcoholic:m().required("Select the type of cocktail"),ingredients:A().required("This field is mandatory")}),onSubmit:async s=>{console.log("FORMIK",o.values);const a=new FormData;a.append("drinkThumb",i),a.append("drink",s.drink),a.append("description",s.description),a.append("category",s.category),a.append("glass",s.glass),a.append("alcoholic",s.alcoholic),a.append("instruction",s.instruction),s.ingredients.forEach((t,n)=>{a.append(`ingredients[${n}][title]`,t.title),a.append(`ingredients[${n}][measure]`,t.measure)});try{const t=await U(a);console.log("RESP",t)}catch(t){console.error("Error message",t)}}});return e.jsx("section",{children:e.jsxs("div",{className:"container",children:[e.jsx("h1",{children:"Add Drink"}),e.jsxs("form",{onSubmit:o.handleSubmit,children:[e.jsx(z,{formik:o,setFileAvatar:r}),e.jsx(V,{formik:o}),e.jsx(E,{formik:o}),e.jsx("button",{type:"submit",children:"SEND"})]})]})})},K=()=>e.jsxs("div",{className:"container",children:[e.jsx(Y,{}),e.jsx($,{})]});export{K as default};
+The cucumber is a creeping vine that roots in the ground and grows up trellises or other supporting frames, wrapping around supports with thin, spiraling tendrils. The plant may also root in a soilless medium and will sprawl along the ground if it does not have supports. The vine has large leaves that form a canopy over the fruits. The fruit of typical cultivars of cucumber is roughly cylindrical, but elongated with tapered ends, and may be as large as 60 centimeters (24 in) long and 10 centimeters (3.9 in) in diameter. Botanically speaking, the cucumber is classified as a pepo, a type of botanical berry with a hard outer rind and no internal divisions. Much like tomato and squash, it is often perceived, prepared and eaten as a vegetable. Cucumber fruits consist of 95% water (see nutrition table).`,type:"Vegetable",alcohol:"No",abv:"0",flavour:"fresh",country:"India"},{_id:{$oid:"64f1d62869d8333cf1310148"},ingredientThumb:"https://ftp.goit.study/img/drinkify/ingredients/Vanilla_vodka.png","thumb-medium":"https://ftp.goit.study/img/drinkify/ingredients/Vanilla_vodka-Medium.png","thumb-small":"https://ftp.goit.study/img/drinkify/ingredients/Vanilla_vodka-Small.png",title:"Vanilla vodka",description:"Vanilla vodka is vodka with a vanilla taste. It is made either by using vanilla-flavored liquor or by blending plain vodka with vanilla extract. Some brands make their product with a base of neutral grain spirit.",type:"Vodka",alcohol:"Yes",abv:"35",flavour:"vanilla",country:"Global"},{_id:{$oid:"64f1d62969d8333cf1310150"},ingredientThumb:"https://ftp.goit.study/img/drinkify/ingredients/Melon_Liqueur.png","thumb-medium":"https://ftp.goit.study/img/drinkify/ingredients/Melon_Liqueur-Medium.png","thumb-small":"https://ftp.goit.study/img/drinkify/ingredients/Melon_Liqueur-Small.png",title:"Melon Liqueur",description:'Midori is a bright, sweet, honeydew melon-flavored liqueur made in Japan. It is manufactured by Suntory and sold in a unique bottle that is hand-blown in Mexico. Midori is typically 20–21% alcohol by volume. Its name is the Japanese word for "green".',type:"Liqueur",alcohol:"Yes",abv:"20",flavour:"melon",country:"Japan"},{_id:{$oid:"64f1d62c69d8333cf1310181"},ingredientThumb:"https://ftp.goit.study/img/drinkify/ingredients/Roses_sweetened_lime_juice.png","thumb-medium":"https://ftp.goit.study/img/drinkify/ingredients/Roses_sweetened_lime_juice-Medium.png","thumb-small":"https://ftp.goit.study/img/drinkify/ingredients/Roses_sweetened_lime_juice-Small.png",title:"Roses sweetened lime juice",description:"A tangy and sweet lime juice concentrate, commonly used in cocktails and culinary dishes.",type:"Juice",alcohol:"No",abv:"0",flavour:"lime",country:"Global"},{_id:{$oid:"64f1d62c69d8333cf1310186"},ingredientThumb:"https://ftp.goit.study/img/drinkify/ingredients/Creme_De_Banane.png","thumb-medium":"https://ftp.goit.study/img/drinkify/ingredients/Creme_De_Banane-Medium.png","thumb-small":"https://ftp.goit.study/img/drinkify/ingredients/Creme_De_Banane-Small.png",title:"Creme De Banane",description:'Banana liqueur is an alcoholic liqueur flavored with banana, either artificially or by maceration. The recipe for banana liqueur is flavored with banana or banana flavoring. In addition to bananas, it is possible to produce banana-flavored liqueur from "banana ...',type:"Liquer",alcohol:"Yes",abv:"17",flavour:"banana",country:"France"}],re=i.div`
+  display: flex;
+  gap: 77px;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    justify-content: space-between;
+  }
+  @media screen and (min-width: 1280px) {
+    justify-content: space-between;
+  }
+`,oe=i.h2`
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 114%;
+  color: #f3f3f3;
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    font-size: 40px;
+    line-height: 110%;
+  }
+  @media screen and (min-width: 1280px) {
+    font-size: 40px;
+    line-height: 110%;
+  }
+`,se=i.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  width: 104px;
+  height: 38px;
+  background-color: transparent;
+  border: 1px solid rgba(243, 243, 243, 0.5);
+  border-radius: 200px;
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    width: 114px;
+    height: 44px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 114px;
+    height: 44px;
+  }
+`,C=i.button`
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: transparent;
+  border: none;
+  color: #f3f3f3;
+  font-size: 25px;
+`,de=i.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 335px;
+  margin-bottom: 18px;
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    width: 704px;
+    gap: 0px;
+    justify-content: space-between;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 540px;
+    gap: 0px;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+`,le=i.div`
+  width: 540px;
+`,ue=i.div`
+  display: flex;
+  gap: 8px;
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    gap: 14px;
+  }
+  @media screen and (min-width: 1280px) {
+    gap: 14px;
+  }
+`,he=i.select`
+  width: 200px;
+  height: 50px;
+  padding: 12px 15px;
+  border: 1px solid rgba(243, 243, 243, 0.5);
+  border-radius: 200px;
+  background-color: transparent;
+  border: 1px solid rgba(243, 243, 243, 0.5);
+  border-radius: 200px;
+  color: #f3f3f3;
+  cursor: pointer;
+
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    width: 332px;
+    height: 56px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 316px;
+    height: 56px;
+  }
+`,ce=i.input`
+  background-color: transparent;
+  border: 1px solid rgba(243, 243, 243, 0.5);
+  border-radius: 200px;
+  padding: 16px;
+  color: #f3f3f3;
+  width: 101px;
+  height: 50px;
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    width: 150px;
+    height: 56px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 150px;
+    height: 56px;
+  }
+`,me=i.button`
+  background-color: transparent;
+  border: none;
+  color: #f3f3f3;
+  font-size: 25px;
+`,pe=({formik:a})=>{const[r,d]=c.useState([{title:"",measure:""}]);c.useEffect(()=>{a.setValues({...a.values,ingredients:r})},[r,a.setValues]);const h=(t,n)=>{const{name:s,value:m}=n.target,p=[...r];p[t][s]=m,d(p)},l=(t,n)=>{const{name:s,value:m}=n.target,p=[...r];p[t][s]=m,d(p)},o=()=>{const t=[...r];t.pop(),d(t)},u=()=>{d([...r,{title:"",measure:""}])};return e.jsxs(le,{children:[e.jsxs(re,{children:[e.jsx(oe,{children:"Ingredients"}),e.jsxs(se,{children:[e.jsx(C,{type:"button",onClick:o,disabled:r.length===1,children:"-"}),e.jsx("p",{children:r.length}),e.jsx(C,{type:"button",onClick:u,children:"+"})]})]}),r.map((t,n)=>e.jsxs(de,{children:[e.jsxs(ue,{children:[e.jsx(he,{name:"title",value:t.title,onChange:s=>l(n,s),children:ne.map(s=>e.jsx("option",{value:s.title,children:s.title},s._id.$oid))}),e.jsx(ce,{name:"measure",type:"text",value:t.measure,onChange:s=>h(n,s),required:!0})]}),e.jsx(me,{type:"button",onClick:()=>o(),disabled:r.length===1,children:"x"})]},n))]})},ge=i.h2`
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 114%;
+  color: #f3f3f3;
+
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 110%;
+    margin-top: 80px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    font-size: 40px;
+    line-height: 110%;
+    margin-top: 80px;
+  }
+`,fe=i.textarea`
+  background-color: transparent;
+  border: 1px solid rgba(243, 243, 243, 0.5);
+  color: #f3f3f3;
+  border-radius: 14px;
+  width: 335px;
+  height: 184px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding: 16px;
+  resize: none;
+
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    width: 480px;
+    height: 184px;
+    padding: 24px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 480px;
+    height: 184px;
+    padding: 24px;
+  }
+`,ye=({formik:a})=>e.jsxs(e.Fragment,{children:[e.jsx(ge,{children:"Recipe Preparation"}),e.jsx(fe,{name:"instruction",placeholder:"Enter the recipe",rows:6,value:a.values.instruction,onChange:a.handleChange})]}),be=async a=>{const r=localStorage.getItem("persist:auth"),h=JSON.parse(r).token,o={headers:{Authorization:`Bearer ${JSON.parse(h)}`,"Content-Type":"multipart/form-data"}};try{return(await q.post("https://drink-code-backend.onrender.com/api/drinks/own/add",a,o)).data}catch(u){throw console.error("Помилка при отриманні даних:",u),u}},we={drinkThumb:"",drink:"",description:"",category:"",glass:"",alcoholic:"Alcoholic",ingredients:[{title:"",measure:""}],instruction:""},ke=i.form`
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    width: 704px;
+    position: relative;
+    margin: 0 auto;
+  }
+`,ve=i.h1`
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: 0em;
+  margin-bottom: 40px;
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    font-size: 56px;
+    line-height: 107%;
+    margin-bottom: 60px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    font-size: 64px;
+    line-height: 106%;
+    margin-bottom: 60px;
+  }
+`,Se=i.button`
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  border: 2px transparent solid;
+  border-radius: 42px;
+  padding: 14px 40px;
+  margin-bottom: 80px;
+  width: 107px;
+  height: 46px;
+
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 129%;
+  color: #161f37;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #f3f3f3;
+    border-color: rgba(64, 112, 205, 0.5);
+  }
+
+  @media screen and (min-width: 1280px) {
+    border-radius: 42px;
+    padding: 18px 44px;
+    width: 118px;
+    height: 54px;
+  }
+`,Te=()=>{const[a,r]=c.useState(),[d,h]=c.useState(!1),l=B({initialValues:we,validationSchema:G().shape({drink:g().required("The drink field is required"),description:g().required("The description field is required"),category:g().required("The category field is required"),glass:g().required("The glass field is required"),alcoholic:g().required("Select the type of required"),ingredients:j().required("This field is required")}),onSubmit:async(o,{resetForm:u})=>{const t=new FormData;t.append("drinkThumb",a),t.append("drink",o.drink),t.append("description",o.description),t.append("category",o.category),t.append("glass",o.glass),t.append("alcoholic",o.alcoholic),t.append("instruction",o.instruction),o.ingredients.forEach((n,s)=>{t.append(`ingredients[${s}][title]`,n.title),t.append(`ingredients[${s}][measure]`,n.measure)});try{(await be(t)).message==="Drink Created"&&(P.success("Drink Created",{position:"top-right",autoClose:5e3}),r(""),h(!1),u())}catch(n){console.error("Error message",n)}}});return e.jsx("section",{children:e.jsxs(e.Fragment,{children:[e.jsx(ve,{children:"Add Drink"}),e.jsxs(ke,{onSubmit:l.handleSubmit,children:[e.jsx(ae,{formik:l,setFileAvatar:r,pictureActive:d,setPictureActive:h}),e.jsx(pe,{formik:l}),e.jsx(ye,{formik:l}),e.jsx(Se,{type:"submit",children:"Add"})]})]})})},_e=i.div`
+  @media screen and (min-width: 1280px) {
+    display: flex;
+    gap: 94px;
+    width: 1240px;
+  }
+`,Ce=i.div`
+  @media screen and (min-width: 1280px) {
+    width: 833px;
+  }
+`,xe=i.div`
+  @media screen and (min-width: 1280px) {
+    width: 313px;
+  }
+`,Ie=()=>e.jsxs(_e,{className:"container",children:[e.jsx(Ce,{children:e.jsx(Te,{})}),e.jsx(xe,{children:e.jsx(O,{})})]});export{Ie as default};
