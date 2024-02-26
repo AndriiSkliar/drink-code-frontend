@@ -1,4 +1,4 @@
-import{u as i,N as x,j as e,b as A,a as M,r as c,g as I,h as q,i as B,k as G,l as g,m as j,B as P}from"./index-88338c00.js";import{c as L}from"./selectors-339aa893.js";const R=i.aside`
+import{u as i,N as x,j as e,b as A,a as M,r as c,g as I,h as q,i as B,k as G,l as g,m as j,B as P}from"./index-ed342e9f.js";import{c as L}from"./selectors-339aa893.js";const R=i.aside`
   @media screen and (min-width: 768px) {
     max-width: 704px;
     margin: 0 auto;
@@ -42,7 +42,7 @@ import{u as i,N as x,j as e,b as A,a as M,r as c,g as I,h as q,i as B,k as G,l a
     flex-direction: row;
     flex-wrap: wrap;
     row-gap: 32px;
-    column-gap: 32px;
+    column-gap: 24px;
   }
 
   @media screen and (min-width: 1440px) {
@@ -221,7 +221,7 @@ import{u as i,N as x,j as e,b as A,a as M,r as c,g as I,h as q,i as B,k as G,l a
 `,w=i.input`
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid rgba(243, 243, 243, 0.5);
+  border-bottom: 1px solid var(--secondary-text-color);
   margin-bottom: 31px;
   color: #f3f3f3;
   width: 335px;
@@ -238,7 +238,7 @@ import{u as i,N as x,j as e,b as A,a as M,r as c,g as I,h as q,i as B,k as G,l a
 `,k=i.label`
   font-weight: 400;
   font-size: 14px;
-  color: rgba(243, 243, 243, 0.5);
+  color: var(--secondary-text-color);
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     font-size: 16px;
   }
@@ -250,8 +250,8 @@ import{u as i,N as x,j as e,b as A,a as M,r as c,g as I,h as q,i as B,k as G,l a
   width: 335px;
   height: 34px;
   margin-bottom: 34px;
-  border-bottom: 1px solid rgba(243, 243, 243, 0.5);
-  color: rgba(243, 243, 243, 0.5);
+  border-bottom: 1px solid var(--secondary-text-color);
+  color: var(--secondary-text-color);
   font-size: 14px;
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     font-size: 16px;
@@ -280,7 +280,7 @@ import{u as i,N as x,j as e,b as A,a as M,r as c,g as I,h as q,i as B,k as G,l a
   border-radius: 200px;
   background-color: transparent;
   border-radius: 200px;
-  color: #f3f3f3;
+  color: var(--secondary-text-color);
   cursor: pointer;
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     font-size: 16px;
@@ -294,11 +294,17 @@ import{u as i,N as x,j as e,b as A,a as M,r as c,g as I,h as q,i as B,k as G,l a
   display: flex;
   gap: 14px;
 `,_=i.div`
+  color: var(--secondary-text-color);
   display: flex;
   gap: 8px;
   font-weight: 400;
   font-size: 16px;
   letter-spacing: -0.02em;
+  accent-color: var(--secondary-text-color);
+
+  input:checked + label {
+    color: var(--primary-text-color);
+  }
 `,ae=({formik:a,setFileAvatar:r,pictureActive:d,setPictureActive:h})=>{const[l,o]=c.useState(""),u=t=>{const n=t.target.files[0];if(!n)return;if(!(n.name.endsWith(".jpg")||n.name.endsWith(".png"))){alert("Please select jpg or png file!");return}r(n),h(!0);const m=URL.createObjectURL(n);o(m)};return e.jsxs(ee,{children:[e.jsxs(Z,{children:[!d&&e.jsx(Q,{}),e.jsx(K,{type:"file",id:"drinkThumb",name:"drinkThumb",onChange:u,required:!0}),!d&&e.jsx(J,{htmlFor:"drinkThumb",children:"+"}),d&&e.jsx(X,{src:l===""?null:l,alt:"avatar of the user",width:335,height:400})]}),e.jsxs(ie,{children:[e.jsx(k,{htmlFor:"drinkInput",children:"Enter item title"}),e.jsx(w,{type:"text",name:"drink",id:"drinkInput",value:a.values.drink,onChange:a.handleChange,required:!0}),e.jsx(k,{htmlFor:"descriptionInput",children:"Enter about recipe"}),e.jsx(w,{type:"text",name:"description",id:"descriptionInput",value:a.values.description,onChange:a.handleChange,required:!0}),e.jsxs(T,{children:[e.jsx(v,{children:"Category"}),e.jsxs(S,{name:"category",onChange:a.handleChange,children:[e.jsx("option",{value:"undefined",children:"Category"}),Y.map((t,n)=>e.jsx("option",{value:t,children:t},n))]})]}),e.jsxs(T,{children:[e.jsx(v,{className:"glassmargin",children:"Glass"}),e.jsxs(S,{name:"glass",onChange:a.handleChange,children:[e.jsx("option",{value:"undefined",children:"Glass"}),H.map((t,n)=>e.jsx("option",{value:t,children:t},n))]})]}),e.jsxs(te,{children:[e.jsxs(_,{children:[e.jsx("input",{type:"radio",id:"alcoholic",name:"alcoholic",value:"Alcoholic",onChange:a.handleChange,checked:a.values.alcoholic==="Alcoholic"}),e.jsx("label",{htmlFor:"alcoholic",children:"Alcoholic"})]}),e.jsxs(_,{children:[e.jsx("input",{type:"radio",id:"non-alcoholic",name:"alcoholic",value:"Non-alcoholic",onChange:a.handleChange,checked:a.values.alcoholic==="Non-alcoholic"}),e.jsx("label",{htmlFor:"non-alcoholic",children:"Non-alcoholic"})]})]})]})]})},ne=[{_id:{$oid:"64aebb7f82d96cc69e0eb4a4"},title:"Light rum",ingredientThumb:"https://ftp.goit.study/img/drinkify/ingredients/Light_rum.png","thumb-medium":"https://ftp.goit.study/img/drinkify/ingredients/Light_rum-Medium.png","thumb-small":"https://ftp.goit.study/img/drinkify/ingredients/Light_rum-Small.png",abv:"40",alcohol:"Yes",description:'Light rums, also referred to as "silver"or "white"rums, in general, have very little flavour aside from a general sweetness. Light rums are sometimes filtered after aging to remove any colour. The majority of light rums come from Puerto Rico. Their milder flavours make them popular for use in mixed drinks, as opposed to drinking them straight. Light rums are included in some of the most popular cocktails including the Mojito and the Daiquiri.',type:"Rum",flavour:"light, sweet",country:"Puerto Rico"},{_id:{$oid:"64aebb7f82d96cc69e0eb4a5"},title:"Applejack",ingredientThumb:"https://ftp.goit.study/img/drinkify/ingredients/Applejack.png","thumb-medium":"https://ftp.goit.study/img/drinkify/ingredients/Applejack-Medium.png","thumb-small":"https://ftp.goit.study/img/drinkify/ingredients/Applejack-Small.png",abv:"40",alcohol:"Yes",description:"Applejack is a strong apple-flavoured alcoholic drink produced from apples. Popular in the American colonial era, the drink's prevalence declined in the 19th and 20th centuries amid competition from other spirits.",type:"Beverage",flavour:"apples, oak",country:"United States"},{_id:{$oid:"64aebb7f82d96cc69e0eb4a6"},title:"Gin",ingredientThumb:"https://ftp.goit.study/img/drinkify/ingredients/Gin.png","thumb-medium":"https://ftp.goit.study/img/drinkify/ingredients/Gin-Medium.png","thumb-small":"https://ftp.goit.study/img/drinkify/ingredients/Gin-Small.png",abv:"40",alcohol:"Yes",description:"Gin is liquor which derives its predominant flavour from juniper berries (Juniperus communis). From its earliest origins in the Middle Ages, gin has evolved over the course of a millennium from a herbal medicine to an object of commerce in the spirits industry. Gin was developed on the basis of the older jenever, and became popular in Great Britain (particularly in London) when William of Orange, leader of the Dutch Republic, occupied the English, Scottish, and Irish thrones with his wife Mary. Gin is one of the broadest categories of spirits, represented by products of Globalorigins, styles, and flavour profiles that all revolve around juniper as a common ingredient.",type:"Gin",flavour:"English-style gin, citrus, juniper",country:"United States"},{_id:{$oid:"64aebb7f82d96cc69e0eb4a7"},title:"Dark rum",ingredientThumb:"https://ftp.goit.study/img/drinkify/ingredients/Dark_rum.png","thumb-medium":"https://ftp.goit.study/img/drinkify/ingredients/Dark_rum-Medium.png","thumb-small":"https://ftp.goit.study/img/drinkify/ingredients/Dark_rum-Small.png",abv:"40",alcohol:"Yes",description:`Dark rum, also known as black rum, classes as a grade darker than gold rum. It is generally aged longer, in heavily charred barrels. Dark rum has a much stronger flavour than either light or gold rum, and hints of spices can be detected, along with a strong molasses or caramel overtone. It is used to provide substance in rum drinks, as well as color.\r
 \r
 In addition to uses in mixed drinks, dark rum is the type of rum most commonly used in cooking.`,type:"Rum",flavour:"sugar",country:"United States"},{_id:{$oid:"64aebb7f82d96cc69e0eb4a8"},title:"Sweet Vermouth",ingredientThumb:"https://ftp.goit.study/img/drinkify/ingredients/Sweet_Vermouth.png","thumb-medium":"https://ftp.goit.study/img/drinkify/ingredients/Sweet_Vermouth-Medium.png","thumb-small":"https://ftp.goit.study/img/drinkify/ingredients/Sweet_Vermouth-Small.png",abv:"16.5",alcohol:"Yes",description:`Vermouth (/vərˈmuːθ/ ver-MOOTH; also UK: /ˈvɜːrməθ/;) is an aromatized, fortified wine flavoured with Globalbotanicals (roots, barks, flowers, seeds, herbs, and spices).\r
@@ -1011,7 +1017,7 @@ The cucumber is a creeping vine that roots in the ground and grows up trellises 
   font-weight: 600;
   font-size: 28px;
   line-height: 114%;
-  color: #f3f3f3;
+  color: var(--primary-text-color);
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     font-size: 40px;
     line-height: 110%;
@@ -1028,7 +1034,7 @@ The cucumber is a creeping vine that roots in the ground and grows up trellises 
   width: 104px;
   height: 38px;
   background-color: transparent;
-  border: 1px solid rgba(243, 243, 243, 0.5);
+  border: 1px solid var(--secondary-text-color);
   border-radius: 200px;
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     width: 114px;
@@ -1043,7 +1049,7 @@ The cucumber is a creeping vine that roots in the ground and grows up trellises 
   padding-right: 5px;
   background-color: transparent;
   border: none;
-  color: #f3f3f3;
+  color: var(--primary-text-color);
   font-size: 25px;
 `,de=i.div`
   display: flex;
@@ -1078,12 +1084,10 @@ The cucumber is a creeping vine that roots in the ground and grows up trellises 
   width: 200px;
   height: 50px;
   padding: 12px 15px;
-  border: 1px solid rgba(243, 243, 243, 0.5);
+  border: 1px solid var(--secondary-text-color);
   border-radius: 200px;
   background-color: transparent;
-  border: 1px solid rgba(243, 243, 243, 0.5);
-  border-radius: 200px;
-  color: #f3f3f3;
+  color: var(--primary-text-color);
   cursor: pointer;
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
@@ -1096,10 +1100,10 @@ The cucumber is a creeping vine that roots in the ground and grows up trellises 
   }
 `,ce=i.input`
   background-color: transparent;
-  border: 1px solid rgba(243, 243, 243, 0.5);
+  border: 1px solid var(--secondary-text-color);
   border-radius: 200px;
   padding: 16px;
-  color: #f3f3f3;
+  color: var(--primary-text-color);
   width: 101px;
   height: 50px;
   @media screen and (min-width: 768px) and (max-width: 1279px) {
@@ -1113,13 +1117,13 @@ The cucumber is a creeping vine that roots in the ground and grows up trellises 
 `,me=i.button`
   background-color: transparent;
   border: none;
-  color: #f3f3f3;
+  color: var(--primary-text-color);
   font-size: 25px;
 `,pe=({formik:a})=>{const[r,d]=c.useState([{title:"",measure:""}]);c.useEffect(()=>{a.setValues({...a.values,ingredients:r})},[r,a.setValues]);const h=(t,n)=>{const{name:s,value:m}=n.target,p=[...r];p[t][s]=m,d(p)},l=(t,n)=>{const{name:s,value:m}=n.target,p=[...r];p[t][s]=m,d(p)},o=()=>{const t=[...r];t.pop(),d(t)},u=()=>{d([...r,{title:"",measure:""}])};return e.jsxs(le,{children:[e.jsxs(re,{children:[e.jsx(oe,{children:"Ingredients"}),e.jsxs(se,{children:[e.jsx(C,{type:"button",onClick:o,disabled:r.length===1,children:"-"}),e.jsx("p",{children:r.length}),e.jsx(C,{type:"button",onClick:u,children:"+"})]})]}),r.map((t,n)=>e.jsxs(de,{children:[e.jsxs(ue,{children:[e.jsx(he,{name:"title",value:t.title,onChange:s=>l(n,s),children:ne.map(s=>e.jsx("option",{value:s.title,children:s.title},s._id.$oid))}),e.jsx(ce,{name:"measure",type:"text",value:t.measure,onChange:s=>h(n,s),required:!0})]}),e.jsx(me,{type:"button",onClick:()=>o(),disabled:r.length===1,children:"x"})]},n))]})},ge=i.h2`
   font-weight: 600;
   font-size: 28px;
   line-height: 114%;
-  color: #f3f3f3;
+  color: var(--primary-text-color);
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     font-weight: 600;
@@ -1135,8 +1139,8 @@ The cucumber is a creeping vine that roots in the ground and grows up trellises 
   }
 `,fe=i.textarea`
   background-color: transparent;
-  border: 1px solid rgba(243, 243, 243, 0.5);
-  color: #f3f3f3;
+  border: 1px solid var(--secondary-text-color);
+  color: var(--primary-text-color);
   border-radius: 14px;
   width: 335px;
   height: 184px;
@@ -1193,11 +1197,12 @@ The cucumber is a creeping vine that roots in the ground and grows up trellises 
   font-weight: 600;
   font-size: 14px;
   line-height: 129%;
-  color: #161f37;
-  transition: all 0.3s ease;
+  color: var(--switcher-ball);
+  transition: border-color 0.3s ease;
+  background-color: var(--link-bg);
 
   &:hover {
-    background-color: #f3f3f3;
+    /* background-color: #f3f3f3; */
     border-color: rgba(64, 112, 205, 0.5);
   }
 
