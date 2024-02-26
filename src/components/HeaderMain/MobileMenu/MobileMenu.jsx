@@ -8,26 +8,26 @@ import {
   LineMobile,
 } from './MobileMenu.styled';
 
-const MobileMenu = () => {
+const MobileMenu = ({handleClick}) => {
   return (
     <MobMenuContainer>
       <BackgroundsColores>
         <LineMobile></LineMobile>
         <NavigationList>
           <NavItem>
-            <StyledLink to="/">Home</StyledLink>
+            <StyledLink to="/" onClick={handleClick}>Home</StyledLink>
           </NavItem>
           <NavItem>
-            <StyledLink to="/drinks">Drinks</StyledLink>
+            <StyledLink to="/drinks" onClick={handleClick}>Drinks</StyledLink>
           </NavItem>
           <NavItem>
-            <StyledLink to="/add">Add drink</StyledLink>
+            <StyledLink to="/add" onClick={handleClick}>Add drink</StyledLink>
           </NavItem>
           <NavItem>
-            <StyledLink to="/my">My drinks</StyledLink>
+            <StyledLink to="/my" onClick={handleClick}>My drinks</StyledLink>
           </NavItem>
           <NavItem>
-            <StyledLink to="favorites">Favorites</StyledLink>
+            <StyledLink to="/favorites" onClick={handleClick}>Favorites</StyledLink>
           </NavItem>
         </NavigationList>
       </BackgroundsColores>
