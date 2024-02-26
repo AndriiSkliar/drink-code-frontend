@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+
 import { useDispatch, useSelector } from 'react-redux';
 import DrinksList from '../../components/DrinkSearch/DrinksList/DrinksList';
 import Pagination from '../../components/Pagination/Pagination';
@@ -33,12 +34,12 @@ const DrinksPage = () => {
     }
   }
   return (
-    <StyledDrinksPage>
+    <StyledDrinksPage >
       <h1 className="drinksTitle">Drinks</h1>
       <div className="searchingContainer">
         <SearchBar />
-        <SearchSelectCategory />
-        <SearchSelectIngredients />
+        <SearchSelectCategory drinks={drinks} />
+        <SearchSelectIngredients drinks={drinks} />
       </div>
       {/* {isLoading && <Loader />} */}
       <div className="categoryListsContainer">

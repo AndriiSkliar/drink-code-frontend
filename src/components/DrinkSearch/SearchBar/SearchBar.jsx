@@ -1,6 +1,7 @@
 // import React from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchDrinksByLetter } from '../../../redux/drinks/drinks.reducer.js';
+import { useSearchParams, useLocation } from 'react-router-dom';
 
 import {
   SearchBarStyled,
@@ -10,16 +11,24 @@ import {
 
 const SearchBar = () => {
   const dispatch = useDispatch();
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const queryValue = searchParams.get('search');
+  console.log(queryValue);
+
+  // const handleKeyDown = (event) => {
+  //   if (event.code === 'Enter') {
+  //     searchByLetter();
+  //   }
+  // };
+  // window.addEventListener('keydown', handleKeyDown());
 
   const searchByLetter = (event) => {
     event.preventDefault();
 
     const letter = event.currentTarget.elements.searchLetter.value;
-
-    // const formData = {
-    //   letter: letter,
-    // };
-    // console.log('data', JSON.stringify(formData));
+    console.log(letter);
+    setSearchParams({ letter: letter });
     dispatch(fetchDrinksByLetter(letter))
       .unwrap()
       .then(() => event.target.reset());
