@@ -1,4 +1,4 @@
-import{u as r,j as e,N as u,r as s,a as d,o as g,b as p,p as m,q as f,t as l,v as c}from"./index-7597830d.js";import{D as w,P as y}from"./Pagination-61b6a441.js";import{d as k,e as j,f as v}from"./selectors-339aa893.js";import{T as b}from"./Title-c88fa782.js";const S=r.li`
+import{u as r,j as e,N as u,r as s,a as d,o as g,b as p,p as m,q as f,t as l,v as c}from"./index-c9a27936.js";import{D as w,P as y}from"./Pagination-955ec9fd.js";import{d as k,e as j,f as v}from"./selectors-339aa893.js";import{T as b}from"./Title-033f81a3.js";const S=r.li`
   display: flex;
   flex-direction: column;
   gap: 18px;
