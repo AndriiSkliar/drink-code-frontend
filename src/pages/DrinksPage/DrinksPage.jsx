@@ -8,7 +8,7 @@ import SearchSelectIngredients from '../../components/DrinkSearch/Select/SearchS
 import { StyledDrinksPage } from './DrinkPage.styled.js';
 import { fetchDrinks } from '../../redux/drinks/drinksSearch.js';
 import { selectDrinks } from '../../redux/selectors';
-import NotFoundDrink from '../../components/NotFoundDrink/NotFound.jsx';
+
 // import Loader from '../../components/Loader/Loader';
 
 const DrinksPage = () => {
@@ -43,7 +43,8 @@ const DrinksPage = () => {
       {/* {isLoading && <Loader />} */}
       <div className="categoryListsContainer">
         {drinks.length > 0 && <DrinksList drinks={drinks} />}
-        {drinks.length < 1 && <NotFoundDrink />}
+        {drinks.length < 1 && <aler>Not gound drink for your request</aler>}
+        {/* {drinks.length < 1 && <NotFoundDrink />} */}
       </div>
       {pageQuan > 1 && <Pagination pageQuan={pageQuan} />}
     </StyledDrinksPage>
