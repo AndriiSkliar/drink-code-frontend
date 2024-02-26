@@ -1,0 +1,1 @@
+const c=s=>s.cocktails.homepageDrinks,o=s=>s.cocktails.isLoading,e=s=>s.cocktails.error,t=s=>s.cocktails.drinkDetails,i={selectHomepageDrinks:c,selectIsLoading:o,selectError:e,drinkDetails:t};export{i as d};
