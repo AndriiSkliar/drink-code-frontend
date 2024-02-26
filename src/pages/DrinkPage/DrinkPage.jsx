@@ -34,27 +34,31 @@ const DrinkPage = () => {
           {isLoading === true && <Loader />}
           {drinkDetails !== null && (
             <div>
-              <Title text={drinkDetails.drink} />
-              <div className="desc-glass-alco">
-                <span>{drinkDetails.glass}</span>
-                <span> / </span>
-                <span>{drinkDetails.alcoholic}</span>
+              <div className="drink-container">
+                <div>
+                  <Title text={drinkDetails.drink} />
+                  <div className="desc-glass-alco">
+                    <span>{drinkDetails.glass}</span>
+                    <span> / </span>
+                    <span>{drinkDetails.alcoholic}</span>
+                  </div>
+                  <p className="desc-drink">{drinkDetails.description}</p>
+
+                  <button className="btn-add-rem-fav">
+                    Add to favorite drinks
+                  </button>
+                </div>
+
+                <img
+                  className="img-drink"
+                  src={
+                    drinkDetails.drinkThumb
+                      ? `${drinkDetails.drinkThumb}`
+                      : defaultImg
+                  }
+                  alt={drinkDetails.drink}
+                />
               </div>
-              <p className="desc-drink">{drinkDetails.description}</p>
-
-              <button className="btn-add-rem-fav">
-                Add to favorite drinks
-              </button>
-
-              <img
-                className="img-drink"
-                src={
-                  drinkDetails.drinkThumb
-                    ? `${drinkDetails.drinkThumb}`
-                    : defaultImg
-                }
-                alt={drinkDetails.drink}
-              />
 
               <h2 className="title-sect-ingred">Ingredients</h2>
 
@@ -62,11 +66,13 @@ const DrinkPage = () => {
                 {drinkDetails.ingredients.map(
                   ({ ingredientId, title, measure }) => (
                     <li className="ingred-item" key={title}>
-                      <img
-                        className="img-ingred"
-                        src={ingredientId.ingredientThumb || defaultImg}
-                        alt={title}
-                      />
+                      <div className="img-container">
+                        <img
+                          className="img-ingred"
+                          src={ingredientId.ingredientThumb || defaultImg}
+                          alt={title}
+                        />
+                      </div>
                       <div className="ingred-descr">
                         <span className="ingred-name">{title}</span>
                         <span className="ingred-quantity">{measure}</span>
@@ -77,14 +83,14 @@ const DrinkPage = () => {
               </ul>
 
               <h2 className="descr-drink-title">Recipe Preparation</h2>
-              <p className="recipe-text">{drinkDetails.instructions}</p>
-              <img
-                className="img-three-drinks"
-                src={drinks}
-                alt="three drinks"
-                width="335"
-                height="430"
-              />
+              <div className="recipe-container">
+                <p className="recipe-text">{drinkDetails.instructions}</p>
+                <img
+                  className="img-three-drinks"
+                  src={drinks}
+                  alt="three drinks"
+                />
+              </div>
             </div>
           )}
         </StyledDrinkPage>
