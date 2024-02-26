@@ -6,7 +6,7 @@ const NavMenu = () => {
   return (
     <NavigationList>
       <NavItem>
-        <StyledLink to="/">Home</StyledLink>
+        <StyledLink to="/">Home</StyledLink> 
       </NavItem>
       <NavItem>
         <StyledLink to="/drinks">Drinks</StyledLink>

@@ -2,6 +2,33 @@ import { createAsyncThunk, createSlice, isAnyOf } from '@reduxjs/toolkit';
 // import { toast } from 'react-toastify';
 import { instance } from '../auth/authOperations';
 
+export const fetchHomePageDrinks = createAsyncThunk(
+  'cocktails/fetchHomepage',
+  async (_, thunkApi) => {
+    try {
+      const { token } = thunkApi.getState().auth; //берем токен из auth
+      console.log(token)
+      if (!token) {
+        return null;
+      }
+
+      const config = {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      };
+
+      const resp = await instance.get('api/drinks/mainpage', config);
+      const data = resp.data;
+      console.log('fetchHomePageDrinks data', data);
+      return data;
+    } catch (error) {
+      console.error('Error while fetching data', error);
+      throw error;
+    }
+  }
+);
+
 export const fetchCocktails = createAsyncThunk(
   'cocktails/getAll',
   async (_, thunkApi) => {
@@ -102,6 +129,7 @@ const initialState = {
   cocktails: [],
   ownCocktails: [],
   favoriteCocktails: [],
+  homepageDrinks: [],
   isLoading: false,
   error: null,
 };
@@ -151,6 +179,13 @@ const cocktailsSlice = createSlice({
         );
         state.cocktails = [...state.cocktails, payload];
       })
+      .addCase(
+        drinksOperations.fetchHomePageDrinks.fulfilled,
+        (state, { payload }) => {
+          state.isLoading = false;
+          state.homepageDrinks = payload;
+        }
+      )
       .addMatcher(
         isAnyOf(
           fetchOwnCoctails.pending,
@@ -159,7 +194,8 @@ const cocktailsSlice = createSlice({
           addCocktails.pending,
           deleteCocktails.pending,
           addToFavorite.pending,
-          deleteFromFavorite.pending
+          deleteFromFavorite.pending,
+          fetchHomePageDrinks.pending
         ),
         (state) => {
           state.isLoading = true;
@@ -174,7 +210,8 @@ const cocktailsSlice = createSlice({
           addCocktails.rejected,
           deleteCocktails.rejected,
           addToFavorite.rejected,
-          deleteFromFavorite.rejected
+          deleteFromFavorite.rejected,
+          fetchHomePageDrinks.rejected
         ),
         (state, { payload }) => {
           state.isLoading = false;
