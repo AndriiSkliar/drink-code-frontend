@@ -14,6 +14,7 @@ export const addDrinktoDB = async (data) => {
   try {
     const resp = await axios.post(
       `https://drink-code-backend.onrender.com/api/drinks/own/add`,
+      // `http://localhost:3000/api/drinks/own/add`,
       data,
       config
     );

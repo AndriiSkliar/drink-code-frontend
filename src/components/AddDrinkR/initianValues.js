@@ -4,11 +4,12 @@ export const initialValues = {
   description: '',
   category: '',
   glass: '',
-  alcoholic: 'Alcoholic',
+  alcoholic: 'Non-Alcoholic',
   ingredients: [
     {
       title: '',
       measure: '',
+      ingredientId: '',
     },
   ],
   instruction: '',
