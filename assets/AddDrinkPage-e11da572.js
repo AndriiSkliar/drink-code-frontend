@@ -1,4 +1,4 @@
-import{u as i,N as x,j as e,b as A,a as M,r as c,g as I,h as q,i as B,k as G,l as g,m as j,B as P}from"./index-ed342e9f.js";import{c as L}from"./selectors-339aa893.js";const R=i.aside`
+import{u as i,N as x,j as e,b as A,a as M,r as c,g as I,h as q,i as B,k as G,l as g,m as j,B as P}from"./index-c29e38d2.js";import{c as L}from"./selectors-339aa893.js";const R=i.aside`
   @media screen and (min-width: 768px) {
     max-width: 704px;
     margin: 0 auto;
@@ -173,9 +173,7 @@ import{u as i,N as x,j as e,b as A,a as M,r as c,g as I,h as q,i as B,k as G,l a
     margin-bottom: 0;
   }
 `,Z=i.div`
-  @media screen and (min-width: 1280px) {
-    position: relative;
-  }
+  position: relative;
 `,Q=i.div`
   position: relative;
   width: 335px;
