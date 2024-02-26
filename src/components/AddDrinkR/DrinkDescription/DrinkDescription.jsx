@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import authSelectors from '../../../redux/auth/authSelectors';
+import sprite from '/src/assets/icons/icons.svg';
 
 import { CATEGORY } from './category';
 import { GLASSES } from './glasses';
@@ -32,7 +33,6 @@ const DrinkDescription = ({
   const [imageURL, setImageURL] = useState('');
   const userData = useSelector(authSelectors.selectUser);
   const isAdult = userData.isAdult;
-  // console.log('userData', userData);
 
   const handleUploadAvatar = (e) => {
     const currentFile = e.target.files[0];
@@ -80,7 +80,7 @@ const DrinkDescription = ({
             }}
           >
             <svg width={16} height={16}>
-              <use xlinkHref="/src/assets/icons/icons.svg#icon-trash"></use>
+              <use xlinkHref={`${sprite}#icon-trash`}></use>
             </svg>
           </StyledDeleteButton>
         )}
