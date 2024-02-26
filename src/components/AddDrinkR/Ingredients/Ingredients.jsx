@@ -1,5 +1,17 @@
 import INGREDIENTS from './ingredients.json';
 import { useState, useEffect } from 'react';
+import {
+  DescHelperContainer,
+  IngrTitle,
+  ButtonContainer,
+  QuantityButton,
+  TitleContainer,
+  IngredientSelect,
+  SelectContainer,
+  SelectInnerContainer,
+  MeasureInput,
+  DeleteMeasureBtn,
+} from './Ingredietns.styled';
 
 const Ingredients = ({ formik }) => {
   const [ingredients, setIngredients] = useState([
@@ -39,39 +51,55 @@ const Ingredients = ({ formik }) => {
     setIngredients([...ingredients, { title: '', measure: '' }]);
   };
   return (
-    <>
-      {ingredients.map((ingredient, index) => (
-        <div key={index}>
-          <select
-            name="title"
-            value={ingredient.title}
-            onChange={(e) => handleSelectChange(index, e)}
+    <DescHelperContainer>
+      <TitleContainer>
+        <IngrTitle>Ingredients</IngrTitle>
+        <ButtonContainer>
+          <QuantityButton
+            type="button"
+            onClick={handleRemoveIngredient}
+            disabled={ingredients.length === 1}
           >
-            {INGREDIENTS.map((ingredient) => (
-              <option key={ingredient._id.$oid} value={ingredient.title}>
-                {ingredient.title}
-              </option>
-            ))}
-          </select>
-          <input
-            name="measure"
-            type="text"
-            value={ingredient.measure}
-            onChange={(e) => handleInputChange(index, e)}
-          />
-          <button type="button" onClick={() => handleRemoveIngredient(index)}>
+            -
+          </QuantityButton>
+          <p>{ingredients.length}</p>
+          <QuantityButton type="button" onClick={handleAddIngredient}>
+            +
+          </QuantityButton>
+        </ButtonContainer>
+      </TitleContainer>
+      {ingredients.map((ingredient, index) => (
+        <SelectContainer key={index}>
+          <SelectInnerContainer>
+            <IngredientSelect
+              name="title"
+              value={ingredient.title}
+              onChange={(e) => handleSelectChange(index, e)}
+            >
+              {INGREDIENTS.map((ingredient) => (
+                <option key={ingredient._id.$oid} value={ingredient.title}>
+                  {ingredient.title}
+                </option>
+              ))}
+            </IngredientSelect>
+            <MeasureInput
+              name="measure"
+              type="text"
+              value={ingredient.measure}
+              onChange={(e) => handleInputChange(index, e)}
+              required
+            />
+          </SelectInnerContainer>
+          <DeleteMeasureBtn
+            type="button"
+            onClick={() => handleRemoveIngredient(index)}
+            disabled={ingredients.length === 1}
+          >
             x
-          </button>
-        </div>
+          </DeleteMeasureBtn>
+        </SelectContainer>
       ))}
-      <button type="button" onClick={handleRemoveIngredient}>
-        -
-      </button>
-      <p>{ingredients.length}</p>
-      <button type="button" onClick={handleAddIngredient}>
-        +
-      </button>
-    </>
+    </DescHelperContainer>
   );
   //   return (
   //     <>
