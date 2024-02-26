@@ -35,6 +35,10 @@ const AddDrinkForm = () => {
       values.ingredients.forEach((ingredient, index) => {
         formData.append(`ingredients[${index}][title]`, ingredient.title);
         formData.append(`ingredients[${index}][measure]`, ingredient.measure);
+        formData.append(
+          `ingredients[${index}][ingredientId]`,
+          ingredient.ingredientId
+        );
       });
       try {
         const resp = await addDrinktoDB(formData);

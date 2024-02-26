@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-//   @media screen and (min-width: 1280px) {
-//
-//   }
-
 export const ImageLabel = styled.label`
   display: flex;
   justify-content: center;
@@ -20,6 +16,15 @@ export const ImageLabel = styled.label`
   transform: translate(-50%, -50%);
   cursor: pointer;
   font-size: 35px;
+
+  &::after {
+    content: 'Add Image';
+    position: absolute;
+    color: #f3f3f3;
+    width: 79px;
+    font-size: 16px;
+    bottom: -30px;
+  }
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     left: 185px;
@@ -39,6 +44,18 @@ export const InputImage = styled.input`
   width: 100%;
   margin-bottom: 40px;
   background-color: transparent;
+  &.visually-hidden {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+  }
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     width: 80px;
@@ -51,6 +68,7 @@ export const InputImage = styled.input`
 `;
 
 export const DescHelper = styled.div`
+  position: relative;
   @media screen and (min-width: 1280px) {
     position: relative;
   }
@@ -77,7 +95,10 @@ export const InputBG = styled.div`
 export const DrinkImg = styled.img`
   margin-bottom: 40px;
   display: block;
+  object-fit: cover;
   @media screen and (min-width: 768px) and (max-width: 1279px) {
+    width: 400px;
+    height: 320px;
     margin-bottom: 0;
   }
   @media screen and (min-width: 1280px) {
@@ -98,11 +119,14 @@ export const TabletMainContainer = styled.div`
 `;
 
 export const TabletContainer = styled.div`
+  margin-top: 40px;
   @media screen and (min-width: 768px) and (max-width: 1279px) {
+    margin-top: 0;
     width: 352px;
   }
   @media screen and (min-width: 1280px) {
     width: 393px;
+    margin-top: 0;
   }
 `;
 
@@ -198,4 +222,32 @@ export const RadioSecondaryContainer = styled.div`
   font-weight: 400;
   font-size: 16px;
   letter-spacing: -0.02em;
+`;
+export const StyledDeleteButton = styled.button`
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  border-radius: 40px;
+  border: none;
+  width: 40px;
+  height: 40px;
+  background: var(--primary-black-color);
+  color: #f3f3f3;
+
+  &:hover {
+    background: #050e24;
+  }
+`;
+
+export const ImgWrapper = styled.div`
+  width: 335px;
+  height: 320px;
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    width: 320px;
+    height: 320px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 400px;
+    height: 400px;
+  }
 `;

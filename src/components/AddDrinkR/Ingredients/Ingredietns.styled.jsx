@@ -85,7 +85,9 @@ export const SelectContainer = styled.div`
 `;
 
 export const DescHelperContainer = styled.div`
-  width: 540px;
+  @media screen and (min-width: 1280px) {
+    width: 540px;
+  }
 `;
 
 export const SelectInnerContainer = styled.div`
