@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import { StyledDrinkPage } from './DrinkPage.styled';
 // import { getDrinkByID } from '../../api/getDrinkById';
 import images from 'src/assets/images/drink-page/images';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import Title from '../../components/Title/Title';
 import drinksSelectors from '../../redux/drinks/drinkSelectors';
@@ -35,6 +37,20 @@ const DrinkPage = () => {
     dispatch(fetchDrinkDetails(id));
   }, [dispatch, inFavorites]);
 
+  const notifyAdd = () => {
+    toast('Drink added to favorites', {
+      position: 'top-right',
+      autoClose: 2000,
+    });
+  };
+
+  const notifyRemove = () => {
+    toast('Drink removed from favorites', {
+      position: 'top-right',
+      autoClose: 2000,
+    });
+  };
+
   const handleAddToFavorite = (cocktailId) => {
     dispatch(addToFavorites(cocktailId));
   };
@@ -45,6 +61,7 @@ const DrinkPage = () => {
 
   return (
     <StyledDrinkPage>
+      <ToastContainer />
       <div className="container-page">
         {error !== null ? (
           <ErrorPage />
@@ -65,14 +82,20 @@ const DrinkPage = () => {
                     {inFavorites ? (
                       <button
                         className="btn-add-rem-fav"
-                        onClick={() => handleDeleteFromFavorites(id)}
+                        onClick={() => {
+                          handleDeleteFromFavorites(id);
+                          notifyRemove();
+                        }}
                       >
                         Remove from favorites
                       </button>
                     ) : (
                       <button
                         className="btn-add-rem-fav"
-                        onClick={() => handleAddToFavorite(id)}
+                        onClick={() => {
+                          handleAddToFavorite(id);
+                          notifyAdd();
+                        }}
                       >
                         Add to favorite drinks
                       </button>
