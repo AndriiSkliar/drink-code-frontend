@@ -89,6 +89,7 @@ const Ingredients = ({ formik }) => {
               value={ingredient.title}
               onChange={(e) => handleSelectChange(index, e)}
             >
+              <option value="">Select ingredients</option>
               {INGREDIENTS.map((ingredient) => (
                 <option
                   key={ingredient._id.$oid}

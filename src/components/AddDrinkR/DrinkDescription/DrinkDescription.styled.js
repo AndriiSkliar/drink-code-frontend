@@ -200,7 +200,7 @@ export const CategoryInput = styled.select`
   text-align: end;
   width: 170px;
   border-radius: 200px;
-  background-color: var(--switcher-ball);
+  background-color: transparent;
   border-radius: 200px;
   color: var(--secondary-text-color);
   cursor: pointer;
