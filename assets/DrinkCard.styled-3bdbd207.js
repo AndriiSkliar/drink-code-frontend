@@ -1,4 +1,5 @@
-import{u as e}from"./index-2c43f712.js";const t=e.li`
+import{u as e}from"./index-419dca2d.js";const t=e.li`
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -21,11 +22,27 @@ import{u as e}from"./index-2c43f712.js";const t=e.li`
 `,o=e.img`
   border-radius: 8px;
   height: 360px;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 8px;
+    background: linear-gradient(
+      180deg,
+      rgba(10, 10, 17, 0.03) 2.37%,
+      rgba(10, 10, 17, 0.96) 95.31%
+    );
+    z-index: 2;
+  }
 
   @media screen and (min-width: 1280px) {
     height: 400px;
   }
-`,n=e.p`
+`,r=e.p`
+  height: 75px;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.28571;
@@ -40,8 +57,10 @@ import{u as e}from"./index-2c43f712.js";const t=e.li`
   @media screen and (min-width: 768px) {
     font-size: 16px;
     line-height: 1.375;
+    height: 110px;
+    -webkit-line-clamp: 5;
   }
-`,r=e.h2`
+`,n=e.h2`
   font-weight: 500;
   font-size: 18px;
   line-height: 1.33333;
@@ -105,4 +124,4 @@ import{u as e}from"./index-2c43f712.js";const t=e.li`
 `,l=e.div`
   display: flex;
   gap: 8px;
-`;export{t as S,o as a,r as b,a as c,n as d,l as e,p as f,d as g};
+`;export{t as S,o as a,n as b,a as c,r as d,l as e,p as f,d as g};
