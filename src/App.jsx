@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 // @ts-nocheck
-import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import SharedLayout from './components/SharedLayout/SharedLayout';
 import PublicRoute from './helpers/PublicRoute';
@@ -9,7 +9,7 @@ import SignUpPage from './pages/SignUpPage/signUpPage';
 import SignInPage from './pages/SignInPage/SignInPage';
 import VerificationPage from './pages/VerificationPage/VerificationPage';
 import authSelectors from './redux/auth/authSelectors';
-import { lazy, useEffect, useState } from 'react';
+import { lazy, useEffect } from 'react';
 import { authOperations } from './redux/auth/authOperations';
 import { PrivateRoute } from './helpers/PrivateRoute';
 
@@ -24,13 +24,14 @@ const DrinkPage = lazy(() => import('./pages/DrinkPage/DrinkPage'));
 function App() {
   const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
   const location = useLocation();
-  const navigate = useNavigate();
-  const [currentPage] = useState(location.pathname);
   const dispatch = useDispatch();
+
+  if(isLoggedIn && location.pathname === "/") {
+    location.pathname = "/home";
+  }
 
   useEffect(() => {
     dispatch(authOperations.currentUser());
-    navigate(currentPage);
   }, [dispatch]);
 
 
