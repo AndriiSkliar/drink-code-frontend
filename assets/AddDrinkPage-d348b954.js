@@ -1,4 +1,4 @@
-import{u as i,N as q,j as e,b as I,a as B,r as m,g as G,h as j,s as P,i as L,k as R,l as N,m as $,n as g,o as F,B as z}from"./index-edeae60b.js";import{c as W}from"./selectors-dad3d6eb.js";const D=i.aside`
+import{u as i,N as q,j as e,b as I,a as B,r as m,g as G,h as j,s as P,i as L,k as R,l as N,m as $,n as g,o as F,B as z}from"./index-a3f8adbe.js";import{c as W}from"./selectors-dad3d6eb.js";const D=i.aside`
   @media screen and (min-width: 768px) {
     max-width: 704px;
     margin: 0 auto;
@@ -310,7 +310,7 @@ import{u as i,N as q,j as e,b as I,a as B,r as m,g as G,h as j,s as P,i as L,k a
   text-align: end;
   width: 170px;
   border-radius: 200px;
-  background-color: var(--switcher-ball);
+  background-color: transparent;
   border-radius: 200px;
   color: var(--secondary-text-color);
   cursor: pointer;
@@ -1178,7 +1178,7 @@ The cucumber is a creeping vine that roots in the ground and grows up trellises 
   border: none;
   color: var(--primary-text-color);
   font-size: 25px;
-`,ve=({formik:a})=>{const[r,d]=m.useState([{title:"",measure:"",ingredientId:""}]);m.useEffect(()=>{a.setValues({...a.values,ingredients:r})},[r,a.setValues]);const c=(l,n)=>{const{name:t,value:o}=n.target,p=[...r];p[l][t]=o,d(p)},h=(l,n)=>{const t=n.target.selectedIndex,o=A[t],{name:p,value:f}=n.target,y=[...r];y[l]={...y[l],[p]:f,ingredientId:o._id.$oid},d(y)},u=l=>{const t=[...r].filter(o=>o.ingredientId!==l);d(t)},s=()=>{d([...r,{title:"",measure:"",ingredientId:""}])};return e.jsxs(fe,{children:[e.jsxs(ce,{children:[e.jsx(me,{children:"Ingredients"}),e.jsxs(pe,{children:[e.jsx(M,{type:"button",onClick:u,disabled:r.length===1,children:"-"}),e.jsx("p",{children:r.length}),e.jsx(M,{type:"button",onClick:s,children:"+"})]})]}),r.map((l,n)=>e.jsxs(ge,{children:[e.jsxs(ye,{children:[e.jsx(be,{name:"title",value:l.title,onChange:t=>h(n,t),children:A.map(t=>e.jsx("option",{"data-id":t._id.$oid,value:t.title,children:t.title},t._id.$oid))}),e.jsx(we,{name:"measure",type:"text",value:l.measure,onChange:t=>c(n,t),required:!0})]}),e.jsx(ke,{type:"button",onClick:()=>u(l.ingredientId),disabled:r.length===1,children:"x"})]},n))]})},Se=i.h2`
+`,ve=({formik:a})=>{const[r,d]=m.useState([{title:"",measure:"",ingredientId:""}]);m.useEffect(()=>{a.setValues({...a.values,ingredients:r})},[r,a.setValues]);const c=(l,n)=>{const{name:t,value:o}=n.target,p=[...r];p[l][t]=o,d(p)},h=(l,n)=>{const t=n.target.selectedIndex,o=A[t],{name:p,value:f}=n.target,y=[...r];y[l]={...y[l],[p]:f,ingredientId:o._id.$oid},d(y)},u=l=>{const t=[...r].filter(o=>o.ingredientId!==l);d(t)},s=()=>{d([...r,{title:"",measure:"",ingredientId:""}])};return e.jsxs(fe,{children:[e.jsxs(ce,{children:[e.jsx(me,{children:"Ingredients"}),e.jsxs(pe,{children:[e.jsx(M,{type:"button",onClick:u,disabled:r.length===1,children:"-"}),e.jsx("p",{children:r.length}),e.jsx(M,{type:"button",onClick:s,children:"+"})]})]}),r.map((l,n)=>e.jsxs(ge,{children:[e.jsxs(ye,{children:[e.jsxs(be,{name:"title",value:l.title,onChange:t=>h(n,t),children:[e.jsx("option",{value:"",children:"Select ingredients"}),A.map(t=>e.jsx("option",{"data-id":t._id.$oid,value:t.title,children:t.title},t._id.$oid))]}),e.jsx(we,{name:"measure",type:"text",value:l.measure,onChange:t=>c(n,t),required:!0})]}),e.jsx(ke,{type:"button",onClick:()=>u(l.ingredientId),disabled:r.length===1,children:"x"})]},n))]})},Se=i.h2`
   font-weight: 600;
   font-size: 28px;
   line-height: 114%;
