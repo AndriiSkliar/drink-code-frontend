@@ -5,10 +5,10 @@ import Pagination from '../../components/Pagination/Pagination';
 import SearchBar from '../../components/DrinkSearch/SearchBar/SearchBar';
 import SearchSelectCategory from '../../components/DrinkSearch/Select/SearchSelectCategory';
 import SearchSelectIngredients from '../../components/DrinkSearch/Select/SearchSelectIngredients';
-import { StyledDrinksPage } from './DrinkPage.styled.js';
+import { SearchingContainer, StyledDrinksPage } from './DrinkPage.styled.js';
 import { fetchDrinks } from '../../redux/drinks/drinksSearch.js';
 import { selectDrinks } from '../../redux/selectors';
-
+import Title from '../../components/Title/Title';
 // import Loader from '../../components/Loader/Loader';
 
 const DrinksPage = () => {
@@ -33,21 +33,21 @@ const DrinksPage = () => {
     }
   }
   return (
-    <StyledDrinksPage>
-      <h1 className="drinksTitle">Drinks</h1>
-      <div className="searchingContainer">
+    <main className="container">
+      <Title text={'Drinks'} />
+      <SearchingContainer>
         <SearchBar />
         <SearchSelectCategory />
         <SearchSelectIngredients />
-      </div>
+      </SearchingContainer>
       {/* {isLoading && <Loader />} */}
       <div className="categoryListsContainer">
         {drinks.length > 0 && <DrinksList drinks={drinks} />}
-        {drinks.length < 1 && <aler>Not gound drink for your request</aler>}
+        {drinks.length < 1 && <alert>Not gound drink for your request</alert>}
         {/* {drinks.length < 1 && <NotFoundDrink />} */}
       </div>
       {pageQuan > 1 && <Pagination pageQuan={pageQuan} />}
-    </StyledDrinksPage>
+    </main>
   );
 };
 export default DrinksPage;

@@ -46,6 +46,7 @@ export const fetchOwnCoctails = createAsyncThunk(
   async (_, thunkApi) => {
     try {
       const { data } = await instance.get('/drinks/own');
+
       return data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);
@@ -108,11 +109,10 @@ export const deleteOwnCocktail = createAsyncThunk(
 
 export const addToFavorites = createAsyncThunk(
   'cocktails/addToFavorite',
-  async (cocktail, thunkApi) => {
+  async (cocktailId, thunkApi) => {
     try {
       const { data } = await instance.post(
-        `/drinks/favorites/add/${cocktail.id}`,
-        cocktail
+        `/drinks/favorites/add/${cocktailId}`
       );
 
       return data;

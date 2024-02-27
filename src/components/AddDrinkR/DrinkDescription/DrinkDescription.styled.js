@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-//   @media screen and (min-width: 1280px) {
-//
-//   }
-
 export const ImageLabel = styled.label`
   display: flex;
   justify-content: center;
@@ -20,6 +16,15 @@ export const ImageLabel = styled.label`
   transform: translate(-50%, -50%);
   cursor: pointer;
   font-size: 35px;
+
+  &::after {
+    content: 'Add Image';
+    position: absolute;
+    color: #f3f3f3;
+    width: 79px;
+    font-size: 16px;
+    bottom: -30px;
+  }
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     left: 185px;
@@ -39,6 +44,18 @@ export const InputImage = styled.input`
   width: 100%;
   margin-bottom: 40px;
   background-color: transparent;
+  &.visually-hidden {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+  }
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     width: 80px;
@@ -51,6 +68,7 @@ export const InputImage = styled.input`
 `;
 
 export const DescHelper = styled.div`
+  position: relative;
   @media screen and (min-width: 1280px) {
     position: relative;
   }
@@ -77,7 +95,10 @@ export const InputBG = styled.div`
 export const DrinkImg = styled.img`
   margin-bottom: 40px;
   display: block;
+  object-fit: cover;
   @media screen and (min-width: 768px) and (max-width: 1279px) {
+    width: 400px;
+    height: 320px;
     margin-bottom: 0;
   }
   @media screen and (min-width: 1280px) {
@@ -98,18 +119,21 @@ export const TabletMainContainer = styled.div`
 `;
 
 export const TabletContainer = styled.div`
+  margin-top: 40px;
   @media screen and (min-width: 768px) and (max-width: 1279px) {
+    margin-top: 0;
     width: 352px;
   }
   @media screen and (min-width: 1280px) {
     width: 393px;
+    margin-top: 0;
   }
 `;
 
 export const DrinkInput = styled.input`
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid rgba(243, 243, 243, 0.5);
+  border-bottom: 1px solid var(--secondary-text-color);
   margin-bottom: 31px;
   color: #f3f3f3;
   width: 335px;
@@ -128,7 +152,7 @@ export const DrinkInput = styled.input`
 export const DrinkLabel = styled.label`
   font-weight: 400;
   font-size: 14px;
-  color: rgba(243, 243, 243, 0.5);
+  color: var(--secondary-text-color);
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     font-size: 16px;
   }
@@ -142,8 +166,8 @@ export const SelectLabel = styled.p`
   width: 335px;
   height: 34px;
   margin-bottom: 34px;
-  border-bottom: 1px solid rgba(243, 243, 243, 0.5);
-  color: rgba(243, 243, 243, 0.5);
+  border-bottom: 1px solid var(--secondary-text-color);
+  color: var(--secondary-text-color);
   font-size: 14px;
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     font-size: 16px;
@@ -174,7 +198,7 @@ export const CategoryInput = styled.select`
   border-radius: 200px;
   background-color: transparent;
   border-radius: 200px;
-  color: #f3f3f3;
+  color: var(--secondary-text-color);
   cursor: pointer;
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     font-size: 16px;
@@ -193,9 +217,43 @@ export const RadioMainContainer = styled.div`
 `;
 
 export const RadioSecondaryContainer = styled.div`
+  color: var(--secondary-text-color);
   display: flex;
   gap: 8px;
   font-weight: 400;
   font-size: 16px;
   letter-spacing: -0.02em;
+  accent-color: var(--secondary-text-color);
+
+  input:checked + label {
+    color: var(--primary-text-color);
+  }
+`;
+export const StyledDeleteButton = styled.button`
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  border-radius: 40px;
+  border: none;
+  width: 40px;
+  height: 40px;
+  background: var(--primary-black-color);
+  color: #f3f3f3;
+
+  &:hover {
+    background: #050e24;
+  }
+`;
+
+export const ImgWrapper = styled.div`
+  width: 335px;
+  height: 320px;
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    width: 320px;
+    height: 320px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 400px;
+    height: 400px;
+  }
 `;

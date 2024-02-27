@@ -8,11 +8,10 @@ import WelcomePage from './pages/WelcomePage/WelcomePage';
 import SignUpPage from './pages/SignUpPage/signUpPage';
 import SignInPage from './pages/SignInPage/SignInPage';
 import VerificationPage from './pages/VerificationPage/VerificationPage';
-import { lazy, useEffect, useState, Suspense } from 'react';
-import { authOperations } from './redux/auth/authOperations';
 import authSelectors from './redux/auth/authSelectors';
+import { lazy, useEffect, useState } from 'react';
+import { authOperations } from './redux/auth/authOperations';
 import { PrivateRoute } from './helpers/PrivateRoute';
-import { Loader } from './components/Loader/Loader';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const ErrorPage = lazy(() => import('./pages/ErrorPage/ErrorPage'));
@@ -29,24 +28,28 @@ function App() {
   const [currentPage] = useState(location.pathname);
   const dispatch = useDispatch();
 
+  if(currentPage === "/" && isLoggedIn) {
+    location.pathname = "/home"
+  }
+
+  if(currentPage === "/" && !isLoggedIn) {
+    location.pathname = "/welcome"
+  }
+
   useEffect(() => {
     dispatch(authOperations.currentUser());
-    if (currentPage !== '/') {
       navigate(currentPage);
-    }
   }, [dispatch]);
 
 
   return (
-    <Suspense fallback={<Loader/>}>
     <Routes>
-      <Route path="/:id" element={<VerificationPage />} />
+      <Route path="/user/:id" element={<VerificationPage />} />
       <Route
         path="/welcome"
         element={
           <PublicRoute
-            redirectTo="/"
-            isLoggedIn={isLoggedIn}
+            redirectTo="/home"
             component={<WelcomePage />}
           />
         }
@@ -55,8 +58,7 @@ function App() {
         path="/signup"
         element={
           <PublicRoute
-            redirectTo="/"
-            isLoggedIn={isLoggedIn}
+            redirectTo="/home"
             component={<SignUpPage />}
           />
         }
@@ -66,15 +68,15 @@ function App() {
         path="/signin"
         element={
           <PublicRoute
-            redirectTo="/"
-            isLoggedIn={isLoggedIn}
+            redirectTo="/home"
             component={<SignInPage />}
           />
         }
       />
-      <Route path="/" element={<PrivateRoute redirectTo="/welcome" component={<SharedLayout />}/>} >
+      <Route path="/" element={!isLoggedIn ? <WelcomePage/> : <SharedLayout/>} >
         <Route
           index
+          path='/home'
           element={
             <PrivateRoute redirectTo="/welcome" component={<HomePage />} />
           }
@@ -109,10 +111,9 @@ function App() {
             <PrivateRoute redirectTo="/welcome" component={<DrinkPage />} />
           }
         />
-        <Route path="*" element={<ErrorPage />} />
+        <Route path="*" element={<PrivateRoute redirectTo="/welcome" component={<ErrorPage />} />} />
       </Route>
     </Routes>
-    </Suspense>
   );
 }
 export default App;

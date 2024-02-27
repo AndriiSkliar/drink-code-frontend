@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import authSelectors from '../../../redux/auth/authSelectors';
+import sprite from '/src/assets/icons/icons.svg';
 
 import { CATEGORY } from './category';
 import { GLASSES } from './glasses';
@@ -7,6 +10,7 @@ import {
   TabletContainer,
   DescHelper,
   InputImage,
+  ImgWrapper,
   ImageLabel,
   InputBG,
   DrinkImg,
@@ -17,6 +21,7 @@ import {
   PositionContainer,
   RadioMainContainer,
   RadioSecondaryContainer,
+  StyledDeleteButton,
 } from './DrinkDescription.styled';
 
 const DrinkDescription = ({
@@ -26,6 +31,8 @@ const DrinkDescription = ({
   setPictureActive,
 }) => {
   const [imageURL, setImageURL] = useState('');
+  const userData = useSelector(authSelectors.selectUser);
+  const isAdult = userData.isAdult;
 
   const handleUploadAvatar = (e) => {
     const currentFile = e.target.files[0];
@@ -50,17 +57,32 @@ const DrinkDescription = ({
           type="file"
           id="drinkThumb"
           name="drinkThumb"
+          className="visually-hidden"
           onChange={handleUploadAvatar}
           required
         />
         {!pictureActive && <ImageLabel htmlFor="drinkThumb">+</ImageLabel>}
         {pictureActive && (
-          <DrinkImg
-            src={imageURL === '' ? null : imageURL}
-            alt="avatar of the user"
-            width={335}
-            height={400}
-          />
+          <ImgWrapper>
+            <DrinkImg
+              src={imageURL === '' ? null : imageURL}
+              alt="avatar of the user"
+              width={335}
+              height={400}
+            />
+          </ImgWrapper>
+        )}
+        {pictureActive && (
+          <StyledDeleteButton
+            onClick={() => {
+              setFileAvatar('');
+              setPictureActive(false);
+            }}
+          >
+            <svg width={16} height={16}>
+              <use xlinkHref={`${sprite}#icon-trash`}></use>
+            </svg>
+          </StyledDeleteButton>
         )}
       </DescHelper>
       <TabletContainer>
@@ -115,6 +137,7 @@ const DrinkDescription = ({
               id="alcoholic"
               name="alcoholic"
               value="Alcoholic"
+              disabled={!isAdult}
               onChange={formik.handleChange}
               checked={formik.values.alcoholic === 'Alcoholic'}
             />

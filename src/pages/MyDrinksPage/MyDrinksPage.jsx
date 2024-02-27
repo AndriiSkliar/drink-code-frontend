@@ -1,5 +1,3 @@
-// MyDrinksPage.jsx
-
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -78,7 +76,7 @@ const MyDrinksPage = () => {
               ))}
             </DrinkList>
           )}
-          <PaginationPanel pageQuan={totalPages} />
+          {totalPages > 1 && <PaginationPanel pageQuan={totalPages} />}
         </>
       )}
     </main>

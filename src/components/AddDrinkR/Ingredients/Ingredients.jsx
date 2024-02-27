@@ -18,6 +18,7 @@ const Ingredients = ({ formik }) => {
     {
       title: '',
       measure: '',
+      ingredientId: '',
     },
   ]);
   useEffect(() => {
@@ -35,21 +36,33 @@ const Ingredients = ({ formik }) => {
   };
 
   const handleSelectChange = (index, event) => {
+    const selectedIndex = event.target.selectedIndex;
+    const selectedIngredient = INGREDIENTS[selectedIndex];
     const { name, value } = event.target;
     const newIngredients = [...ingredients];
-    newIngredients[index][name] = value;
+    newIngredients[index] = {
+      ...newIngredients[index],
+      [name]: value,
+      ingredientId: selectedIngredient._id.$oid,
+    };
     setIngredients(newIngredients);
   };
 
-  const handleRemoveIngredient = () => {
+  const handleRemoveIngredient = (elID) => {
     const newIngredients = [...ingredients];
-    newIngredients.pop();
-    setIngredients(newIngredients);
+    const filteredArray = newIngredients.filter(
+      (ingr) => ingr.ingredientId !== elID
+    );
+    setIngredients(filteredArray);
   };
 
   const handleAddIngredient = () => {
-    setIngredients([...ingredients, { title: '', measure: '' }]);
+    setIngredients([
+      ...ingredients,
+      { title: '', measure: '', ingredientId: '' },
+    ]);
   };
+
   return (
     <DescHelperContainer>
       <TitleContainer>
@@ -77,7 +90,11 @@ const Ingredients = ({ formik }) => {
               onChange={(e) => handleSelectChange(index, e)}
             >
               {INGREDIENTS.map((ingredient) => (
-                <option key={ingredient._id.$oid} value={ingredient.title}>
+                <option
+                  key={ingredient._id.$oid}
+                  data-id={ingredient._id.$oid}
+                  value={ingredient.title}
+                >
                   {ingredient.title}
                 </option>
               ))}
@@ -92,7 +109,7 @@ const Ingredients = ({ formik }) => {
           </SelectInnerContainer>
           <DeleteMeasureBtn
             type="button"
-            onClick={() => handleRemoveIngredient(index)}
+            onClick={() => handleRemoveIngredient(ingredient.ingredientId)}
             disabled={ingredients.length === 1}
           >
             x
