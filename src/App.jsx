@@ -28,13 +28,9 @@ function App() {
   const [currentPage] = useState(location.pathname);
   const dispatch = useDispatch();
 
-  if(currentPage === "/" && isLoggedIn) {
-    location.pathname = "/home"
-  }
-
   useEffect(() => {
     dispatch(authOperations.currentUser());
-      navigate(currentPage);
+    navigate(currentPage);
   }, [dispatch]);
 
 
@@ -69,7 +65,7 @@ function App() {
           />
         }
       />
-      <Route path="/" element={!isLoggedIn ? <WelcomePage/> : <SharedLayout/>} >
+      <Route path="/" element={!isLoggedIn ? <WelcomePage /> : <SharedLayout />} >
         <Route
           index
           path='/home'
