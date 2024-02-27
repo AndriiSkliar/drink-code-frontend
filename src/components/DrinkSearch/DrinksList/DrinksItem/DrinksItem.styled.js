@@ -10,7 +10,6 @@ export const StyledCocktailWrapper = styled.li`
     row-gap: 14px;
     width: 342px;
     margin-bottom: 0;
-
   }
 
   @media screen and (min-width: 1280px) {
@@ -18,28 +17,27 @@ export const StyledCocktailWrapper = styled.li`
   }
 `;
 
-
-
 export const StyledCocktailImageContainer = styled.div`
-        position: relative;
+  position: relative;
 
-      /* Градиент для затемнения на фото коктейля */
-      &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border-radius: 8px;
-        background: linear-gradient(
-          180deg,
-          rgba(10, 10, 17, 0.03) 2.37%,
-          rgba(10, 10, 17, 0.96) 95.31%
-        );
-        z-index: 1;
-      }
-    `
+  /* Градиент для затемнения на фото коктейля */
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 200px;
+    border-radius: 8px;
+    background: linear-gradient(
+      180deg,
+      rgba(10, 10, 17, 0.03) 2.37%,
+      rgba(10, 10, 17, 0.96) 95.31%
+    );
+    z-index: 1;
+  }
+`;
 
 export const StyledCocktailImage = styled.img`
   border-radius: 8px;
@@ -58,7 +56,8 @@ export const StyledCocktailName = styled.h2`
 
   @media screen and (min-width: 768px) {
     font-size: 18px;
-    line-height: 1.33333;  }
+    line-height: 1.33333;
+  }
 `;
 
 export const StyledCocktailSeeMore = styled.p`
@@ -94,13 +93,13 @@ export const StyledDrinkInfo = styled.div`
     width: 342px;
   }
 
-@media screen and (min-width: 1280px) {
- width: 400px;
-   }
+  @media screen and (min-width: 1280px) {
+    width: 400px;
+  }
 
   /* svg {
     width: 24px;
      height: 24px;
      stroke: #f3f3f3;
    } */
- `;
+`;
