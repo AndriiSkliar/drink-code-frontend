@@ -45,7 +45,7 @@ export const AuthForm = styled(Form)`
 `;
 
 export const Input = styled(Field)`
-  width: 285px;
+  width: 100%;
   display: block;
   padding: 18px 24px;
   border: 1px solid var(--primary-text-color-02);
@@ -75,10 +75,10 @@ export const Input = styled(Field)`
     `}
     
   @media screen and (min-width: 768px) {
-    width: 350px;
+    width: 100%;
     font-size: 17px;
     line-height: 1.56;
-    padding: 14px 24px;
+    padding: 14px 52px 14px 24px;
   }
 `;
 
