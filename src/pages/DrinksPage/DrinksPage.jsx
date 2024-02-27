@@ -6,21 +6,20 @@ import SearchBar from '../../components/DrinkSearch/SearchBar/SearchBar';
 import SearchSelectCategory from '../../components/DrinkSearch/Select/SearchSelectCategory';
 import SearchSelectIngredients from '../../components/DrinkSearch/Select/SearchSelectIngredients';
 import { SearchingContainer, StyledDrinksPage } from './DrinkPage.styled.js';
-import { fetchDrinks } from '../../redux/drinks/drinks.reducer';
-import { selectDrinks, selectIsLoading } from '../../redux/selectors';
+import { fetchDrinks } from '../../redux/drinks/drinksSearch.js';
+import { selectDrinks, selectIsLoadingDrinks } from '../../redux/selectors';
 import Title from '../../components/Title/Title';
 import { Loader } from '../../components/Loader/Loader.jsx';
 import { useSearchParams } from 'react-router-dom';
 import DrinkList from '../../components/DrinkList/DrinkList';
 import DrinksItem from '../../components/DrinkSearch/DrinksList/DrinksItem/DrinksItem';
-// import Loader from '../../components/Loader/Loader';
 
 const DrinksPage = () => {
   const dispatch = useDispatch();
   const [perPage, setPerPage] = useState(8);
   const [searchParams, setSearchParams] = useSearchParams();
   const drinks = useSelector(selectDrinks);
-  const isLoading = useSelector(selectIsLoading);
+  const isLoading = useSelector(selectIsLoadingDrinks);
   const page = searchParams.get('page') || 1;
 
   const totalPages = Math.ceil(drinks.length / perPage);
@@ -59,9 +58,14 @@ const DrinksPage = () => {
         <SearchSelectCategory />
         <SearchSelectIngredients />
       </SearchingContainer>
-      {isLoading === true && <Loader />}
       <div className="categoryListsContainer">
-        {drinks.length > 0 && (
+        {isLoading && <Loader />}
+
+        {!isLoading && drinks.length < 1 && (
+          <p>Not gound drink for your request</p>
+        )}
+
+        {!isLoading && drinks.length > 0 && (
           <DrinkList>
             {drinks.slice(startIndex, endIndex).map((drink) => (
               <DrinksItem
@@ -74,8 +78,6 @@ const DrinksPage = () => {
             ))}
           </DrinkList>
         )}
-        {drinks.length < 1 && <h2>Not found drink for your request</h2>}
-        {/* {drinks.length < 1 && <NotFoundDrink />} */}
       </div>
       {totalPages > 1 && <Pagination pageQuan={totalPages} />}
     </main>

@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { StyledDrinkPage } from './DrinkPage.styled';
-// import { getDrinkByID } from '../../api/getDrinkById';
 import images from 'src/assets/images/drink-page/images';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -166,8 +165,6 @@ const DrinkPage = () => {
                       src={images.drinks_mobile}
                       alt="three drinks"
                       className="img-three-drinks"
-                      // width="335px"
-                      // height="430px"
                     />
                   </picture>
                 </div>
