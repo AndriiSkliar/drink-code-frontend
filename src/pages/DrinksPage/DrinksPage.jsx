@@ -7,14 +7,16 @@ import SearchSelectCategory from '../../components/DrinkSearch/Select/SearchSele
 import SearchSelectIngredients from '../../components/DrinkSearch/Select/SearchSelectIngredients';
 import { SearchingContainer, StyledDrinksPage } from './DrinkPage.styled.js';
 import { fetchDrinks } from '../../redux/drinks/drinksSearch.js';
-import { selectDrinks } from '../../redux/selectors';
+import { selectDrinks, selectIsLoading } from '../../redux/selectors';
 import Title from '../../components/Title/Title';
+import { Loader } from '../../components/Loader/Loader.jsx';
 // import Loader from '../../components/Loader/Loader';
 
 const DrinksPage = () => {
   const dispatch = useDispatch();
   let pageQuan = 1;
   const drinks = useSelector(selectDrinks);
+  const isLoading = useSelector(selectIsLoading);
 
   useEffect(() => {
     dispatch(fetchDrinks());
@@ -40,7 +42,7 @@ const DrinksPage = () => {
         <SearchSelectCategory />
         <SearchSelectIngredients />
       </SearchingContainer>
-      {/* {isLoading && <Loader />} */}
+      {isLoading === true && <Loader />}
       <div className="categoryListsContainer">
         {drinks.length > 0 && <DrinksList drinks={drinks} />}
         {drinks.length < 1 && <alert>Not gound drink for your request</alert>}

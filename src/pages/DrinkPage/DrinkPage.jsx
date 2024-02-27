@@ -5,6 +5,8 @@ import { useParams } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import { StyledDrinkPage } from './DrinkPage.styled';
 // import { getDrinkByID } from '../../api/getDrinkById';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import Title from '../../components/Title/Title';
 import drinksSelectors from '../../redux/drinks/drinkSelectors';
@@ -20,8 +22,7 @@ import {
 } from '../../redux/selectors';
 import { Loader } from '../../components/Loader/Loader';
 import ErrorPage from '../ErrorPage/ErrorPage.jsx';
-
-const defaultImg = 'https://dummyimage.com/335x400';
+import defaultImg from '../../assets/dummyDrinkThumb.png';
 
 const DrinkPage = () => {
   const dispatch = useDispatch();
@@ -43,6 +44,20 @@ const DrinkPage = () => {
     dispatch(fetchDrinkDetails(id));
   }, [dispatch, inFavorites]);
 
+  const notifyAdd = () => {
+    toast('Drink added to favorites', {
+      position: 'top-right',
+      autoClose: 2000,
+    });
+  };
+
+  const notifyRemove = () => {
+    toast('Drink removed from favorites', {
+      position: 'top-right',
+      autoClose: 2000,
+    });
+  };
+
   const handleAddToFavorite = (cocktailId) => {
     dispatch(addToFavorites(cocktailId));
   };
@@ -53,6 +68,7 @@ const DrinkPage = () => {
 
   return (
     <StyledDrinkPage>
+      <ToastContainer />
       <div className="container-page">
         {error !== null ? (
           <ErrorPage />
@@ -73,14 +89,20 @@ const DrinkPage = () => {
                     {inFavorites ? (
                       <button
                         className="btn-add-rem-fav"
-                        onClick={() => handleDeleteFromFavorites(id)}
+                        onClick={() => {
+                          handleDeleteFromFavorites(id);
+                          notifyRemove();
+                        }}
                       >
                         Remove from favorites
                       </button>
                     ) : (
                       <button
                         className="btn-add-rem-fav"
-                        onClick={() => handleAddToFavorite(id)}
+                        onClick={() => {
+                          handleAddToFavorite(id);
+                          notifyAdd();
+                        }}
                       >
                         Add to favorite drinks
                       </button>
@@ -106,7 +128,11 @@ const DrinkPage = () => {
                         <div className="img-container">
                           <img
                             className="img-ingred"
-                            src={ingredientId.ingredientThumb || defaultImg}
+                            src={
+                              ingredientId && ingredientId.ingredientThumb
+                                ? ingredientId.ingredientThumb
+                                : defaultImg
+                            }
                             alt={title}
                           />
                         </div>
