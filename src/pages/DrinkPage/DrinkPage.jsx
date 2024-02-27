@@ -20,8 +20,7 @@ import {
 } from '../../redux/selectors';
 import { Loader } from '../../components/Loader/Loader';
 import ErrorPage from '../ErrorPage/ErrorPage.jsx';
-
-const defaultImg = 'https://dummyimage.com/335x400';
+import defaultImg from '../../assets/dummyDrinkThumb.png';
 
 const DrinkPage = () => {
   const dispatch = useDispatch();
@@ -121,7 +120,11 @@ const DrinkPage = () => {
                         <div className="img-container">
                           <img
                             className="img-ingred"
-                            src={ingredientId.ingredientThumb || defaultImg}
+                            src={
+                              ingredientId && ingredientId.ingredientThumb
+                                ? ingredientId.ingredientThumb
+                                : defaultImg
+                            }
                             alt={title}
                           />
                         </div>
