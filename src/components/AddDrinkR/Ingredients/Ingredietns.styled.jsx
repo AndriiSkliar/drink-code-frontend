@@ -107,7 +107,7 @@ export const IngredientSelect = styled.select`
   padding: 12px 15px;
   border: 1px solid var(--secondary-text-color);
   border-radius: 200px;
-  background-color: transparent;
+  background-color: #020202;
   color: var(--primary-text-color);
   cursor: pointer;
 
