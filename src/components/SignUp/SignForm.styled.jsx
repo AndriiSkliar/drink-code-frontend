@@ -75,10 +75,10 @@ export const Input = styled(Field)`
     `}
     
   @media screen and (min-width: 768px) {
-    width: 400px;
+    width: 100%;
     font-size: 17px;
     line-height: 1.56;
-    padding: 14px 24px;
+    padding: 14px 52px 14px 24px;
   }
 `;
 

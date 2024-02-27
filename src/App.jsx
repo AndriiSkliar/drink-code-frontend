@@ -28,6 +28,14 @@ function App() {
   const [currentPage] = useState(location.pathname);
   const dispatch = useDispatch();
 
+  if(currentPage === "/" && isLoggedIn) {
+    location.pathname = "/home"
+  }
+
+  if(currentPage === "/" && !isLoggedIn) {
+    location.pathname = "/welcome"
+  }
+
   useEffect(() => {
     dispatch(authOperations.currentUser());
       navigate(currentPage);
