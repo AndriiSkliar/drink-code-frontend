@@ -116,11 +116,11 @@ const DrinkPage = () => {
                   <p className="recipe-text">{drinkDetails.instructions}</p>
                   <picture>
                     <source
-                      srcSet={images.drinks_mobile}
+                      srcSet={images.drinks_desktop}
                       type="image/jpg"
-                      media="(min-width:280px)"
-                      width="335px"
-                      height="430px"
+                      media="(min-width:1200px)"
+                      width="631px"
+                      height="480px"
                     />
                     <source
                       srcSet={images.drinks_tablet}
@@ -130,11 +130,11 @@ const DrinkPage = () => {
                       height="430px"
                     />
                     <source
-                      srcSet={images.drinks_desktop}
+                      srcSet={images.drinks_mobile}
                       type="image/jpg"
-                      media="(min-width:1200px)"
-                      width="631px"
-                      height="480px"
+                      media="(min-width:280px)"
+                      width="335px"
+                      height="430px"
                     />
                     <img
                       src={images.drinks_mobile}
