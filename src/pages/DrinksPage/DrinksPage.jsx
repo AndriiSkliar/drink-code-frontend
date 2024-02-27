@@ -13,7 +13,6 @@ import { Loader } from '../../components/Loader/Loader.jsx';
 import { useSearchParams } from 'react-router-dom';
 import DrinkList from '../../components/DrinkList/DrinkList';
 import DrinksItem from '../../components/DrinkSearch/DrinksList/DrinksItem/DrinksItem';
-// import Loader from '../../components/Loader/Loader';
 
 const DrinksPage = () => {
   const dispatch = useDispatch();
@@ -59,7 +58,6 @@ const DrinksPage = () => {
         <SearchSelectCategory />
         <SearchSelectIngredients />
       </SearchingContainer>
-      {/* {isLoading === true && <Loader />} */}
       <div className="categoryListsContainer">
         {isLoading && <Loader />}
 
