@@ -13,6 +13,7 @@ import {
   addToFavorites,
   deleteFromFavorites,
   fetchDrinkDetails,
+  fetchFavoriteCocktails,
 } from '../../redux/drinks/drinksOperations.js';
 import {
   selectFavoriteCocktails,
@@ -33,6 +34,7 @@ const DrinkPage = () => {
   const inFavorites = favoriteCocktails.some((cocktail) => cocktail._id === id);
 
   useEffect(() => {
+    dispatch(fetchFavoriteCocktails());
     dispatch(fetchDrinkDetails(id));
   }, [dispatch, inFavorites]);
 

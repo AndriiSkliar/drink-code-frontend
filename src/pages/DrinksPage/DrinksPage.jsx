@@ -5,7 +5,7 @@ import Pagination from '../../components/Pagination/Pagination';
 import SearchBar from '../../components/DrinkSearch/SearchBar/SearchBar';
 import SearchSelectCategory from '../../components/DrinkSearch/Select/SearchSelectCategory';
 import SearchSelectIngredients from '../../components/DrinkSearch/Select/SearchSelectIngredients';
-import { SearchingContainer, StyledDrinksPage } from './DrinkPage.styled.js';
+import { SearchingContainer, StyledDivNotFound } from './DrinksPage.styled.js';
 import { fetchDrinks } from '../../redux/drinks/drinksSearch.js';
 import { selectDrinks, selectIsLoadingDrinks } from '../../redux/selectors';
 import Title from '../../components/Title/Title';
@@ -13,6 +13,7 @@ import { Loader } from '../../components/Loader/Loader.jsx';
 import { useSearchParams } from 'react-router-dom';
 import DrinkList from '../../components/DrinkList/DrinkList';
 import DrinksItem from '../../components/DrinkSearch/DrinksList/DrinksItem/DrinksItem';
+import { NotFoundCocktail } from '../../components/NotFoundDrink/NotFound';
 // import Loader from '../../components/Loader/Loader';
 
 const DrinksPage = () => {
@@ -64,7 +65,10 @@ const DrinksPage = () => {
         {isLoading && <Loader />}
 
         {!isLoading && drinks.length < 1 && (
-          <p>Not gound drink for your request</p>
+          <StyledDivNotFound>
+            <NotFoundCocktail />
+            <p>We haven't found any cocktails. Please try another filters.</p>
+          </StyledDivNotFound>
         )}
 
         {!isLoading && drinks.length > 0 && (
