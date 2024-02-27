@@ -1,17 +1,17 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 // @ts-nocheck
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import SharedLayout from './components/SharedLayout/SharedLayout';
 import PublicRoute from './helpers/PublicRoute';
 import WelcomePage from './pages/WelcomePage/WelcomePage';
 import SignUpPage from './pages/SignUpPage/signUpPage';
 import SignInPage from './pages/SignInPage/SignInPage';
 import VerificationPage from './pages/VerificationPage/VerificationPage';
-import { lazy, useEffect, useState, Suspense } from 'react';
+import authSelectors from './redux/auth/authSelectors';
+import { lazy, useEffect, useState } from 'react';
 import { authOperations } from './redux/auth/authOperations';
 import { PrivateRoute } from './helpers/PrivateRoute';
-import { Loader } from './components/Loader/Loader';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const ErrorPage = lazy(() => import('./pages/ErrorPage/ErrorPage'));
@@ -22,6 +22,7 @@ const MyDrinksPage = lazy(() => import('./pages/MyDrinksPage/MyDrinksPage'));
 const DrinkPage = lazy(() => import('./pages/DrinkPage/DrinkPage'));
 
 function App() {
+  const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
   const location = useLocation();
   const navigate = useNavigate();
   const [currentPage] = useState(location.pathname);
@@ -29,14 +30,11 @@ function App() {
 
   useEffect(() => {
     dispatch(authOperations.currentUser());
-    if (currentPage === '/' ) {
       navigate(currentPage);
-    }
   }, [dispatch]);
 
 
   return (
-    <Suspense fallback={<Loader/>}>
     <Routes>
       <Route path="/user/:id" element={<VerificationPage />} />
       <Route
@@ -67,7 +65,7 @@ function App() {
           />
         }
       />
-      <Route path="/" element={ <PrivateRoute redirectTo="/welcome" component={<SharedLayout />} />} >
+      <Route path="/" element={!isLoggedIn ? <WelcomePage/> : <SharedLayout/>} >
         <Route
           index
           path='/home'
@@ -108,7 +106,6 @@ function App() {
         <Route path="*" element={<PrivateRoute redirectTo="/welcome" component={<ErrorPage />} />} />
       </Route>
     </Routes>
-    </Suspense>
   );
 }
 export default App;
