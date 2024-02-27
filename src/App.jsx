@@ -32,10 +32,6 @@ function App() {
     location.pathname = "/home"
   }
 
-  if(currentPage === "/" && !isLoggedIn) {
-    location.pathname = "/welcome"
-  }
-
   useEffect(() => {
     dispatch(authOperations.currentUser());
       navigate(currentPage);

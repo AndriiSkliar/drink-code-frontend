@@ -1,8 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+// @ts-nocheck
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
 import { StyledDrinkPage } from './DrinkPage.styled';
 // import { getDrinkByID } from '../../api/getDrinkById';
-import images from 'src/assets/images/drink-page/images';
 
 import Title from '../../components/Title/Title';
 import drinksSelectors from '../../redux/drinks/drinkSelectors';
@@ -28,6 +30,12 @@ const DrinkPage = () => {
   const isLoading = useSelector(selectIsLoading);
   const favoriteCocktails = useSelector(selectFavoriteCocktails);
   const { id } = useParams();
+
+  // Creating mediaqueries for adaptation image
+  const isTablet = useMediaQuery({ minWidth: 768 });
+  const isTabletEnd = useMediaQuery({ maxWidth: 1199.98 });
+  const isDesktop = useMediaQuery({ minWidth: 1200 });
+  // ============================================================
 
   const inFavorites = favoriteCocktails.some((cocktail) => cocktail._id === id);
 
@@ -114,36 +122,23 @@ const DrinkPage = () => {
                 <h2 className="descr-drink-title">Recipe Preparation</h2>
                 <div className="recipe-container">
                   <p className="recipe-text">{drinkDetails.instructions}</p>
-                  <picture>
-                    <source
-                      srcSet={images.drinks_mobile}
-                      type="image/jpg"
-                      media="(min-width:280px)"
-                      width="335px"
-                      height="430px"
-                    />
-                    <source
-                      srcSet={images.drinks_tablet}
-                      type="image/jpg"
-                      media="(min-width:768px)"
-                      width="704px"
-                      height="430px"
-                    />
-                    <source
-                      srcSet={images.drinks_desktop}
-                      type="image/jpg"
-                      media="(min-width:1200px)"
-                      width="631px"
-                      height="480px"
-                    />
-                    <img
-                      src={images.drinks_mobile}
-                      alt="three drinks"
-                      className="img-three-drinks"
-                      // width="335px"
-                      // height="430px"
-                    />
-                  </picture>
+                  <img
+                    srcSet={
+                      isTablet && isTabletEnd
+                        ? '/src/assets/images/drink-page/drinks_tablet.jpg 1x, /src/assets/images/drink-page/drinks_tablet@2x.jpg 2x'
+                        : isDesktop
+                        ? '/src/assets/images/drink-page/drinks_desktop.jpg 1x, /src/assets/images/drink-page/drinks_desktop@2x.jpg 2x'
+                        : '/src/assets/images/drink-page/drinks_mobile.jpg 1x, /src/assets/images/drink-page/drinks_mobile@2x.jpg 2x'
+                    }
+                    src={
+                      isTablet && isTabletEnd
+                        ? '/src/assets/images/drink-page/drinks_tablet.jpg'
+                        : isDesktop
+                        ? '/src/assets/images/drink-page/drinks_desktop.jpg'
+                        : '/src/assets/images/drink-page/drinks_mobile.jpg'
+                    }
+                    alt="Three cocktails on table"
+                  />
                 </div>
               </div>
             )}
