@@ -16,6 +16,7 @@ import {
   fetchOwnCoctails,
 } from '../../redux/drinks/drinksOperations';
 import sprite from '/src/assets/icons/icons.svg';
+import { StyledCocktailImageContainer } from '../DrinkSearch/DrinksList/DrinksItem/DrinksItem.styled';
 
 const OwnDrinkCard = ({ name, description, alcoholic, imgUrl, id }) => {
   const dispatch = useDispatch();
@@ -27,7 +28,9 @@ const OwnDrinkCard = ({ name, description, alcoholic, imgUrl, id }) => {
 
   return (
     <StyledCocktailWrapper>
-      <StyledCocktailImage src={imgUrl} alt={name} />
+      <StyledCocktailImageContainer>
+        <StyledCocktailImage src={imgUrl} alt={name} />
+      </StyledCocktailImageContainer>
       <div>
         <StyledCocktailName>{name}</StyledCocktailName>
         <StyledCocktailAlcoholic>{alcoholic}</StyledCocktailAlcoholic>
