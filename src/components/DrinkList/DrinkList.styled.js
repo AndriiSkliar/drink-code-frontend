@@ -9,7 +9,6 @@ export const StyledList = styled.ul`
   gap: 40px;
 
   @media screen and (min-width: 768px) {
-    margin-top: 40px;
     flex-direction: row;
     row-gap: 80px;
     column-gap: 20px;

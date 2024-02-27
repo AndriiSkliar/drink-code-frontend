@@ -2,6 +2,7 @@ import { styled } from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const StyledCocktailWrapper = styled.li`
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -33,6 +34,7 @@ export const StyledCocktailImage = styled.img`
 `;
 
 export const StyledCocktailDescription = styled.p`
+  height: 75px;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.28571;
@@ -47,6 +49,8 @@ export const StyledCocktailDescription = styled.p`
   @media screen and (min-width: 768px) {
     font-size: 16px;
     line-height: 1.375;
+    height: 110px;
+    -webkit-line-clamp: 5;
   }
 `;
 

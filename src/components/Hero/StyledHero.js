@@ -2,23 +2,23 @@ import styled from 'styled-components';
 
 export const StyledHero = styled.div`
   display: block;
-  margin-top: 80px;
-  margin-bottom: 112px;
 
   /* Планшетная версия  */
   @media (min-width: 768px) {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
 
-    margin-top: 120px;
-    margin-bottom: 123px;
+    margin-top: 40px;
+    margin-bottom: 54px;
   }
   /* Десктопная версия  */
   @media (min-width: 1280px) {
-    margin-top: 185px;
-    margin-bottom: 218px;
+    flex-direction: row;
+
+    margin-top: 8px;
+    margin-bottom: 106px;
   }
 
   .heroContent {
@@ -143,7 +143,7 @@ export const StyledHero = styled.div`
     border: 2px solid rgba(64, 112, 205, 0.5);
     border-radius: 42px;
     box-shadow: 0 0 20px rgba(64, 112, 205, 0.7);
-    background-color: var( --link-bg-hover);
+    background-color: var(--link-bg-hover);
   }
 `;
 export default StyledHero;

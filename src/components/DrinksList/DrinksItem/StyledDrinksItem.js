@@ -87,20 +87,31 @@ export const StyledDrinksItem = styled.li`
   .drinkImgWrapper {
     position: relative;
     overflow: hidden;
-    width: 100%;
-    height: 100%;
+    width: 335px;
+    height: 360px;
     border-radius: 8px;
     object-fit: cover;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+    @media (min-width: 768px) {
+      width: 342px;
+      height: 360px;
+    }
+
+    @media (min-width: 1280px) {
+      width: 400px;
+      height: 400px;
+    }
 
     /* Градиент для затемнения на фото коктейля */
     &:before {
       content: '';
       position: absolute;
-      top: 0;
+      top: 50%;
       left: 0;
       right: 0;
       bottom: 0;
+      height: 200px;
       border-radius: 8px;
       background: linear-gradient(
         180deg,
@@ -111,14 +122,11 @@ export const StyledDrinksItem = styled.li`
     }
   }
 
-
-  /* .drinkImg {
+  .drinkImg {
     width: 100%;
     height: 100%;
-    border-radius: 8px;
     object-fit: cover;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  } */
+  }
 
   .drinkName {
     font-weight: 500;

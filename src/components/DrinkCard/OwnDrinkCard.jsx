@@ -11,14 +11,19 @@ import {
   StyledCocktailWrapper,
   StyledDeleteButton,
 } from './DrinkCard.styled';
-import { deleteFromFavorites } from '../../redux/drinks/drinksOperations';
+import {
+  deleteOwnCocktail,
+  fetchOwnCoctails,
+} from '../../redux/drinks/drinksOperations';
 import sprite from '/src/assets/icons/icons.svg';
 import { StyledCocktailImageContainer } from '../DrinkSearch/DrinksList/DrinksItem/DrinksItem.styled';
 
-const DrinkCard = ({ name, description, alcoholic, imgUrl, id }) => {
+const OwnDrinkCard = ({ name, description, alcoholic, imgUrl, id }) => {
   const dispatch = useDispatch();
   const handleDelete = (cocktailId) => {
-    dispatch(deleteFromFavorites(cocktailId));
+    dispatch(deleteOwnCocktail(cocktailId)).then(() => {
+      dispatch(fetchOwnCoctails());
+    });
   };
 
   return (
@@ -26,7 +31,6 @@ const DrinkCard = ({ name, description, alcoholic, imgUrl, id }) => {
       <StyledCocktailImageContainer>
         <StyledCocktailImage src={imgUrl} alt={name} />
       </StyledCocktailImageContainer>
-
       <div>
         <StyledCocktailName>{name}</StyledCocktailName>
         <StyledCocktailAlcoholic>{alcoholic}</StyledCocktailAlcoholic>
@@ -47,4 +51,4 @@ const DrinkCard = ({ name, description, alcoholic, imgUrl, id }) => {
   );
 };
 
-export default DrinkCard;
+export default OwnDrinkCard;

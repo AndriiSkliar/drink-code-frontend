@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import DrinksItem from './DrinksItem/DrinksItem';
 import { StyledDrinksList } from './StyledDrinksList';
+import DrinkList from '../../DrinkList/DrinkList';
 
 const DrinksList = ({ drinks }) => {
   // Фильтруем коктейли по указанной категории
@@ -29,7 +30,7 @@ const DrinksList = ({ drinks }) => {
     // Добавляем слушателя события изменения размера экрана и вызываем функцию handleResize при монтировании компонента
     window.addEventListener('resize', handleResize);
     handleResize();
-   
+
     // Очищаем слушателя события при размонтировании компонента, чтобы избежать утечек памяти
     return () => {
       window.removeEventListener('resize', handleResize);
@@ -40,19 +41,17 @@ const DrinksList = ({ drinks }) => {
   const limitedDrinks = drinks.slice(0, visibleDrinks);
 
   return (
-    <StyledDrinksList>
-      <ul className="drinksList">
-        {limitedDrinks.map((drink) => (
-          <DrinksItem
-            key={drink._id}
-            className="drinksListItem"
-            id={drink._id}
-            name={drink.drink}
-            img={drink.drinkThumb}
-          />
-        ))}
-      </ul>
-    </StyledDrinksList>
+    <DrinkList className="drinksList">
+      {limitedDrinks.map((drink) => (
+        <DrinksItem
+          key={drink._id}
+          className="drinksListItem"
+          id={drink._id}
+          name={drink.drink}
+          img={drink.drinkThumb}
+        />
+      ))}
+    </DrinkList>
   );
 };
 

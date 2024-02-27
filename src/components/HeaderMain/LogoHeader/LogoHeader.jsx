@@ -5,7 +5,7 @@ import { SvgIcon, LogoLink, IconText } from './LogoHeader.styled';
 const LogoHeader = ({handleClick}) => {
   return (
     <>
-      <LogoLink to="/" onClick={handleClick}>
+      <LogoLink to="/home" onClick={handleClick}>
         <SvgIcon>
           <use xlinkHref={`${sprite}#icon-Vector`}></use>
         </SvgIcon>

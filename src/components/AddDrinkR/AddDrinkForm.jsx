@@ -2,6 +2,7 @@ import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 import DrinkDescription from './DrinkDescription/DrinkDescription';
 import Ingredients from './Ingredients/Ingredients';
@@ -11,6 +12,7 @@ import { initialValues } from './initianValues';
 import { SectionTitle, SubmitButton, AddForm } from './AddDrinkForm.styled';
 
 const AddDrinkForm = () => {
+  const navigate = useNavigate();
   const [fileAvatar, setFileAvatar] = useState();
   const [pictureActive, setPictureActive] = useState(false);
   const formik = useFormik({
@@ -35,6 +37,10 @@ const AddDrinkForm = () => {
       values.ingredients.forEach((ingredient, index) => {
         formData.append(`ingredients[${index}][title]`, ingredient.title);
         formData.append(`ingredients[${index}][measure]`, ingredient.measure);
+        formData.append(
+          `ingredients[${index}][ingredientId]`,
+          ingredient.ingredientId
+        );
       });
       try {
         const resp = await addDrinktoDB(formData);
@@ -46,6 +52,7 @@ const AddDrinkForm = () => {
           setFileAvatar('');
           setPictureActive(false);
           resetForm();
+          navigate('/my');
         }
       } catch (error) {
         console.error('Error message', error);

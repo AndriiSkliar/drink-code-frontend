@@ -24,7 +24,7 @@ export const IngrTitle = styled.h2`
   font-weight: 600;
   font-size: 28px;
   line-height: 114%;
-  color: #f3f3f3;
+  color: var(--primary-text-color);
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     font-size: 40px;
     line-height: 110%;
@@ -43,7 +43,7 @@ export const ButtonContainer = styled.div`
   width: 104px;
   height: 38px;
   background-color: transparent;
-  border: 1px solid rgba(243, 243, 243, 0.5);
+  border: 1px solid var(--secondary-text-color);
   border-radius: 200px;
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     width: 114px;
@@ -60,7 +60,7 @@ export const QuantityButton = styled.button`
   padding-right: 5px;
   background-color: transparent;
   border: none;
-  color: #f3f3f3;
+  color: var(--primary-text-color);
   font-size: 25px;
 `;
 
@@ -85,7 +85,9 @@ export const SelectContainer = styled.div`
 `;
 
 export const DescHelperContainer = styled.div`
-  width: 540px;
+  @media screen and (min-width: 1280px) {
+    width: 540px;
+  }
 `;
 
 export const SelectInnerContainer = styled.div`
@@ -103,12 +105,10 @@ export const IngredientSelect = styled.select`
   width: 200px;
   height: 50px;
   padding: 12px 15px;
-  border: 1px solid rgba(243, 243, 243, 0.5);
+  border: 1px solid var(--secondary-text-color);
   border-radius: 200px;
-  background-color: transparent;
-  border: 1px solid rgba(243, 243, 243, 0.5);
-  border-radius: 200px;
-  color: #f3f3f3;
+  background-color: var(--background-color);
+  color: var(--primary-text-color);
   cursor: pointer;
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
@@ -123,10 +123,10 @@ export const IngredientSelect = styled.select`
 
 export const MeasureInput = styled.input`
   background-color: transparent;
-  border: 1px solid rgba(243, 243, 243, 0.5);
+  border: 1px solid var(--secondary-text-color);
   border-radius: 200px;
   padding: 16px;
-  color: #f3f3f3;
+  color: var(--primary-text-color);
   width: 101px;
   height: 50px;
   @media screen and (min-width: 768px) and (max-width: 1279px) {
@@ -142,6 +142,6 @@ export const MeasureInput = styled.input`
 export const DeleteMeasureBtn = styled.button`
   background-color: transparent;
   border: none;
-  color: #f3f3f3;
+  color: var(--primary-text-color);
   font-size: 25px;
 `;
