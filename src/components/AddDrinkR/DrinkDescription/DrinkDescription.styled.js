@@ -120,7 +120,7 @@ export const TabletMainContainer = styled.div`
 
 export const TabletContainer = styled.div`
   margin-top: 40px;
-  
+
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     margin-top: 0;
     width: 352px;
@@ -140,7 +140,6 @@ export const DrinkInput = styled.input`
   width: 335px;
   height: 34px;
 
-
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     height: 41px;
     width: 352px;
@@ -156,7 +155,7 @@ export const DrinkLabel = styled.label`
   font-weight: 400;
   font-size: 14px;
   color: var(--secondary-text-color);
- 
+
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     font-size: 16px;
   }
@@ -172,7 +171,7 @@ export const SelectLabel = styled.p`
   margin-bottom: 34px;
   border-bottom: 1px solid var(--secondary-text-color);
   color: var(--secondary-text-color);
- 
+
   font-size: 14px;
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     font-size: 16px;
@@ -201,7 +200,7 @@ export const CategoryInput = styled.select`
   text-align: end;
   width: 170px;
   border-radius: 200px;
-  background-color: #030813;
+  background-color: var(--switcher-ball);
   border-radius: 200px;
   color: var(--secondary-text-color);
   cursor: pointer;
