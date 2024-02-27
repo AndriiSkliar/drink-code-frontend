@@ -7,12 +7,9 @@ import SearchSelectCategory from '../../components/DrinkSearch/Select/SearchSele
 import SearchSelectIngredients from '../../components/DrinkSearch/Select/SearchSelectIngredients';
 import { SearchingContainer, StyledDrinksPage } from './DrinkPage.styled.js';
 import { fetchDrinks } from '../../redux/drinks/drinks.reducer';
-import { selectDrinks } from '../../redux/selectors';
+import { selectDrinks, selectIsLoading } from '../../redux/selectors';
 import Title from '../../components/Title/Title';
-import { useSearchParams } from 'react-router-dom';
-import DrinkList from '../../components/DrinkList/DrinkList';
-
-import DrinksItem from '../../components/DrinkSearch/DrinksList/DrinksItem/DrinksItem';
+import { Loader } from '../../components/Loader/Loader.jsx';
 // import Loader from '../../components/Loader/Loader';
 
 const DrinksPage = () => {
@@ -20,6 +17,7 @@ const DrinksPage = () => {
   const [perPage, setPerPage] = useState(8);
   const [searchParams, setSearchParams] = useSearchParams();
   const drinks = useSelector(selectDrinks);
+  const isLoading = useSelector(selectIsLoading);
   const page = searchParams.get('page') || 1;
 
   const totalPages = Math.ceil(drinks.length / perPage);
@@ -58,7 +56,7 @@ const DrinksPage = () => {
         <SearchSelectCategory />
         <SearchSelectIngredients />
       </SearchingContainer>
-      {/* {isLoading && <Loader />} */}
+      {isLoading === true && <Loader />}
       <div className="categoryListsContainer">
         {drinks.length > 0 && (
           <DrinkList>
