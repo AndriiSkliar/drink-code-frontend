@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-// @media screen and (min-width: 1280px) {
-//
-//   }
-
 export const AddForm = styled.form`
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     width: 704px;
