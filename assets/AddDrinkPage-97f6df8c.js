@@ -1,4 +1,4 @@
-import{u as i,N as q,j as e,b as I,a as B,r as m,g as G,h as j,s as P,i as L,k as R,l as N,m as g,n as $,B as F}from"./index-195bd965.js";import{c as z}from"./selectors-339aa893.js";const W=i.aside`
+import{u as i,N as q,j as e,b as I,a as B,r as m,g as G,h as j,s as P,i as L,k as R,l as N,m as g,n as $,B as F}from"./index-63edf22f.js";import{c as z}from"./selectors-339aa893.js";const W=i.aside`
   @media screen and (min-width: 768px) {
     max-width: 704px;
     margin: 0 auto;
@@ -238,6 +238,7 @@ import{u as i,N as q,j as e,b as I,a as B,r as m,g as G,h as j,s as P,i as L,k a
   }
 `,oe=i.div`
   margin-top: 40px;
+  
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     margin-top: 0;
     width: 352px;
@@ -254,6 +255,8 @@ import{u as i,N as q,j as e,b as I,a as B,r as m,g as G,h as j,s as P,i as L,k a
   color: #f3f3f3;
   width: 335px;
   height: 34px;
+
+
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     height: 41px;
     width: 352px;
@@ -267,6 +270,7 @@ import{u as i,N as q,j as e,b as I,a as B,r as m,g as G,h as j,s as P,i as L,k a
   font-weight: 400;
   font-size: 14px;
   color: var(--secondary-text-color);
+ 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     font-size: 16px;
   }
@@ -280,6 +284,7 @@ import{u as i,N as q,j as e,b as I,a as B,r as m,g as G,h as j,s as P,i as L,k a
   margin-bottom: 34px;
   border-bottom: 1px solid var(--secondary-text-color);
   color: var(--secondary-text-color);
+ 
   font-size: 14px;
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     font-size: 16px;
@@ -306,7 +311,7 @@ import{u as i,N as q,j as e,b as I,a as B,r as m,g as G,h as j,s as P,i as L,k a
   text-align: end;
   width: 170px;
   border-radius: 200px;
-  background-color: transparent;
+  background-color: #030813;
   border-radius: 200px;
   color: var(--secondary-text-color);
   cursor: pointer;
@@ -1141,7 +1146,7 @@ The cucumber is a creeping vine that roots in the ground and grows up trellises 
   padding: 12px 15px;
   border: 1px solid var(--secondary-text-color);
   border-radius: 200px;
-  background-color: transparent;
+  background-color: #020202;
   color: var(--primary-text-color);
   cursor: pointer;
 
