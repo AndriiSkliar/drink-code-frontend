@@ -31,6 +31,7 @@ const FavoritesPage = () => {
 
   useEffect(() => {
     dispatch(fetchFavoriteCocktails());
+    console.log(cocktails);
   }, [dispatch]);
 
   useEffect(() => {

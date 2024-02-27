@@ -1,39 +1,56 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import DrinksList from '../../components/DrinkSearch/DrinksList/DrinksList';
+
 import Pagination from '../../components/Pagination/Pagination';
 import SearchBar from '../../components/DrinkSearch/SearchBar/SearchBar';
 import SearchSelectCategory from '../../components/DrinkSearch/Select/SearchSelectCategory';
 import SearchSelectIngredients from '../../components/DrinkSearch/Select/SearchSelectIngredients';
 import { SearchingContainer, StyledDrinksPage } from './DrinkPage.styled.js';
-import { fetchDrinks } from '../../redux/drinks/drinksSearch.js';
+import { fetchDrinks } from '../../redux/drinks/drinks.reducer';
 import { selectDrinks, selectIsLoading } from '../../redux/selectors';
 import Title from '../../components/Title/Title';
 import { Loader } from '../../components/Loader/Loader.jsx';
+import { useSearchParams } from 'react-router-dom';
+import DrinkList from '../../components/DrinkList/DrinkList';
+import DrinksItem from '../../components/DrinkSearch/DrinksList/DrinksItem/DrinksItem';
 // import Loader from '../../components/Loader/Loader';
 
 const DrinksPage = () => {
   const dispatch = useDispatch();
-  let pageQuan = 1;
+  const [perPage, setPerPage] = useState(8);
+  const [searchParams, setSearchParams] = useSearchParams();
   const drinks = useSelector(selectDrinks);
   const isLoading = useSelector(selectIsLoading);
+  const page = searchParams.get('page') || 1;
+
+  const totalPages = Math.ceil(drinks.length / perPage);
+  const startIndex = (page - 1) * perPage;
+  const endIndex = Math.min(startIndex + perPage, drinks.length);
 
   useEffect(() => {
     dispatch(fetchDrinks());
   }, [dispatch]);
 
-  // Count pages for pagination
-  if (drinks.length > 7) {
-    const screenWidth = window.innerWidth;
+  useEffect(() => {
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
 
-    if (screenWidth >= 1280) {
-      pageQuan = Math.ceil(drinks.length / 9);
-    } else if (screenWidth >= 768) {
-      pageQuan = Math.ceil(drinks.length / 8);
-    } else {
-      pageQuan = Math.ceil(drinks.length / 10);
-    }
-  }
+      const newCocktailsPerPage = screenWidth >= 1200 ? 9 : 8;
+
+      if (newCocktailsPerPage !== perPage) {
+        setPerPage(newCocktailsPerPage);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [perPage, page, drinks]);
+
   return (
     <main className="container">
       <Title text={'Drinks'} />
@@ -44,11 +61,23 @@ const DrinksPage = () => {
       </SearchingContainer>
       {isLoading === true && <Loader />}
       <div className="categoryListsContainer">
-        {drinks.length > 0 && <DrinksList drinks={drinks} />}
-        {drinks.length < 1 && <alert>Not gound drink for your request</alert>}
+        {drinks.length > 0 && (
+          <DrinkList>
+            {drinks.slice(startIndex, endIndex).map((drink) => (
+              <DrinksItem
+                key={drink._id}
+                className="drinksListItem"
+                id={drink._id}
+                name={drink.drink}
+                img={drink.drinkThumb}
+              />
+            ))}
+          </DrinkList>
+        )}
+        {drinks.length < 1 && <h2>Not found drink for your request</h2>}
         {/* {drinks.length < 1 && <NotFoundDrink />} */}
       </div>
-      {pageQuan > 1 && <Pagination pageQuan={pageQuan} />}
+      {totalPages > 1 && <Pagination pageQuan={totalPages} />}
     </main>
   );
 };
