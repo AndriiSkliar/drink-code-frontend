@@ -111,14 +111,17 @@ export const StyledDrinksItem = styled.li`
     }
   }
 
-
-  /* .drinkImg {
+  .drinkImg {
     width: 100%;
-    height: 100%;
+    height: 360px;
     border-radius: 8px;
     object-fit: cover;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  } */
+
+    @media (min-width: 1280px) {
+      height: 400px;
+    }
+  }
 
   .drinkName {
     font-weight: 500;
