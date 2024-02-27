@@ -26,14 +26,13 @@ export const StyledHomePage = styled.div`
     padding: 14px 40px;
     width: 167px;
     height: 46px;
-    background:var(--link-bg);
+    background: var(--link-bg);
 
     font-weight: 600;
     font-size: 14px;
     line-height: 1.28571;
-    color: var( --link-text);
+    color: var(--link-text);
 
-    margin-bottom: 80px;
     margin-left: auto;
     margin-right: auto;
 
@@ -51,11 +50,7 @@ export const StyledHomePage = styled.div`
       font-size: 16px;
       line-height: 1.125;
 
-      margin-bottom: 140px;
-    }
-
-    @media (min-width: 1280px) {
-      margin-bottom: 158px;
+      margin-bottom: 60px;
     }
   }
 
@@ -64,6 +59,6 @@ export const StyledHomePage = styled.div`
     border: 2px solid rgba(64, 112, 205, 0.5);
     border-radius: 42px;
     box-shadow: 0 0 20px rgba(64, 112, 205, 0.7);
-    background-color: var( --link-bg-hover)
+    background-color: var(--link-bg-hover);
   }
 `;
