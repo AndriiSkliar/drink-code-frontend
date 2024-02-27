@@ -195,7 +195,7 @@ export const StyledDrinkPage = styled.div`
     }
 
     .img-three-drinks {
-      width: 631px;
+      min-width: 631px;
       height: 480px;
     }
   }
