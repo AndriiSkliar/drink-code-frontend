@@ -10,6 +10,9 @@ import { fetchDrinks } from '../../redux/drinks/drinks.reducer';
 import { selectDrinks, selectIsLoading } from '../../redux/selectors';
 import Title from '../../components/Title/Title';
 import { Loader } from '../../components/Loader/Loader.jsx';
+import { useSearchParams } from 'react-router-dom';
+import DrinkList from '../../components/DrinkList/DrinkList';
+import DrinksItem from '../../components/DrinkSearch/DrinksList/DrinksItem/DrinksItem';
 // import Loader from '../../components/Loader/Loader';
 
 const DrinksPage = () => {
