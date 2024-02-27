@@ -1,4 +1,4 @@
-import{u as d,j as e,N as x,r as h,a as b,b as l,f,L as u}from"./index-b540e5e4.js";import{d as p}from"./drinkSelectors-5b86cb2e.js";const k=d.li`
+import{u as d,j as e,N as x,r as h,a as b,b as p,f,L as k}from"./index-2c43f712.js";import{d as l}from"./drinkSelectors-5b86cb2e.js";const u=d.li`
   margin-bottom: 40px;
   border-radius: 8px;
   /* width: 335px;
@@ -86,11 +86,21 @@ import{u as d,j as e,N as x,r as h,a as b,b as l,f,L as u}from"./index-b540e5e4.
   .drinkImgWrapper {
     position: relative;
     overflow: hidden;
-    width: 100%;
-    height: 100%;
+    width: 335px;
+    height: 360px;
     border-radius: 8px;
     object-fit: cover;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+    @media (min-width: 768px) {
+      width: 342px;
+      height: 360px;
+    }
+
+    @media (min-width: 1280px) {
+      width: 400px;
+      height: 400px;
+    }
 
     /* Градиент для затемнения на фото коктейля */
     &:before {
@@ -110,14 +120,11 @@ import{u as d,j as e,N as x,r as h,a as b,b as l,f,L as u}from"./index-b540e5e4.
     }
   }
 
-
-  /* .drinkImg {
+  .drinkImg {
     width: 100%;
     height: 100%;
-    border-radius: 8px;
     object-fit: cover;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  } */
+  }
 
   .drinkName {
     font-weight: 500;
@@ -157,7 +164,7 @@ import{u as d,j as e,N as x,r as h,a as b,b as l,f,L as u}from"./index-b540e5e4.
     align-items: center;
     justify-content: space-between;
   }
-`,w=({id:r,drinkName:t,img:n})=>e.jsxs(k,{children:[e.jsx("div",{className:"imgContainer",children:e.jsx("div",{className:"drinkImgWrapper",children:e.jsx("img",{src:`${n}`,alt:t,className:"drinkImg"})})}),e.jsxs("div",{className:"contentContainer",children:[e.jsx("h3",{className:"drinkName",children:t}),e.jsx(x,{to:`/drink/${r}`,className:"seeMoreLink",children:"See more"})]})]}),_=d.div`
+`,w=({id:n,drinkName:t,img:r})=>e.jsxs(u,{children:[e.jsx("div",{className:"imgContainer",children:e.jsx("div",{className:"drinkImgWrapper",children:e.jsx("img",{src:`${r}`,alt:t,className:"drinkImg"})})}),e.jsxs("div",{className:"contentContainer",children:[e.jsx("h3",{className:"drinkName",children:t}),e.jsx(x,{to:`/drink/${n}`,className:"seeMoreLink",children:"See more"})]})]}),_=d.div`
   .drinksList {
     list-style: none;
     padding: 0;
@@ -200,7 +207,7 @@ import{u as d,j as e,N as x,r as h,a as b,b as l,f,L as u}from"./index-b540e5e4.
       line-height: 1.1;
     }
   }
-`,a=({title:r,drinks:t})=>{const n=t.filter(i=>i.category===r),[s,c]=h.useState(1);h.useEffect(()=>{const i=()=>{const m=window.innerWidth;m>=1280?c(3):m>=768?c(2):c(1)};return window.addEventListener("resize",i),i(),()=>{window.removeEventListener("resize",i)}},[]);const g=n.slice(0,s);return e.jsxs(_,{children:[e.jsx("h2",{className:"drinksListTitle",children:r}),e.jsx("ul",{className:"drinksList",children:g.map(i=>e.jsx(w,{id:i._id,className:"drinksListItem",drinkName:i.drink,img:i.drinkThumb},i._id))})]})},v=d.div`
+`,a=({title:n,drinks:t})=>{const r=t.filter(i=>i.category===n),[s,c]=h.useState(1);h.useEffect(()=>{const i=()=>{const m=window.innerWidth;m>=1280?c(3):m>=768?c(2):c(1)};return window.addEventListener("resize",i),i(),()=>{window.removeEventListener("resize",i)}},[]);const g=r.slice(0,s);return e.jsxs(_,{children:[e.jsx("h2",{className:"drinksListTitle",children:n}),e.jsx("ul",{className:"drinksList",children:g.map(i=>e.jsx(w,{id:i._id,className:"drinksListItem",drinkName:i.drink,img:i.drinkThumb},i._id))})]})},v=d.div`
   display: block;
 
   /* Планшетная версия  */
@@ -405,4 +412,4 @@ import{u as d,j as e,N as x,r as h,a as b,b as l,f,L as u}from"./index-b540e5e4.
     box-shadow: 0 0 20px rgba(64, 112, 205, 0.7);
     background-color: var(--link-bg-hover);
   }
-`,W=()=>{const r=b(),t=l(p.selectHomepageDrinks),n=l(p.selectIsLoading),s=l(p.selectError);return h.useEffect(()=>{r(f())},[r]),e.jsxs(M,{className:"container",children:[e.jsx(H,{}),n&&e.jsx(u,{}),s&&e.jsxs("p",{children:["Error: ",s]}),e.jsxs("div",{className:"categoryListsContainer",children:[e.jsx(a,{drinks:t,title:"Ordinary Drink"},"OrdinaryDrink"),e.jsx(a,{drinks:t,title:"Cocktail"},"Cocktail"),e.jsx(a,{drinks:t,title:"Shake"},"Shake"),e.jsx(a,{drinks:t,title:"Other/Unknown"},"OtherUnknown")]}),e.jsx(x,{to:"/drinks",className:"otherDrinksLink",children:"Other drinks"})]})};export{W as default};
+`,W=()=>{const n=b(),t=p(l.selectHomepageDrinks),r=p(l.selectIsLoading),s=p(l.selectError);return h.useEffect(()=>{n(f())},[n]),e.jsxs(M,{className:"container",children:[e.jsx(H,{}),r&&e.jsx(k,{}),s&&e.jsxs("p",{children:["Error: ",s]}),e.jsxs("div",{className:"categoryListsContainer",children:[e.jsx(a,{drinks:t,title:"Ordinary Drink"},"OrdinaryDrink"),e.jsx(a,{drinks:t,title:"Cocktail"},"Cocktail"),e.jsx(a,{drinks:t,title:"Shake"},"Shake"),e.jsx(a,{drinks:t,title:"Other/Unknown"},"OtherUnknown")]}),e.jsx(x,{to:"/drinks",className:"otherDrinksLink",children:"Other drinks"})]})};export{W as default};
