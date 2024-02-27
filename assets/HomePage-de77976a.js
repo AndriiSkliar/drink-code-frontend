@@ -1,4 +1,4 @@
-import{u as d,j as e,N as x,r as h,a as b,b as p,f,L as k}from"./index-419dca2d.js";import{d as l}from"./drinkSelectors-5b86cb2e.js";const u=d.li`
+import{u as d,j as e,N as x,r as h,a as b,b as p,f,L as k}from"./index-edeae60b.js";import{d as l}from"./drinkSelectors-5b86cb2e.js";const u=d.li`
   margin-bottom: 40px;
   border-radius: 8px;
   /* width: 335px;
@@ -106,10 +106,11 @@ import{u as d,j as e,N as x,r as h,a as b,b as p,f,L as k}from"./index-419dca2d.
     &:before {
       content: '';
       position: absolute;
-      top: 0;
+      top: 50%;
       left: 0;
       right: 0;
       bottom: 0;
+      height: 200px;
       border-radius: 8px;
       background: linear-gradient(
         180deg,
