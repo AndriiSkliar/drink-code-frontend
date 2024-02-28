@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import  { useEffect } from 'react';
 import DrinksList from '../../components/DrinksList/DrinksList';
 import Hero from '../../components/Hero/Hero';
 import { StyledHomePage } from './StyledHomePage';
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchHomePageDrinks } from '../../redux/drinks/drinksOperations';
-import drinksSelectors from '../../redux/drinks/drinkSelectors';
+import { fetchHomePageDrinks } from '../../redux/auth/drinks/drinksOperations';
+import drinksSelectors from '../../redux/auth/drinks/drinkSelectors';
 import { Loader } from '../../components/Loader/Loader';
 
 const HomePage = () => {

@@ -12,8 +12,8 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-import { drinksReducer } from './drinks/drinks.reducer';
-import { cocktailsReducer } from './drinks/drinksSlice';
+import { drinksReducer } from './auth/drinks/drinks.reducer';
+import { cocktailsReducer } from './auth/drinks/drinksSlice';
 
 import { authReducer } from './auth/authSlice';
 

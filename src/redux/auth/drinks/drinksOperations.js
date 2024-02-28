@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { instance } from '../auth/authOperations';
+import { instance } from '../authOperations';
 
 export const fetchHomePageDrinks = createAsyncThunk(
   'cocktails/fetchHomepage',
@@ -148,10 +148,23 @@ export const fetchDrinkDetails = createAsyncThunk(
   }
 );
 
+export const fetchDrinksBySearch = createAsyncThunk(
+  'drinks/getBySearch',
+  async (data, thunkApi) => {
+    try {
+      const {data} = await instance.get('/drinks/search');
+      return data;
+    } catch (err) {
+      return thunkApi.rejectWithValue(err.message);
+    }
+  }
+)
+
 export const drinksOperations = {
   fetchOwnCoctails,
   fetchCocktails,
   fetchPopularDrinks,
+  fetchDrinksBySearch,
   fetchFavoriteCocktails,
   addCocktail,
   deleteOwnCocktail,

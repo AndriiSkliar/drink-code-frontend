@@ -1,18 +1,19 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchDrinksByCategory } from '../../../redux/drinks/drinks.reducer.js';
+// @ts-nocheck
+import { useSelector } from 'react-redux';
 import { SearchSelectStyled } from './SearchSelect.styled.js';
 import { selectCategory } from '../../../redux/selectors.js';
 
-const SearchSelectCategory = () => {
+const SearchSelectCategory = ({setCategory}) => {
   const category = useSelector(selectCategory);
 
-  const dispatch = useDispatch();
 
   const searchByCategory = (event) => {
-    const category = event.target.value;
-
-    dispatch(fetchDrinksByCategory(category));
+    const categoryParam = event.target.value;
+    if(categoryParam !== "hide") {
+       setCategory(categoryParam);
+    }
   };
+  
   return (
     <SearchSelectStyled>
       <select
