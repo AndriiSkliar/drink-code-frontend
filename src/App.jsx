@@ -1,13 +1,13 @@
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { lazy, useEffect } from 'react';
 import SharedLayout from './components/SharedLayout/SharedLayout';
+import { PrivateRoute } from './helpers/PrivateRoute';
 import PublicRoute from './helpers/PublicRoute';
 import WelcomePage from './pages/WelcomePage/WelcomePage';
 import SignUpPage from './pages/SignUpPage/signUpPage';
 import SignInPage from './pages/SignInPage/SignInPage';
 import VerificationPage from './pages/VerificationPage/VerificationPage';
-import { lazy, useEffect } from 'react';
-import { PrivateRoute } from './helpers/PrivateRoute';
 import { selectIsLoggedIn } from './redux/selectors/auth.selectors';
 import { authOperations } from './redux/auth/auth.operations';
 

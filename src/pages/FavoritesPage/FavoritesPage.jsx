@@ -57,7 +57,7 @@ const FavoritesPage = () => {
       {cocktails.length === 0 ? (
         <StyledDivNotFound>
           <NotFoundCocktail />
-          <p>You haven't added any favorite cocktails yet</p>
+          <p>You haven`t added any favorite cocktails yet</p>
         </StyledDivNotFound>
       ) : (
         <>

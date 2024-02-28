@@ -3,12 +3,11 @@ export const StyledDrinksPage = styled.div`
   margin-top: 80px;
   margin-bottom: 80px;
 
-  /* Планшетная версия  */
   @media (min-width: 768px) {
     margin-top: 60px;
     margin-bottom: 60px;
   }
-  /* Десктопная версия  */
+
   @media (min-width: 1280px) {
     margin-top: 80px;
   }
@@ -22,7 +21,6 @@ export const StyledDrinksPage = styled.div`
     margin-bottom: 40px;
   }
 
-  /* Стили для планшетной версии */
   @media (min-width: 768px) {
     .drinksTitle {
       font-size: 56px;
@@ -32,7 +30,6 @@ export const StyledDrinksPage = styled.div`
     }
   }
 
-  /* Десктопная версия  */
   @media (min-width: 1280px) {
     .drinksTitle {
       font-size: 64px;
@@ -48,7 +45,6 @@ export const StyledDrinksPage = styled.div`
     row-gap: 20px;
   }
 
-  /* Стили для планшетной версии */
   @media (min-width: 768px) {
     .searchingContainer {
       flex-direction: row;

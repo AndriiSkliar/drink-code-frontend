@@ -22,8 +22,7 @@ export const fetchHomePageDrinks = createAsyncThunk(
 
       return data;
     } catch (error) {
-      console.error('Error while fetching data', error);
-      throw error;
+      return thunkApi.rejectWithValue(error.message);
     }
   }
 );
@@ -35,8 +34,8 @@ export const fetchCocktails = createAsyncThunk(
       const { data } = await instance.get('/drinks');
 
       return data;
-    } catch (err) {
-      return thunkApi.rejectWithValue(err.message);
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
     }
   }
 );
@@ -72,8 +71,8 @@ export const fetchFavoriteCocktails = createAsyncThunk(
       const { data } = await instance.get('/drinks/favorites');
 
       return data;
-    } catch (err) {
-      return thunkApi.rejectWithValue(err.message);
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
     }
   }
 );
@@ -85,8 +84,8 @@ export const addCocktail = createAsyncThunk(
       const { data } = await instance.post('/drinks/own/add', cocktail);
 
       return data;
-    } catch (err) {
-      return thunkApi.rejectWithValue(err.message);
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
     }
   }
 );
@@ -100,8 +99,8 @@ export const deleteOwnCocktail = createAsyncThunk(
       );
 
       return data;
-    } catch (err) {
-      return thunkApi.rejectWithValue(err.message);
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
     }
   }
 );
@@ -115,8 +114,8 @@ export const addToFavorites = createAsyncThunk(
       );
 
       return data;
-    } catch (err) {
-      return thunkApi.rejectWithValue(err.message);
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
     }
   }
 );
@@ -128,8 +127,8 @@ export const deleteFromFavorites = createAsyncThunk(
       const { data } = await instance.delete(`/drinks/favorites/remove/${id}`);
 
       return data;
-    } catch (err) {
-      return thunkApi.rejectWithValue(err.message);
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
     }
   }
 );
@@ -141,8 +140,8 @@ export const fetchDrinkDetails = createAsyncThunk(
       const { data } = await instance.get(`/drinks/${id}`);
 
       return data;
-    } catch (err) {
-      return thunkApi.rejectWithValue(err.message);
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
     }
   }
 );
@@ -153,8 +152,8 @@ export const fetchDrinksBySearch = createAsyncThunk(
     try {
       const { data } = await instance.get('/drinks/search', formData);
       return data;
-    } catch (err) {
-      return thunkApi.rejectWithValue(err.message);
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
     }
   }
 );

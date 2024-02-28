@@ -1,19 +1,20 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useSearchParams } from 'react-router-dom';
 
 import Pagination from '../../components/Pagination/Pagination';
 import SearchBar from '../../components/DrinkSearch/SearchBar/SearchBar';
 import SearchSelectCategory from '../../components/DrinkSearch/Select/SearchSelectCategory';
 import SearchSelectIngredients from '../../components/DrinkSearch/Select/SearchSelectIngredients';
-import { SearchingContainer, StyledDivNotFound } from './DrinksPage.styled.js';
 import Title from '../../components/Title/Title';
 import { Loader } from '../../components/Loader/Loader.jsx';
-import { useSearchParams } from 'react-router-dom';
 import DrinkList from '../../components/DrinkList/DrinkList';
 import DrinksItem from '../../components/DrinkSearch/DrinksList/DrinksItem/DrinksItem';
 import { NotFoundCocktail } from '../../components/NotFoundDrink/NotFound';
+
 import { selectDrinksBySearch, selectIsLoadingDrinks } from '../../redux/selectors/drinks.selectors.js';
 import { fetchDrinksBySearch } from '../../redux/drinks/drinks.operations.js';
+import { SearchingContainer, StyledDivNotFound } from './DrinksPage.styled.js';
 
 const DrinksPage = () => {
   const dispatch = useDispatch();
@@ -29,9 +30,7 @@ const DrinksPage = () => {
   const [category, setCategory] = useState(''); //searchParam from category select
   const [ingredient, setIngredient] = useState('');// searchParam from ingredient select
   // ==========================================
-  const dataObj = JSON.stringify({drink, category, ingredient});
-  console.log(dataObj);
-  console.log(drinks);
+  // const dataObj = JSON.stringify({drink, category, ingredient});
 
   formData.append('drink', drink);
   formData.append('category', category);
@@ -41,18 +40,15 @@ const DrinksPage = () => {
   const startIndex = (page - 1) * perPage;
   const endIndex = Math.min(startIndex + perPage, drinks.length);
 
-  // useEffect(() => {
-  //   dispatch(fetchDrinks());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(fetchDrinksBySearch());
+  }, [dispatch])
 
   useEffect(() => {
-    if(drink === "" && category === "" && ingredient === "") {
-      return;
-    }
-
+    if (drink === "" && category === "" && ingredient === "") return;
+    
     dispatch(fetchDrinksBySearch(formData));
-
-  }, [category, dispatch, ingredient, drink])
+  }, [category, ingredient, drink, dispatch])
 
   useEffect(() => {
     const handleResize = () => {

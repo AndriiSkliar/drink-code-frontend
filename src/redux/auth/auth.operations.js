@@ -2,9 +2,8 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const instance = axios.create({
-    baseURL: 'https://drink-code-backend.onrender.com/api',
+  baseURL: 'https://drink-code-backend.onrender.com/api',
 });
-axios.defaults.baseURL = 'https://drink-code-backend.onrender.com/api'; 
 
 const authHeaderToken = {
   set(token) {
@@ -23,7 +22,7 @@ const signUp = createAsyncThunk(
       authHeaderToken.set(data.token);
       return data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.response.data.message); 
+      return thunkAPI.rejectWithValue(error.response.data.message);
     }
   }
 );
@@ -117,7 +116,7 @@ export const updateUser = createAsyncThunk(
 );
 
 export const authOperations = {
-  signUp,  
+  signUp,
   signIn,
   signOut,
   currentUser,

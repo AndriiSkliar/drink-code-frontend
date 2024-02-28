@@ -4,9 +4,9 @@ import { fetchDrinksBySearch } from './drinks.operations';
 const initialState = {
   drinks: [],
   search: {
-    category: null,
-    ingredient: null,
-    drink: null,
+    category: '',
+    ingredient: '',
+    drink: '',
   },
   isLoading: false,
   error: null,
