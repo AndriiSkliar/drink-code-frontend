@@ -1,5 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-// @ts-nocheck
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -8,23 +6,21 @@ import SearchBar from '../../components/DrinkSearch/SearchBar/SearchBar';
 import SearchSelectCategory from '../../components/DrinkSearch/Select/SearchSelectCategory';
 import SearchSelectIngredients from '../../components/DrinkSearch/Select/SearchSelectIngredients';
 import { SearchingContainer, StyledDivNotFound } from './DrinksPage.styled.js';
-import { fetchDrinks } from '../../redux/auth/drinks/drinks.reducer';
-import { selectIsLoadingDrinks } from '../../redux/selectors';
-import drinksSelectors from '../../redux/auth/drinks/drinkSelectors';
 import Title from '../../components/Title/Title';
 import { Loader } from '../../components/Loader/Loader.jsx';
 import { useSearchParams } from 'react-router-dom';
 import DrinkList from '../../components/DrinkList/DrinkList';
 import DrinksItem from '../../components/DrinkSearch/DrinksList/DrinksItem/DrinksItem';
 import { NotFoundCocktail } from '../../components/NotFoundDrink/NotFound';
-import { fetchDrinksBySearch } from '../../redux/auth/drinks/drinksOperations';
+import { selectDrinksBySearch, selectIsLoadingDrinks } from '../../redux/selectors/drinks.selectors.js';
+import { fetchDrinksBySearch } from '../../redux/drinks/drinks.operations.js';
 
 const DrinksPage = () => {
   const dispatch = useDispatch();
   const formData = new FormData();
   const [perPage, setPerPage] = useState(8);
   const [searchParams] = useSearchParams();
-  const drinks = useSelector(drinksSelectors.selectDrinksBySearch);
+  const drinks = useSelector(selectDrinksBySearch);
   const isLoading = useSelector(selectIsLoadingDrinks);
   const page = searchParams.get('page') || 1;
 

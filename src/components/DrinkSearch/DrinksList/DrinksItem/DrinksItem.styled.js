@@ -20,7 +20,6 @@ export const StyledCocktailWrapper = styled.li`
 export const StyledCocktailImageContainer = styled.div`
   position: relative;
 
-  /* Градиент для затемнения на фото коктейля */
   &:before {
     content: '';
     position: absolute;
@@ -77,12 +76,6 @@ export const StyledCocktailSeeMore = styled.p`
     line-height: 1.125;
   }
 `;
-
-// export const StyledButtonsWrapper = styled.div`
-//   display: flex;
-//   gap: 8px;
-// `;
-
 export const StyledDrinkInfo = styled.div`
   display: flex;
   flex-direction: row;
@@ -96,10 +89,4 @@ export const StyledDrinkInfo = styled.div`
   @media screen and (min-width: 1280px) {
     width: 400px;
   }
-
-  /* svg {
-    width: 24px;
-     height: 24px;
-     stroke: #f3f3f3;
-   } */
 `;

@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import { BtnBurger, SvgIconBurger } from "./BurgerMenuButton.styled"
 import sprite from '/src/assets/icons/icons.svg'
 

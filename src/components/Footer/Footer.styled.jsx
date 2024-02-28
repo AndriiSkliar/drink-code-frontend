@@ -31,7 +31,6 @@ export const LogoAndSocialContainer = styled.div`
 export const FooterNavContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  /* gap: 90px; */
 
   @media (min-width: 768px) {
     flex-direction: column;
@@ -48,7 +47,6 @@ export const FooterNavContainer = styled.div`
 export const NavAndFormContainer = styled.div`
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   gap: 50px;
   margin-bottom: 80px;
 

@@ -28,6 +28,7 @@ import {
 
   import { fullYearsCount } from 'helpers/fullYearsCount.js';
   import DummyDrinkThumb from 'src/assets/dummyDrinkThumb.png';
+import { selectCategory } from '../../../redux/selectors/drinks.selectors';
   
   
   const DrinkDescriptionFields = ({
@@ -50,15 +51,11 @@ import {
     }
   
     const [uri, setUri] = useState();
-  
-    // Funkcja rejestrująca tablicę obiektów składników w formie wymaganej do zaznaczenia.
-    // Zostanie on później zapisany do initial w celu ponownego użycia wszędzie tam, gdzie react-wybierze
     const options = (array) =>
       array.map((item) => {
         return { value: item, label: item };
       });
   
-    // фPodgląd obrazu wybranego pliku
     const addImagePreview = (e) => {
       if (!e.target.files[0].type.startsWith('image/')) {
         throw HttpError(400,

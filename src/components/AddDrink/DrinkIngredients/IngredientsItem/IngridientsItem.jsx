@@ -19,7 +19,6 @@ import {
     wrongIngredients,
     theme,
   }) => {
-    // Funkcja złożona kontrolowanego przetwarzania dwóch wsadów (składnika i jego ilości)
     const onChangeIngredientHandler = (payload, field) => {
       let tempArray = [...chosenIngredients];
   

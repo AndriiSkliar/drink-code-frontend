@@ -1,4 +1,3 @@
-import React from 'react';
 import { StyledDrinksItem } from './StyledDrinksItem';
 import { NavLink } from 'react-router-dom';
 

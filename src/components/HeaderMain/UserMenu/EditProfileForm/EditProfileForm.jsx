@@ -1,8 +1,5 @@
-// @ts-nocheck
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { authOperations } from '/src/redux/auth/authOperations.js';
-import authSelectors from '/src/redux/auth/authSelectors.js';
 import { toast } from 'react-toastify';
 import sprite from '/src/assets/icons/icons.svg';
 import {
@@ -21,6 +18,8 @@ import {
   EditNameButton,
   LabelChangeName,
 } from './EditProfileForm.styled';
+import { selectAvatarURL, selectUserName } from '../../../../redux/selectors/auth.selectors';
+import { updateUser } from '../../../../redux/auth/auth.operations';
 
 const EditProfileForm = ({
   setIsEditOpen,
@@ -29,8 +28,8 @@ const EditProfileForm = ({
   setIsOpenPopupMenu,
 }) => {
   const dispatch = useDispatch();
-  const name = useSelector(authSelectors.selectUserName);
-  const avatar = useSelector(authSelectors.selectAvatarURL);
+  const name = useSelector(selectUserName);
+  const avatar = useSelector(selectAvatarURL);
   const [editName, setEditName] = useState(false);
   const [imageURL, setImageURL] = useState('');
   const [fileAvatar, setFileAvatar] = useState();
@@ -61,7 +60,7 @@ const EditProfileForm = ({
     } else if (fileAvatar) {
       formData.append('avatarURL', fileAvatar);
     }
-    dispatch(authOperations.updateUser(formData))
+    dispatch(updateUser(formData))
       .unwrap()
       .then((res) => {
         setUserAvatar(res.avatarURL);

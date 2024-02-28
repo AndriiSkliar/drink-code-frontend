@@ -4,15 +4,6 @@ export const StyledDrinksList = styled.div`
   list-style: none;
   padding: 0;
 
-
-/* 
-  @media (max-width: 767px) {
-    .drinksList {
-      margin-bottom: 28px;
-    }
-  } */
-
-
   @media (min-width: 768px) {
     .drinksList {
       display: flex;

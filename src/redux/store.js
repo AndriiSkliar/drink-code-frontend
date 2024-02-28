@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { configureStore } from '@reduxjs/toolkit';
 import {
   persistStore,
@@ -12,10 +11,9 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-import { drinksReducer } from './auth/drinks/drinks.reducer';
-import { cocktailsReducer } from './auth/drinks/drinksSlice';
-
-import { authReducer } from './auth/authSlice';
+import { cocktailsReducer } from './drinks/drinks.slice';
+import { authReducer } from './auth/auth.reducer';
+import { drinksReducer } from './drinks/drinks.reducer';
 
 const authConfig = {
   key: 'auth',

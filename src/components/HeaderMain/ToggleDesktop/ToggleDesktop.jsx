@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import sprite from '/src/assets/icons/icons.svg';

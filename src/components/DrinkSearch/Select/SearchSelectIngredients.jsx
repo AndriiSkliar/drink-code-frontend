@@ -1,7 +1,6 @@
-// @ts-nocheck
 import { useSelector } from 'react-redux';
 import { SearchSelectStyled } from './SearchSelect.styled.js';
-import { selectIngredient } from '../../../redux/selectors.js';
+import { selectIngredient } from '../../../redux/selectors/drinks.selectors.js';
 
 const SearchSelectIngredients = ({setIngredient}) => {
   const ingredient = useSelector(selectIngredient);

@@ -1,7 +1,5 @@
-// @ts-nocheck
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
-
-import { drinksOperations } from './drinksOperations';
+import { drinksOperations } from './drinks.operations';
 
 const initialState = {
   ownCocktails: [],
@@ -46,11 +44,13 @@ const cocktailsSlice = createSlice({
           state.popularDrinks = payload;
         }
       )
-      .addCase(drinksOperations.fetchDrinksBySearch.fulfilled,
-        (state, {payload}) => {
+      .addCase(
+        drinksOperations.fetchDrinksBySearch.fulfilled,
+        (state, { payload }) => {
           state.isLoading = false;
           state.drinksSearched = payload.drinks;
-        })
+        }
+      )
       .addCase(
         drinksOperations.fetchFavoriteCocktails.fulfilled,
         (state, { payload }) => {
@@ -63,7 +63,6 @@ const cocktailsSlice = createSlice({
         state.isLoading = false;
         state.cocktails = [...state.ownCocktails, payload];
         state.totalOwn += 1;
-        // toast.success(`Now ${payload.name} added`);
       })
       .addCase(
         drinksOperations.deleteOwnCocktail.fulfilled,
@@ -73,7 +72,6 @@ const cocktailsSlice = createSlice({
             (cocktail) => cocktail._id !== payload.result._id
           );
           state.totalOwn -= 1;
-          // toast(`❌ ${payload.name} was deleted`);
         }
       )
       .addCase(

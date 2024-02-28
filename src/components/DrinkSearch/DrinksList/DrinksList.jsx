@@ -1,7 +1,4 @@
-/* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from 'react';
 import DrinksItem from './DrinksItem/DrinksItem';
-import { StyledDrinksList } from './StyledDrinksList';
 import DrinkList from '../../DrinkList/DrinkList';
 
 const DrinksList = ({ drinks }) => {

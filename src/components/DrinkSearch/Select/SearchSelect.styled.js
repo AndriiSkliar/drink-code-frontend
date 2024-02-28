@@ -13,14 +13,8 @@ export const SearchSelectStyled = styled.div`
     height: 56px;
     border: 1px solid transparent;
     border-radius: 30px;
-    role: listbox;
   }
   .select-styled {
-    // position: absolute;
-    // top: 0;
-    // right: 0;
-    // bottom: 0;
-    // left: 0;
     background-color: #161f37;
     border: 2px solid transparent;
     border-radius: 30px;
@@ -42,7 +36,6 @@ export const SearchSelectStyled = styled.div`
     &:active,
     &.active {
       background-color: darken(#4070cd, 5);
-      boreder: 1px solid;
       border-radius: 20px;
       &:after {
         top: 9px;
@@ -63,7 +56,6 @@ export const SearchSelectStyled = styled.div`
     list-style: none;
     color: #f3f3f3;
     background-color: darken(#161f37, 5);
-    boreder: 1px solid;
     border-radius: 20px;
     li {
       font-family: Manrope;

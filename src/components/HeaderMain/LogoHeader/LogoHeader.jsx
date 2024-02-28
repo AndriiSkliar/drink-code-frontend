@@ -1,4 +1,3 @@
-// @ts-nocheck
 import sprite from '/src/assets/icons/icons.svg';
 import { SvgIcon, LogoLink, IconText } from './LogoHeader.styled';
 

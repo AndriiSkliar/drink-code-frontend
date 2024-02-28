@@ -5,7 +5,6 @@ export const FooterNav = styled.nav`
   display: flex;
   gap: 25px;
   flex-direction: column;
-  /* justify-content: center;  */
 
   @media (min-width: 768px) {
     gap: 28px;

@@ -7,23 +7,18 @@ import {
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
-// Для використання цього компоненту потрібно передати в нього параметр pageQuan, кількість сторінок для якої потрібно рендерити пагінацію :)
-
 const PaginationPanel = ({ pageQuan }) => {
   const navigation = useNavigate();
   const [searchParams] = useSearchParams();
   const [currentPpage, setCurrentPage] = useState(1);
 
-  //Set number of pages
   const numberOfPages = [];
   for (let i = 1; i <= pageQuan; i++) {
     numberOfPages.push(i);
   }
 
-  // Current active button number
   const [currentButton, setCurrentButton] = useState(1);
 
-  // Array of buttons what we see on the page
   const [arrOfCurrButtons, setArrOfCurrButtons] = useState([]);
 
   useEffect(() => {
