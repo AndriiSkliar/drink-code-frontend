@@ -11,9 +11,9 @@ import {
   StyledCocktailWrapper,
   StyledDeleteButton,
 } from './DrinkCard.styled';
-import { deleteFromFavorites } from '../../redux/drinks/drinksOperations';
 import sprite from '/src/assets/icons/icons.svg';
 import { StyledCocktailImageContainer } from '../DrinkSearch/DrinksList/DrinksItem/DrinksItem.styled';
+import { deleteFromFavorites } from '../../redux/drinks/drinks.operations';
 
 const DrinkCard = ({ name, description, alcoholic, imgUrl, id }) => {
   const dispatch = useDispatch();

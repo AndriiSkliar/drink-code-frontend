@@ -95,7 +95,6 @@ body {
   body {
     background-image: url('./assets/images/Hero/left_blur_desktop.svg'),
       url('./assets/images/Hero/right_blur_desktop.svg');
-    /* center_blur_desktop.svg в StyledHomePage так как этот блик есть только на странице HomePage */
     background-repeat: no-repeat;
     background-position:
       top left,

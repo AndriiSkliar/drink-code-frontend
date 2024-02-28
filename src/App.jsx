@@ -1,5 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-// @ts-nocheck
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import SharedLayout from './components/SharedLayout/SharedLayout';
@@ -8,10 +6,10 @@ import WelcomePage from './pages/WelcomePage/WelcomePage';
 import SignUpPage from './pages/SignUpPage/signUpPage';
 import SignInPage from './pages/SignInPage/SignInPage';
 import VerificationPage from './pages/VerificationPage/VerificationPage';
-import authSelectors from './redux/auth/authSelectors';
 import { lazy, useEffect } from 'react';
-import { authOperations } from './redux/auth/authOperations';
 import { PrivateRoute } from './helpers/PrivateRoute';
+import { selectIsLoggedIn } from './redux/selectors/auth.selectors';
+import { authOperations } from './redux/auth/auth.operations';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const ErrorPage = lazy(() => import('./pages/ErrorPage/ErrorPage'));
@@ -22,7 +20,7 @@ const MyDrinksPage = lazy(() => import('./pages/MyDrinksPage/MyDrinksPage'));
 const DrinkPage = lazy(() => import('./pages/DrinkPage/DrinkPage'));
 
 function App() {
-  const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   const location = useLocation();
   const dispatch = useDispatch();
 

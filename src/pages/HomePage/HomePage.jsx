@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import  { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import DrinksList from '../../components/DrinksList/DrinksList';
 import Hero from '../../components/Hero/Hero';
-import { StyledHomePage } from './StyledHomePage';
-import { NavLink } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchHomePageDrinks } from '../../redux/drinks/drinksOperations';
-import drinksSelectors from '../../redux/drinks/drinkSelectors';
 import { Loader } from '../../components/Loader/Loader';
+import { StyledHomePage } from './StyledHomePage';
+import { selectError, selectHomepageDrinks, selectIsLoading } from '../../redux/selectors/drinks.selectors';
+import { fetchHomePageDrinks } from '../../redux/drinks/drinks.operations';
 
 const HomePage = () => {
   const dispatch = useDispatch();
-  const drinks = useSelector(drinksSelectors.selectHomepageDrinks);
-  const isLoading = useSelector(drinksSelectors.selectIsLoading);
-  const error = useSelector(drinksSelectors.selectError);
+  const drinks = useSelector(selectHomepageDrinks);
+  const isLoading = useSelector(selectIsLoading);
+  const error = useSelector(selectError);
 
   useEffect(() => {
     dispatch(fetchHomePageDrinks());

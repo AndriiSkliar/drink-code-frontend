@@ -1,4 +1,3 @@
-// import { Link } from 'react-router-dom';
 import { Icon, IconText, LogoLink } from './Logo.styled';
 
 export const Logo = () => {

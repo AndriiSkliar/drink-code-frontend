@@ -1,10 +1,8 @@
-import React from 'react';
 import { Formik, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { ToastContainer, toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import 'react-toastify/dist/ReactToastify.css';
-import { authOperations } from '../../../redux/auth/authOperations';
 import {
   SubscrForm,
   SubscrFormText,
@@ -17,6 +15,7 @@ import {
   InputWrapper,
   ErrorText,
 } from '../../SignUp/SignForm.styled';
+import { authOperations } from '../../../redux/auth/auth.operations';
 
 const initialValues = { email: '' };
 const EmailSchema = Yup.object().shape({

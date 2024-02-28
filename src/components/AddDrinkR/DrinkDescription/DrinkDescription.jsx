@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import authSelectors from '../../../redux/auth/authSelectors';
 import sprite from '/src/assets/icons/icons.svg';
 
 import { CATEGORY } from './category';
@@ -23,6 +22,7 @@ import {
   RadioSecondaryContainer,
   StyledDeleteButton,
 } from './DrinkDescription.styled';
+import { selectUser } from '../../../redux/selectors/auth.selectors';
 
 const DrinkDescription = ({
   formik,
@@ -31,7 +31,7 @@ const DrinkDescription = ({
   setPictureActive,
 }) => {
   const [imageURL, setImageURL] = useState('');
-  const userData = useSelector(authSelectors.selectUser);
+  const userData = useSelector(selectUser);
   const isAdult = userData.isAdult;
 
   const handleUploadAvatar = (e) => {

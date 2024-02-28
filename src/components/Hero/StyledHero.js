@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const StyledHero = styled.div`
   display: block;
 
-  /* Планшетная версия  */
   @media (min-width: 768px) {
     display: flex;
     flex-direction: column;
@@ -13,7 +12,6 @@ export const StyledHero = styled.div`
     margin-top: 40px;
     margin-bottom: 54px;
   }
-  /* Десктопная версия  */
   @media (min-width: 1280px) {
     flex-direction: row;
 
@@ -45,7 +43,6 @@ export const StyledHero = styled.div`
     margin-bottom: 16px;
   }
 
-  /* Планшетная версия */
   @media (min-width: 768px) {
     .heroTitle {
       font-size: 56px;
@@ -56,7 +53,6 @@ export const StyledHero = styled.div`
     }
   }
 
-  /* Десктопная версия */
   @media (min-width: 1280px) {
     .heroTitle {
       font-size: 64px;
@@ -77,7 +73,6 @@ export const StyledHero = styled.div`
     margin-bottom: 32px;
   }
 
-  /* Планшетная версия */
   @media (min-width: 768px) {
     .heroDescription {
       font-size: 18px;
@@ -88,7 +83,6 @@ export const StyledHero = styled.div`
     }
   }
 
-  /* Десктопная версия */
   @media (min-width: 1280px) {
     .heroDescription {
       max-width: 500px;
@@ -119,7 +113,6 @@ export const StyledHero = styled.div`
       background-color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
   }
 
-  /* Планшетная версия */
   @media (min-width: 768px) {
     .addDrinkLink {
       padding: 18px 44px;
@@ -131,7 +124,6 @@ export const StyledHero = styled.div`
     }
   }
 
-  /* Десктопная версия */
   @media (min-width: 1280px) {
     .addDrinkLink {
       width: 164px;

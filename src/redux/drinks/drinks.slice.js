@@ -1,12 +1,11 @@
-// @ts-nocheck
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
-
-import { drinksOperations } from './drinksOperations';
+import { drinksOperations } from './drinks.operations';
 
 const initialState = {
   ownCocktails: [],
   cocktails: [],
   popularDrinks: [],
+  drinksSearched: [],
   favoriteCocktails: [],
   homepageDrinks: [],
   totalFavorites: null,
@@ -46,6 +45,13 @@ const cocktailsSlice = createSlice({
         }
       )
       .addCase(
+        drinksOperations.fetchDrinksBySearch.fulfilled,
+        (state, { payload }) => {
+          state.isLoading = false;
+          state.drinksSearched = payload.drinks;
+        }
+      )
+      .addCase(
         drinksOperations.fetchFavoriteCocktails.fulfilled,
         (state, { payload }) => {
           state.isLoading = false;
@@ -57,7 +63,6 @@ const cocktailsSlice = createSlice({
         state.isLoading = false;
         state.cocktails = [...state.ownCocktails, payload];
         state.totalOwn += 1;
-        // toast.success(`Now ${payload.name} added`);
       })
       .addCase(
         drinksOperations.deleteOwnCocktail.fulfilled,
@@ -67,7 +72,6 @@ const cocktailsSlice = createSlice({
             (cocktail) => cocktail._id !== payload.result._id
           );
           state.totalOwn -= 1;
-          // toast(`❌ ${payload.name} was deleted`);
         }
       )
       .addCase(
@@ -110,6 +114,7 @@ const cocktailsSlice = createSlice({
           drinksOperations.fetchOwnCoctails.pending,
           drinksOperations.fetchCocktails.pending,
           drinksOperations.fetchFavoriteCocktails.pending,
+          drinksOperations.fetchDrinksBySearch.pending,
           drinksOperations.addCocktail.pending,
           drinksOperations.deleteOwnCocktail.pending,
           drinksOperations.addToFavorites.pending,
@@ -129,6 +134,7 @@ const cocktailsSlice = createSlice({
           drinksOperations.fetchCocktails.rejected,
           drinksOperations.fetchPopularDrinks.rejected,
           drinksOperations.fetchFavoriteCocktails.rejected,
+          drinksOperations.fetchDrinksBySearch.rejected,
           drinksOperations.addCocktail.rejected,
           drinksOperations.deleteOwnCocktail.rejected,
           drinksOperations.addToFavorites.rejected,

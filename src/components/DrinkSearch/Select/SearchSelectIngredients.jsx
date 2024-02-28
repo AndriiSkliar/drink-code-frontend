@@ -1,17 +1,15 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchDrinksByIngredient } from '../../../redux/drinks/drinks.reducer.js';
+import { useSelector } from 'react-redux';
 import { SearchSelectStyled } from './SearchSelect.styled.js';
-import { selectIngredient } from '../../../redux/selectors.js';
+import { selectIngredient } from '../../../redux/selectors/drinks.selectors.js';
 
-const SearchSelectIngredients = () => {
+const SearchSelectIngredients = ({setIngredient}) => {
   const ingredient = useSelector(selectIngredient);
 
-  const dispatch = useDispatch();
-
   const searchByIngredient = (event) => {
-    const ingredient = event.target.value;
-
-    dispatch(fetchDrinksByIngredient(ingredient));
+    const ingredientParam = event.target.value;
+    if(ingredientParam !== "hide") {
+      setIngredient(ingredientParam);
+   }
   };
   return (
     <SearchSelectStyled>

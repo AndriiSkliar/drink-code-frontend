@@ -40,18 +40,9 @@ export const SearchBarStyled = styled.div`
   }
 
   .SearchForm-button {
-    // position: absolute;
-    // top: 100px;
-    // left: 50 px;
-    // display: inline-block;
-    // width: 48px;
-    // height: 48px;
     background-color: transparent;
     opacity: 0;
     padding: 18px;
-    // transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    // cursor: pointer;
-    // outline: none;
   }
 
   .SearchForm-button:hover {
@@ -60,14 +51,6 @@ export const SearchBarStyled = styled.div`
 
   .SearchForm-button-label {
     position: absolute;
-    // width: 1px;
-    // height: 1px;
-    // padding: 0;
-    // overflow: hidden;
-    // clip: rect(0, 0, 0, 0);
-    // white-space: nowrap;
-    // clip-path: inset(50%);
-    // border: 0;
   }
 
   .SearchForm-input {

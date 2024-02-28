@@ -45,7 +45,6 @@ export const SubmitButton = styled.button`
   background-color: var(--link-bg);
 
   &:hover {
-    /* background-color: #f3f3f3; */
     border-color: rgba(64, 112, 205, 0.5);
   }
 

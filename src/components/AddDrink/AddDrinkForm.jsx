@@ -43,7 +43,6 @@ const AddDrinkForm = ({ theme }) => {
 
   const persistedForm = useSelector(selectForm);
   if (!persistedForm?.form) {
-    // initiation persist form
     dispatch(setForm(initialValues));
   }
   const formValues = persistedForm.form;
@@ -93,7 +92,6 @@ const AddDrinkForm = ({ theme }) => {
     return false;
   };
 
-  // Funkcja przetwarzania formularzy
   const submitHandler = (values, actions) => {
     if (!isAllIngredientsUniq()) {
         throw HttpError(404, 'Duplicate ingredients are not allowed');
@@ -105,8 +103,6 @@ const AddDrinkForm = ({ theme }) => {
     ) {
       return;
     }
-
-    // Prośba o stworzenie własnego koktajlu bez obrazu
 
     if (!file) {
       const formWithImgUrl = {
@@ -133,7 +129,6 @@ const AddDrinkForm = ({ theme }) => {
       return;
     }
 
-    // wysłanie wybranego pliku na serwer
     const formData = new FormData();
     formData.append('cocktail', file);
     dispatch(addOwnDrinkImg(formData))
@@ -165,7 +160,6 @@ const AddDrinkForm = ({ theme }) => {
         } else {
             throw HttpError(404,`Format "webp" not allowed. Try upload .jpeg or .png`);
         }
-        // console.log(resp.payload.message);
       })
       .catch((e) => {
         console.log(e);
@@ -197,7 +191,6 @@ const AddDrinkForm = ({ theme }) => {
         actions.resetForm({ values: initialValues });
         return;
       }
-      // console.log(resp.payload.message);
       errorsHandler(resp.payload.message);
     });
   };
@@ -224,7 +217,6 @@ const AddDrinkForm = ({ theme }) => {
 
     return duplicateElement.length > 0 ? false : true;
   };
-  // dispatch(setForm(initialValues));
 
   return (
     <Wrapper>

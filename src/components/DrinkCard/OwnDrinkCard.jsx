@@ -1,4 +1,3 @@
-import React from 'react';
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import {
@@ -11,12 +10,9 @@ import {
   StyledCocktailWrapper,
   StyledDeleteButton,
 } from './DrinkCard.styled';
-import {
-  deleteOwnCocktail,
-  fetchOwnCoctails,
-} from '../../redux/drinks/drinksOperations';
 import sprite from '/src/assets/icons/icons.svg';
 import { StyledCocktailImageContainer } from '../DrinkSearch/DrinksList/DrinksItem/DrinksItem.styled';
+import { deleteOwnCocktail, fetchOwnCoctails } from '../../redux/drinks/drinks.operations';
 
 const OwnDrinkCard = ({ name, description, alcoholic, imgUrl, id }) => {
   const dispatch = useDispatch();

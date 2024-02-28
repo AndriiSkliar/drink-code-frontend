@@ -6,26 +6,17 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import Title from '../../components/Title/Title';
-import drinksSelectors from '../../redux/drinks/drinkSelectors';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-  addToFavorites,
-  deleteFromFavorites,
-  fetchDrinkDetails,
-  fetchFavoriteCocktails,
-} from '../../redux/drinks/drinksOperations.js';
-import {
-  selectFavoriteCocktails,
-  selectIsLoading,
-} from '../../redux/selectors';
 import { Loader } from '../../components/Loader/Loader';
 import ErrorPage from '../ErrorPage/ErrorPage.jsx';
 import defaultImg from '../../assets/dummyDrinkThumb.png';
+import { selectDrinkDetails, selectError, selectFavoriteCocktails, selectIsLoading } from '../../redux/selectors/drinks.selectors.js';
+import { addToFavorites, deleteFromFavorites, fetchDrinkDetails, fetchFavoriteCocktails } from '../../redux/drinks/drinks.operations.js';
 
 const DrinkPage = () => {
   const dispatch = useDispatch();
-  const drinkDetails = useSelector(drinksSelectors.drinkDetails);
-  const error = useSelector(drinksSelectors.selectError);
+  const drinkDetails = useSelector(selectDrinkDetails);
+  const error = useSelector(selectError);
   const isLoading = useSelector(selectIsLoading);
   const favoriteCocktails = useSelector(selectFavoriteCocktails);
   const { id } = useParams();

@@ -1,22 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useSearchParams } from 'react-router-dom';
 import Title from '../../components/Title/Title';
 import DrinkList from '../../components/DrinkList/DrinkList';
 import DrinkCard from '../../components/DrinkCard/DrinkCard';
-import { StyledDivNotFound } from './FavoritesPage.styled';
-import {
-  deleteFromFavorites,
-  fetchFavoriteCocktails,
-} from '../../redux/drinks/drinksOperations';
-import {
-  selectFavoriteCocktails,
-  selectIsLoading,
-  selectTotalFavorites,
-} from '../../redux/selectors';
 import { NotFoundCocktail } from '../../components/NotFoundDrink/NotFound';
 import { Loader } from '../../components/Loader/Loader';
 import PaginationPanel from '../../components/Pagination/Pagination';
-import { useSearchParams } from 'react-router-dom';
+import { StyledDivNotFound } from './FavoritesPage.styled';
+import { selectFavoriteCocktails, selectIsLoading, selectTotalFavorites } from '../../redux/selectors/drinks.selectors';
+import { deleteFromFavorites, fetchFavoriteCocktails } from '../../redux/drinks/drinks.operations';
 
 const FavoritesPage = () => {
   const dispatch = useDispatch();

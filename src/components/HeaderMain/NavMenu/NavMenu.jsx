@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { NavigationList, NavItem, StyledLink } from "./NavMenu.styled"
 
 const NavMenu = () => {

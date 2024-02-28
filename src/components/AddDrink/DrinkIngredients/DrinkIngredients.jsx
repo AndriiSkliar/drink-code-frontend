@@ -25,15 +25,12 @@ import {
   
     const ingredientsData = useSelector(selectIngredient);
   
-    // Tablica składników jest zapisywana do zmiany, w zależności od ograniczeń Alcoholic/Non alcoholic
     const ingredientOptions = ingredientsData.filter((el) =>
       form.alcoholic === 'Alcoholic' ? el.alcohol : el.alcohol === 'No',
     );
   
-    // Tablica składników jest rejestrowana podczas zmiany, biorąc pod uwagę fakt, że w bazie danych znajdują się nienazwane składniki
     const ingredientTitleArray = ingredientOptions.filter((el) => el.title);
   
-    // Tablica obiektów składników jest zapisywana do przesunięcia, w postaci niezbędnej do pracy selekcji.
     const ingredientsForSelect = ingredientTitleArray.map((item) => {
       return { value: item.title, label: item.title, alcohol: item.alcohol };
     });

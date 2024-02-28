@@ -24,7 +24,6 @@ export const SubscrFormText = styled.p`
 
 export const SubscrFormInput = styled(Field)`
   display: block;
-  /* margin-bottom: 18px; */
   color: var(--primary-text-color-footer);
   width: 100%;
   height: 56px;

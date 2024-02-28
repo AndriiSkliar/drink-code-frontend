@@ -95,8 +95,6 @@ export const Button = styled.button`
   font-size: 14px;
   font-weight: 600;
   line-height: 1.28571;
-  // margin-bottom: 14px;
-  // margin-top: 14px;
   display: flex;
   justify-content: center;
   border: 1px solid var(--primary-text-color-05);
@@ -142,7 +140,6 @@ export const ErrorText = styled.p`
     absolute === 'true' || select === 'true' ? '0' : '25px'};
   margin-top: ${({ absolute, select }) =>
     absolute === 'true' || select === 'true' ? '0' : '8px'};
-  /* width: ${({ select }) => (select === 'true' ? '200px' : '100%')}; */
   white-space: nowrap;
   text-align: ${({ select }) => (select === 'true' ? 'right' : 'left')};
 `;
@@ -164,11 +161,6 @@ export const CheckSvgStyled = styled(CheckSvg)`
 export const Link = styled(NavLink)`
   color: var(--primary-text-color-footer);
   border: 1px solid var(--primary-text-color-05);
-  //   font-size: 12px;
-  //   font-weight: 600;
-  //   line-height: 1.33px;
-  //   text-decoration-line: none;
-  //   text-align: center;
 
   position: relative;
   padding: 18px;
@@ -178,7 +170,6 @@ export const Link = styled(NavLink)`
   justify-content: center;
   border-radius: 42px;
   background-color: transparent;
-  //   border: 1px solid transparent;
   transition: border ${transition};
 
   &:focus,

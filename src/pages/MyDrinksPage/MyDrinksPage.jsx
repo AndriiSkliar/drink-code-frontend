@@ -1,19 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Title from '../../components/Title/Title';
 import { Loader } from '../../components/Loader/Loader.jsx';
 import DrinkList from '../../components/DrinkList/DrinkList.jsx';
 import { NotFoundCocktail } from '../../components/NotFoundDrink/NotFound';
-import { selectIsLoading, selectOwnCocktails } from '../../redux/selectors.js';
-import {
-  deleteOwnCocktail,
-  fetchOwnCoctails,
-} from '../../redux/drinks/drinksOperations.js';
-import { StyledDivNotFound } from './MyDrinks.styled.js';
 import OwnDrinkCard from '../../components/DrinkCard/OwnDrinkCard.jsx';
 import PaginationPanel from '../../components/Pagination/Pagination.jsx';
-import { selectTotalOwnCocktails } from '../../redux/selectors.js';
+import { StyledDivNotFound } from './MyDrinks.styled.js';
+import { deleteOwnCocktail, fetchOwnCoctails } from '../../redux/drinks/drinks.operations.js';
+import {selectIsLoading, selectOwnCocktails, selectTotalOwnCocktails} from '../../redux/selectors/drinks.selectors.js'
 
 const MyDrinksPage = () => {
   const dispatch = useDispatch();

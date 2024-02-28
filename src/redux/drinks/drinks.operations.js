@@ -1,13 +1,12 @@
-// @ts-nocheck
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { instance } from '../auth/authOperations';
+import { instance } from '../auth/auth.operations';
 
 export const fetchHomePageDrinks = createAsyncThunk(
   'cocktails/fetchHomepage',
   async (_, thunkApi) => {
     try {
-      const { token } = thunkApi.getState().auth; //берем токен из auth
-      // console.log(token)
+      const { token } = thunkApi.getState().auth;
+
       if (!token) {
         return null;
       }
@@ -20,7 +19,7 @@ export const fetchHomePageDrinks = createAsyncThunk(
 
       const resp = await instance.get('/drinks/mainpage', config);
       const data = resp.data;
-      // console.log('fetchHomePageDrinks data', data);
+
       return data;
     } catch (error) {
       console.error('Error while fetching data', error);
@@ -148,10 +147,23 @@ export const fetchDrinkDetails = createAsyncThunk(
   }
 );
 
+export const fetchDrinksBySearch = createAsyncThunk(
+  'drinks/getBySearch',
+  async (formData, thunkApi) => {
+    try {
+      const { data } = await instance.get('/drinks/search', formData);
+      return data;
+    } catch (err) {
+      return thunkApi.rejectWithValue(err.message);
+    }
+  }
+);
+
 export const drinksOperations = {
   fetchOwnCoctails,
   fetchCocktails,
   fetchPopularDrinks,
+  fetchDrinksBySearch,
   fetchFavoriteCocktails,
   addCocktail,
   deleteOwnCocktail,
