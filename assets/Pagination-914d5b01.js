@@ -1,4 +1,4 @@
-import{u as i,j as a,k as y,c as k,r as g}from"./index-a3f8adbe.js";const C=i.ul`
+import{u as i,j as a,k as y,c as k,r as g}from"./index-4f9b7f0d.js";const C=i.ul`
   margin-top: 40px;
   display: flex;
   justify-content: center;
@@ -35,7 +35,6 @@ import{u as i,j as a,k as y,c as k,r as g}from"./index-a3f8adbe.js";const C=i.ul
 `,N=i.div`
   position: relative;
 
-  /* Градиент для затемнения на фото коктейля */
   &:before {
     content: '';
     position: absolute;
@@ -98,12 +97,6 @@ import{u as i,j as a,k as y,c as k,r as g}from"./index-a3f8adbe.js";const C=i.ul
   @media screen and (min-width: 1280px) {
     width: 400px;
   }
-
-  /* svg {
-    width: 24px;
-     height: 24px;
-     stroke: #f3f3f3;
-   } */
 `,P=i.ul`
   display: flex;
   justify-content: center;
