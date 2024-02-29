@@ -1,17 +1,13 @@
-import { useSelector } from 'react-redux';
 import { SearchSelectStyled } from './SearchSelect.styled.js';
-import { selectCategory } from '../../../redux/selectors/drinks.selectors.js';
 
 const SearchSelectCategory = ({setCategory}) => {
-  const category = useSelector(selectCategory);
-
-
   const searchByCategory = (event) => {
     event.preventDefault()
     const categoryParam = event.target.value;
-    if(categoryParam !== "hide") {
-       setCategory(categoryParam);
-    }
+
+    if (categoryParam !== "hide") setCategory(categoryParam);
+    if (categoryParam === "hide") setCategory("")
+    
   };
   
   return (
@@ -19,7 +15,7 @@ const SearchSelectCategory = ({setCategory}) => {
       <select
         id="categories"
         name="category"
-        value={category}
+        defaultValue="hide"
         className="select select-styled"
         onChange={searchByCategory}
       >

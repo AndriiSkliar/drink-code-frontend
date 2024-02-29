@@ -1,22 +1,21 @@
-import { useSelector } from 'react-redux';
 import { SearchSelectStyled } from './SearchSelect.styled.js';
-import { selectIngredient } from '../../../redux/selectors/drinks.selectors.js';
 
 const SearchSelectIngredients = ({setIngredient}) => {
-  const ingredient = useSelector(selectIngredient);
 
   const searchByIngredient = (event) => {
+    event.preventDefault()
     const ingredientParam = event.target.value;
-    if(ingredientParam !== "hide") {
-      setIngredient(ingredientParam);
-   }
+    
+    if (ingredientParam !== "hide") setIngredient(ingredientParam);
+    if (ingredientParam === "hide") setIngredient("")
+   
   };
   return (
     <SearchSelectStyled>
       <select
         id="ingredients"
         name="ingredients"
-        value={ingredient}
+        defaultValue="hide"
         className="select select-styled"
         onChange={searchByIngredient}
       >

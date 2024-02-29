@@ -69,6 +69,16 @@ body {
   background-color: var(--background-color);
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: auto;
+}
+
 @media (max-width: 767px) {
   body {
     background-image: url('./assets/images/Hero/left_blur_mobile.svg'),
