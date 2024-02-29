@@ -1,4 +1,4 @@
-import{u as i,j as a,k as y,c as k,r as g}from"./index-39f8cb3b.js";const C=i.ul`
+import{u as i,j as a,k as y,c as k,r as g}from"./index-3bc7ec2a.js";const C=i.ul`
   margin-top: 40px;
   display: flex;
   justify-content: center;
