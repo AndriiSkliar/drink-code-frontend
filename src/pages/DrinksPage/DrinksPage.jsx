@@ -18,57 +18,52 @@ import { SearchingContainer, StyledDivNotFound } from './DrinksPage.styled.js';
 
 const DrinksPage = () => {
   const dispatch = useDispatch();
-  const formData = new FormData();
-  const [perPage, setPerPage] = useState(8);
-  const [searchParams] = useSearchParams();
+  const [limit, setLimit] = useState(10);
   const drinks = useSelector(selectDrinksBySearch);
   const isLoading = useSelector(selectIsLoadingDrinks);
+  const [searchParams] = useSearchParams();
   const page = searchParams.get('page') || 1;
+  const formData = new FormData();
+  
+  const [drink, setDrink] = useState(""); 
+  const [category, setCategory] = useState(""); 
+  const [ingredient, setIngredient] = useState("");
 
-  // State for send request to backend
-  const [drink, setDrink] = useState(''); // searchParam from search bar
-  const [category, setCategory] = useState(''); //searchParam from category select
-  const [ingredient, setIngredient] = useState('');// searchParam from ingredient select
-  // ==========================================
-  // const dataObj = JSON.stringify({drink, category, ingredient});
-
+  useEffect(() => {
+    const screenWidth = window.innerWidth;
+    if (screenWidth >= 1280) {
+      setLimit(9);
+    } else if (screenWidth >= 768) {
+      setLimit(8);
+    } else {
+      setLimit(10);
+    }
+  }, []);
+  
+  const totalPages = Math.ceil(drinks.length / limit);
+  const startIndex = (page - 1) * limit;
+  const endIndex = Math.min(startIndex + limit, drinks.length);
+  
   formData.append('drink', drink);
   formData.append('category', category);
   formData.append('ingredient', ingredient);
+  formData.append('limit', limit);
 
-  const totalPages = Math.ceil(drinks.length / perPage);
-  const startIndex = (page - 1) * perPage;
-  const endIndex = Math.min(startIndex + perPage, drinks.length);
+  const params = new URLSearchParams();
+  formData.forEach((value, key) => {
+    params.append(key, value);
+  });
 
   useEffect(() => {
-    dispatch(fetchDrinksBySearch());
+    console.log('limit: ', limit);
+    dispatch(fetchDrinksBySearch(params));
   }, [dispatch])
 
   useEffect(() => {
-    if (drink === "" && category === "" && ingredient === "") return;
+    if (drink === '' && category === '' && ingredient === '') return;
     
-    dispatch(fetchDrinksBySearch(formData));
+    dispatch(fetchDrinksBySearch(params));
   }, [category, ingredient, drink, dispatch])
-
-  useEffect(() => {
-    const handleResize = () => {
-      const screenWidth = window.innerWidth;
-
-      const newCocktailsPerPage = screenWidth >= 1200 ? 9 : 8;
-
-      if (newCocktailsPerPage !== perPage) {
-        setPerPage(newCocktailsPerPage);
-      }
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    handleResize();
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [perPage, page, drinks]);
 
   return (
     <main className="container">

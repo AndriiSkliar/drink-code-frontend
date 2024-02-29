@@ -148,9 +148,9 @@ export const fetchDrinkDetails = createAsyncThunk(
 
 export const fetchDrinksBySearch = createAsyncThunk(
   'drinks/getBySearch',
-  async (formData, thunkApi) => {
+  async (params, thunkApi) => {
     try {
-      const { data } = await instance.get('/drinks/search', formData);
+      const { data } = await instance.get('/drinks/search', { params });
       return data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);
