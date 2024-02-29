@@ -7,6 +7,7 @@ const SearchSelectCategory = ({setCategory}) => {
 
 
   const searchByCategory = (event) => {
+    event.preventDefault()
     const categoryParam = event.target.value;
     if(categoryParam !== "hide") {
        setCategory(categoryParam);
