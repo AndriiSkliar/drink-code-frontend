@@ -5,10 +5,8 @@ export const selectFavoriteCocktails = (state) =>
 export const selectTotalFavorites = (state) => state.cocktails.totalFavorites;
 
 export const selectDrinks = (state) => state.drinks.drinks;
-export const selectCategory = (state) => state.drinks.category;
-export const selectIngredient = (state) => state.drinks.ingredient;
-
 export const selectIsLoadingDrinks = (state) => state.drinks.isLoading;
+
 export const selectOwnCocktails = (state) => state.cocktails.ownCocktails;
 export const selectTotalOwnCocktails = (state) => state.cocktails.totalOwn;
 

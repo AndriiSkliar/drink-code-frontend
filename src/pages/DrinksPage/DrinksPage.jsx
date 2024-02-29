@@ -31,14 +31,8 @@ const DrinksPage = () => {
   const params = new URLSearchParams({ drink, category, ingredient });
 
   useEffect(() => {
-    dispatch(fetchDrinksBySearch());
-  }, [dispatch])
-
-  useEffect(() => {
-    if (drink === '' && category === '' && ingredient === '') return;
-    
     dispatch(fetchDrinksBySearch(params));
-  }, [category, ingredient, drink, dispatch])
+  }, [category, ingredient, drink])
 
   useEffect(() => {
     const handleResize = () => {

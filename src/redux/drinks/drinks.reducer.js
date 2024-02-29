@@ -3,8 +3,6 @@ import { fetchDrinksBySearch } from './drinks.operations';
 
 const initialState = {
   drinks: [],
-  category: '',
-  ingredient: '',
   isLoading: false,
   error: null,
 };
