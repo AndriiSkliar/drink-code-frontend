@@ -7,11 +7,8 @@ import {
 const SearchBar = ({ setDrink }) => {
   const searchByLetter = (event) => {
     event.preventDefault();
-    const letterParams = event.currentTarget.elements.searchLetter.value;
-    if (letterParams.trim() !== '') {
-      setDrink(letterParams);
-    }
-    event.currentTarget.elements.searchLetter.value = "";
+    const letterParams = event.currentTarget.elements.searchLetter.value.trim();
+    setDrink(letterParams);
   };
 
   return (

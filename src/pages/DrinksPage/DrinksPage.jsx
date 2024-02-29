@@ -12,51 +12,26 @@ import DrinkList from '../../components/DrinkList/DrinkList';
 import DrinksItem from '../../components/DrinkSearch/DrinksList/DrinksItem/DrinksItem';
 import { NotFoundCocktail } from '../../components/NotFoundDrink/NotFound';
 
-import { selectDrinksBySearch, selectIsLoadingDrinks } from '../../redux/selectors/drinks.selectors.js';
+import { selectDrinks, selectIsLoadingDrinks } from '../../redux/selectors/drinks.selectors.js';
 import { fetchDrinksBySearch } from '../../redux/drinks/drinks.operations.js';
 import { SearchingContainer, StyledDivNotFound } from './DrinksPage.styled.js';
 
 const DrinksPage = () => {
   const dispatch = useDispatch();
-  const [limit, setLimit] = useState(10);
-  const drinks = useSelector(selectDrinksBySearch);
+  const [perPage, setPerPage] = useState(1);
+  const drinks = useSelector(selectDrinks);
   const isLoading = useSelector(selectIsLoadingDrinks);
   const [searchParams] = useSearchParams();
   const page = searchParams.get('page') || 1;
-  const formData = new FormData();
   
   const [drink, setDrink] = useState(""); 
   const [category, setCategory] = useState(""); 
   const [ingredient, setIngredient] = useState("");
+  
+  const params = new URLSearchParams({ drink, category, ingredient });
 
   useEffect(() => {
-    const screenWidth = window.innerWidth;
-    if (screenWidth >= 1280) {
-      setLimit(9);
-    } else if (screenWidth >= 768) {
-      setLimit(8);
-    } else {
-      setLimit(10);
-    }
-  }, []);
-  
-  const totalPages = Math.ceil(drinks.length / limit);
-  const startIndex = (page - 1) * limit;
-  const endIndex = Math.min(startIndex + limit, drinks.length);
-  
-  formData.append('drink', drink);
-  formData.append('category', category);
-  formData.append('ingredient', ingredient);
-  formData.append('limit', limit);
-
-  const params = new URLSearchParams();
-  formData.forEach((value, key) => {
-    params.append(key, value);
-  });
-
-  useEffect(() => {
-    console.log('limit: ', limit);
-    dispatch(fetchDrinksBySearch(params));
+    dispatch(fetchDrinksBySearch());
   }, [dispatch])
 
   useEffect(() => {
@@ -64,6 +39,29 @@ const DrinksPage = () => {
     
     dispatch(fetchDrinksBySearch(params));
   }, [category, ingredient, drink, dispatch])
+
+  useEffect(() => {
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+      if (screenWidth >= 1280) {
+        setPerPage(9);
+      } else if (screenWidth >= 768) {
+        setPerPage(8);
+      } else {
+        setPerPage(10);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [perPage, page, drinks]);
+  
+  const totalPages = Math.ceil(drinks.length / perPage);
+  const startIndex = (page - 1) * perPage;
+  const endIndex = Math.min(startIndex + perPage, drinks.length);
 
   return (
     <main className="container">
@@ -97,7 +95,7 @@ const DrinksPage = () => {
           </DrinkList>
         )}
       </div>
-      {totalPages > 1 && <Pagination pageQuan={totalPages} />}
+      {!isLoading && totalPages > 1 && <Pagination pageQuan={totalPages} />}
     </main>
   );
 };
