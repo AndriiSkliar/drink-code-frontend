@@ -162,20 +162,20 @@ input[type='file'] {
 }
 
 .container {
-  width: 375px;
   margin: 0 auto;
   padding: 80px 10px;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 374px) {
   .container {
-    max-width: 375px;
+    max-width: 374px;
   }
 }
 
 @media screen and (min-width: 375px) {
   .container {
     padding: 80px 20px;
+    width: 375px;
   }
 }
 
