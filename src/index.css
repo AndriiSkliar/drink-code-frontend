@@ -162,6 +162,7 @@ input[type='file'] {
 }
 
 .container {
+  width: 375px;
   margin: 0 auto;
   padding: 80px 10px;
 }
