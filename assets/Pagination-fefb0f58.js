@@ -1,7 +1,7 @@
-import{u as i,j as a,k as y,c as k,r as g}from"./index-3bc7ec2a.js";const C=i.ul`
+import{u as i,j as a,k as y,c as k,r as g}from"./index-d39268e7.js";const C=i.ul`
   margin-top: 40px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   gap: 40px;
