@@ -12,7 +12,10 @@ import DrinkList from '../../components/DrinkList/DrinkList';
 import DrinksItem from '../../components/DrinkSearch/DrinksList/DrinksItem/DrinksItem';
 import { NotFoundCocktail } from '../../components/NotFoundDrink/NotFound';
 
-import { selectDrinks, selectIsLoadingDrinks } from '../../redux/selectors/drinks.selectors.js';
+import {
+  selectDrinks,
+  selectIsLoadingDrinks,
+} from '../../redux/selectors/drinks.selectors.js';
 import { fetchDrinksBySearch } from '../../redux/drinks/drinks.operations.js';
 import { SearchingContainer, StyledDivNotFound } from './DrinksPage.styled.js';
 
@@ -23,22 +26,22 @@ const DrinksPage = () => {
   const isLoading = useSelector(selectIsLoadingDrinks);
   const [searchParams] = useSearchParams();
   const page = searchParams.get('page') || 1;
-  
-  const [drink, setDrink] = useState(""); 
-  const [category, setCategory] = useState(""); 
-  const [ingredient, setIngredient] = useState("");
-  
+
+  const [drink, setDrink] = useState('');
+  const [category, setCategory] = useState('');
+  const [ingredient, setIngredient] = useState('');
+
   const params = new URLSearchParams({ drink, category, ingredient });
 
   useEffect(() => {
     dispatch(fetchDrinksBySearch());
-  }, [dispatch])
+  }, [dispatch]);
 
   useEffect(() => {
-    if (drink === '' && category === '' && ingredient === '') return;
-    
+    // if (drink === '' && category === '' && ingredient === '') return;
+
     dispatch(fetchDrinksBySearch(params));
-  }, [category, ingredient, drink, dispatch])
+  }, [category, ingredient, drink, dispatch]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -58,7 +61,7 @@ const DrinksPage = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, [perPage, page, drinks]);
-  
+
   const totalPages = Math.ceil(drinks.length / perPage);
   const startIndex = (page - 1) * perPage;
   const endIndex = Math.min(startIndex + perPage, drinks.length);
@@ -67,9 +70,9 @@ const DrinksPage = () => {
     <main className="container">
       <Title text={'Drinks'} />
       <SearchingContainer>
-        <SearchBar setDrink={setDrink}/>
-        <SearchSelectCategory setCategory={setCategory}/>
-        <SearchSelectIngredients setIngredient={setIngredient}/>
+        <SearchBar setDrink={setDrink} />
+        <SearchSelectCategory setCategory={setCategory} />
+        <SearchSelectIngredients setIngredient={setIngredient} />
       </SearchingContainer>
       <div className="categoryListsContainer">
         {isLoading && <Loader />}
@@ -77,7 +80,9 @@ const DrinksPage = () => {
         {!isLoading && drinks.length < 1 && (
           <StyledDivNotFound>
             <NotFoundCocktail />
-            <p>We haven&apos;t found any cocktails. Please try another filters.</p>
+            <p>
+              We haven&apos;t found any cocktails. Please try another filters.
+            </p>
           </StyledDivNotFound>
         )}
 

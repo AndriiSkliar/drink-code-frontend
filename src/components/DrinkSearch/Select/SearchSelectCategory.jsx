@@ -1,15 +1,14 @@
 import { SearchSelectStyled } from './SearchSelect.styled.js';
 
-const SearchSelectCategory = ({setCategory}) => {
+const SearchSelectCategory = ({ setCategory }) => {
   const searchByCategory = (event) => {
-    event.preventDefault()
+    event.preventDefault();
     const categoryParam = event.target.value;
 
-    if (categoryParam !== "hide") setCategory(categoryParam);
-    if (categoryParam === "hide") setCategory("")
-    
+    if (categoryParam !== 'hide') setCategory(categoryParam);
+    if (categoryParam === 'hide') setCategory('');
   };
-  
+
   return (
     <SearchSelectStyled>
       <select
@@ -26,7 +25,7 @@ const SearchSelectCategory = ({setCategory}) => {
         <option value="other">Other/Unknown</option>
         <option value="cocoa">Cocoa</option>
         <option value="shot">Shot</option>
-        <option value="coffee tea">Coffee / Tea</option>
+        <option value="coffee">Coffee / Tea</option>
         <option value="homemade liqueur">Homemade Liqueur</option>
         <option value="punch">Punch / Party Drink</option>
         <option value="beer">Beer</option>

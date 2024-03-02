@@ -3,7 +3,7 @@ import { styled } from 'styled-components';
 export const StyledList = styled.ul`
   margin-top: 40px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   gap: 40px;
