@@ -16,5 +16,7 @@ export const selectHomepageDrinks = (state) => state.cocktails.homepageDrinks;
 export const selectDrinkDetails = (state) => state.cocktails.drinkDetails;
 export const selectDrinksBySearch = (state) => state.cocktails.drinksSearched;
 
+export const selectIngredients = (state) => state.drinks.ingredients;
+
 export const selectError = (state) => state.cocktails.error;
 export const selectIsLoading = (state) => state.cocktails.isLoading;

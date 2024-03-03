@@ -158,6 +158,18 @@ export const fetchDrinksBySearch = createAsyncThunk(
   }
 );
 
+export const fetchIngredients = createAsyncThunk(
+  'filters/ingredients',
+  async (params, thunkApi) => {
+    try {
+      const { data } = await instance.get('filters/ingredients', { params });
+      return data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
+    }
+  }
+);
+
 export const drinksOperations = {
   fetchOwnCoctails,
   fetchCocktails,
@@ -170,4 +182,5 @@ export const drinksOperations = {
   deleteFromFavorites,
   fetchHomePageDrinks,
   fetchDrinkDetails,
+  fetchIngredients
 };
