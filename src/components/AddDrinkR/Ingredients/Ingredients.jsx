@@ -89,6 +89,7 @@ const Ingredients = ({ formik }) => {
               value={ingredient.title}
               onChange={(e) => handleSelectChange(index, e)}
             >
+              <option value="">Select ingredients</option>
               {INGREDIENTS.map((ingredient) => (
                 <option
                   key={ingredient._id.$oid}
@@ -118,32 +119,6 @@ const Ingredients = ({ formik }) => {
       ))}
     </DescHelperContainer>
   );
-  //   return (
-  //     <>
-  //       <h2>Ingredients</h2>
-  //       <select name="ingredients" onChange={formik.handeChange}>
-  //         {INGREDIENTS.map((ingredient) => {
-  //           return (
-  //             <option
-  //               key={ingredient._id.$oid}
-  //               id={ingredient._id.$oid}
-  //               value={ingredient.title}
-  //             >
-  //               {ingredient.title}
-  //             </option>
-  //           );
-  //         })}
-  //       </select>
-  //       <input
-  //         name="measure"
-  //         type="text"
-  //         id="measure"
-  //         value={formik.values.ingredients.measure}
-  //         onChange={formik.handeChange}
-  //       />
-  //       <button type="button">x</button>
-  //     </>
-  //   );
 };
 
 export default Ingredients;

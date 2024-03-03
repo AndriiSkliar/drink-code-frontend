@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-// @media screen and (min-width: 1280px) {
-//
-//   }
-
 export const AddForm = styled.form`
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     width: 704px;
@@ -49,7 +45,6 @@ export const SubmitButton = styled.button`
   background-color: var(--link-bg);
 
   &:hover {
-    /* background-color: #f3f3f3; */
     border-color: rgba(64, 112, 205, 0.5);
   }
 

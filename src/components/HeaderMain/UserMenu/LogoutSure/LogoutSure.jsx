@@ -1,7 +1,4 @@
-// @ts-nocheck
-
 import { useDispatch } from 'react-redux';
-import { authOperations } from '/src/redux/auth/authOperations.js'
 import sprite from '/src/assets/icons/icons.svg'
 import {
   Backdrop,
@@ -13,6 +10,7 @@ import {
   ModalWindow,
   SvgIconClose,
 } from './LogoutSure.styled';
+import { authOperations } from '../../../../redux/auth/auth.operations';
 
 const LogoutSure = ({ setIsOpenLogout }) => {
   const dispatch = useDispatch();

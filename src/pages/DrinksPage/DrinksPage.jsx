@@ -1,52 +1,100 @@
-import React, { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import DrinksList from '../../components/DrinkSearch/DrinksList/DrinksList';
+import { useSearchParams } from 'react-router-dom';
+
 import Pagination from '../../components/Pagination/Pagination';
 import SearchBar from '../../components/DrinkSearch/SearchBar/SearchBar';
 import SearchSelectCategory from '../../components/DrinkSearch/Select/SearchSelectCategory';
 import SearchSelectIngredients from '../../components/DrinkSearch/Select/SearchSelectIngredients';
-import { SearchingContainer, StyledDrinksPage } from './DrinkPage.styled.js';
-import { fetchDrinks } from '../../redux/drinks/drinksSearch.js';
-import { selectDrinks } from '../../redux/selectors';
 import Title from '../../components/Title/Title';
-// import Loader from '../../components/Loader/Loader';
+import { Loader } from '../../components/Loader/Loader.jsx';
+import DrinkList from '../../components/DrinkList/DrinkList';
+import DrinksItem from '../../components/DrinkSearch/DrinksList/DrinksItem/DrinksItem';
+import { NotFoundCocktail } from '../../components/NotFoundDrink/NotFound';
+
+import {
+  selectDrinks,
+  selectIsLoadingDrinks,
+} from '../../redux/selectors/drinks.selectors.js';
+import { fetchDrinksBySearch } from '../../redux/drinks/drinks.operations.js';
+import { SearchingContainer, StyledDivNotFound } from './DrinksPage.styled.js';
 
 const DrinksPage = () => {
   const dispatch = useDispatch();
-  let pageQuan = 1;
+  const [perPage, setPerPage] = useState(1);
   const drinks = useSelector(selectDrinks);
+  const isLoading = useSelector(selectIsLoadingDrinks);
+  const [searchParams] = useSearchParams();
+  const page = searchParams.get('page') || 1;
+
+  const [drink, setDrink] = useState('');
+  const [category, setCategory] = useState('');
+  const [ingredient, setIngredient] = useState('');
+
+  const params = new URLSearchParams({ drink, category, ingredient });
 
   useEffect(() => {
-    dispatch(fetchDrinks());
-  }, [dispatch]);
+    dispatch(fetchDrinksBySearch(params));
+  }, [category, ingredient, drink, dispatch]);
 
-  // Count pages for pagination
-  if (drinks.length > 7) {
-    const screenWidth = window.innerWidth;
+  useEffect(() => {
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+      if (screenWidth >= 1280) {
+        setPerPage(9);
+      } else if (screenWidth >= 768) {
+        setPerPage(8);
+      } else {
+        setPerPage(10);
+      }
+    };
 
-    if (screenWidth >= 1280) {
-      pageQuan = Math.ceil(drinks.length / 9);
-    } else if (screenWidth >= 768) {
-      pageQuan = Math.ceil(drinks.length / 8);
-    } else {
-      pageQuan = Math.ceil(drinks.length / 10);
-    }
-  }
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [perPage, page, drinks]);
+
+  const totalPages = Math.ceil(drinks.length / perPage);
+  const startIndex = (page - 1) * perPage;
+  const endIndex = Math.min(startIndex + perPage, drinks.length);
+
   return (
     <main className="container">
       <Title text={'Drinks'} />
       <SearchingContainer>
-        <SearchBar />
-        <SearchSelectCategory />
-        <SearchSelectIngredients />
+        <SearchBar setDrink={setDrink} />
+        <SearchSelectCategory setCategory={setCategory} />
+        <SearchSelectIngredients setIngredient={setIngredient} />
       </SearchingContainer>
-      {/* {isLoading && <Loader />} */}
       <div className="categoryListsContainer">
-        {drinks.length > 0 && <DrinksList drinks={drinks} />}
-        {drinks.length < 1 && <alert>Not gound drink for your request</alert>}
-        {/* {drinks.length < 1 && <NotFoundDrink />} */}
+        {isLoading && <Loader />}
+
+        {!isLoading && drinks.length < 1 && (
+          <StyledDivNotFound>
+            <NotFoundCocktail />
+            <p>
+              We haven&apos;t found any cocktails. Please try another filters.
+            </p>
+          </StyledDivNotFound>
+        )}
+
+        {!isLoading && drinks.length > 0 && (
+          <DrinkList>
+            {drinks.slice(startIndex, endIndex).map((drink) => (
+              <DrinksItem
+                key={drink._id}
+                className="drinksListItem"
+                id={drink._id}
+                name={drink.drink}
+                img={drink.drinkThumb}
+              />
+            ))}
+          </DrinkList>
+        )}
       </div>
-      {pageQuan > 1 && <Pagination pageQuan={pageQuan} />}
+      {!isLoading && totalPages > 1 && <Pagination pageQuan={totalPages} />}
     </main>
   );
 };

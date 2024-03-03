@@ -2,23 +2,21 @@ import styled from 'styled-components';
 
 export const StyledHero = styled.div`
   display: block;
-  margin-top: 80px;
-  margin-bottom: 112px;
 
-  /* Планшетная версия  */
   @media (min-width: 768px) {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
 
-    margin-top: 120px;
-    margin-bottom: 123px;
+    margin-top: 40px;
+    margin-bottom: 54px;
   }
-  /* Десктопная версия  */
   @media (min-width: 1280px) {
-    margin-top: 185px;
-    margin-bottom: 218px;
+    flex-direction: row;
+
+    margin-top: 8px;
+    margin-bottom: 106px;
   }
 
   .heroContent {
@@ -45,7 +43,6 @@ export const StyledHero = styled.div`
     margin-bottom: 16px;
   }
 
-  /* Планшетная версия */
   @media (min-width: 768px) {
     .heroTitle {
       font-size: 56px;
@@ -56,7 +53,6 @@ export const StyledHero = styled.div`
     }
   }
 
-  /* Десктопная версия */
   @media (min-width: 1280px) {
     .heroTitle {
       font-size: 64px;
@@ -77,7 +73,6 @@ export const StyledHero = styled.div`
     margin-bottom: 32px;
   }
 
-  /* Планшетная версия */
   @media (min-width: 768px) {
     .heroDescription {
       font-size: 18px;
@@ -88,7 +83,6 @@ export const StyledHero = styled.div`
     }
   }
 
-  /* Десктопная версия */
   @media (min-width: 1280px) {
     .heroDescription {
       max-width: 500px;
@@ -119,7 +113,6 @@ export const StyledHero = styled.div`
       background-color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
   }
 
-  /* Планшетная версия */
   @media (min-width: 768px) {
     .addDrinkLink {
       padding: 18px 44px;
@@ -131,7 +124,6 @@ export const StyledHero = styled.div`
     }
   }
 
-  /* Десктопная версия */
   @media (min-width: 1280px) {
     .addDrinkLink {
       width: 164px;
@@ -143,7 +135,7 @@ export const StyledHero = styled.div`
     border: 2px solid rgba(64, 112, 205, 0.5);
     border-radius: 42px;
     box-shadow: 0 0 20px rgba(64, 112, 205, 0.7);
-    background-color: var( --link-bg-hover);
+    background-color: var(--link-bg-hover);
   }
 `;
 export default StyledHero;

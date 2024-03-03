@@ -1,8 +1,7 @@
-// @ts-nocheck
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchPopularDrinks } from '/src/redux/drinks/drinksOperations.js';
-import { selectPopularDrinks } from '/src/redux/selectors.js';
+import { fetchPopularDrinks } from '../../../redux/drinks/drinks.operations';
+import { selectPopularDrinks } from '/src/redux/selectors/drinks.selectors.js';
 import {
   DrinkDescription,
   NameDrink,

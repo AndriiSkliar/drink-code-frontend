@@ -1,24 +1,20 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchDrinksByCategory } from '../../../redux/drinks/drinks.reducer.js';
 import { SearchSelectStyled } from './SearchSelect.styled.js';
-import { selectCategory } from '../../../redux/selectors.js';
 
-const SearchSelectCategory = () => {
-  const category = useSelector(selectCategory);
-
-  const dispatch = useDispatch();
-
+const SearchSelectCategory = ({ setCategory }) => {
   const searchByCategory = (event) => {
-    const category = event.target.value;
+    event.preventDefault();
+    const categoryParam = event.target.value;
 
-    dispatch(fetchDrinksByCategory(category));
+    if (categoryParam !== 'hide') setCategory(categoryParam);
+    if (categoryParam === 'hide') setCategory('');
   };
+
   return (
     <SearchSelectStyled>
       <select
         id="categories"
         name="category"
-        value={category}
+        defaultValue="hide"
         className="select select-styled"
         onChange={searchByCategory}
       >
@@ -29,7 +25,7 @@ const SearchSelectCategory = () => {
         <option value="other">Other/Unknown</option>
         <option value="cocoa">Cocoa</option>
         <option value="shot">Shot</option>
-        <option value="coffee tea">Coffee / Tea</option>
+        <option value="coffee">Coffee / Tea</option>
         <option value="homemade liqueur">Homemade Liqueur</option>
         <option value="punch">Punch / Party Drink</option>
         <option value="beer">Beer</option>

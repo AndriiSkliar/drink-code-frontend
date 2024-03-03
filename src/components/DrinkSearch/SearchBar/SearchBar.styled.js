@@ -26,10 +26,9 @@ export const StyledSearchButton = styled.button`
 `;
 
 export const SearchBarStyled = styled.div`
- 
   .SearchForm {
     display: flex;
-    padding:18px;
+    padding: 18px;
     align-items: center;
     width: 100%;
     max-width: 335px;
@@ -41,34 +40,17 @@ export const SearchBarStyled = styled.div`
   }
 
   .SearchForm-button {
-    // position: absolute;
-    // top: 100px;
-    // left: 50 px;
-    // display: inline-block;
-    // width: 48px;
-    // height: 48px;
-    bacground-color: transparent;
+    background-color: transparent;
     opacity: 0;
-    padding:18px;
-    // transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    // cursor: pointer;
-    // outline: none;
+    padding: 18px;
   }
-  
+
   .SearchForm-button:hover {
     opacity: 1;
   }
 
   .SearchForm-button-label {
     position: absolute;
-    // width: 1px;
-    // height: 1px;
-    // padding: 0;
-    // overflow: hidden;
-    // clip: rect(0, 0, 0, 0);
-    // white-space: nowrap;
-    // clip-path: inset(50%);
-    // border: 0;
   }
 
   .SearchForm-input {
@@ -88,13 +70,10 @@ export const SearchBarStyled = styled.div`
     font: inherit;
     font-size: 18px;
   }
-  
-  }
-   @media (min-width: 768px) {
-     .SearchForm {
-    max-width: 264px;
-  }
-  
-  }
 
+  @media (min-width: 768px) {
+    .SearchForm {
+      max-width: 264px;
+    }
+  }
 `;

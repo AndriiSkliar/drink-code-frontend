@@ -11,23 +11,17 @@ export const StyledDrinksList = styled.div`
       column-gap: 20px;
       justify-content: space-between;
     }
-
-    @media (min-width: 1280px) {
-      /* на будущее */
-    }
   }
 
-  /* Стили для мобильной версии */
   .drinksListTitle {
     font-weight: 600;
     font-size: 28px;
     line-height: 1.14286;
-    color: var( --primary-text-color);
+    color: var(--primary-text-color);
 
     margin-bottom: 24px;
   }
 
-  /* Стили для планшетной версии (если они отличаются от мобильной) */
   @media (min-width: 768px) {
     .drinksListTitle {
       font-size: 40px;
@@ -37,7 +31,6 @@ export const StyledDrinksList = styled.div`
     }
   }
 
-  /* Стили для десктопной версии (если они отличаются от мобильной и планшетной) */
   @media (min-width: 1280px) {
     .drinksListTitle {
       line-height: 1.1;

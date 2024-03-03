@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { MainHeader, MobileBox, NavigationHeader } from './Header.styled';
 import { useState, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';

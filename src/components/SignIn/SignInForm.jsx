@@ -1,10 +1,8 @@
-// @ts-nocheck
 import { ErrorMessage, Formik } from 'formik';
 import { ToastContainer, toast, Slide } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { authOperations } from '../../redux/auth/authOperations';
 import * as Yup from 'yup';
 import {
   Container,
@@ -22,6 +20,7 @@ import {
 import { ReactComponent as ShowPassword } from '../../assets/images/signSvg/eye.svg';
 import { ReactComponent as HidePassword } from '../../assets/images/signSvg/eye-off.svg';
 import { WelcomeWrapper } from '../Welcome/Welcome.styled';
+import { authOperations } from '../../redux/auth/auth.operations';
 
 const initialValues = { email: '', password: '' };
 const schema = Yup.object().shape({
@@ -58,8 +57,8 @@ export default function SigninForm() {
           autoClose: 1500,
         });
       })
-      .catch(() => {
-        toast.error(`Something went wrong. Try again`, {
+      .catch((error) => {
+        toast.error(error, {
           position: "top-right",
           autoClose: 1500,
         });

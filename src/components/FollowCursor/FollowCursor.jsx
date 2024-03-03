@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { StyledFollowCursor } from './StyledFollowCursor';
 
 const FollowCursor = () => {
@@ -8,7 +8,7 @@ const FollowCursor = () => {
   const handleMouseMove = (e) => {
     const target = e.target;
 
-    if (target.closest('a') || target.closest('button')) { //реагируем на ссылки и кнопки
+    if (target.closest('a') || target.closest('button')) { 
       setIsActive(true);
     } else {
       setIsActive(false);

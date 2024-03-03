@@ -1,11 +1,10 @@
-// @ts-nocheck
 import { NavigationList, NavItem, StyledLink } from "./NavMenu.styled"
 
 const NavMenu = () => {
   return (
     <NavigationList>
       <NavItem>
-        <StyledLink to="/">Home</StyledLink> 
+        <StyledLink to="/home">Home</StyledLink> 
       </NavItem>
       <NavItem>
         <StyledLink to="/drinks">Drinks</StyledLink>

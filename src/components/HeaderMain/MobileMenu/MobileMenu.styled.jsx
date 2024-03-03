@@ -1,4 +1,3 @@
-// @ts-nocheck
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import bg224 from '/src/assets/images/mob-menu-bg/bg224.png';

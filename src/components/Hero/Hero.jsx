@@ -1,4 +1,3 @@
-import React from 'react';
 import StyledHero from './StyledHero';
 import { NavLink } from 'react-router-dom';
 import images from 'src/assets/images/Hero/images';
@@ -16,7 +15,6 @@ const Hero = () => {
           destination for exploring, crafting, and mastering the world's finest
           beverages.
         </p>
-        {/* Ссылка на страницу добавления напитка */}
         <NavLink to="/add" className="addDrinkLink">
           Add drink
         </NavLink>

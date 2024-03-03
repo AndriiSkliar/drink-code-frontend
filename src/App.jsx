@@ -1,18 +1,15 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-// @ts-nocheck
-import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { lazy, useEffect } from 'react';
 import SharedLayout from './components/SharedLayout/SharedLayout';
+import { PrivateRoute } from './helpers/PrivateRoute';
 import PublicRoute from './helpers/PublicRoute';
 import WelcomePage from './pages/WelcomePage/WelcomePage';
 import SignUpPage from './pages/SignUpPage/signUpPage';
 import SignInPage from './pages/SignInPage/SignInPage';
 import VerificationPage from './pages/VerificationPage/VerificationPage';
-import { lazy, useEffect, useState, Suspense } from 'react';
-import { authOperations } from './redux/auth/authOperations';
-import authSelectors from './redux/auth/authSelectors';
-import { PrivateRoute } from './helpers/PrivateRoute';
-import { Loader } from './components/Loader/Loader';
+import { selectIsLoggedIn } from './redux/selectors/auth.selectors';
+import { authOperations } from './redux/auth/auth.operations';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const ErrorPage = lazy(() => import('./pages/ErrorPage/ErrorPage'));
@@ -23,30 +20,27 @@ const MyDrinksPage = lazy(() => import('./pages/MyDrinksPage/MyDrinksPage'));
 const DrinkPage = lazy(() => import('./pages/DrinkPage/DrinkPage'));
 
 function App() {
-  const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   const location = useLocation();
-  const navigate = useNavigate();
-  const [currentPage] = useState(location.pathname);
   const dispatch = useDispatch();
+
+  if(isLoggedIn && location.pathname === "/") {
+    location.pathname = "/home";
+  }
 
   useEffect(() => {
     dispatch(authOperations.currentUser());
-    if (currentPage !== '/') {
-      navigate(currentPage);
-    }
   }, [dispatch]);
 
 
   return (
-    <Suspense fallback={<Loader/>}>
     <Routes>
-      <Route path="/:id" element={<VerificationPage />} />
+      <Route path="/user/:id" element={<VerificationPage />} />
       <Route
         path="/welcome"
         element={
           <PublicRoute
-            redirectTo="/"
-            isLoggedIn={isLoggedIn}
+            redirectTo="/home"
             component={<WelcomePage />}
           />
         }
@@ -55,8 +49,7 @@ function App() {
         path="/signup"
         element={
           <PublicRoute
-            redirectTo="/"
-            isLoggedIn={isLoggedIn}
+            redirectTo="/home"
             component={<SignUpPage />}
           />
         }
@@ -66,15 +59,15 @@ function App() {
         path="/signin"
         element={
           <PublicRoute
-            redirectTo="/"
-            isLoggedIn={isLoggedIn}
+            redirectTo="/home"
             component={<SignInPage />}
           />
         }
       />
-      <Route path="/" element={<PrivateRoute redirectTo="/welcome" component={<SharedLayout />}/>} >
+      <Route path="/" element={!isLoggedIn ? <WelcomePage /> : <SharedLayout />} >
         <Route
           index
+          path='/home'
           element={
             <PrivateRoute redirectTo="/welcome" component={<HomePage />} />
           }
@@ -109,10 +102,9 @@ function App() {
             <PrivateRoute redirectTo="/welcome" component={<DrinkPage />} />
           }
         />
-        <Route path="*" element={<ErrorPage />} />
+        <Route path="*" element={<PrivateRoute redirectTo="/welcome" component={<ErrorPage />} />} />
       </Route>
     </Routes>
-    </Suspense>
   );
 }
 export default App;

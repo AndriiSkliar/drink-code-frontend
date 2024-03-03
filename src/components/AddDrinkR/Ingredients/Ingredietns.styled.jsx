@@ -1,11 +1,4 @@
 import styled from 'styled-components';
-// @media screen and (min-width: 768px) and (max-width: 1279px) {
-
-//   }
-
-// @media screen and (min-width: 1280px) {
-
-// }
 
 export const TitleContainer = styled.div`
   display: flex;
@@ -107,7 +100,7 @@ export const IngredientSelect = styled.select`
   padding: 12px 15px;
   border: 1px solid var(--secondary-text-color);
   border-radius: 200px;
-  background-color: transparent;
+  background-color: var(--background-color);
   color: var(--primary-text-color);
   cursor: pointer;
 

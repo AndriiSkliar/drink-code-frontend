@@ -2,25 +2,18 @@ import styled from 'styled-components';
 export const StyledDrinksItem = styled.li`
   margin-bottom: 40px;
   border-radius: 8px;
-  /* width: 335px;
-  height: 360px; */
 
   @media (min-width: 768px) {
-    /* width: 342px;
-    height: 360px; */
     margin-bottom: 80px;
-    width: calc(150% - 20px); /* Две картинки с промежутком в 20px */
+    width: calc(150% - 20px);
   }
 
   @media (min-width: 1280px) {
-    /* width: 400px;
-    height: 400px; */
-    width: calc(100% - 40px); /* Три картинки с промежутками в 20px */
+    width: calc(100% - 40px);
   }
 
   .imgContainer {
     margin-bottom: 14px;
-    /* Подсветка карточки с коктейлем */
     background: transparent;
     position: relative;
   }
@@ -29,10 +22,9 @@ export const StyledDrinksItem = styled.li`
     border-radius: 8px;
     position: relative;
     background: linear-gradient(0deg, #000, #272727);
-    transition: background cubic-bezier(0.25, 0.1, 0.25, 1) 0.3s; /* Плавный переход цвета */
+    transition: background cubic-bezier(0.25, 0.1, 0.25, 1) 0.3s;
   }
 
-  /* Эффект радужной тени */
   .imgContainer:hover:before,
   .imgContainer:hover:after,
   .imgContainer:focus:before,
@@ -59,13 +51,12 @@ export const StyledDrinksItem = styled.li`
     height: calc(100% + 4px);
     border-radius: 8px;
     z-index: -1;
-    animation-name: steam; /* имя анимации, определенной ниже с использованием @keyframes */
-    animation-duration: 16s; /* продолжительность анимации */
-    animation-timing-function: linear; /* анимация идет с постоянной скоростью */
-    animation-iteration-count: infinite; /* бесконечное повторение */
+    animation-name: steam;
+    animation-duration: 16s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
   }
 
-  /* Анимация радужной тени */
   @keyframes steam {
     0% {
       background-position: 0 0;
@@ -78,29 +69,38 @@ export const StyledDrinksItem = styled.li`
     }
   }
 
-  /* Эффект размытия */
   .imgContainer:after {
     filter: blur(20px);
-    transition: filter cubic-bezier(0.25, 0.1, 0.25, 1) 0.3s; /* Плавный переход размытия */
+    transition: filter cubic-bezier(0.25, 0.1, 0.25, 1) 0.3s;
   }
 
   .drinkImgWrapper {
     position: relative;
     overflow: hidden;
-    width: 100%;
-    height: 100%;
+    width: 335px;
+    height: 360px;
     border-radius: 8px;
     object-fit: cover;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 
-    /* Градиент для затемнения на фото коктейля */
+    @media (min-width: 768px) {
+      width: 342px;
+      height: 360px;
+    }
+
+    @media (min-width: 1280px) {
+      width: 400px;
+      height: 400px;
+    }
+
     &:before {
       content: '';
       position: absolute;
-      top: 0;
+      top: 50%;
       left: 0;
       right: 0;
       bottom: 0;
+      height: 200px;
       border-radius: 8px;
       background: linear-gradient(
         180deg,
@@ -111,14 +111,11 @@ export const StyledDrinksItem = styled.li`
     }
   }
 
-
-  /* .drinkImg {
+  .drinkImg {
     width: 100%;
     height: 100%;
-    border-radius: 8px;
     object-fit: cover;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  } */
+  }
 
   .drinkName {
     font-weight: 500;

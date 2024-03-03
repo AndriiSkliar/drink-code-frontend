@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import DrinksItem from './DrinksItem/DrinksItem';
 import { StyledDrinksList } from './StyledDrinksList';
 
@@ -21,8 +21,6 @@ const DrinksList = ({ title, drinks }) => {
 
     window.addEventListener('resize', handleResize);
     handleResize();
-
-    // Очищаем слушателя события при размонтировании компонента, чтобы избежать утечек памяти
 
     return () => {
       window.removeEventListener('resize', handleResize);

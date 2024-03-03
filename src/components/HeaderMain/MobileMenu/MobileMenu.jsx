@@ -1,4 +1,3 @@
-// @ts-nocheck
 import {
   NavigationList,
   StyledLink,
@@ -15,7 +14,7 @@ const MobileMenu = ({handleClick}) => {
         <LineMobile></LineMobile>
         <NavigationList>
           <NavItem>
-            <StyledLink to="/" onClick={handleClick}>Home</StyledLink>
+            <StyledLink to="/home" onClick={handleClick}>Home</StyledLink>
           </NavItem>
           <NavItem>
             <StyledLink to="/drinks" onClick={handleClick}>Drinks</StyledLink>
