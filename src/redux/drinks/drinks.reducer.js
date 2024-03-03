@@ -1,11 +1,11 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
-import { fetchDrinksBySearch } from './drinks.operations';
+import { fetchDrinksBySearch, fetchIngredients } from './drinks.operations';
 
 const initialState = {
   drinks: [],
   category: '',
-  ingredient: '',
-  isLoading: false,
+  ingredients: [], 
+    isLoading: false,
   error: null,
 };
 
@@ -13,19 +13,28 @@ const drinksSlice = createSlice({
   name: 'drinks',
   initialState,
 
-  reducers: {},
+  reducers: {  },
   extraReducers: (builder) =>
     builder
       .addCase(fetchDrinksBySearch.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.drinks = payload;
       })
-      .addMatcher(isAnyOf(fetchDrinksBySearch.pending), (state) => {
+      .addCase(fetchIngredients.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.ingredients = payload;
+            })
+      .addMatcher(isAnyOf(
+        fetchDrinksBySearch.pending,
+        fetchIngredients.pending
+        ), 
+        (state) => {
         state.isLoading = true;
         state.error = null;
       })
       .addMatcher(
-        isAnyOf(fetchDrinksBySearch.rejected),
+        isAnyOf(fetchDrinksBySearch.rejected,
+          fetchIngredients.rejected),
         (state, { payload }) => {
           state.isLoading = false;
           state.error = payload;
