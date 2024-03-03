@@ -1,1 +1,0 @@
-import{j as c}from"./index-d39268e7.js";const s="/drink-code-frontend/assets/404Cocktail2x-edf5c5fe.png",n="/drink-code-frontend/assets/404Cocktail-5c1fb6aa.png",e=({width:t,height:o})=>c.jsx("img",{srcSet:n,src:s,alt:"cocktail",width:t,height:o});export{e as N};
