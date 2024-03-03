@@ -1,6 +1,6 @@
 // @ts-nocheck
-import { PopularDrinks } from '../../components/AddDrink/PopularDrinks/PopularDrinks';
-import AddDrinkForm from '../../components/AddDrink/AddDrinkForm';
+import { PopularDrinks } from '../../components/AddDrinkR/PopularDrinks/PopularDrinks';
+import AddDrinkForm from '../../components/AddDrinkR/AddDrinkForm';
 import {
   FormContainer,
   PopularContainer,
