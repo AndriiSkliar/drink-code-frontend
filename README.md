@@ -27,9 +27,9 @@ by logging into your account.
 
 **Favorites:** On this page you can see a list of all your favorite drinks.
 
-The top part of the site contains a logo with a link to the home page, a button to switch themes between light and black, and a user profile. In the footer, the user can subscribe to social networks, use the navigation, and subscribe their email address to receive newsletter.
-
 **Drink:** On this page the user can see full information about the cocktail.
+
+The top part of the site contains a logo with a link to the home page, a button to switch themes between light and black, and a user profile. In the footer, the user can subscribe to social networks, use the navigation, and subscribe their email address to receive newsletter.
 
 ### Team Members and Responsibilities:
 
